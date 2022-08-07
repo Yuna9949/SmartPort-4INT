@@ -9,8 +9,16 @@
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 		global $return_value;
-		//$return_value = array($row["car1x"], $row["car2x"], $row["car3x"], $row["car1y"], $row["car2y"], $row["car3y"], $row["light01"], $row["light02"], $row["light03"], $row["light04"], $row["light05"], $row["light06"], $row["light07"], $row["light08"], $row["light09"], $row["light10"], $row["light11"], $row["light12"]);
-		$return_value = $row["car2x"];
+		$return_value = json_encode(array(
+				"car1x"=>$row["car1x"],"car2x"=>$row["car2x"],"car3x"=>$row["car3x"],
+				"car1y"=>$row["car1y"],"car2y"=>$row["car2y"],"car3y"=>$row["car3y"],
+				"car1s"=>$row["car1s"],"car2s"=>$row["car2s"],"car3s"=>$row["car3s"],
+				"light01" => $row["light01"], "light02" => $row["light02"],
+				"light03" => $row["light03"], "light04" => $row["light04"],
+				"light05" => $row["light05"], "light06" => $row["light06"],
+				"light07" => $row["light07"], "light08" => $row["light08"],
+				"light09" => $row["light09"], "light10" => $row["light10"],
+				"light11" => $row["light11"], "light12" => $row["light12"]));
 		mysqli_close($conn);
 		return $return_value;
 	}
@@ -103,8 +111,11 @@
 			}
 			#output{
 				position: absolute;
-				top: -50px;
+			/*	top: -50px;
 				left: 30%;
+			*/
+				top: 200px;
+				left: -1370px;
 				color: red;
 			}
 			.statuspanel{
@@ -143,10 +154,19 @@
 		<title>SPTS</title>
 		<script type="text/javascript">
 			function mysql_conn(){
-				//var js_array = "<?php echo json_encode(mysql_conn());?>";
-				//document.getElementById('output').innerHTML = js_array;
-				var temp = "<?php echo mysql_conn();?>";
-				document.getElementById('output').innerHTML = temp;
+				var info_temp = '<?php echo mysql_conn(); ?>';
+				var contact = JSON.parse(info_temp);
+				var status_list = "x: "+contact["car1x"]+" "+contact["car2x"]+" "+contact["car3x"];
+				status_list  +=  " y: "+contact["car1y"]+" "+contact["car2y"]+" "+contact["car3y"];
+				status_list  +=  " s: "+contact["car1s"]+" "+contact["car2s"]+" "+contact["car3s"];
+				status_list  +=  " | light: "+contact["light01"]+" "+contact["light02"];
+				status_list  +=  " " + contact["light03"] + " " + contact["light04"];
+				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
+				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
+				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
+				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+
+				document.getElementById('output').innerHTML = status_list;
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
@@ -402,7 +422,7 @@
 									<td><button class="btn" id="pause">I I</button></td>
 								</tr>
 							</table>
-							<p id="output">1</p>
+							<p id="output">no data input</p>
 						</div>
 					</div>
 				</td>
