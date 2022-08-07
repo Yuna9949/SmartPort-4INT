@@ -139,7 +139,7 @@
 				}
 			}
 		</style>
-		<title>테스트 홈페이지 </title>
+		<title>SPTS</title>
 		<script type="text/javascript">
 			function mysql_conn(){
 				var temp = "<?php echo mysql_conn();?>";
@@ -223,6 +223,14 @@
 				ctx.fillRect(4*road+wth+2,     8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(4*road+wth+2,    14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(4*road+wth+2,    20*road+2, 2*road-2, 2*road-2);
+
+				<!-- car -->
+				ctx.fillStyle = 'rgb(9, 96, 47)';
+				ctx.fillRect(5*road, 3.5*road-14, 50,30);
+				ctx.fillRect(4*road+wth/2+1, 4*road+1, 30, 50);
+				ctx.fillRect(wth + 5*road+1, 7*road, 30, 50);
+				ctx.fillRect(wth+5*road+1, 16*road+1, 30, 50);
+				ctx.fillRect(2*road+wth/2, 14*road+1, 50,30);
 			}
 
 			function start() {
@@ -319,7 +327,10 @@
 					<br>
 					<br>
 				</td>
-				<th></th>
+				<th class="title">
+					<br>
+					Smart Port Traffic Simulator
+				</th>
 			</tr>
 			<tr>
             			<td class="controler" style="text-align : left;">
@@ -328,11 +339,11 @@
 							시나리오 선택
 						</div>
 						<select>
-    							<option value="1" selected>#1</option>
+    							<option value="1" selected>#1 - Sync with actual situation</option>
     							<option value="2">#2</option>
     							<option value="3">#3</option>
     							<option value="4">#4</option>
-    							<option value="5">#5</option>
+    							<option value="5">#5 - Custom</option>
 						</select>
 					</div>
 				</td>
@@ -379,8 +390,8 @@
 								<tr>
 									<td style="width:110px;">차량 대수</td>
 									<td style="width:15px; border-left: 1px solid #e7e7e7;"></td>
-									<td><div id="carshw">1</div></td>
-									<td>1 <input type="range" id="carnum" min="1" max="10" value='1'> 10</td>
+									<td><div id="carshw">5</div></td>
+									<td>1 <input type="range" id="carnum" min="1" max="10" value='5'> 10</td>
 								</tr>
 								<tr>
 									<td>현재 배속</td>
