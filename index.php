@@ -109,14 +109,22 @@
 				padding : 5px 0 5px 35px;
 				position: relative;
 			}
-			#output{
+			.output{
 				position: absolute;
-			/*	top: -50px;
-				left: 30%;
-			*/
-				top: 200px;
 				left: -1370px;
 				color: red;
+			}
+			#outputx{
+				top: 175px;
+			}
+			#outputy{
+				top: 195px;
+			}
+			#outputs{
+				top: 215px;
+			}
+			#outputt{
+				top: 235px;
 			}
 			.statuspanel{
 				padding: 5px 0px 0px 35px;
@@ -156,17 +164,20 @@
 			function mysql_conn(){
 				var info_temp = '<?php echo mysql_conn(); ?>';
 				var contact = JSON.parse(info_temp);
-				var status_list = "x: "+contact["car1x"]+" "+contact["car2x"]+" "+contact["car3x"];
-				status_list  +=  " y: "+contact["car1y"]+" "+contact["car2y"]+" "+contact["car3y"];
-				status_list  +=  " s: "+contact["car1s"]+" "+contact["car2s"]+" "+contact["car3s"];
-				status_list  +=  " ___ light: "+contact["light01"]+" "+contact["light02"];
+				var status_listx = "x: "+contact["car1x"]+" "+contact["car2x"]+" "+contact["car3x"];
+				var status_listy = "y: "+contact["car1y"]+" "+contact["car2y"]+" "+contact["car3y"];
+				var status_lists = "s: "+contact["car1s"]+" "+contact["car2s"]+" "+contact["car3s"];
+				var status_list = "light: "+contact["light01"]+" "+contact["light02"];
 				status_list  +=  " " + contact["light03"] + " " + contact["light04"];
 				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
 				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
 				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 
-				document.getElementById('output').innerHTML = status_list;
+				document.getElementById('outputx').innerHTML = status_listx;
+				document.getElementById('outputy').innerHTML = status_listy;
+				document.getElementById('outputs').innerHTML = status_lists;
+				document.getElementById('outputt').innerHTML = status_list;
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
@@ -422,7 +433,10 @@
 									<td><button class="btn" id="pause">I I</button></td>
 								</tr>
 							</table>
-							<p id="output">no data input</p>
+							<p class="output" id="outputx">no data input1</p>
+							<p class="output" id="outputy">no data input2</p>
+							<p class="output" id="outputs">no data input3</p>
+							<p class="output" id="outputt">no data input4</p>
 						</div>
 					</div>
 				</td>
