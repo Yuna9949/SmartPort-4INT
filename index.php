@@ -151,7 +151,7 @@
 		<script type="text/javascript">
 			function mysql_conn(){
 				var info_temp = '<?php echo mysql_conn(); ?>';
-				alert(info_temp);
+				//alert(info_temp);
 				var contact = JSON.parse(info_temp);
 				var status_list = "light: "+contact["light01"]+" "+contact["light02"];
 				status_list  +=  " " + contact["light03"] + " " + contact["light04"];
@@ -162,7 +162,26 @@
 
 				document.getElementById('outputt').innerHTML = status_list;
 
+				var up = "<img src='go.png' width='45%' style='transform:rotate(270deg);'/>";
+				var right = "<img src='go.png' width='45%' style='transform:rotate(0deg);'/>";
+				var down = "<img src='go.png' width='45%' style='transform:rotate(90deg);'/>";
+				var left = "<img src='go.png' width='45%' style='transform:rotate(180deg);'/>";
+				var stay = "<img src='go.png' width='45%' style='transform:rotate(270deg);'/>";
+
+				if(contact["light03"] == 12)
+					document.getElementById('l3').innerHTML = left;
 			}
+
+			function show_carnum(){
+				const carN = document.getElementById('carnum').value;
+				document.getElementById('carshw').innerText = carN;
+			}
+			function show_speed(){
+				const spdvalue = document.getElementById('speednum').value;
+				docummnet.ggetElementById('speedshw').innerText = spdvalue;
+			}
+
+
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
@@ -244,8 +263,9 @@
 
 			}
 
-			function start() {
+			var stopani = null;
 
+			function start() {
 				const carnum = document.getElementById('carnum').value;
 				const canvas = document.getElementById('canvas');
 
@@ -340,61 +360,51 @@
 							else			this.stauts = 1;
 							this.turn = 0;
 							check = 900;
-							//alert(check);
 						}
 						if(this.dbx != 1 && this.dby == 1)
 						{
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
-							//alert(check);
 						}
 						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
 						{
-							//alert(147);
 							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
 							{
 								check = 456;
-								//alert(check);
 								this.turn = 0;
 								this.status = 3;
 							}
 							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
 							{
 								check = 91011;
-								//alert(check);
 								this.turn = 0;
 								this.status = 3;
 							}
 							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
 							{
 								check = 141516;
-								//alert(check);
 								this.turn = 0;
 								this.status = 3;
 							}
 						}
 						if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
 						{
-							//alert(258);
 							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
 							{
 								check = 456;
-								//alert(check);
 								this.turn = 0;
 								this.status = 1;
 							}
 							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
 							{
 								check = 91011;
-								//alert(check);
 								this.turn = 0;
 								this.status = 1;
 							}
 							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
 							{
 								check = 141516;
-								//alert(check);
 								this.turn = 0;
 								this.status = 1;
 							}
@@ -402,7 +412,6 @@
 						if(this.dbx == 3 || this.dbx == 6)
 						{
 							check = 36;
-							//alert(check);
 							this.turn = 0;
 							if(this.dby == 2)	this.status = 4;
 							else if(this.dby == 6 || this.dby == 7)
@@ -420,19 +429,16 @@
 										this.status = 2;
 							else if(this.dby == 18)	this.status = 2;
 						}
-						if(check == 0)
-						{
-							//alert("zero");
-							this.status = 0;
-						}
+						if(check == 0)		this.status = 0;
 
 						if(this.status == 0 && this.turn == 0)
 						{
-							mysql_conn();
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
+
+							mysql_conn();
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							if(this.dby == 2 || this.dby == 3)
 							{
@@ -572,10 +578,14 @@
 						canvas.width = window.innerWidth*0.695;
 						canvas.height = window.innerHeight*0.985;
 					})
-					requestAnimationFrame(animate);
+					stopani = requestAnimationFrame(animate);
 				}
 				init();
 				animate();
+			}
+
+			function stop(){
+				cancelAnimationFrame(stopani);
 			}
 		</script>
 	</head>
@@ -618,24 +628,24 @@
 						</div>
 						<table class="traffic">
 							<tr>
-								<td class="lights"><img src="go.png" width="45%" style="transform:rotate(0deg);"/></td>
-								<td class="lights"><img src="stop.png" width="45%" style="transform:rotate(270deg);" /></td>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l1"><img src="go.png" width="45%" style="transform:rotate(0deg);"/></td>
+								<td class="lights" id="l2"><img src="stop.png" width="45%" style="transform:rotate(270deg);" /></td>
+								<td class="lights" id="l3"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
 							</tr>
 							<tr>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights"><img src="go.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l4"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l5"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l6"><img src="go.png" width="45%" style="transform:rotate(270deg);"/></td>
 							</tr>
 							<tr>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights"><img src="go.png" width="45%" style="transform:rotate(180deg);"/></td>
-								<td class="lights"><img src="stop.png" width="45%" style="transform:rotate(270deg);" /></td>
+								<td class="lights" id="l7"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l8"><img src="go.png" width="45%" style="transform:rotate(180deg);"/></td>
+								<td class="lights" id="l9"><img src="stop.png" width="45%" style="transform:rotate(270deg);" /></td>
 							</tr>
 							<tr>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
 							</tr>
 						</table>
 					</div>
@@ -653,19 +663,19 @@
 									<td style="width:110px;">차량 대수</td>
 									<td style="width:15px; border-left: 1px solid #e7e7e7;"></td>
 									<td><div id="carshw">1</div></td>
-									<td>1 <input type="range" id="carnum" min="1" max="10" value='1'> 10</td>
+									<td>1 <input type="range" id="carnum" min="1" max="10" value='1' onchange='show_carnum()'> 10</td>
 								</tr>
 								<tr>
 									<td>현재 배속</td>
 									<td style="border-left:1px solid #e7e7e7;"></td>
 									<td><div id="speedshw">1</div></td> 
-									<td>1 <input type="range" min="1" max="10" value='1' id="speednum"> 10</td>
+									<td>1 <input type="range" min="1" max="10" value='1' id="speednum" onchange='show_speed()'> 10</td>
 								</tr>
 								<tr>
 									<td>시작/일시정지</td>
 									<td style="border-left:1px solid #e7e7e7;"></td>
-									<td><button id="play" class="btn" onclick="start()">►</button></td>
-									<td><button class="btn" id="pause">I I</button></td>
+									<td id="playbtn"><button id="play" class="btn" onclick="start()">►</button></td>
+									<td><button class="btn" id="pause" onclick="stop()"}>I I</button></td>
 								</tr>
 							</table>
 							<p class="output" id="outputt">no data input</p>
