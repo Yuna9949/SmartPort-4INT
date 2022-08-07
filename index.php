@@ -5,11 +5,11 @@
 			echo "DB fail".mysqli_connect_error();
 		}
 	
-		$sql = "SELECT * FROM test ORDER BY time DESC";
+		$sql = "SELECT * FROM traffic ORDER BY time DESC";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 		global $return_value;
-		$return_value = $row["status"];
+		$return_value = array($row["car1x"], $row["car2x"], $row["car3x"], $row["car1y"], $row["car2y"], $row["car3y"], $row["light01"], $row["light02"], $row["light03"], $row["light04"], $row["light05"], $row["light06"], $row["light07"], $row["light08"], $row["light09"], $row["light10"], $row["light11"], $row["light12"]);
 		mysqli_close($conn);
 		return $return_value;
 	}
@@ -104,7 +104,7 @@
 				position: absolute;
 				top: -50px;
 				left: 30%;
-				color: white;
+				color: red;
 			}
 			.statuspanel{
 				padding: 5px 0px 0px 35px;
@@ -142,8 +142,8 @@
 		<title>SPTS</title>
 		<script type="text/javascript">
 			function mysql_conn(){
-				var temp = "<?php echo mysql_conn();?>";
-				document.getElementById('output').innerHTML = temp;
+				var js_array = "<?php echo json_encode(mysql_conn());?>";
+				document.getElementById('output').innerHTML = js_array;
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
@@ -224,13 +224,6 @@
 				ctx.fillRect(4*road+wth+2,    14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(4*road+wth+2,    20*road+2, 2*road-2, 2*road-2);
 
-				<!-- car -->
-				ctx.fillStyle = 'rgb(9, 96, 47)';
-				ctx.fillRect(5*road, 3.5*road-14, 50,30);
-				ctx.fillRect(4*road+wth/2+1, 4*road+1, 30, 50);
-				ctx.fillRect(wth + 5*road+1, 7*road, 30, 50);
-				ctx.fillRect(wth+5*road+1, 16*road+1, 30, 50);
-				ctx.fillRect(2*road+wth/2, 14*road+1, 50,30);
 			}
 
 			function start() {
@@ -254,9 +247,9 @@
 					update(){
 						mysql_conn();
 
-						var st = document.getElementById('output').innerHTML; 
-						st = st*1;
-						this.status = st;
+						//var st = document.getElementById('output').innerHTML; 
+						//st = st*1;
+						//this.status = st;
 
 						if(this.status == 1){ //up
 							this.y -= this.speed;
@@ -343,7 +336,7 @@
     							<option value="2">#2</option>
     							<option value="3">#3</option>
     							<option value="4">#4</option>
-    							<option value="5">#5 - Custom</option>
+    							<option value="5">#5</option>
 						</select>
 					</div>
 				</td>
@@ -390,8 +383,8 @@
 								<tr>
 									<td style="width:110px;">차량 대수</td>
 									<td style="width:15px; border-left: 1px solid #e7e7e7;"></td>
-									<td><div id="carshw">5</div></td>
-									<td>1 <input type="range" id="carnum" min="1" max="10" value='5'> 10</td>
+									<td><div id="carshw">1</div></td>
+									<td>1 <input type="range" id="carnum" min="1" max="10" value='1'> 10</td>
 								</tr>
 								<tr>
 									<td>현재 배속</td>
