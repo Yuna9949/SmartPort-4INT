@@ -159,7 +159,7 @@
 				var status_list = "x: "+contact["car1x"]+" "+contact["car2x"]+" "+contact["car3x"];
 				status_list  +=  " y: "+contact["car1y"]+" "+contact["car2y"]+" "+contact["car3y"];
 				status_list  +=  " s: "+contact["car1s"]+" "+contact["car2s"]+" "+contact["car3s"];
-				status_list  +=  " | light: "+contact["light01"]+" "+contact["light02"];
+				status_list  +=  " ___ light: "+contact["light01"]+" "+contact["light02"];
 				status_list  +=  " " + contact["light03"] + " " + contact["light04"];
 				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
 				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
