@@ -263,15 +263,16 @@
 			function start() {
 				const carnum = document.getElementById('carnum').value;
 				const canvas = document.getElementById('canvas');
-				
-				var ctx = canvas.getContext('2d');
+
+			var ctx = canvas.getContext('2d');
+
 
 				class Truck{
 					constructor(x, y){
 						this.x = x;
 						this.y = y;
 						this.c = 'rgb(9, 96, 47)';
-						
+
 						this.sizex = 30;
 						this.sizey = 50;
 						this.angle = 0;
@@ -286,101 +287,164 @@
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
 
-						if(x >= 2*road && x < 3*road)		this.dbx = 1;
-						else if(x >= 3*road && x < 4*road)	this.dbx = 2;
-						else if(x >= 4*road && x < (wth-2*road)/2+4*road) 	
-											this.dbx = 3;
-						else if(x >= (wth-2*road)/2+4*road && x < (wth-2*road)/2+5*road)
-											this.dbx = 4;
-						else if(x >= (wth-2*road)/2+5*road && x < (wth-2*road)/2+6*road)
-											this.dbx = 5;
-						else if(x >= (wth-2*road)/2+6*road && x < wth+4*road)
-											this.dbx = 6;
-						else if(x >= wth+4*road && x < wth+5*road)
-											this.dbx = 7;
-						else if(x >= wth+5*road && x < wth+6*road)
-											this.dbx = 8;
-						else if(x >= wth+6*road)		this.dbx = 9;
-						else					this.dbx = 0;
+						if(this.x >= 2*road && this.x < 3*road)
+							this.dbx = 1;
+						else if(this.x >= 3*road && this.x < 4*road)
+							this.dbx = 2;
+						else if(this.x >= 4*road && this.x < (wth-2*road)/2+4*road)
+							this.dbx = 3;
+						else if(this.x >= (wth-2*road)/2+4*road && this.x < (wth-2*road)/2+5*road)
+							this.dbx = 4;
+						else if(this.x >= (wth-2*road)/2+5*road && this.x < (wth-2*road)/2+6*road)
+							this.dbx = 5;
+						else if(this.x >= (wth-2*road)/2+6*road && this.x < wth+4*road)
+							this.dbx = 6;
+						else if(this.x >= wth+4*road && this.x < wth+5*road)
+							this.dbx = 7;
+						else if(this.x >= wth+5*road && this.x < wth+6*road)
+							this.dbx = 8;
+						else if(this.x >= wth+6*road)
+							this.dbx = 9;
+						else	this.dbx = 0;
 
-						if(y >= road && y < 2*road)		this.dby = 1;
-						else if(y >= 2*road && y < 3*road) 	this.dby = 2;
-						else if(y >= 3*road && y < 4*road) 	this.dby = 3;
-						else if(y >= 4*road && y < 5*road) 	this.dby = 4;
-						else if(y >= 5*road && y < 7*road) 	this.dby = 5;
-						else if(y >= 7*road && y < 8*road) 	this.dby = 6;
-						else if(y >= 8*road && y < 9*road) 	this.dby = 7;
-						else if(y >= 9*road && y < 10*road) 	this.dby = 8;
-						else if(y >= 10*road && y < 11*road) 	this.dby = 9;
-						else if(y >= 11*road && y < 13*road) 	this.dby = 10;
-						else if(y >= 13*road && y < 14*road) 	this.dby = 11;
-						else if(y >= 14*road && y < 15*road) 	this.dby = 12;
-						else if(y >= 15*road && y < 16*road) 	this.dby = 13;
-						else if(y >= 16*road && y < 17*road) 	this.dby = 14;
-						else if(y >= 17*road && y < 19*road) 	this.dby = 15;
-						else if(y >= 19*road && y < 20*road) 	this.dby = 16;
-						else if(y >= 20*road && y < 21*road) 	this.dby = 17;
-						else if(y >= 21*road && y < 22*road) 	this.dby = 18;
-						else 					this.dby = 0;
+						if(this.y >= road && this.y < 2*road)
+							this.dby = 1;
+						else if(this.y >= 2*road && this.y < 3*road)
+							this.dby = 2;
+						else if(this.y >= 3*road && this.y < 4*road)
+							this.dby = 3;
+						else if(this.y >= 4*road && this.y < 5*road)
+							this.dby = 4;
+						else if(this.y >= 5*road && this.y < 7*road)
+							this.dby = 5;
+						else if(this.y >= 7*road && this.y < 8*road)
+							this.dby = 6;
+						else if(this.y >= 8*road && this.y < 9*road)
+							this.dby = 7;
+						else if(this.y >= 9*road && this.y < 10*road)
+							this.dby = 8;
+						else if(this.y >= 10*road && this.y < 11*road)
+							this.dby = 9;
+						else if(this.y >= 11*road && this.y < 13*road)
+							this.dby = 10;
+						else if(this.y >= 13*road && this.y < 14*road)
+							this.dby = 11;
+						else if(this.y >= 14*road && this.y < 15*road)
+							this.dby = 12;
+						else if(this.y >= 15*road && this.y < 16*road)
+							this.dby = 13;
+						else if(this.y >= 16*road && this.y < 17*road)
+							this.dby = 14;
+						else if(this.y >= 17*road && this.y < 19*road)
+							this.dby = 15;
+						else if(this.y >= 19*road && this.y < 20*road)
+							this.dby = 16;
+						else if(this.y >= 20*road && this.y < 21*road)
+							this.dby = 17;
+						else if(this.y >= 21*road && this.y < 22*road)
+							this.dby = 18;
+						else 	this.dby = 0
 
+						alert("dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+
+						var check = 0;
 						// 1 up  2 right  3 down  4 left
 						if(this.dbx == 9)
 						{
 							if(this.dby == 2)	this.status = 4;
 							else			this.stauts = 1;
 							this.turn = 0;
+							check = 900;
+							alert(check);
 						}
-						else if(this.dbx != 1)
+						if(this.dbx != 1 && this.dby == 1)
 						{
-							if(this.dby == 1)	this.status = 4;
-							this.turn = 0; 
-						}
-						else if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
-						{
+							this.status = 4;
 							this.turn = 0;
+							check = 101;
+							alert(check); 
+						}
+						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
+						{
+							alert(147);
 							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
-										this.status = 3;
+							{
+								check = 456;
+								alert(check);
+								this.turn = 0;
+								this.status = 3;
+							}
 							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
-										this.status = 3;
+							{
+								check = 91011;
+								alert(check);
+								this.turn = 0;
+								this.status = 3;
+							}
 							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
-										this.status = 3;
+							{
+								check = 141516;
+								alert(check);
+								this.turn = 0;
+								this.status = 3;
+							}
 						}
-						else if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
+						if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
 						{
-							this.turn = 0;
+							alert(258);
 							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
-										this.status = 1;
+							{
+								check = 456;
+								alert(check);
+								this.turn = 0;
+								this.status = 1;
+							}
 							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
-										this.status = 1;
+							{
+								check = 91011;
+								alert(check);
+								this.turn = 0;
+								this.status = 1;
+							}
 							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
-										this.status = 1;
+							{
+								check = 141516;
+								alert(check);
+								this.turn = 0;
+								this.status = 1;
+							}
 						}
-						else if(this.dbx == 3 || this.dbx == 6)
+						if(this.dbx == 3 || this.dbx == 6)
 						{
+							check = 36;
+							alert(check);
 							this.turn = 0;
-							if(this.dby == 2)	this.status = 4; 
-							if(this.dby == 6 || this.dby == 7)
+							if(this.dby == 2)	this.status = 4;
+							else if(this.dby == 6 || this.dby == 7)
 										this.status = 4;
-							if(this.dby == 11 || this.dby == 12)
+							else if(this.dby == 11 || this.dby == 12)
 										this.status = 4;
-							if(this.dby == 16 || this.dby == 17)
+							else if(this.dby == 16 || this.dby == 17)
 										this.status = 4;
-							if(this.dby == 3 || this.dby == 4)
+
+							else if(this.dby == 3 || this.dby == 4)
 										this.status = 2;
-							if(this.dby == 8 || this.dby == 9)
+							else if(this.dby == 8 || this.dby == 9)
 										this.status = 2;
-							if(this.dby == 13 || this.dby == 14)
+							else if(this.dby == 13 || this.dby == 14)
 										this.status = 2;
-							if(this.dby == 18)	this.status = 2;
+							else if(this.dby == 18)	this.status = 2;
 						}
-						else{
+						if(check == 0)
+						{
+							alert("zero");
 							this.status = 0;
-							this.turn = 0;
 						}
 
 						if(this.status == 0 && this.turn == 0)
 						{
-							this.n = 2*road;
+							alert("get data");
+							this.n = 1.5*road;
 							mysql_conn();
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
@@ -427,6 +491,7 @@
 
 						if(this.turn != 0 && this.n > 0)
 						{
+							alert("turn1");
 							this.n -= this.speed;
 							if(this.turn <= 3)
 								this.status = 1;
@@ -434,11 +499,12 @@
 								this.status = 2; 
 							else if(this.turn <=9)
 								this.status = 3;
-							else if(thsi.turn <=12)
+							else if(this.turn <=12)
 								this.status = 4;
 						}
 						else if(this.turn != 0)
 						{
+							alert("turn2");
 							this.n = 0;
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
 								this.status = 1;
