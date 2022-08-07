@@ -277,13 +277,178 @@
 						this.angle = 0;
 						this.status = 0; //stop
 						this.speed = 1;
+						this.n = 0;
+						this.dbx = 0;
+						this.dby = 0;
+						this.turn = 0;
 					}
 					update(){
-						mysql_conn();
+						var road = canvas.height*0.045;
+						var wth = canvas.width-8*road;
 
-						//var st = document.getElementById('output').innerHTML; 
-						//st = st*1;
-						//this.status = st;
+						if(x >= 2*road && x < 3*road)		this.dbx = 1;
+						else if(x >= 3*road && x < 4*road)	this.dbx = 2;
+						else if(x >= 4*road && x < (wth-2*road)/2+4*road) 	
+											this.dbx = 3;
+						else if(x >= (wth-2*road)/2+4*road && x < (wth-2*road)/2+5*road)
+											this.dbx = 4;
+						else if(x >= (wth-2*road)/2+5*road && x < (wth-2*road)/2+6*road)
+											this.dbx = 5;
+						else if(x >= (wth-2*road)/2+6*road && x < wth+4*road)
+											this.dbx = 6;
+						else if(x >= wth+4*road && x < wth+5*road)
+											this.dbx = 7;
+						else if(x >= wth+5*road && x < wth+6*road)
+											this.dbx = 8;
+						else if(x >= wth+6*road)		this.dbx = 9;
+						else					this.dbx = 0;
+
+						if(y >= road && y < 2*road)		this.dby = 1;
+						else if(y >= 2*road && y < 3*road) 	this.dby = 2;
+						else if(y >= 3*road && y < 4*road) 	this.dby = 3;
+						else if(y >= 4*road && y < 5*road) 	this.dby = 4;
+						else if(y >= 5*road && y < 7*road) 	this.dby = 5;
+						else if(y >= 7*road && y < 8*road) 	this.dby = 6;
+						else if(y >= 8*road && y < 9*road) 	this.dby = 7;
+						else if(y >= 9*road && y < 10*road) 	this.dby = 8;
+						else if(y >= 10*road && y < 11*road) 	this.dby = 9;
+						else if(y >= 11*road && y < 13*road) 	this.dby = 10;
+						else if(y >= 13*road && y < 14*road) 	this.dby = 11;
+						else if(y >= 14*road && y < 15*road) 	this.dby = 12;
+						else if(y >= 15*road && y < 16*road) 	this.dby = 13;
+						else if(y >= 16*road && y < 17*road) 	this.dby = 14;
+						else if(y >= 17*road && y < 19*road) 	this.dby = 15;
+						else if(y >= 19*road && y < 20*road) 	this.dby = 16;
+						else if(y >= 20*road && y < 21*road) 	this.dby = 17;
+						else if(y >= 21*road && y < 22*road) 	this.dby = 18;
+						else 					this.dby = 0;
+
+						// 1 up  2 right  3 down  4 left
+						if(this.dbx == 9)
+						{
+							if(this.dby == 2)	this.status = 4;
+							else			this.stauts = 1;
+							this.turn = 0;
+						}
+						else if(this.dbx != 1)
+						{
+							if(this.dby == 1)	this.status = 4;
+							this.turn = 0; 
+						}
+						else if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
+						{
+							this.turn = 0;
+							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
+										this.status = 3;
+							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
+										this.status = 3;
+							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
+										this.status = 3;
+						}
+						else if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
+						{
+							this.turn = 0;
+							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
+										this.status = 1;
+							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
+										this.status = 1;
+							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
+										this.status = 1;
+						}
+						else if(this.dbx == 3 || this.dbx == 6)
+						{
+							this.turn = 0;
+							if(this.dby == 2)	this.status = 4; 
+							if(this.dby == 6 || this.dby == 7)
+										this.status = 4;
+							if(this.dby == 11 || this.dby == 12)
+										this.status = 4;
+							if(this.dby == 16 || this.dby == 17)
+										this.status = 4;
+							if(this.dby == 3 || this.dby == 4)
+										this.status = 2;
+							if(this.dby == 8 || this.dby == 9)
+										this.status = 2;
+							if(this.dby == 13 || this.dby == 14)
+										this.status = 2;
+							if(this.dby == 18)	this.status = 2;
+						}
+						else{
+							this.status = 0;
+							this.turn = 0;
+						}
+
+						if(this.status == 0 && this.turn == 0)
+						{
+							this.n = 2*road;
+							mysql_conn();
+							// up right 1 / up left 2 / up up 3
+							// right up 4 / right down 5 / right right 6
+							// down left 7 / down right 8 / down down 9
+							// left down 10 / left up 11 / left left 12
+							var light = document.getElementById('outputt').innerHTML.split(" "); 
+							if(this.dby == 2 || this.dby == 3)
+							{
+								if(this.dbx == 1 || this.dbx == 2)
+									this.turn = light[1];
+								if(this.dbx == 4 || this.dbx == 5)
+									this.turn = light[2];
+								if(this.dbx == 7 || this.dbx == 8)
+									this.turn = light[3];
+							}
+							else if(this.dby == 7 || this.dby == 8)
+							{
+								if(this.dbx == 1 || this.dbx == 2)
+									this.turn = light[4];
+								if(this.dbx == 4 || this.dbx == 5)
+									this.turn = light[5];
+								if(this.dbx == 7 || this.dbx == 8)
+									this.turn = light[6];
+							}
+							else if(this.dby == 12 || this.dby == 13)
+							{
+								if(this.dbx == 1 || this.dbx == 2)
+									this.turn = light[7];
+								if(this.dbx == 4 || this.dbx == 5)
+									this.turn = light[8];
+								if(this.dbx == 7 || this.dbx == 8)
+									this.turn = light[9];
+							}
+							else if(this.dby == 17 || this.dby == 18)
+							{
+								if(this.dbx == 1 || this.dbx == 2)
+									this.turn = light[10];
+								if(this.dbx == 4 || this.dbx == 5)
+									this.turn = light[11];
+								if(this.dbx == 7 || this.dbx == 8)
+									this.turn = light[12];
+							}
+						}
+
+						if(this.turn != 0 && this.n > 0)
+						{
+							this.n -= this.speed;
+							if(this.turn <= 3)
+								this.status = 1;
+							else if(this.turn <=6)
+								this.status = 2; 
+							else if(this.turn <=9)
+								this.status = 3;
+							else if(thsi.turn <=12)
+								this.status = 4;
+						}
+						else if(this.turn != 0)
+						{
+							this.n = 0;
+							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
+								this.status = 1;
+							if(this.turn == 1 || this.turn == 6 || this.turn == 8)
+								this.status = 2;
+							if(this.turn == 5 || this.turn == 9 || this.turn == 10)
+								this.status = 3;
+							if(this.turn == 2 || this.turn == 7 || this.turn == 12)
+								this.status = 4; 
+						}
 
 						if(this.status == 1){ //up
 							this.y -= this.speed;
@@ -322,16 +487,16 @@
 				function animate(){
 					
 					drawMap();
-					if(carnum >=1)  { truck1.update();    truck1.draw();  }
-					if(carnum >=2)  { truck2.update();    truck2.draw();  }
-					if(carnum >=3)  { truck3.update();    truck3.draw();  }
-					if(carnum >=4)  { truck4.update();    truck4.draw();  }
-					if(carnum >=5)  { truck5.update();    truck5.draw();  }
-					if(carnum >=6)  { truck6.update();    truck6.draw();  }
-					if(carnum >=7)  { truck7.update();    truck7.draw();  }
-					if(carnum >=8)  { truck8.update();    truck8.draw();  }
-					if(carnum >=9)  { truck9.update();    truck9.draw();  }
-					if(carnum >=10) { truck10.update();  truck10.draw(); }
+					if(carnum >=1)  { truck1.update(1);    truck1.draw();  }
+					if(carnum >=2)  { truck2.update(2);    truck2.draw();  }
+					if(carnum >=3)  { truck3.update(3);    truck3.draw();  }
+					if(carnum >=4)  { truck4.update(4);    truck4.draw();  }
+					if(carnum >=5)  { truck5.update(5);    truck5.draw();  }
+					if(carnum >=6)  { truck6.update(6);    truck6.draw();  }
+					if(carnum >=7)  { truck7.update(7);    truck7.draw();  }
+					if(carnum >=8)  { truck8.update(8);    truck8.draw();  }
+					if(carnum >=9)  { truck9.update(9);    truck9.draw();  }
+					if(carnum >=10) { truck10.update(10);  truck10.draw(); }
 
 					window.addEventListener('resize', function(){
 						canvas.width = window.innerWidth*0.695;
