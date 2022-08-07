@@ -162,6 +162,7 @@
 		<title>SPTS</title>
 		<script type="text/javascript">
 			function mysql_conn(){
+				//alert("connecting");
 				var info_temp = '<?php echo mysql_conn(); ?>';
 				var contact = JSON.parse(info_temp);
 				var status_listx = "x: "+contact["car1x"]+" "+contact["car2x"]+" "+contact["car3x"];
@@ -178,6 +179,7 @@
 				document.getElementById('outputy').innerHTML = status_listy;
 				document.getElementById('outputs').innerHTML = status_lists;
 				document.getElementById('outputt').innerHTML = status_list;
+				//alert("connected");
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
@@ -345,7 +347,7 @@
 							this.dby = 18;
 						else 	this.dby = 0
 
-						alert("dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						//alert("dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						var check = 0;
 						// 1 up  2 right  3 down  4 left
@@ -355,61 +357,61 @@
 							else			this.stauts = 1;
 							this.turn = 0;
 							check = 900;
-							alert(check);
+							//alert(check);
 						}
 						if(this.dbx != 1 && this.dby == 1)
 						{
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
-							alert(check); 
+							//alert(check);
 						}
 						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
 						{
-							alert(147);
+							//alert(147);
 							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
 							{
 								check = 456;
-								alert(check);
+								//alert(check);
 								this.turn = 0;
 								this.status = 3;
 							}
 							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
 							{
 								check = 91011;
-								alert(check);
+								//alert(check);
 								this.turn = 0;
 								this.status = 3;
 							}
 							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
 							{
 								check = 141516;
-								alert(check);
+								//alert(check);
 								this.turn = 0;
 								this.status = 3;
 							}
 						}
 						if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
 						{
-							alert(258);
+							//alert(258);
 							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
 							{
 								check = 456;
-								alert(check);
+								//alert(check);
 								this.turn = 0;
 								this.status = 1;
 							}
 							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
 							{
 								check = 91011;
-								alert(check);
+								//alert(check);
 								this.turn = 0;
 								this.status = 1;
 							}
 							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
 							{
 								check = 141516;
-								alert(check);
+								//alert(check);
 								this.turn = 0;
 								this.status = 1;
 							}
@@ -417,7 +419,7 @@
 						if(this.dbx == 3 || this.dbx == 6)
 						{
 							check = 36;
-							alert(check);
+							//alert(check);
 							this.turn = 0;
 							if(this.dby == 2)	this.status = 4;
 							else if(this.dby == 6 || this.dby == 7)
@@ -437,14 +439,13 @@
 						}
 						if(check == 0)
 						{
-							alert("zero");
+							//alert("zero");
 							this.status = 0;
 						}
 
 						if(this.status == 0 && this.turn == 0)
 						{
-							alert("get data");
-							this.n = 1.5*road;
+							//alert("get data");
 							mysql_conn();
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
@@ -487,25 +488,35 @@
 								if(this.dbx == 7 || this.dbx == 8)
 									this.turn = light[12];
 							}
+
+							if(this.turn % 2 == 1)
+								this.n = 0.5*road;
+							else if(this.turn % 2 == 0 && this.turn != 0)
+								this.n = 1.4*road;
 						}
 
 						if(this.turn != 0 && this.n > 0)
 						{
-							alert("turn1");
+							//alert("turn1");
 							this.n -= this.speed;
 							if(this.turn <= 3)
 								this.status = 1;
 							else if(this.turn <=6)
-								this.status = 2; 
+								this.status = 2;
 							else if(this.turn <=9)
 								this.status = 3;
 							else if(this.turn <=12)
 								this.status = 4;
 						}
-						else if(this.turn != 0)
+						else if(this.turn != 0 && this.n < 0)
 						{
-							alert("turn2");
+							//alert("turn2");
 							this.n = 0;
+							//if(this.turn == 10)
+							//	this.y += 50;
+						}
+						else if(this.turn != 0 && this.n == 0)
+						{
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
 								this.status = 1;
 							if(this.turn == 1 || this.turn == 6 || this.turn == 8)
@@ -513,33 +524,44 @@
 							if(this.turn == 5 || this.turn == 9 || this.turn == 10)
 								this.status = 3;
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)
-								this.status = 4; 
+								this.status = 4;
 						}
 
 						if(this.status == 1){ //up
+							this.sizex = 30;
+							this.sizey = 50;
 							this.y -= this.speed;
 						}
 						if(this.status == 2){ //right
+							this.sizex = 50;
+							this.sizey = 30;
 							this.x += this.speed;
 						}
 						if(this.status == 3){ //down
+							this.sizex = 30;
+							this.sizey = 50;
 							this.y += this.speed;
 						}
 						if(this.status == 4){ //left
+							this.sizex = 50;
+							this.sizey = 30;
 							this.x -= this.speed;
 						}
 					}
 					draw(){
 						ctx.fillStyle = this.c;
-						ctx.fillRect(this.x, this.y, this.sizex, this.sizey);
+						ctx.fillRect(this.x, this.y, this.sizex/2, this.sizey/2);
+						ctx.fillRect(this.x, this.y, this.sizex/2, (this.sizey/2)*(-1));
+						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), this.sizey/2);
+						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), (this.sizey/2)*(-1));
 					}
 
 				}
 				var park = 80;
-				init = () => { // 그려질 공의 개체를 설정하는 함수
-					if(carnum >=1) {truck1 = new Truck(canvas.width-40, park)}
-					if(carnum >=2) {truck2 = new Truck(canvas.width-40, 2*park)}
-					if(carnum >=3) {truck3 = new Truck(canvas.width-40, 3*park)}
+				init = () => { // 그려질 truck의 개체를 설정하는 함수
+					if(carnum >=1) {truck1 = new Truck(canvas.width-40, park+5)}
+					if(carnum >=2) {truck2 = new Truck(canvas.width-40, 2*park+5)}
+					if(carnum >=3) {truck3 = new Truck(canvas.width-40, 3*park+5)}
 					if(carnum >=4) {truck4 = new Truck(canvas.width-40, 4*park)}
 					if(carnum >=5) {truck5 = new Truck(canvas.width-40, 5*park)}
 					if(carnum >=6) {truck6 = new Truck(canvas.width-40, 6*park)}
@@ -551,18 +573,18 @@
 				}
 
 				function animate(){
-					
+
 					drawMap();
-					if(carnum >=1)  { truck1.update(1);    truck1.draw();  }
-					if(carnum >=2)  { truck2.update(2);    truck2.draw();  }
-					if(carnum >=3)  { truck3.update(3);    truck3.draw();  }
-					if(carnum >=4)  { truck4.update(4);    truck4.draw();  }
-					if(carnum >=5)  { truck5.update(5);    truck5.draw();  }
-					if(carnum >=6)  { truck6.update(6);    truck6.draw();  }
-					if(carnum >=7)  { truck7.update(7);    truck7.draw();  }
-					if(carnum >=8)  { truck8.update(8);    truck8.draw();  }
-					if(carnum >=9)  { truck9.update(9);    truck9.draw();  }
-					if(carnum >=10) { truck10.update(10);  truck10.draw(); }
+					if(carnum >=1)  { truck1.update();    truck1.draw();  }
+					if(carnum >=2)  { truck2.update();    truck2.draw();  }
+					if(carnum >=3)  { truck3.update();    truck3.draw();  }
+					if(carnum >=4)  { truck4.update();    truck4.draw();  }
+					if(carnum >=5)  { truck5.update();    truck5.draw();  }
+					if(carnum >=6)  { truck6.update();    truck6.draw();  }
+					if(carnum >=7)  { truck7.update();    truck7.draw();  }
+					if(carnum >=8)  { truck8.update();    truck8.draw();  }
+					if(carnum >=9)  { truck9.update();    truck9.draw();  }
+					if(carnum >=10) { truck10.update();  truck10.draw(); }
 
 					window.addEventListener('resize', function(){
 						canvas.width = window.innerWidth*0.695;
