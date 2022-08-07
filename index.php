@@ -145,8 +145,8 @@
 			function mysql_conn(){
 				//var js_array = "<?php echo json_encode(mysql_conn());?>";
 				//document.getElementById('output').innerHTML = js_array;
-				var out = "<?php echo mysql_conn());?>";
-				document.getElementById('output').innerHTML = out;
+				var temp = "<?php echo mysql_conn();?>";
+				document.getElementById('output').innerHTML = temp;
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
