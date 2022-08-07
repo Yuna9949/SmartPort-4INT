@@ -9,7 +9,8 @@
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 		global $return_value;
-		$return_value = array($row["car1x"], $row["car2x"], $row["car3x"], $row["car1y"], $row["car2y"], $row["car3y"], $row["light01"], $row["light02"], $row["light03"], $row["light04"], $row["light05"], $row["light06"], $row["light07"], $row["light08"], $row["light09"], $row["light10"], $row["light11"], $row["light12"]);
+		//$return_value = array($row["car1x"], $row["car2x"], $row["car3x"], $row["car1y"], $row["car2y"], $row["car3y"], $row["light01"], $row["light02"], $row["light03"], $row["light04"], $row["light05"], $row["light06"], $row["light07"], $row["light08"], $row["light09"], $row["light10"], $row["light11"], $row["light12"]);
+		$return_value = $row["car2x"];
 		mysqli_close($conn);
 		return $return_value;
 	}
@@ -142,8 +143,10 @@
 		<title>SPTS</title>
 		<script type="text/javascript">
 			function mysql_conn(){
-				var js_array = "<?php echo json_encode(mysql_conn());?>";
-				document.getElementById('output').innerHTML = js_array;
+				//var js_array = "<?php echo json_encode(mysql_conn());?>";
+				//document.getElementById('output').innerHTML = js_array;
+				var out = "<?php echo mysql_conn());?>";
+				document.getElementById('output').innerHTML = out;
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
