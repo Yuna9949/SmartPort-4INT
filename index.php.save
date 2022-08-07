@@ -1,12 +1,14 @@
 <?php
 	function mysql_conn(){
-
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
-
+		if(!$conn){
+			ysqli_connect_error();
+		}
+	
 		$sql = "SELECT * FROM traffic ORDER BY time DESC";
 		$result = mysqli_query($conn, $sql);
-
 		$row = mysqli_fetch_assoc($result);
+		global $return_value;
 		$return_value = json_encode(array(
 				"light01" => $row["light01"], "light02" => $row["light02"],
 				"light03" => $row["light03"], "light04" => $row["light04"],
@@ -14,8 +16,6 @@
 				"light07" => $row["light07"], "light08" => $row["light08"],
 				"light09" => $row["light09"], "light10" => $row["light10"],
 				"light11" => $row["light11"], "light12" => $row["light12"]));
-
-		mysqli_free_result($result);
 		mysqli_close($conn);
 		return $return_value;
 	}
@@ -26,8 +26,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport"
-			content="width=device-width, height=device-height,
+		<meta name="viewport" 
+			content="width=device-width, height=device-height, 
 			minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
@@ -150,6 +150,7 @@
 		<title>SPTS</title>
 		<script type="text/javascript">
 			function mysql_conn(){
+				//alert("connecting");
 				var info_temp = '<?php echo mysql_conn(); ?>';
 				alert(info_temp);
 				var contact = JSON.parse(info_temp);
@@ -161,7 +162,7 @@
 				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 
 				document.getElementById('outputt').innerHTML = status_list;
-
+				//alert("connected");
 			}
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
@@ -245,11 +246,10 @@
 			}
 
 			function start() {
-
 				const carnum = document.getElementById('carnum').value;
 				const canvas = document.getElementById('canvas');
 
-				var ctx = canvas.getContext('2d');
+			var ctx = canvas.getContext('2d');
 
 
 				class Truck{
@@ -428,6 +428,7 @@
 
 						if(this.status == 0 && this.turn == 0)
 						{
+							//alert("get data");
 							mysql_conn();
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
