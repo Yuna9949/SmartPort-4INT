@@ -247,7 +247,7 @@
 						this.speed = 1;
 						
 						//car number
-						this.num = 0;
+						this.num = num;
 						
 						//position of car
 						this.n = 0;
