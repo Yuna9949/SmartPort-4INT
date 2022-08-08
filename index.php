@@ -262,7 +262,7 @@
 					update(){
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
-						this.speed = numspd;
+						//this.speed = numspd;
 
 						if(this.x >= 2*road && this.x < 3*road)
 							this.dbx = 1;
@@ -322,7 +322,7 @@
 							this.dby = 18;
 						else 	this.dby = 0;
 
-						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						var check = 0;
 						// 1 up  2 right  3 down  4 left
@@ -474,7 +474,6 @@
 						}
 						else if(this.turn != 0 && this.n == 0)
 						{
-							alert("why"+this.dbx+" "+this.dby);
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
 								this.status = 1;
 							if(this.turn == 1 || this.turn == 6 || this.turn == 8)
@@ -511,7 +510,6 @@
 						}
 					}
 					draw(){
-						alert("draw");
 						ctx.fillStyle = this.c;
 						ctx.fillRect(this.x, this.y, this.sizex/2, this.sizey/2);
 						ctx.fillRect(this.x, this.y, this.sizex/2, (this.sizey/2)*(-1));
