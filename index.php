@@ -262,6 +262,7 @@
 					update(){
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
+						this.speed = numspd;
 
 						if(this.x >= 2*road && this.x < 3*road)
 							this.dbx = 1;
@@ -321,7 +322,7 @@
 							this.dby = 18;
 						else 	this.dby = 0;
 
-						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						var check = 0;
 						// 1 up  2 right  3 down  4 left
