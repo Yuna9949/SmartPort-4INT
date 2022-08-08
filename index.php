@@ -166,10 +166,142 @@
 				var right = "<img src='go.png' width='45%' style='transform:rotate(0deg);'/>";
 				var down = "<img src='go.png' width='45%' style='transform:rotate(90deg);'/>";
 				var left = "<img src='go.png' width='45%' style='transform:rotate(180deg);'/>";
-				var stay = "<img src='go.png' width='45%' style='transform:rotate(270deg);'/>";
+				var stay = "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
+				// up 3 4 11
+				// right 1 6 8
+				// down 5 9 10
+				// left 2 7 12
+				if(contact["light01"] == 0)
+					document.getElementById('l1').innerHTML = stay;
+				else if(contact["light01"] == 3 || contact["light01"] == 4 || contact["light01"] == 11 )
+					document.getElementById('l1').innerHTML = up;
+				else if(contact["light01"] == 1 || contact["light01"] == 6 || contact["light01"] == 8 )
+					document.getElementById('l1').innerHTML = right;
+				else if(contact["light01"] == 5 || contact["light01"] == 9 || contact["light01"] == 10 )
+					document.getElementById('l1').innerHTML = down;
+				else if(contact["light01"] == 2 || contact["light01"] == 7 || contact["light01"] == 12 )
+					document.getElementById('l1').innerHTML = left;
 
-				if(contact["light03"] == 12)
+				if(contact["light02"] == 0)
+					document.getElementById('l2').innerHTML = stay;
+				else if(contact["light02"] == 3 || contact["light02"] == 4 || contact["light02"] == 11 )
+					document.getElementById('l2').innerHTML = up;
+				else if(contact["light02"] == 1 || contact["light02"] == 6 || contact["light02"] == 8 )
+					document.getElementById('l2').innerHTML = right;
+				else if(contact["light02"] == 5 || contact["light02"] == 9 || contact["light02"] == 10 )
+					document.getElementById('l2').innerHTML = down;
+				else if(contact["light02"] == 2 || contact["light02"] == 7 || contact["light02"] == 12 )
+					document.getElementById('l2').innerHTML = left;
+
+				if(contact["light03"] == 0)
+					document.getElementById('l3').innerHTML = stay;
+				else if(contact["light03"] == 3 || contact["light03"] == 4 || contact["light03"] == 11 )
+					document.getElementById('l3').innerHTML = up;
+				else if(contact["light03"] == 1 || contact["light03"] == 6 || contact["light03"] == 8 )
+					document.getElementById('l3').innerHTML = right;
+				else if(contact["light03"] == 5 || contact["light03"] == 9 || contact["light03"] == 10 )
+					document.getElementById('l3').innerHTML = down;
+				else if(contact["light03"] == 2 || contact["light03"] == 7 || contact["light03"] == 12 )
 					document.getElementById('l3').innerHTML = left;
+
+				if(contact["light04"] == 0)
+					document.getElementById('l4').innerHTML = stay;
+				else if(contact["light04"] == 3 || contact["light04"] == 4 || contact["light04"] == 11 )
+					document.getElementById('l4').innerHTML = up;
+				else if(contact["light04"] == 1 || contact["light04"] == 6 || contact["light04"] == 8 )
+					document.getElementById('l4').innerHTML = right;
+				else if(contact["light04"] == 5 || contact["light04"] == 9 || contact["light04"] == 10 )
+					document.getElementById('l4').innerHTML = down;
+				else if(contact["light04"] == 2 || contact["light04"] == 7 || contact["light04"] == 12 )
+					document.getElementById('l4').innerHTML = left;
+
+				if(contact["light05"] == 0)
+					document.getElementById('l5').innerHTML = stay;
+				else if(contact["light05"] == 3 || contact["light05"] == 4 || contact["light05"] == 11 )
+					document.getElementById('l5').innerHTML = up;
+				else if(contact["light05"] == 1 || contact["light05"] == 6 || contact["light05"] == 8 )
+					document.getElementById('l5').innerHTML = right;
+				else if(contact["light05"] == 5 || contact["light05"] == 9 || contact["light05"] == 10 )
+					document.getElementById('l5').innerHTML = down;
+				else if(contact["light05"] == 2 || contact["light05"] == 7 || contact["light05"] == 12 )
+					document.getElementById('l5').innerHTML = left;
+
+				if(contact["light06"] == 0)
+					document.getElementById('l6').innerHTML = stay;
+				else if(contact["light06"] == 3 || contact["light06"] == 4 || contact["light06"] == 11 )
+					document.getElementById('l6').innerHTML = up;
+				else if(contact["light06"] == 1 || contact["light06"] == 6 || contact["light06"] == 8 )
+					document.getElementById('l6').innerHTML = right;
+				else if(contact["light06"] == 5 || contact["light06"] == 9 || contact["light06"] == 10 )
+					document.getElementById('l6').innerHTML = down;
+				else if(contact["light06"] == 2 || contact["light06"] == 7 || contact["light06"] == 12 )
+					document.getElementById('l6').innerHTML = left;
+
+				if(contact["light07"] == 0)
+					document.getElementById('l7').innerHTML = stay;
+				else if(contact["light07"] == 3 || contact["light07"] == 4 || contact["light07"] == 11 )
+					document.getElementById('l7').innerHTML = up;
+				else if(contact["light07"] == 1 || contact["light07"] == 6 || contact["light07"] == 8 )
+					document.getElementById('l7').innerHTML = right;
+				else if(contact["light07"] == 5 || contact["light07"] == 9 || contact["light07"] == 10 )
+					document.getElementById('l7').innerHTML = down;
+				else if(contact["light07"] == 2 || contact["light07"] == 7 || contact["light07"] == 12 )
+					document.getElementById('l7').innerHTML = left;
+
+				if(contact["light08"] == 0)
+					document.getElementById('l8').innerHTML = stay;
+				else if(contact["light08"] == 3 || contact["light08"] == 4 || contact["light08"] == 11 )
+					document.getElementById('l8').innerHTML = up;
+				else if(contact["light08"] == 1 || contact["light08"] == 6 || contact["light08"] == 8 )
+					document.getElementById('l8').innerHTML = right;
+				else if(contact["light08"] == 5 || contact["light08"] == 9 || contact["light08"] == 10 )
+					document.getElementById('l8').innerHTML = down;
+				else if(contact["light08"] == 2 || contact["light08"] == 7 || contact["light08"] == 12 )
+					document.getElementById('l8').innerHTML = left;
+
+				if(contact["light09"] == 0)
+					document.getElementById('l9').innerHTML = stay;
+				else if(contact["light09"] == 3 || contact["light09"] == 4 || contact["light09"] == 11 )
+					document.getElementById('l9').innerHTML = up;
+				else if(contact["light09"] == 1 || contact["light09"] == 6 || contact["light09"] == 8 )
+					document.getElementById('l9').innerHTML = right;
+				else if(contact["light09"] == 5 || contact["light09"] == 9 || contact["light09"] == 10 )
+					document.getElementById('l9').innerHTML = down;
+				else if(contact["light09"] == 2 || contact["light09"] == 7 || contact["light09"] == 12 )
+					document.getElementById('l9').innerHTML = left;
+
+				if(contact["light10"] == 0)
+					document.getElementById('l10').innerHTML = stay;
+				else if(contact["light10"] == 3 || contact["light10"] == 4 || contact["light10"] == 11 )
+					document.getElementById('l10').innerHTML = up;
+				else if(contact["light10"] == 1 || contact["light10"] == 6 || contact["light10"] == 8 )
+					document.getElementById('l10').innerHTML = right;
+				else if(contact["light10"] == 5 || contact["light10"] == 9 || contact["light10"] == 10 )
+					document.getElementById('l10').innerHTML = down;
+				else if(contact["light10"] == 2 || contact["light10"] == 7 || contact["light10"] == 12 )
+					document.getElementById('l10').innerHTML = left;
+
+				if(contact["light11"] == 0)
+					document.getElementById('l11').innerHTML = stay;
+				else if(contact["light11"] == 3 || contact["light11"] == 4 || contact["light11"] == 11 )
+					document.getElementById('l11').innerHTML = up;
+				else if(contact["light11"] == 1 || contact["light11"] == 6 || contact["light11"] == 8 )
+					document.getElementById('l11').innerHTML = right;
+				else if(contact["light11"] == 5 || contact["light11"] == 9 || contact["light11"] == 10 )
+					document.getElementById('l11').innerHTML = down;
+				else if(contact["light11"] == 2 || contact["light11"] == 7 || contact["light11"] == 12 )
+					document.getElementById('l11').innerHTML = left;
+
+				if(contact["light12"] == 0)
+					document.getElementById('l12').innerHTML = stay;
+				if(contact["light12"] == 3 || contact["light12"] == 4 || contact["light12"] == 11 )
+					document.getElementById('l12').innerHTML = up;
+				if(contact["light12"] == 1 || contact["light12"] == 6 || contact["light12"] == 8 )
+					document.getElementById('l12').innerHTML = right;
+				if(contact["light12"] == 5 || contact["light12"] == 9 || contact["light12"] == 10 )
+					document.getElementById('l12').innerHTML = down;
+				if(contact["light12"] == 2 || contact["light12"] == 7 || contact["light12"] == 12 )
+					document.getElementById('l12').innerHTML = left;
 			}
 
 			function show_carnum(){
@@ -628,19 +760,19 @@
 						</div>
 						<table class="traffic">
 							<tr>
-								<td class="lights" id="l1"><img src="go.png" width="45%" style="transform:rotate(0deg);"/></td>
-								<td class="lights" id="l2"><img src="stop.png" width="45%" style="transform:rotate(270deg);" /></td>
+								<td class="lights" id="l1"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l2"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
 								<td class="lights" id="l3"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
 							</tr>
 							<tr>
 								<td class="lights" id="l4"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
 								<td class="lights" id="l5"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights" id="l6"><img src="go.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l6"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
 							</tr>
 							<tr>
 								<td class="lights" id="l7"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-								<td class="lights" id="l8"><img src="go.png" width="45%" style="transform:rotate(180deg);"/></td>
-								<td class="lights" id="l9"><img src="stop.png" width="45%" style="transform:rotate(270deg);" /></td>
+								<td class="lights" id="l8"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l9"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
 							</tr>
 							<tr>
 								<td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
