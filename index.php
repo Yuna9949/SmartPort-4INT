@@ -457,7 +457,7 @@
 						if(this.turn != 0 && this.n > 0)
 						{
 							//alert("turn1");
-							this.n -= this.speed;
+							this.n -= numspd;
 							if(this.turn <= 3)
 								this.status = 1;
 							else if(this.turn <=6)
@@ -487,25 +487,25 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnu == 0)
-								this.y -= this.speed;
+								this.y -= numspd;
 						}
 						if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnr == 0)
-								this.x += this.speed;
+								this.x += numspd;
 						}
 						if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnd == 0)
-								this.y += this.speed;
+								this.y += numspd;
 						}
 						if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnl == 0)
-								this.x -= this.speed;
+								this.x -= numspd;
 						}
 					}
 					draw(){
