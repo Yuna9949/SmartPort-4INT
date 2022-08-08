@@ -245,7 +245,7 @@
 						
 						//status
 						this.status = 0; //stop
-						this.speed = 2;
+						this.speed = 1;
 						
 						//turn corner
 						this.n = 0;
@@ -262,7 +262,7 @@
 					update(){
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
-						//this.speed = numspd;
+						this.speed = numspd;
 
 						if(this.x >= 2*road && this.x < 3*road)
 							this.dbx = 1;
