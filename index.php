@@ -763,24 +763,25 @@
 			
 			var light = 0;
 			var l = "";
-			for(var i=1; i<=12; i+=1)
+			for(var i = 1; i <= 12; i++)
 			{
 				switch(i){
 					case  1: light=contact["light01"]; l='l1' ; break;
-					case  1: light=contact["light02"]; l='l2' ; break;
-					case  1: light=contact["light03"]; l='l3' ; break;
-					case  1: light=contact["light04"]; l='l4' ; break;
-					case  1: light=contact["light05"]; l='l5' ; break;
-					case  1: light=contact["light06"]; l='l6' ; break;
-					case  1: light=contact["light07"]; l='l7' ; break;
-					case  1: light=contact["light08"]; l='l8' ; break;
-					case  1: light=contact["light09"]; l='l9' ; break;
-					case  1: light=contact["light10"]; l='l10'; break;
-					case  1: light=contact["light11"]; l='l11'; break;
-					case  1: light=contact["light12"]; l='l12'; break;
+					case  2: light=contact["light02"]; l='l2' ; break;
+					case  3: light=contact["light03"]; l='l3' ; break;
+					case  4: light=contact["light04"]; l='l4' ; break;
+					case  5: light=contact["light05"]; l='l5' ; break;
+					case  6: light=contact["light06"]; l='l6' ; break;
+					case  7: light=contact["light07"]; l='l7' ; break;
+					case  8: light=contact["light08"]; l='l8' ; break;
+					case  9: light=contact["light09"]; l='l9' ; break;
+					case 10: light=contact["light10"]; l='l10'; break;
+					case 11: light=contact["light11"]; l='l11'; break;
+					case 12: light=contact["light12"]; l='l12'; break;
 					default:
 						alert("error");
 			}
+				
 			if(contact["light01"] == 0)
 				document.getElementById('l1').innerHTML = stay;
 			else if(contact["light01"] == 3 || contact["light01"] == 4 || contact["light01"] == 11 )
