@@ -222,7 +222,8 @@
 
 			var stopani = null;
 
-			//function start() {
+			function start() {
+				const numcar = document.getElementById('carnum').value;
 				const canvas = document.getElementById('canvas');
 
 				var ctx = canvas.getContext('2d');
@@ -556,40 +557,22 @@
 					}
 
 				}
-				var park = 85;
-				var truck01 = null;
-				var truck02 = null;
-				var truck03 = null;
-				var truck04 = null;
-				var truck05 = null;
-				var truck06 = null;
-				var truck07 = null;
-				var truck08 = null;
-				var truck09 = null;
-				var truck10 = null;
-				var truck11 = null;
-				var truck12 = null;
-			
-				//init = () => { // 그려질 truck의 개체를 설정하는 함수
-				//function first(){
-					const numcar = document.getElementById('carnum').value;
-					alert("init"+numcar);
-					if(numcar >= 1) { alert("wow"); truck01 = new Truck(canvas.width-40,    park,  1); alert("wow2") }
-					if(numcar >= 2) { truck02 = new Truck(canvas.width-40,  2*park,  2); }
-					if(numcar >= 3) { truck03 = new Truck(canvas.width-40,  3*park,  3); }
-					if(numcar >= 4) { truck04 = new Truck(canvas.width-40,  4*park,  4); }
-					if(numcar >= 5) { truck05 = new Truck(canvas.width-40,  5*park,  5); }
-					if(numcar >= 6) { truck06 = new Truck(canvas.width-40,  6*park,  6); }
-					if(numcar >= 7) { truck07 = new Truck(canvas.width-40,  7*park,  7); }
-					if(numcar >= 8) { truck08 = new Truck(canvas.width-40,  8*park,  8); }
-					if(numcar >= 9) { truck09 = new Truck(canvas.width-40,  9*park,  9); }
-					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10); }
+				var park = 85;	
+				init = () => { // 그려질 truck의 개체를 설정하는 함수
+					if(numcar >= 1) { truck01 = new Truck(canvas.width-40,    park,  1) }
+					if(numcar >= 2) { truck02 = new Truck(canvas.width-40,  2*park,  2) }
+					if(numcar >= 3) { truck03 = new Truck(canvas.width-40,  3*park,  3) }
+					if(numcar >= 4) { truck04 = new Truck(canvas.width-40,  4*park,  4) }
+					if(numcar >= 5) { truck05 = new Truck(canvas.width-40,  5*park,  5) }
+					if(numcar >= 6) { truck06 = new Truck(canvas.width-40,  6*park,  6) }
+					if(numcar >= 7) { truck07 = new Truck(canvas.width-40,  7*park,  7) }
+					if(numcar >= 8) { truck08 = new Truck(canvas.width-40,  8*park,  8) }
+					if(numcar >= 9) { truck09 = new Truck(canvas.width-40,  9*park,  9) }
+					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10) }
 					mysql_conn();
-					alert("init2");
-				//}
+				}
 				function animate(){
-					alert("animate");
-					
+
 					drawMap();
 					
 					//update and draw
@@ -625,13 +608,9 @@
 					//animation and cancel animation
 					stopani = requestAnimationFrame(animate);
 				}
-			function start(){
-				alert("start");
-				//first();
-				alert("why");
+				init();
 				animate();
 			}
-			//}
 			
 			//stop animation
 			function stop(){
