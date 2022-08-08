@@ -240,8 +240,13 @@
 						this.dbx = 0;
 						this.dby = 0;
 						this.turn = 0;
+						this.warnu = 0;
+						this.warnr = 0;
+						this.warnd = 0;
+						this.warnl = 0;
 					}
-					update(){
+					update(num){
+						this.num = num;
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
 
@@ -303,14 +308,15 @@
 							this.dby = 18;
 						else 	this.dby = 0
 
-						//alert("dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						var check = 0;
 						// 1 up  2 right  3 down  4 left
+
 						if(this.dbx == 9)
 						{
-							if(this.dby == 2)	this.status = 4;
-							else			this.stauts = 1;
+							if(this.y < 3*road-15)	this.status = 4;
+							else 			this.status = 1;
 							this.turn = 0;
 							check = 900;
 						}
@@ -471,22 +477,26 @@
 						if(this.status == 1){ //up
 							this.sizex = 30;
 							this.sizey = 50;
-							this.y -= this.speed;
+							if(this.warnu == 0)
+								this.y -= this.speed;
 						}
 						if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
-							this.x += this.speed;
+							if(this.warnr == 0)
+								this.x += this.speed;
 						}
 						if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
-							this.y += this.speed;
+							if(this.warnd == 0)
+								this.y += this.speed;
 						}
 						if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
-							this.x -= this.speed;
+							if(this.warnl == 0)
+								this.x -= this.speed;
 						}
 					}
 					draw(){
@@ -496,13 +506,53 @@
 						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), this.sizey/2);
 						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), (this.sizey/2)*(-1));
 					}
+					check(){
+						//up
+						var imgData = ctx.getImageData(this.x, this.y-this.sizey/2-36, 1, 1);
+						var redcolor = imgData.data[0];
+						var greencolor = imgData.data[1];
+						var bluecolor = imgData.data[2];
+						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
+							this.warnu = 1;
+						else	this.warnu = 0;
+
+						//right
+						imgData = ctx.getImageData(this.x+this.sizex/2+36, this.y, 1, 1);
+						redcolor = imgData.data[0];
+						greencolor = imgData.data[1];
+						bluecolor = imgData.data[2];
+						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
+							this.warnr = 1;
+						else 	this.warnr = 0;
+
+						//down
+						imgData = ctx.getImageData(this.x, this.y+this.sizey/2+36, 1, 1);
+						redcolor = imgData.data[0];
+						greencolor = imgData.data[1];
+						bluecolor = imgData.data[2];
+						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
+							this.warnd = 1;
+						else	this.warnd = 0;
+
+						//left
+						imgData = ctx.getImageData(this.x-this.sizex/2-36, this.y, 1, 1);
+						redcolor = imgData.data[0];
+						greencolor = imgData.data[1];
+						bluecolor = imgData.data[2];
+						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
+							this.warnl = 1;
+						else	this.warnl = 0;
+
+						//if(this.warnu+this.warnr+this.warnd+this.warnl > 0)
+						//	alert(this.num+":"+this.warnu+this.warnr+this.warnd+this.warnl);
+					}
 
 				}
-				var park = 80;
+				var park = 85;
 				init = () => { // 그려질 truck의 개체를 설정하는 함수
-					if(carnum >=1) {truck1 = new Truck(canvas.width-40, park+5)}
-					if(carnum >=2) {truck2 = new Truck(canvas.width-40, 2*park+5)}
-					if(carnum >=3) {truck3 = new Truck(canvas.width-40, 3*park+5)}
+					if(carnum >=1) {truck1 = new Truck(canvas.width-40, park)}
+					if(carnum >=2) {truck2 = new Truck(canvas.width-40, 2*park)}
+					if(carnum >=3) {truck3 = new Truck(canvas.width-40, 3*park)}
 					if(carnum >=4) {truck4 = new Truck(canvas.width-40, 4*park)}
 					if(carnum >=5) {truck5 = new Truck(canvas.width-40, 5*park)}
 					if(carnum >=6) {truck6 = new Truck(canvas.width-40, 6*park)}
@@ -516,16 +566,28 @@
 				function animate(){
 
 					drawMap();
-					if(carnum >=1)  { truck1.update();    truck1.draw();  }
-					if(carnum >=2)  { truck2.update();    truck2.draw();  }
-					if(carnum >=3)  { truck3.update();    truck3.draw();  }
-					if(carnum >=4)  { truck4.update();    truck4.draw();  }
-					if(carnum >=5)  { truck5.update();    truck5.draw();  }
-					if(carnum >=6)  { truck6.update();    truck6.draw();  }
-					if(carnum >=7)  { truck7.update();    truck7.draw();  }
-					if(carnum >=8)  { truck8.update();    truck8.draw();  }
-					if(carnum >=9)  { truck9.update();    truck9.draw();  }
-					if(carnum >=10) { truck10.update();  truck10.draw(); }
+					if(carnum >=1)  { truck1.update(1);    truck1.draw();  }
+					if(carnum >=2)  { truck2.update(2);    truck2.draw();  }
+					if(carnum >=3)  { truck3.update(3);    truck3.draw();  }
+					if(carnum >=4)  { truck4.update(4);    truck4.draw();  }
+					if(carnum >=5)  { truck5.update(5);    truck5.draw();  }
+					if(carnum >=6)  { truck6.update(6);    truck6.draw();  }
+					if(carnum >=7)  { truck7.update(7);    truck7.draw();  }
+					if(carnum >=8)  { truck8.update(8);    truck8.draw();  }
+					if(carnum >=9)  { truck9.update(9);    truck9.draw();  }
+					if(carnum >=10) { truck10.update(10);  truck10.draw(); }
+
+					//warning
+					if(carnum >=1)  { truck1.check();  }
+					if(carnum >=2)  { truck2.check();  }
+					if(carnum >=3)  { truck3.check();  }
+					if(carnum >=4)  { truck4.check();  }
+					if(carnum >=5)  { truck5.check();  }
+					if(carnum >=6)  { truck6.check();  }
+					if(carnum >=7)  { truck7.check();  }
+					if(carnum >=8)  { truck8.check();  }
+					if(carnum >=9)  { truck9.check();  }
+					if(carnum >=10) { truck10.check(); }
 
 					window.addEventListener('resize', function(){
 						canvas.width = window.innerWidth*0.695;
@@ -577,7 +639,7 @@
             			<td class="controler">
 					<div class="panel">
 						<div class="title">
-							신호등 지시 현황 
+							신호등 지시 현황
 						</div>
 						<table class="traffic">
 							<tr>
