@@ -205,18 +205,18 @@
 
 				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,          2*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,          8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,         14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,         20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,  2*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,  8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2, 14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2, 20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,     2*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,     8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,    14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,    20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		14*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	 8*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	14*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	 8*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	14*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	20*road+2, 2*road-2, 2*road-2);
 
 			}
 
@@ -571,7 +571,7 @@
 				var truck12 = null;
 			
 				//init = () => { // 그려질 truck의 개체를 설정하는 함수
-				function first(){
+				//function first(){
 					const numcar = document.getElementById('carnum').value;
 					alert("init"+numcar);
 					if(numcar >= 1) { alert("wow"); truck01 = new Truck(canvas.width-40,    park,  1); alert("wow2") }
@@ -586,7 +586,7 @@
 					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10); }
 					mysql_conn();
 					alert("init2");
-				}
+				//}
 				function animate(){
 					alert("animate");
 					
@@ -627,7 +627,7 @@
 				}
 			function start(){
 				alert("start");
-				first();
+				//first();
 				alert("why");
 				animate();
 			}
