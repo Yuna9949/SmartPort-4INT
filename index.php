@@ -283,6 +283,8 @@
 						else if(this.x >= wth+6*road)
 							this.dbx = 9;
 						else	this.dbx = 0;
+						
+						alert("x:"+this.x+" y:"+this.y);
 
 						if(this.y >= road && this.y < 2*road)
 							this.dby = 1;
