@@ -136,7 +136,7 @@
 			}
 			function show_speed(){
 				const spdvalue = document.getElementById('speednum').value;
-				docummnet.ggetElementById('speedshw').innerText = spdvalue;
+				document.getElementById('speedshw').innerText = spdvalue;
 			}
 
 			//draw map
@@ -224,6 +224,7 @@
 
 			function start() {
 				const numcar = document.getElementById('carnum').value;
+				const numspd = document.getElementById('speednum').value;
 				const canvas = document.getElementById('canvas');
 
 				var ctx = canvas.getContext('2d');
@@ -244,7 +245,7 @@
 						
 						//status
 						this.status = 0; //stop
-						this.speed = 1;
+						this.speed = numspd;
 						
 						//turn corner
 						this.n = 0;
