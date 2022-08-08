@@ -458,7 +458,6 @@
 
 						if(this.turn != 0 && this.n > 0)
 						{
-							//alert("turn1");
 							this.n -= this.speed;
 							if(this.turn <= 3)
 								this.status = 1;
@@ -475,6 +474,7 @@
 						}
 						else if(this.turn != 0 && this.n == 0)
 						{
+							alert("why");
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
 								this.status = 1;
 							if(this.turn == 1 || this.turn == 6 || this.turn == 8)
