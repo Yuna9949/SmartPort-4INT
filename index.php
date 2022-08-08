@@ -612,8 +612,9 @@
 					stopani = requestAnimationFrame(animate);
 				}
 			function start(){
-					alert("start");
+				alert("start");
 				first();
+				alert("why");
 				animate();
 			}
 			//}
