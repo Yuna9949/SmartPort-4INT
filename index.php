@@ -474,7 +474,7 @@
 						}
 						else if(this.turn != 0 && this.n == 0)
 						{
-							alert("why");
+							alert("why"+this.dbx+" "+this.dby);
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
 								this.status = 1;
 							if(this.turn == 1 || this.turn == 6 || this.turn == 8)
@@ -511,6 +511,7 @@
 						}
 					}
 					draw(){
+						alert("draw");
 						ctx.fillStyle = this.c;
 						ctx.fillRect(this.x, this.y, this.sizex/2, this.sizey/2);
 						ctx.fillRect(this.x, this.y, this.sizex/2, (this.sizey/2)*(-1));
