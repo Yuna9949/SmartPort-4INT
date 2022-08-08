@@ -222,7 +222,7 @@
 
 			var stopani = null;
 
-			function start() {
+			//function start() {
 				const carnum = document.getElementById('carnum').value;
 				const canvas = document.getElementById('canvas');
 
@@ -608,9 +608,11 @@
 					//animation and cancel animation
 					stopani = requestAnimationFrame(animate);
 				}
+			function start(){
 				init();
 				animate();
 			}
+			//}
 			
 			//stop animation
 			function stop(){
