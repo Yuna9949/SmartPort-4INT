@@ -236,11 +236,6 @@
 						this.angle = 0;
 						this.status = 0; //stop
 						this.speed = 1;
-
-						//car number
-						this.num = num;
-
-						//position of car
 						this.n = 0;
 						this.dbx = 0;
 						this.dby = 0;
