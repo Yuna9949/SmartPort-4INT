@@ -245,7 +245,6 @@
 						
 						//status
 						this.status = 0; //stop
-						this.speed = numspd;
 						
 						//turn corner
 						this.n = 0;
