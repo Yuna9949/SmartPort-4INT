@@ -136,7 +136,7 @@
 			}
 			function show_speed(){
 				const spdvalue = document.getElementById('speednum').value;
-				document.getElementById('speedshw').innerText = spdvalue;
+				docummnet.ggetElementById('speedshw').innerText = spdvalue;
 			}
 
 			//draw map
@@ -224,7 +224,6 @@
 
 			function start() {
 				const numcar = document.getElementById('carnum').value;
-				const numspd = document.getElementById('speednum').value;
 				const canvas = document.getElementById('canvas');
 
 				var ctx = canvas.getContext('2d');
@@ -245,7 +244,7 @@
 						
 						//status
 						this.status = 0; //stop
-						this.speed = numspd;
+						this.speed = 1;
 						
 						//turn corner
 						this.n = 0;
@@ -321,7 +320,7 @@
 							this.dby = 18;
 						else 	this.dby = 0;
 
-						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						var check = 0;
 						// 1 up  2 right  3 down  4 left
@@ -450,9 +449,9 @@
 							}
 
 							if(this.turn % 2 == 1)
-								this.n = 0.95*road/this.speed;
+								this.n = 0.95*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)
-								this.n = 1.9*road/this.speed;
+								this.n = 1.9*road;
 						}
 
 						if(this.turn != 0 && this.n > 0)
