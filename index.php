@@ -2,7 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+		<meta name="viewport"
+			content="width=device-width, height=device-height,
+			minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 		
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
@@ -125,9 +127,8 @@
 				}
 			}
 		</style>
-		
-		<title>SPTS</title>
 
+		<title>SPTS</title>
 		<script type="text/javascript">
 
 			//show input bar value
@@ -151,36 +152,36 @@
 				var road = canvas.height*0.045;
 				var wth = canvas.width-8*road;
 
-				//background
+				<!-- background -->
 				var round = 15;
 				ctx.fillStyle = 'rgb(255,255,255)';
 				ctx.fillRect(0,0, canvas.width, canvas.height);
 
-				//바다
+				<!-- 바다 -->
 				ctx.fillStyle = "rgb(113, 156, 255)";
 				ctx.fillRect (0, 0, 1500, road);
 
-                		//선박
+                		<!-- 선박 -->
                 		ctx.fillStyle = "rgb(211, 211, 211)";
                 		ctx.fillRect (5.5*road, 0, 2*road, road);
                 		ctx.fillRect (wth/2 - 0.5*road, 0, 2*road, road);
                 		ctx.fillRect (6.5*road+wth/2, 0, 2*road, road);
                 		ctx.fillRect (0.5*road+wth, 0, 2*road, road);
 
-               			//하역 크레인
+               			<!-- 하역 크레인 -->
                			ctx.fillStyle = "rgb(255, 192, 203)";
                			ctx.fillRect (6*road, 0, road, 2*road);
                			ctx.fillRect (wth/2, 0, road, 2*road);
                			ctx.fillRect (7*road+wth/2, 0, road, 2*road);
                			ctx.fillRect (road+wth, 0, road, 2*road);
 
-				//도로 line
+				<!-- 도로 -->
 				ctx.fillStyle = "rgb(150, 150, 150)";
-				ctx.fillRect (2*road,  2*road, wth+4*road, 2);
-				ctx.fillRect (2*road,  3*road, wth+4*road, 2);
-				ctx.fillRect (2*road,  4*road, wth+4*road, 2);
-				ctx.fillRect (2*road,  8*road, wth+4*road, 2);
-				ctx.fillRect (2*road,  9*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 2*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 3*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 4*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 8*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 9*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 10*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 14*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 15*road, wth+4*road, 2);
@@ -195,7 +196,7 @@
 				ctx.fillRect (wth+5*road, 2*road, 2, 20*road);
 				ctx.fillRect (wth+6*road, 2*road, 2, 20*road+2);
 
-				//적재된 컨테이너
+				<!-- 적재된 컨테이너 -->
 				ctx.fillStyle = "rgb(176, 176, 228)";
 				ctx.fillRect (4*road, 5*road,(wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road , 5*road, (wth-2*road)/2, 2*road);
@@ -204,7 +205,7 @@
 				ctx.fillRect (4*road, 17*road, (wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road, 17*road, (wth-2*road)/2, 2*road);
 
-				//신호등
+				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
 				ctx.fillRect(2*road+2,		 2*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
@@ -234,6 +235,9 @@
 						//exact location of car
 						this.x = x;
 						this.y = y;
+						
+						//car number
+						this.num = num;
 						this.c = 'rgb(9, 96, 47)';
 						
 						//size of car
@@ -243,9 +247,6 @@
 						//status of car
 						this.status = 0; //stop
 						this.speed = 1;
-						
-						//car number
-						this.num = 0;
 						
 						//position of car
 						this.n = 0;
@@ -260,88 +261,148 @@
 						this.warnl = 0;
 					}
 					
-					update(){						
+					update(){				
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
 						
 						//get position of car
-						if(this.x >= 2*road && this.x < 3*road)						this.dbx = 1;
-						else if(this.x >= 3*road && this.x < 4*road+15)					this.dbx = 2;
-						else if(this.x >= 4*road+15 && this.x < (wth-2*road)/2+4*road-15)		this.dbx = 3;
-						else if(this.x >= (wth-2*road)/2+4*road-15 && this.x < (wth-2*road)/2+5*road)	this.dbx = 4;
-						else if(this.x >= (wth-2*road)/2+5*road && this.x < (wth-2*road)/2+6*road+15)	this.dbx = 5;
-						else if(this.x >= (wth-2*road)/2+6*road+15 && this.x < wth+4*road-15)		this.dbx = 6;
-						else if(this.x >= wth+4*road-15 && this.x < wth+5*road)				this.dbx = 7;
-						else if(this.x >= wth+5*road && this.x < wth+6*road)				this.dbx = 8;
-						else if(this.x >= wth+6*road)							this.dbx = 9;
-						else										this.dbx = 0;
+						if(this.x >= 2*road && this.x < 3*road)
+							this.dbx = 1;
+						else if(this.x >= 3*road && this.x < 4*road+15)
+							this.dbx = 2;
+						else if(this.x >= 4*road+15 && this.x < (wth-2*road)/2+4*road-15)
+							this.dbx = 3;
+						else if(this.x >= (wth-2*road)/2+4*road-15 && this.x < (wth-2*road)/2+5*road)
+							this.dbx = 4;
+						else if(this.x >= (wth-2*road)/2+5*road && this.x < (wth-2*road)/2+6*road+15)
+							this.dbx = 5;
+						else if(this.x >= (wth-2*road)/2+6*road+15 && this.x < wth+4*road-15)
+							this.dbx = 6;
+						else if(this.x >= wth+4*road-15 && this.x < wth+5*road)
+							this.dbx = 7;
+						else if(this.x >= wth+5*road && this.x < wth+6*road)
+							this.dbx = 8;
+						else if(this.x >= wth+6*road)
+							this.dbx = 9;
+						else	this.dbx = 0;
 
-						if(this.y >= road && this.y < 2*road)						this.dby = 1;
-						else if(this.y >= 2*road && this.y < 3*road)					this.dby = 2;
-						else if(this.y >= 3*road && this.y < 4*road+15)					this.dby = 3;
-						else if(this.y >= 4*road+15 && this.y < 5*road)					this.dby = 4;
-						else if(this.y >= 5*road && this.y < 7*road)					this.dby = 5;
-						else if(this.y >= 7*road && this.y < 8*road-15)					this.dby = 6;
-						else if(this.y >= 8*road-15 && this.y < 9*road)					this.dby = 7;
-						else if(this.y >= 9*road && this.y < 10*road+15)				this.dby = 8;
-						else if(this.y >= 10*road+15 && this.y < 11*road)				this.dby = 9;
-						else if(this.y >= 11*road && this.y < 13*road)					this.dby = 10;
-						else if(this.y >= 13*road && this.y < 14*road-15)				this.dby = 11;
-						else if(this.y >= 14*road-15 && this.y < 15*road)				this.dby = 12;
-						else if(this.y >= 15*road && this.y < 16*road+15)				this.dby = 13;
-						else if(this.y >= 16*road+15 && this.y < 17*road)				this.dby = 14;
-						else if(this.y >= 17*road && this.y < 19*road)					this.dby = 15;
-						else if(this.y >= 19*road && this.y < 20*road-15)				this.dby = 16;
-						else if(this.y >= 20*road-15 && this.y < 21*road)				this.dby = 17;
-						else if(this.y >= 21*road && this.y < 22*road)					this.dby = 18;
-						else 										this.dby = 0;
+						if(this.y >= road && this.y < 2*road)
+							this.dby = 1;
+						else if(this.y >= 2*road && this.y < 3*road)
+							this.dby = 2;
+						else if(this.y >= 3*road && this.y < 4*road+15)
+							this.dby = 3;
+						else if(this.y >= 4*road+15 && this.y < 5*road)
+							this.dby = 4;
+						else if(this.y >= 5*road && this.y < 7*road)
+							this.dby = 5;
+						else if(this.y >= 7*road && this.y < 8*road-15)
+							this.dby = 6;
+						else if(this.y >= 8*road-15 && this.y < 9*road)
+							this.dby = 7;
+						else if(this.y >= 9*road && this.y < 10*road+15)
+							this.dby = 8;
+						else if(this.y >= 10*road+15 && this.y < 11*road)
+							this.dby = 9;
+						else if(this.y >= 11*road && this.y < 13*road)
+							this.dby = 10;
+						else if(this.y >= 13*road && this.y < 14*road-15)
+							this.dby = 11;
+						else if(this.y >= 14*road-15 && this.y < 15*road)
+							this.dby = 12;
+						else if(this.y >= 15*road && this.y < 16*road+15)
+							this.dby = 13;
+						else if(this.y >= 16*road+15 && this.y < 17*road)
+							this.dby = 14;
+						else if(this.y >= 17*road && this.y < 19*road)
+							this.dby = 15;
+						else if(this.y >= 19*road && this.y < 20*road-15)
+							this.dby = 16;
+						else if(this.y >= 20*road-15 && this.y < 21*road)
+							this.dby = 17;
+						else if(this.y >= 21*road && this.y < 22*road)
+							this.dby = 18;
+						else 	this.dby = 0;
 						
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						//update status
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
-						var px = this.dbx;
-						var py = this.dby;
-						if(px == 9)
+						if(this.dbx == 9)
 						{
-							check = 900;
-							this.turn = 0;
 							if(this.y < 3*road-15)	this.status = 4;
 							else 			this.status = 1;
-						}
-						if(px != 1 && py == 1)
-						{
-							check = 101;
 							this.turn = 0;
-							this.status = 4;
+							check = 900;
 						}
-						if(px == 1 || px == 4 || px == 7)
+						if(this.dbx != 1 && this.dby == 1)
 						{
-							if(py == 4 || py == 5 || py == 6 || py == 9 || py == 10 || py == 11 || py == 14 || py == 15 || py == 16)
+							this.status = 4;
+							this.turn = 0;
+							check = 101;
+						}
+						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
+						{
+							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
 							{
-								check = 4914;
+								check = 456;
+								this.turn = 0;
+								this.status = 3;
+							}
+							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
+							{
+								check = 91011;
+								this.turn = 0;
+								this.status = 3;
+							}
+							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
+							{
+								check = 141516;
 								this.turn = 0;
 								this.status = 3;
 							}
 						}
-						if(px == 2 || px == 5 || px == 8)
+						if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
 						{
-							if(py == 4 || py == 5 || py == 6 || py == 9 || py == 10 || py == 11 || py == 14 || py == 15 || py == 16)
+							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
 							{
 								check = 456;
 								this.turn = 0;
 								this.status = 1;
 							}
+							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
+							{
+								check = 91011;
+								this.turn = 0;
+								this.status = 1;
+							}
+							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
+							{
+								check = 141516;
+								this.turn = 0;
+								this.status = 1;
+							}
 						}
-						if(px == 3 || px == 6)
+						if(this.dbx == 3 || this.dbx == 6)
 						{
 							check = 36;
 							this.turn = 0;
-							if(py == 2 || py == 6 || py == 7 || py == 11 || py == 12 || py == 16 || py == 17)	
-								this.status = 4;
-							else if(py == 3 || py == 4 || py == 8 || py == 9 || py == 13 || py == 14 || py == 18)
-								this.status = 2;
+							if(this.dby == 2)	this.status = 4;
+							else if(this.dby == 6 || this.dby == 7)
+										this.status = 4;
+							else if(this.dby == 11 || this.dby == 12)
+										this.status = 4;
+							else if(this.dby == 16 || this.dby == 17)
+										this.status = 4;
+
+							else if(this.dby == 3 || this.dby == 4)
+										this.status = 2;
+							else if(this.dby == 8 || this.dby == 9)
+										this.status = 2;
+							else if(this.dby == 13 || this.dby == 14)
+										this.status = 2;
+							else if(this.dby == 18)	this.status = 2;
 						}
 						if(check == 0)		this.status = 0;
 
@@ -352,49 +413,46 @@
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
-							
+
 							mysql_conn();
-							var light = document.getElementById('outputt').innerHTML.split(" ");
-							
-							//find traffic light that on the way
-							if(py == 2 || py == 3)
+							var light = document.getElementById('outputt').innerHTML.split(" "); 
+							if(this.dby == 2 || this.dby == 3)
 							{
-								if(px == 1 || px == 2)
+								if(this.dbx == 1 || this.dbx == 2)
 									this.turn = light[1];
-								if(px == 4 || px == 5)
+								if(this.dbx == 4 || this.dbx == 5)
 									this.turn = light[2];
-								if(px == 7 || px == 8)
+								if(this.dbx == 7 || this.dbx == 8)
 									this.turn = light[3];
 							}
-							else if(py == 7 || py == 8)
+							else if(this.dby == 7 || this.dby == 8)
 							{
-								if(px == 1 || px == 2)
+								if(this.dbx == 1 || this.dbx == 2)
 									this.turn = light[4];
-								if(px == 4 || px == 5)
+								if(this.dbx == 4 || this.dbx == 5)
 									this.turn = light[5];
-								if(px == 7 || px == 8)
+								if(this.dbx == 7 || this.dbx == 8)
 									this.turn = light[6];
 							}
-							else if(py == 12 || py == 13)
+							else if(this.dby == 12 || this.dby == 13)
 							{
-								if(px == 1 || px == 2)
+								if(this.dbx == 1 || this.dbx == 2)
 									this.turn = light[7];
-								if(px == 4 || px == 5)
+								if(this.dbx == 4 || this.dbx == 5)
 									this.turn = light[8];
-								if(px == 7 || px == 8)
+								if(this.dbx == 7 || this.dbx == 8)
 									this.turn = light[9];
 							}
-							else if(py == 17 || py == 18)
+							else if(this.dby == 17 || this.dby == 18)
 							{
-								if(px == 1 || px == 2)
+								if(this.dbx == 1 || this.dbx == 2)
 									this.turn = light[10];
-								if(px == 4 || px == 5)
+								if(this.dbx == 4 || this.dbx == 5)
 									this.turn = light[11];
-								if(px == 7 || px == 8)
+								if(this.dbx == 7 || this.dbx == 8)
 									this.turn = light[12];
 							}
-							
-							//detail value while turn
+
 							if(this.turn % 2 == 1)
 								this.n = 0.95*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)
@@ -486,20 +544,20 @@
 						//right
 						imgData = ctx.getImageData(this.x+this.sizex/2+35, this.y, 1, 1);
 						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
-							this.warnu = 1;
-						else	this.warnu = 0;
+							this.warnr = 1;
+						else	this.warnr = 0;
 
 						//down
 						imgData = ctx.getImageData(this.x, this.y+this.sizey/2+35, 1, 1);
 						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
-							this.warnu = 1;
-						else	this.warnu = 0;
+							this.warnd = 1;
+						else	this.warnd = 0;
 
 						//left
 						imgData = ctx.getImageData(this.x-this.sizex/2-35, this.y, 1, 1);
 						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
-							this.warnu = 1;
-						else	this.warnu = 0;
+							this.warnl = 1;
+						else	this.warnl = 0;
 					}
 
 				}
