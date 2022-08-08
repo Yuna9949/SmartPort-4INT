@@ -244,7 +244,7 @@
 						
 						//status
 						this.status = 0; //stop
-						this.speed = 1;
+						this.speed = document.getElementById('speednum').value;
 						
 						//turn corner
 						this.n = 0;
