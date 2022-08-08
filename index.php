@@ -558,7 +558,8 @@
 
 				}
 				var park = 85;
-				init = () => { // 그려질 truck의 개체를 설정하는 함수
+				//init = () => { // 그려질 truck의 개체를 설정하는 함수
+				function first(){
 					alert("init");
 					if(carnum >= 1) {truck01 = new Truck(canvas.width-40,    park,  1)}
 					if(carnum >= 2) {truck02 = new Truck(canvas.width-40,  2*park,  2)}
@@ -612,7 +613,7 @@
 				}
 			function start(){
 					alert("start");
-				init();
+				first();
 				animate();
 			}
 			//}
