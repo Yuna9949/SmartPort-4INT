@@ -224,7 +224,6 @@
 
 			function start() {
 				const numcar = document.getElementById('carnum').value;
-				const numspd = document.getElementById('speednum').value;
 				const canvas = document.getElementById('canvas');
 
 				var ctx = canvas.getContext('2d');
@@ -245,7 +244,7 @@
 						
 						//status
 						this.status = 0; //stop
-						this.speed = numspd;
+						this.speed = 1;
 						
 						//turn corner
 						this.n = 0;
@@ -450,9 +449,9 @@
 							}
 
 							if(this.turn % 2 == 1)
-								this.n = 0.95*road/this.speed;
+								this.n = 0.95*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)
-								this.n = 1.9*road/this.speed;
+								this.n = 1.9*road;
 						}
 
 						if(this.turn != 0 && this.n > 0)
