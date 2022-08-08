@@ -2,9 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport"
-			content="width=device-width, height=device-height,
-			minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, height=device-height, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 		
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
@@ -129,9 +127,9 @@
 		</style>
 		
 		<title>SPTS</title>
-		
+
 		<script type="text/javascript">
-			
+
 			//show input bar value
 			function show_carnum(){
 				const carN = document.getElementById('carnum').value;
@@ -654,7 +652,7 @@
 									<td>시작/일시정지</td>
 									<td style="border-left:1px solid #e7e7e7;"></td>
 									<td id="playbtn"><button id="play" class="btn" onclick="start()">►</button></td>
-									<td><button class="btn" id="pause" onclick="stop()"}>I I</button></td>
+									<td><button class="btn" id="pause" onclick="stop()">I I</button></td>
 								</tr>
 							</table>
 							<p class="output" id="outputt">no data input</p>
