@@ -128,6 +128,8 @@
 		</style>
 		<title>SPTS</title>
 		<script type="text/javascript">
+			
+			//show input bar value
 			function show_carnum(){
 				const carN = document.getElementById('carnum').value;
 				document.getElementById('carshw').innerText = carN;
@@ -137,6 +139,7 @@
 				docummnet.ggetElementById('speedshw').innerText = spdvalue;
 			}
 
+			//draw map
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
@@ -226,27 +229,36 @@
 				var ctx = canvas.getContext('2d');
 
 				class Truck{
-					constructor(x, y){
+					constructor(x, y, num){
+						//location
 						this.x = x;
 						this.y = y;
+						
+						//number
+						this.num = num;
 						this.c = 'rgb(9, 96, 47)';
 
+						//size
 						this.sizex = 30;
 						this.sizey = 50;
-						this.angle = 0;
+						
+						//status
 						this.status = 0; //stop
 						this.speed = 1;
+						
+						//turn corner
 						this.n = 0;
 						this.dbx = 0;
 						this.dby = 0;
 						this.turn = 0;
+						
+						//check not to crash
 						this.warnu = 0;
 						this.warnr = 0;
 						this.warnd = 0;
 						this.warnl = 0;
 					}
-					update(num){
-						this.num = num;
+					update(){
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
 
@@ -457,10 +469,7 @@
 						}
 						else if(this.turn != 0 && this.n < 0)
 						{
-							//alert("turn2");
 							this.n = 0;
-							//if(this.turn == 10)
-							//	this.y += 50;
 						}
 						else if(this.turn != 0 && this.n == 0)
 						{
@@ -543,62 +552,67 @@
 							this.warnl = 1;
 						else	this.warnl = 0;
 
-						if(this.warnu+this.warnr+this.warnd+this.warnl > 0)
-							alert(this.num+":"+this.warnu+this.warnr+this.warnd+this.warnl);
+						//if(this.warnu+this.warnr+this.warnd+this.warnl > 0)
+						//	alert(this.num+":"+this.warnu+this.warnr+this.warnd+this.warnl);
 					}
 
 				}
 				var park = 85;
 				init = () => { // 그려질 truck의 개체를 설정하는 함수
-					if(carnum >=1) {truck1 = new Truck(canvas.width-40, park)}
-					if(carnum >=2) {truck2 = new Truck(canvas.width-40, 2*park)}
-					if(carnum >=3) {truck3 = new Truck(canvas.width-40, 3*park)}
-					if(carnum >=4) {truck4 = new Truck(canvas.width-40, 4*park)}
-					if(carnum >=5) {truck5 = new Truck(canvas.width-40, 5*park)}
-					if(carnum >=6) {truck6 = new Truck(canvas.width-40, 6*park)}
-					if(carnum >=7) {truck7 = new Truck(canvas.width-40, 7*park)}
-					if(carnum >=8) {truck8 = new Truck(canvas.width-40, 8*park)}
-					if(carnum >=9) {truck9 = new Truck(canvas.width-40, 9*park)}
-					if(carnum >=10) {truck10 = new Truck(canvas.width-40, 10*park)}
+					if(carnum >= 1) {truck01 = new Truck(canvas.width-40,    park,  1)}
+					if(carnum >= 2) {truck02 = new Truck(canvas.width-40,  2*park,  2)}
+					if(carnum >= 3) {truck03 = new Truck(canvas.width-40,  3*park,  3)}
+					if(carnum >= 4) {truck04 = new Truck(canvas.width-40,  4*park,  4)}
+					if(carnum >= 5) {truck05 = new Truck(canvas.width-40,  5*park,  5)}
+					if(carnum >= 6) {truck06 = new Truck(canvas.width-40,  6*park,  6)}
+					if(carnum >= 7) {truck07 = new Truck(canvas.width-40,  7*park,  7)}
+					if(carnum >= 8) {truck08 = new Truck(canvas.width-40,  8*park,  8)}
+					if(carnum >= 9) {truck09 = new Truck(canvas.width-40,  9*park,  9)}
+					if(carnum >=10) {truck10 = new Truck(canvas.width-40, 10*park, 10)}
 					mysql_conn();
 				}
-
 				function animate(){
-
+					
 					drawMap();
-					if(carnum >=1)  { truck1.update(1);    truck1.draw();  }
-					if(carnum >=2)  { truck2.update(2);    truck2.draw();  }
-					if(carnum >=3)  { truck3.update(3);    truck3.draw();  }
-					if(carnum >=4)  { truck4.update(4);    truck4.draw();  }
-					if(carnum >=5)  { truck5.update(5);    truck5.draw();  }
-					if(carnum >=6)  { truck6.update(6);    truck6.draw();  }
-					if(carnum >=7)  { truck7.update(7);    truck7.draw();  }
-					if(carnum >=8)  { truck8.update(8);    truck8.draw();  }
-					if(carnum >=9)  { truck9.update(9);    truck9.draw();  }
-					if(carnum >=10) { truck10.update(10);  truck10.draw(); }
-
+					
+					//update and draw
+					if(carnum >= 1) { truck01.update(); truck01.draw(); }
+					if(carnum >= 2) { truck02.update(); truck02.draw(); }
+					if(carnum >= 3) { truck03.update(); truck03.draw(); }
+					if(carnum >= 4) { truck04.update(); truck04.draw(); }
+					if(carnum >= 5) { truck05.update(); truck05.draw(); }
+					if(carnum >= 6) { truck06.update(); truck06.draw(); }
+					if(carnum >= 7) { truck07.update(); truck07.draw(); }
+					if(carnum >= 8) { truck08.update(); truck08.draw(); }
+					if(carnum >= 9) { truck09.update(); truck09.draw(); }
+					if(carnum >=10) { truck10.update(); truck10.draw(); }
+					
 					//warning
-					if(carnum >=1)  { truck1.check();  }
-					if(carnum >=2)  { truck2.check();  }
-					if(carnum >=3)  { truck3.check();  }
-					if(carnum >=4)  { truck4.check();  }
-					if(carnum >=5)  { truck5.check();  }
-					if(carnum >=6)  { truck6.check();  }
-					if(carnum >=7)  { truck7.check();  }
-					if(carnum >=8)  { truck8.check();  }
-					if(carnum >=9)  { truck9.check();  }
+					if(carnum >= 1) { truck01.check(); }
+					if(carnum >= 2) { truck02.check(); }
+					if(carnum >= 3) { truck03.check(); }
+					if(carnum >= 4) { truck04.check(); }
+					if(carnum >= 5) { truck05.check(); }
+					if(carnum >= 6) { truck06.check(); }
+					if(carnum >= 7) { truck07.check(); }
+					if(carnum >= 8) { truck08.check(); }
+					if(carnum >= 9) { truck09.check(); }
 					if(carnum >=10) { truck10.check(); }
-
+					
+					//resize window
 					window.addEventListener('resize', function(){
 						canvas.width = window.innerWidth*0.695;
 						canvas.height = window.innerHeight*0.985;
 					})
+					
+					//animation and cancel animation
 					stopani = requestAnimationFrame(animate);
 				}
 				init();
 				animate();
 			}
-
+			
+			//stop animation
 			function stop(){
 				cancelAnimationFrame(stopani);
 			}
@@ -694,7 +708,9 @@
 								</tr>
 							</table>
 							<p class="output" id="outputt">no data input</p>
-							<p class="output" id="outputa">{"light01":"0"}</p>
+							<p class="output" id="outputa">
+								{"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
+							</p>
 						</div>
 					</div>
 				</td>
@@ -750,11 +766,11 @@
 			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 			document.getElementById('outputt').innerHTML = status_list;
 
-			var up = "<img src='go.png' width='45%' style='transform:rotate(270deg);'/>";
-			var right = "<img src='go.png' width='45%' style='transform:rotate(0deg);'/>";
-			var down = "<img src='go.png' width='45%' style='transform:rotate(90deg);'/>";
-			var left = "<img src='go.png' width='45%' style='transform:rotate(180deg);'/>";
-			var stay = "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
+			var up		= "<img src='go.png'   width='45%' style='transform:rotate(270deg);'/>";
+			var right	= "<img src='go.png'   width='45%' style='transform:rotate(  0deg);'/>";
+			var down	= "<img src='go.png'   width='45%' style='transform:rotate( 90deg);'/>";
+			var left	= "<img src='go.png'   width='45%' style='transform:rotate(180deg);'/>";
+			var stay 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
 
 			// up 3 4 11
 			// right 1 6 8
