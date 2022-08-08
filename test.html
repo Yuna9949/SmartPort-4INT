@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<title>title</title>
+	</head>
+	<body>
+		<button id='btn' onclick="out()">go</button>
+		<div id="textbox"></div>
+		<script src="https://code.jquery.com/jquery.min.js"></script>
+		<script>
+			function out(){
+				$.ajax({
+					url: "getMysql.php",
+					type: "get",
+				}).done(function(data){
+					$("#textbox").text(data);
+				});
+			}
+		</script>
+	</body>
+</html>
