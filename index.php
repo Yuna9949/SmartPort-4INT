@@ -5,6 +5,7 @@
 		<meta name="viewport"
 			content="width=device-width, height=device-height,
 			minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+		
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 			html, body{
@@ -126,8 +127,12 @@
 				}
 			}
 		</style>
+		
 		<title>SPTS</title>
+		
 		<script type="text/javascript">
+			
+			//show input bar value
 			function show_carnum(){
 				const carN = document.getElementById('carnum').value;
 				document.getElementById('carshw').innerText = carN;
@@ -137,6 +142,7 @@
 				docummnet.ggetElementById('speedshw').innerText = spdvalue;
 			}
 
+			//draw base map
 			function drawMap(){
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
@@ -147,36 +153,36 @@
 				var road = canvas.height*0.045;
 				var wth = canvas.width-8*road;
 
-				<!-- background -->
+				//background
 				var round = 15;
 				ctx.fillStyle = 'rgb(255,255,255)';
 				ctx.fillRect(0,0, canvas.width, canvas.height);
 
-				<!-- 바다 -->
+				//바다
 				ctx.fillStyle = "rgb(113, 156, 255)";
 				ctx.fillRect (0, 0, 1500, road);
 
-                		<!-- 선박 -->
+                		//선박
                 		ctx.fillStyle = "rgb(211, 211, 211)";
                 		ctx.fillRect (5.5*road, 0, 2*road, road);
                 		ctx.fillRect (wth/2 - 0.5*road, 0, 2*road, road);
                 		ctx.fillRect (6.5*road+wth/2, 0, 2*road, road);
                 		ctx.fillRect (0.5*road+wth, 0, 2*road, road);
 
-               			<!-- 하역 크레인 -->
+               			//하역 크레인
                			ctx.fillStyle = "rgb(255, 192, 203)";
                			ctx.fillRect (6*road, 0, road, 2*road);
                			ctx.fillRect (wth/2, 0, road, 2*road);
                			ctx.fillRect (7*road+wth/2, 0, road, 2*road);
                			ctx.fillRect (road+wth, 0, road, 2*road);
 
-				<!-- 도로 -->
+				//도로 line
 				ctx.fillStyle = "rgb(150, 150, 150)";
-				ctx.fillRect (2*road, 2*road, wth+4*road, 2);
-				ctx.fillRect (2*road, 3*road, wth+4*road, 2);
-				ctx.fillRect (2*road, 4*road, wth+4*road, 2);
-				ctx.fillRect (2*road, 8*road, wth+4*road, 2);
-				ctx.fillRect (2*road, 9*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  2*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  3*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  4*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  8*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  9*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 10*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 14*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 15*road, wth+4*road, 2);
@@ -191,7 +197,7 @@
 				ctx.fillRect (wth+5*road, 2*road, 2, 20*road);
 				ctx.fillRect (wth+6*road, 2*road, 2, 20*road+2);
 
-				<!-- 적재된 컨테이너 -->
+				//적재된 컨테이너
 				ctx.fillStyle = "rgb(176, 176, 228)";
 				ctx.fillRect (4*road, 5*road,(wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road , 5*road, (wth-2*road)/2, 2*road);
@@ -200,20 +206,20 @@
 				ctx.fillRect (4*road, 17*road, (wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road, 17*road, (wth-2*road)/2, 2*road);
 
-				<!-- 신호등 -->
+				//신호등
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,          2*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,          8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,         14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,         20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,  2*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,  8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2, 14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2, 20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,     2*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,     8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,    14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,    20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		14*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	 8*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	14*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	 8*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	14*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	20*road+2, 2*road-2, 2*road-2);
 
 			}
 
@@ -226,225 +232,180 @@
 				var ctx = canvas.getContext('2d');
 
 				class Truck{
-					constructor(x, y){
+					constructor(x, y, num){
+						//exact location of car
 						this.x = x;
 						this.y = y;
 						this.c = 'rgb(9, 96, 47)';
-
+						
+						//size of car
 						this.sizex = 30;
 						this.sizey = 50;
-						this.angle = 0;
+						
+						//status of car
 						this.status = 0; //stop
 						this.speed = 1;
+						
+						//car number
+						this.num = 0;
+						
+						//position of car
 						this.n = 0;
 						this.dbx = 0;
 						this.dby = 0;
 						this.turn = 0;
+						
+						//check to not crash
 						this.warnu = 0;
 						this.warnr = 0;
 						this.warnd = 0;
 						this.warnl = 0;
 					}
-					update(num){
-						this.num = num;
+					
+					update(){						
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
+						
+						//get position of car
+						if(this.x >= 2*road && this.x < 3*road)						this.dbx = 1;
+						else if(this.x >= 3*road && this.x < 4*road+15)					this.dbx = 2;
+						else if(this.x >= 4*road+15 && this.x < (wth-2*road)/2+4*road-15)		this.dbx = 3;
+						else if(this.x >= (wth-2*road)/2+4*road-15 && this.x < (wth-2*road)/2+5*road)	this.dbx = 4;
+						else if(this.x >= (wth-2*road)/2+5*road && this.x < (wth-2*road)/2+6*road+15)	this.dbx = 5;
+						else if(this.x >= (wth-2*road)/2+6*road+15 && this.x < wth+4*road-15)		this.dbx = 6;
+						else if(this.x >= wth+4*road-15 && this.x < wth+5*road)				this.dbx = 7;
+						else if(this.x >= wth+5*road && this.x < wth+6*road)				this.dbx = 8;
+						else if(this.x >= wth+6*road)							this.dbx = 9;
+						else										this.dbx = 0;
 
-						if(this.x >= 2*road && this.x < 3*road)
-							this.dbx = 1;
-						else if(this.x >= 3*road && this.x < 4*road+15)
-							this.dbx = 2;
-						else if(this.x >= 4*road+15 && this.x < (wth-2*road)/2+4*road-15)
-							this.dbx = 3;
-						else if(this.x >= (wth-2*road)/2+4*road-15 && this.x < (wth-2*road)/2+5*road)
-							this.dbx = 4;
-						else if(this.x >= (wth-2*road)/2+5*road && this.x < (wth-2*road)/2+6*road+15)
-							this.dbx = 5;
-						else if(this.x >= (wth-2*road)/2+6*road+15 && this.x < wth+4*road-15)
-							this.dbx = 6;
-						else if(this.x >= wth+4*road-15 && this.x < wth+5*road)
-							this.dbx = 7;
-						else if(this.x >= wth+5*road && this.x < wth+6*road)
-							this.dbx = 8;
-						else if(this.x >= wth+6*road)
-							this.dbx = 9;
-						else	this.dbx = 0;
-
-						if(this.y >= road && this.y < 2*road)
-							this.dby = 1;
-						else if(this.y >= 2*road && this.y < 3*road)
-							this.dby = 2;
-						else if(this.y >= 3*road && this.y < 4*road+15)
-							this.dby = 3;
-						else if(this.y >= 4*road+15 && this.y < 5*road)
-							this.dby = 4;
-						else if(this.y >= 5*road && this.y < 7*road)
-							this.dby = 5;
-						else if(this.y >= 7*road && this.y < 8*road-15)
-							this.dby = 6;
-						else if(this.y >= 8*road-15 && this.y < 9*road)
-							this.dby = 7;
-						else if(this.y >= 9*road && this.y < 10*road+15)
-							this.dby = 8;
-						else if(this.y >= 10*road+15 && this.y < 11*road)
-							this.dby = 9;
-						else if(this.y >= 11*road && this.y < 13*road)
-							this.dby = 10;
-						else if(this.y >= 13*road && this.y < 14*road-15)
-							this.dby = 11;
-						else if(this.y >= 14*road-15 && this.y < 15*road)
-							this.dby = 12;
-						else if(this.y >= 15*road && this.y < 16*road+15)
-							this.dby = 13;
-						else if(this.y >= 16*road+15 && this.y < 17*road)
-							this.dby = 14;
-						else if(this.y >= 17*road && this.y < 19*road)
-							this.dby = 15;
-						else if(this.y >= 19*road && this.y < 20*road-15)
-							this.dby = 16;
-						else if(this.y >= 20*road-15 && this.y < 21*road)
-							this.dby = 17;
-						else if(this.y >= 21*road && this.y < 22*road)
-							this.dby = 18;
-						else 	this.dby = 0
-
+						if(this.y >= road && this.y < 2*road)						this.dby = 1;
+						else if(this.y >= 2*road && this.y < 3*road)					this.dby = 2;
+						else if(this.y >= 3*road && this.y < 4*road+15)					this.dby = 3;
+						else if(this.y >= 4*road+15 && this.y < 5*road)					this.dby = 4;
+						else if(this.y >= 5*road && this.y < 7*road)					this.dby = 5;
+						else if(this.y >= 7*road && this.y < 8*road-15)					this.dby = 6;
+						else if(this.y >= 8*road-15 && this.y < 9*road)					this.dby = 7;
+						else if(this.y >= 9*road && this.y < 10*road+15)				this.dby = 8;
+						else if(this.y >= 10*road+15 && this.y < 11*road)				this.dby = 9;
+						else if(this.y >= 11*road && this.y < 13*road)					this.dby = 10;
+						else if(this.y >= 13*road && this.y < 14*road-15)				this.dby = 11;
+						else if(this.y >= 14*road-15 && this.y < 15*road)				this.dby = 12;
+						else if(this.y >= 15*road && this.y < 16*road+15)				this.dby = 13;
+						else if(this.y >= 16*road+15 && this.y < 17*road)				this.dby = 14;
+						else if(this.y >= 17*road && this.y < 19*road)					this.dby = 15;
+						else if(this.y >= 19*road && this.y < 20*road-15)				this.dby = 16;
+						else if(this.y >= 20*road-15 && this.y < 21*road)				this.dby = 17;
+						else if(this.y >= 21*road && this.y < 22*road)					this.dby = 18;
+						else 										this.dby = 0;
+						
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
-						var check = 0;
+						//update status
 						// 1 up  2 right  3 down  4 left
-
-						if(this.dbx == 9)
+						var check = 0;
+						var px = this.dbx;
+						var py = this.dby;
+						if(px == 9)
 						{
+							check = 900;
+							this.turn = 0;
 							if(this.y < 3*road-15)	this.status = 4;
 							else 			this.status = 1;
-							this.turn = 0;
-							check = 900;
 						}
-						if(this.dbx != 1 && this.dby == 1)
+						if(px != 1 && py == 1)
 						{
-							this.status = 4;
-							this.turn = 0;
 							check = 101;
+							this.turn = 0;
+							this.status = 4;
 						}
-						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
+						if(px == 1 || px == 4 || px == 7)
 						{
-							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
+							if(py == 4 || py == 5 || py == 6 || py == 9 || py == 10 || py == 11 || py == 14 || py == 15 || py == 16)
 							{
-								check = 456;
-								this.turn = 0;
-								this.status = 3;
-							}
-							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
-							{
-								check = 91011;
-								this.turn = 0;
-								this.status = 3;
-							}
-							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
-							{
-								check = 141516;
+								check = 4914;
 								this.turn = 0;
 								this.status = 3;
 							}
 						}
-						if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
+						if(px == 2 || px == 5 || px == 8)
 						{
-							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
+							if(py == 4 || py == 5 || py == 6 || py == 9 || py == 10 || py == 11 || py == 14 || py == 15 || py == 16)
 							{
 								check = 456;
 								this.turn = 0;
 								this.status = 1;
 							}
-							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
-							{
-								check = 91011;
-								this.turn = 0;
-								this.status = 1;
-							}
-							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
-							{
-								check = 141516;
-								this.turn = 0;
-								this.status = 1;
-							}
 						}
-						if(this.dbx == 3 || this.dbx == 6)
+						if(px == 3 || px == 6)
 						{
 							check = 36;
 							this.turn = 0;
-							if(this.dby == 2)	this.status = 4;
-							else if(this.dby == 6 || this.dby == 7)
-										this.status = 4;
-							else if(this.dby == 11 || this.dby == 12)
-										this.status = 4;
-							else if(this.dby == 16 || this.dby == 17)
-										this.status = 4;
-
-							else if(this.dby == 3 || this.dby == 4)
-										this.status = 2;
-							else if(this.dby == 8 || this.dby == 9)
-										this.status = 2;
-							else if(this.dby == 13 || this.dby == 14)
-										this.status = 2;
-							else if(this.dby == 18)	this.status = 2;
+							if(py == 2 || py == 6 || py == 7 || py == 11 || py == 12 || py == 16 || py == 17)	
+								this.status = 4;
+							else if(py == 3 || py == 4 || py == 8 || py == 9 || py == 13 || py == 14 || py == 18)
+								this.status = 2;
 						}
 						if(check == 0)		this.status = 0;
 
+						//check if turn
 						if(this.status == 0 && this.turn == 0)
 						{
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
-
+							
 							mysql_conn();
-							var light = document.getElementById('outputt').innerHTML.split(" "); 
-							if(this.dby == 2 || this.dby == 3)
+							var light = document.getElementById('outputt').innerHTML.split(" ");
+							
+							//find traffic light that on the way
+							if(py == 2 || py == 3)
 							{
-								if(this.dbx == 1 || this.dbx == 2)
+								if(px == 1 || px == 2)
 									this.turn = light[1];
-								if(this.dbx == 4 || this.dbx == 5)
+								if(px == 4 || px == 5)
 									this.turn = light[2];
-								if(this.dbx == 7 || this.dbx == 8)
+								if(px == 7 || px == 8)
 									this.turn = light[3];
 							}
-							else if(this.dby == 7 || this.dby == 8)
+							else if(py == 7 || py == 8)
 							{
-								if(this.dbx == 1 || this.dbx == 2)
+								if(px == 1 || px == 2)
 									this.turn = light[4];
-								if(this.dbx == 4 || this.dbx == 5)
+								if(px == 4 || px == 5)
 									this.turn = light[5];
-								if(this.dbx == 7 || this.dbx == 8)
+								if(px == 7 || px == 8)
 									this.turn = light[6];
 							}
-							else if(this.dby == 12 || this.dby == 13)
+							else if(py == 12 || py == 13)
 							{
-								if(this.dbx == 1 || this.dbx == 2)
+								if(px == 1 || px == 2)
 									this.turn = light[7];
-								if(this.dbx == 4 || this.dbx == 5)
+								if(px == 4 || px == 5)
 									this.turn = light[8];
-								if(this.dbx == 7 || this.dbx == 8)
+								if(px == 7 || px == 8)
 									this.turn = light[9];
 							}
-							else if(this.dby == 17 || this.dby == 18)
+							else if(py == 17 || py == 18)
 							{
-								if(this.dbx == 1 || this.dbx == 2)
+								if(px == 1 || px == 2)
 									this.turn = light[10];
-								if(this.dbx == 4 || this.dbx == 5)
+								if(px == 4 || px == 5)
 									this.turn = light[11];
-								if(this.dbx == 7 || this.dbx == 8)
+								if(px == 7 || px == 8)
 									this.turn = light[12];
 							}
-
+							
+							//detail value while turn
 							if(this.turn % 2 == 1)
 								this.n = 0.95*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)
 								this.n = 1.9*road;
 						}
-
+						
+						//go before turn
 						if(this.turn != 0 && this.n > 0)
 						{
-							//alert("turn1");
 							this.n -= this.speed;
 							if(this.turn <= 3)
 								this.status = 1;
@@ -455,13 +416,12 @@
 							else if(this.turn <=12)
 								this.status = 4;
 						}
+						//turn
 						else if(this.turn != 0 && this.n < 0)
 						{
-							//alert("turn2");
 							this.n = 0;
-							//if(this.turn == 10)
-							//	this.y += 50;
 						}
+						//go after turn
 						else if(this.turn != 0 && this.n == 0)
 						{
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
@@ -474,32 +434,43 @@
 								this.status = 4;
 						}
 
+						//change value for actual move
+						//if this.status == 0 then stop
 						if(this.status == 1){ //up
 							this.sizex = 30;
 							this.sizey = 50;
+							
+							//check to not crush
 							if(this.warnu == 0)
 								this.y -= this.speed;
 						}
-						if(this.status == 2){ //right
+						else if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
+							
+							//check to not crush
 							if(this.warnr == 0)
 								this.x += this.speed;
 						}
-						if(this.status == 3){ //down
+						else if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
+							
+							//check to not crush
 							if(this.warnd == 0)
 								this.y += this.speed;
 						}
-						if(this.status == 4){ //left
+						else if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
+							
+							//check to not crush
 							if(this.warnl == 0)
 								this.x -= this.speed;
 						}
 					}
 					draw(){
+						//draw car
 						ctx.fillStyle = this.c;
 						ctx.fillRect(this.x, this.y, this.sizex/2, this.sizey/2);
 						ctx.fillRect(this.x, this.y, this.sizex/2, (this.sizey/2)*(-1));
@@ -507,98 +478,91 @@
 						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), (this.sizey/2)*(-1));
 					}
 					check(){
+						//check to not crush
 						//up
-						var imgData = ctx.getImageData(this.x, this.y-this.sizey/2-36, 1, 1);
-						var redcolor = imgData.data[0];
-						var greencolor = imgData.data[1];
-						var bluecolor = imgData.data[2];
-						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
+						var imgData = ctx.getImageData(this.x, this.y-this.sizey/2-35, 1, 1);
+						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
 							this.warnu = 1;
 						else	this.warnu = 0;
 
 						//right
-						imgData = ctx.getImageData(this.x+this.sizex/2+36, this.y, 1, 1);
-						redcolor = imgData.data[0];
-						greencolor = imgData.data[1];
-						bluecolor = imgData.data[2];
-						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
-							this.warnr = 1;
-						else 	this.warnr = 0;
+						imgData = ctx.getImageData(this.x+this.sizex/2+35, this.y, 1, 1);
+						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
+							this.warnu = 1;
+						else	this.warnu = 0;
 
 						//down
-						imgData = ctx.getImageData(this.x, this.y+this.sizey/2+36, 1, 1);
-						redcolor = imgData.data[0];
-						greencolor = imgData.data[1];
-						bluecolor = imgData.data[2];
-						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
-							this.warnd = 1;
-						else	this.warnd = 0;
+						imgData = ctx.getImageData(this.x, this.y+this.sizey/2+35, 1, 1);
+						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
+							this.warnu = 1;
+						else	this.warnu = 0;
 
 						//left
-						imgData = ctx.getImageData(this.x-this.sizex/2-36, this.y, 1, 1);
-						redcolor = imgData.data[0];
-						greencolor = imgData.data[1];
-						bluecolor = imgData.data[2];
-						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)
-							this.warnl = 1;
-						else	this.warnl = 0;
-
-						if(this.warnu+this.warnr+this.warnd+this.warnl > 0)
-							alert(this.num+":"+this.warnu+this.warnr+this.warnd+this.warnl);
+						imgData = ctx.getImageData(this.x-this.sizex/2-35, this.y, 1, 1);
+						if(imgData.data[0] == 9 && imgData.data[1] == 96 && imgData.data[2] == 47)
+							this.warnu = 1;
+						else	this.warnu = 0;
 					}
 
 				}
 				var park = 85;
 				init = () => { // 그려질 truck의 개체를 설정하는 함수
-					if(carnum >=1) {truck1 = new Truck(canvas.width-40, park)}
-					if(carnum >=2) {truck2 = new Truck(canvas.width-40, 2*park)}
-					if(carnum >=3) {truck3 = new Truck(canvas.width-40, 3*park)}
-					if(carnum >=4) {truck4 = new Truck(canvas.width-40, 4*park)}
-					if(carnum >=5) {truck5 = new Truck(canvas.width-40, 5*park)}
-					if(carnum >=6) {truck6 = new Truck(canvas.width-40, 6*park)}
-					if(carnum >=7) {truck7 = new Truck(canvas.width-40, 7*park)}
-					if(carnum >=8) {truck8 = new Truck(canvas.width-40, 8*park)}
-					if(carnum >=9) {truck9 = new Truck(canvas.width-40, 9*park)}
-					if(carnum >=10) {truck10 = new Truck(canvas.width-40, 10*park)}
+					if(carnum >= 1) {truck01 = new Truck(canvas.width-40,    park,  1)}
+					if(carnum >= 2) {truck02 = new Truck(canvas.width-40,  2*park,  2)}
+					if(carnum >= 3) {truck03 = new Truck(canvas.width-40,  3*park,  3)}
+					if(carnum >= 4) {truck04 = new Truck(canvas.width-40,  4*park,  4)}
+					if(carnum >= 5) {truck05 = new Truck(canvas.width-40,  5*park,  5)}
+					if(carnum >= 6) {truck06 = new Truck(canvas.width-40,  6*park,  6)}
+					if(carnum >= 7) {truck07 = new Truck(canvas.width-40,  7*park,  7)}
+					if(carnum >= 8) {truck08 = new Truck(canvas.width-40,  8*park,  8)}
+					if(carnum >= 9) {truck09 = new Truck(canvas.width-40,  9*park,  9)}
+					if(carnum >=10) {truck10 = new Truck(canvas.width-40, 10*park, 10)}
 					mysql_conn();
 				}
 
 				function animate(){
-
+					
 					drawMap();
-					if(carnum >=1)  { truck1.update(1);    truck1.draw();  }
-					if(carnum >=2)  { truck2.update(2);    truck2.draw();  }
-					if(carnum >=3)  { truck3.update(3);    truck3.draw();  }
-					if(carnum >=4)  { truck4.update(4);    truck4.draw();  }
-					if(carnum >=5)  { truck5.update(5);    truck5.draw();  }
-					if(carnum >=6)  { truck6.update(6);    truck6.draw();  }
-					if(carnum >=7)  { truck7.update(7);    truck7.draw();  }
-					if(carnum >=8)  { truck8.update(8);    truck8.draw();  }
-					if(carnum >=9)  { truck9.update(9);    truck9.draw();  }
-					if(carnum >=10) { truck10.update(10);  truck10.draw(); }
+					
+					//update and draw car
+					if(carnum >= 1) { truck01.update(); truck01.draw(); }
+					if(carnum >= 2) { truck02.update(); truck02.draw(); }
+					if(carnum >= 3) { truck03.update(); truck03.draw(); }
+					if(carnum >= 4) { truck04.update(); truck04.draw(); }
+					if(carnum >= 5) { truck05.update(); truck05.draw(); }
+					if(carnum >= 6) { truck06.update(); truck06.draw(); }
+					if(carnum >= 7) { truck07.update(); truck07.draw(); }
+					if(carnum >= 8) { truck08.update(); truck08.draw(); }
+					if(carnum >= 9) { truck09.update(); truck09.draw(); }
+					if(carnum >=10) { truck10.update(); truck10.draw(); }
 
 					//warning
-					if(carnum >=1)  { truck1.check();  }
-					if(carnum >=2)  { truck2.check();  }
-					if(carnum >=3)  { truck3.check();  }
-					if(carnum >=4)  { truck4.check();  }
-					if(carnum >=5)  { truck5.check();  }
-					if(carnum >=6)  { truck6.check();  }
-					if(carnum >=7)  { truck7.check();  }
-					if(carnum >=8)  { truck8.check();  }
-					if(carnum >=9)  { truck9.check();  }
+					if(carnum >= 1) { truck01.check(); }
+					if(carnum >= 2) { truck02.check(); }
+					if(carnum >= 3) { truck03.check(); }
+					if(carnum >= 4) { truck04.check(); }
+					if(carnum >= 5) { truck05.check(); }
+					if(carnum >= 6) { truck06.check(); }
+					if(carnum >= 7) { truck07.check(); }
+					if(carnum >= 8) { truck08.check(); }
+					if(carnum >= 9) { truck09.check(); }
 					if(carnum >=10) { truck10.check(); }
-
+					
+					//resize window
 					window.addEventListener('resize', function(){
 						canvas.width = window.innerWidth*0.695;
 						canvas.height = window.innerHeight*0.985;
 					})
+					
+					//animation and cancel animation
 					stopani = requestAnimationFrame(animate);
 				}
+				
 				init();
 				animate();
 			}
 
+			//stop animation
 			function stop(){
 				cancelAnimationFrame(stopani);
 			}
@@ -694,7 +658,9 @@
 								</tr>
 							</table>
 							<p class="output" id="outputt">no data input</p>
-							<p class="output" id="outputa">{"light01":"0"}</p>
+							<p class="output" id="outputa">
+								{"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
+							</p>
 						</div>
 					</div>
 				</td>
@@ -732,6 +698,7 @@
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
 		function mysql_conn(){
+			//get mysql data
 			$.ajax({
 				url: "getMysql.php",
 				type: "get",
@@ -760,137 +727,38 @@
 			// right 1 6 8
 			// down 5 9 10
 			// left 2 7 12
-			if(contact["light01"] == 0)
-				document.getElementById('l1').innerHTML = stay;
-			else if(contact["light01"] == 3 || contact["light01"] == 4 || contact["light01"] == 11 )
-				document.getElementById('l1').innerHTML = up;
-			else if(contact["light01"] == 1 || contact["light01"] == 6 || contact["light01"] == 8 )
-				document.getElementById('l1').innerHTML = right;
-			else if(contact["light01"] == 5 || contact["light01"] == 9 || contact["light01"] == 10 )
-				document.getElementById('l1').innerHTML = down;
-			else if(contact["light01"] == 2 || contact["light01"] == 7 || contact["light01"] == 12 )
-				document.getElementById('l1').innerHTML = left;
-
-			if(contact["light02"] == 0)
-				document.getElementById('l2').innerHTML = stay;
-			else if(contact["light02"] == 3 || contact["light02"] == 4 || contact["light02"] == 11 )
-				document.getElementById('l2').innerHTML = up;
-			else if(contact["light02"] == 1 || contact["light02"] == 6 || contact["light02"] == 8 )
-				document.getElementById('l2').innerHTML = right;
-			else if(contact["light02"] == 5 || contact["light02"] == 9 || contact["light02"] == 10 )
-				document.getElementById('l2').innerHTML = down;
-			else if(contact["light02"] == 2 || contact["light02"] == 7 || contact["light02"] == 12 )
-				document.getElementById('l2').innerHTML = left;
-
-			if(contact["light03"] == 0)
-				document.getElementById('l3').innerHTML = stay;
-			else if(contact["light03"] == 3 || contact["light03"] == 4 || contact["light03"] == 11 )
-				document.getElementById('l3').innerHTML = up;
-			else if(contact["light03"] == 1 || contact["light03"] == 6 || contact["light03"] == 8 )
-				document.getElementById('l3').innerHTML = right;
-			else if(contact["light03"] == 5 || contact["light03"] == 9 || contact["light03"] == 10 )
-				document.getElementById('l3').innerHTML = down;
-			else if(contact["light03"] == 2 || contact["light03"] == 7 || contact["light03"] == 12 )
-				document.getElementById('l3').innerHTML = left;
-
-			if(contact["light04"] == 0)
-				document.getElementById('l4').innerHTML = stay;
-			else if(contact["light04"] == 3 || contact["light04"] == 4 || contact["light04"] == 11 )
-				document.getElementById('l4').innerHTML = up;
-			else if(contact["light04"] == 1 || contact["light04"] == 6 || contact["light04"] == 8 )
-				document.getElementById('l4').innerHTML = right;
-			else if(contact["light04"] == 5 || contact["light04"] == 9 || contact["light04"] == 10 )
-				document.getElementById('l4').innerHTML = down;
-			else if(contact["light04"] == 2 || contact["light04"] == 7 || contact["light04"] == 12 )
-				document.getElementById('l4').innerHTML = left;
-
-			if(contact["light05"] == 0)
-				document.getElementById('l5').innerHTML = stay;
-			else if(contact["light05"] == 3 || contact["light05"] == 4 || contact["light05"] == 11 )
-				document.getElementById('l5').innerHTML = up;
-			else if(contact["light05"] == 1 || contact["light05"] == 6 || contact["light05"] == 8 )
-				document.getElementById('l5').innerHTML = right;
-			else if(contact["light05"] == 5 || contact["light05"] == 9 || contact["light05"] == 10 )
-				document.getElementById('l5').innerHTML = down;
-			else if(contact["light05"] == 2 || contact["light05"] == 7 || contact["light05"] == 12 )
-				document.getElementById('l5').innerHTML = left;
-
-			if(contact["light06"] == 0)
-				document.getElementById('l6').innerHTML = stay;
-			else if(contact["light06"] == 3 || contact["light06"] == 4 || contact["light06"] == 11 )
-				document.getElementById('l6').innerHTML = up;
-			else if(contact["light06"] == 1 || contact["light06"] == 6 || contact["light06"] == 8 )
-				document.getElementById('l6').innerHTML = right;
-			else if(contact["light06"] == 5 || contact["light06"] == 9 || contact["light06"] == 10 )
-				document.getElementById('l6').innerHTML = down;
-			else if(contact["light06"] == 2 || contact["light06"] == 7 || contact["light06"] == 12 )
-				document.getElementById('l6').innerHTML = left;
-
-			if(contact["light07"] == 0)
-				document.getElementById('l7').innerHTML = stay;
-			else if(contact["light07"] == 3 || contact["light07"] == 4 || contact["light07"] == 11 )
-				document.getElementById('l7').innerHTML = up;
-			else if(contact["light07"] == 1 || contact["light07"] == 6 || contact["light07"] == 8 )
-				document.getElementById('l7').innerHTML = right;
-			else if(contact["light07"] == 5 || contact["light07"] == 9 || contact["light07"] == 10 )
-				document.getElementById('l7').innerHTML = down;
-			else if(contact["light07"] == 2 || contact["light07"] == 7 || contact["light07"] == 12 )
-				document.getElementById('l7').innerHTML = left;
-
-			if(contact["light08"] == 0)
-				document.getElementById('l8').innerHTML = stay;
-			else if(contact["light08"] == 3 || contact["light08"] == 4 || contact["light08"] == 11 )
-				document.getElementById('l8').innerHTML = up;
-			else if(contact["light08"] == 1 || contact["light08"] == 6 || contact["light08"] == 8 )
-				document.getElementById('l8').innerHTML = right;
-			else if(contact["light08"] == 5 || contact["light08"] == 9 || contact["light08"] == 10 )
-				document.getElementById('l8').innerHTML = down;
-			else if(contact["light08"] == 2 || contact["light08"] == 7 || contact["light08"] == 12 )
-				document.getElementById('l8').innerHTML = left;
-
-			if(contact["light09"] == 0)
-				document.getElementById('l9').innerHTML = stay;
-			else if(contact["light09"] == 3 || contact["light09"] == 4 || contact["light09"] == 11 )
-				document.getElementById('l9').innerHTML = up;
-			else if(contact["light09"] == 1 || contact["light09"] == 6 || contact["light09"] == 8 )
-				document.getElementById('l9').innerHTML = right;
-			else if(contact["light09"] == 5 || contact["light09"] == 9 || contact["light09"] == 10 )
-				document.getElementById('l9').innerHTML = down;
-			else if(contact["light09"] == 2 || contact["light09"] == 7 || contact["light09"] == 12 )
-				document.getElementById('l9').innerHTML = left;
-
-			if(contact["light10"] == 0)
-				document.getElementById('l10').innerHTML = stay;
-			else if(contact["light10"] == 3 || contact["light10"] == 4 || contact["light10"] == 11 )
-				document.getElementById('l10').innerHTML = up;
-			else if(contact["light10"] == 1 || contact["light10"] == 6 || contact["light10"] == 8 )
-				document.getElementById('l10').innerHTML = right;
-			else if(contact["light10"] == 5 || contact["light10"] == 9 || contact["light10"] == 10 )
-				document.getElementById('l10').innerHTML = down;
-			else if(contact["light10"] == 2 || contact["light10"] == 7 || contact["light10"] == 12 )
-				document.getElementById('l10').innerHTML = left;
-
-			if(contact["light11"] == 0)
-				document.getElementById('l11').innerHTML = stay;
-			else if(contact["light11"] == 3 || contact["light11"] == 4 || contact["light11"] == 11 )
-				document.getElementById('l11').innerHTML = up;
-			else if(contact["light11"] == 1 || contact["light11"] == 6 || contact["light11"] == 8 )
-				document.getElementById('l11').innerHTML = right;
-			else if(contact["light11"] == 5 || contact["light11"] == 9 || contact["light11"] == 10 )
-				document.getElementById('l11').innerHTML = down;
-			else if(contact["light11"] == 2 || contact["light11"] == 7 || contact["light11"] == 12 )
-				document.getElementById('l11').innerHTML = left;
-
-			if(contact["light12"] == 0)
-				document.getElementById('l12').innerHTML = stay;
-			else if(contact["light12"] == 3 || contact["light12"] == 4 || contact["light12"] == 11 )
-				document.getElementById('l12').innerHTML = up;
-			else if(contact["light12"] == 1 || contact["light12"] == 6 || contact["light12"] == 8 )
-				document.getElementById('l12').innerHTML = right;
-			else if(contact["light12"] == 5 || contact["light12"] == 9 || contact["light12"] == 10 )
-				document.getElementById('l12').innerHTML = down;
-			else if(contact["light12"] == 2 || contact["light12"] == 7 || contact["light12"] == 12 )
-				document.getElementById('l12').innerHTML = left;
+			
+			var light = 0;
+			var l = "";
+			for(int i=1; i<=12; i++)
+			{
+				switch(i) {
+					case  1: light = contact["light01"]; l = 'l1' ; break;
+					case  2: light = contact["light02"]; l = 'l2' ; break;
+					case  3: light = contact["light03"]; l = 'l3' ; break;
+					case  4: light = contact["light04"]; l = 'l4' ; break;
+					case  5: light = contact["light05"]; l = 'l5' ; break;
+					case  6: light = contact["light06"]; l = 'l6' ; break;
+					case  7: light = contact["light07"]; l = 'l7' ; break;
+					case  8: light = contact["light08"]; l = 'l8' ; break;
+					case  9: light = contact["light09"]; l = 'l9' ; break;
+					case 10: light = contact["light10"]; l = 'l10'; break;
+					case 11: light = contact["light11"]; l = 'l11'; break;
+					case 12: light = contact["light12"]; l = 'l12'; break;
+					default:
+						alert("error");
+				}
+				if(light == 0)
+					document.getElementById(l).innerHTML = stay;
+				else if(light == 3 || light == 4 || light == 11 )
+					document.getElementById(l).innerHTML = up;
+				else if(light == 1 || light == 6 || light == 8 )
+					document.getElementById(l).innerHTML = right;
+				else if(light == 5 || light == 9 || light == 10 )
+					document.getElementById(l).innerHTML = down;
+				else if(light == 2 || light == 7 || light == 12 )
+					document.getElementById(l).innerHTML = left;
+			}
 		}
 
 		window.onload = drawMap();
