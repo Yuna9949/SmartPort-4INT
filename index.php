@@ -561,7 +561,7 @@
 				//init = () => { // 그려질 truck의 개체를 설정하는 함수
 				function first(){
 					alert("init");
-					if(carnum >= 1) {truck01 = new Truck(canvas.width-40,    park,  1)}
+					if(carnum >= 1) {alert("car");truck01 = new Truck(canvas.width-40,    park,  1)}
 					if(carnum >= 2) {truck02 = new Truck(canvas.width-40,  2*park,  2)}
 					if(carnum >= 3) {truck03 = new Truck(canvas.width-40,  3*park,  3)}
 					if(carnum >= 4) {truck04 = new Truck(canvas.width-40,  4*park,  4)}
@@ -572,6 +572,7 @@
 					if(carnum >= 9) {truck09 = new Truck(canvas.width-40,  9*park,  9)}
 					if(carnum >=10) {truck10 = new Truck(canvas.width-40, 10*park, 10)}
 					mysql_conn();
+					alert("init2");
 				}
 				function animate(){
 					alert("animate");
