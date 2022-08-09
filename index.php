@@ -269,8 +269,6 @@
 						var wth = canvas.width-8*road;
 						this.speed = parseInt(document.getElementById('speednum').value);
 						
-						//alert("x:"+this.x+" y:"+this.y);
-
 						//get section position
 						if     (this.x >= 2*road          && this.x < 3*road         ) {this.dbx = 1; this.tll = 2*road;	this.tlr = 3*road;	}
 						else if(this.x >= 3*road          && this.x < 4*road      +25) {this.dbx = 2; this.tll = 3*road; 	this.tlr = 4*road;	}
@@ -303,8 +301,8 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
-						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
-
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y);
+						
 						//set status if not turning
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
