@@ -269,7 +269,7 @@
 						var wth = canvas.width-8*road;
 						this.speed = parseInt(document.getElementById('speednum').value);
 						
-						alert("x:"+this.x+" y:"+this.y);
+						//alert("x:"+this.x+" y:"+this.y);
 
 						//get section position
 						if     (this.x >= 2*road          && this.x < 3*road         ) {this.dbx = 1; this.tll = 2*road;	this.tlr = 3*road;	}
