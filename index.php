@@ -550,8 +550,6 @@
 					if(numcar >= 9) { truck09 = new Truck(canvas.width-40,  9*park,  9) }
 					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10) }
 					mysql_conn();
-					var light = document.getElementById('outputt').innerHTML; 
-					document.getElementById('outputt').innerHTML = light+"1";
 					
 				}
 				function animate(){
@@ -591,13 +589,9 @@
 					//animation and cancel animation
 					stopani = requestAnimationFrame(animate);
 				}
-				
-				var light = document.getElementById('outputt').innerHTML.split(" "); 
-				alert(light[13]);
-				if(light[13] == 0){	
-					init();
-				}
-				
+				var nodata = document.getElementById('outputt').innerHTML;
+				alert(nodata);
+				if(nodata == "no data input") init();
 				animate();
 			}
 			
