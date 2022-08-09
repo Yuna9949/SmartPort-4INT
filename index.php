@@ -264,6 +264,7 @@
 						var wth = canvas.width-8*road;
 						this.speed = parseInt(numspd);
 
+						//get section position
 						if(this.x >= 2*road && this.x < 3*road)
 							this.dbx = 1;
 						else if(this.x >= 3*road && this.x < 4*road+15)
@@ -284,8 +285,6 @@
 							this.dbx = 9;
 						else	this.dbx = 0;
 						
-						alert("x:"+this.x+" y:"+this.y);
-
 						if(this.y >= road && this.y < 2*road)
 							this.dby = 1;
 						else if(this.y >= 2*road && this.y < 3*road)
@@ -326,9 +325,9 @@
 
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
-						var check = 0;
+						//set status if not turning
 						// 1 up  2 right  3 down  4 left
-
+						var check = 0;
 						if(this.dbx == 9)
 						{
 							if(this.y < 3*road-15)	this.status = 4;
@@ -336,76 +335,52 @@
 							this.turn = 0;
 							check = 900;
 						}
+						
 						if(this.dbx != 1 && this.dby == 1)
 						{
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
 						}
+						
 						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7)
 						{
-							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
+							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
+							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
+							   this.dby == 14 || this.dby == 15 || this.dby == 16)
 							{
-								check = 456;
-								this.turn = 0;
-								this.status = 3;
-							}
-							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
-							{
-								check = 91011;
-								this.turn = 0;
-								this.status = 3;
-							}
-							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
-							{
-								check = 141516;
+								check = 4914;
 								this.turn = 0;
 								this.status = 3;
 							}
 						}
-						if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
+						else if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8)
 						{
-							if(this.dby == 4 || this.dby == 5 || this.dby == 6)
+							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
+							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
+							   this.dby == 14 || this.dby == 15 || this.dby == 16)
 							{
-								check = 456;
-								this.turn = 0;
-								this.status = 1;
-							}
-							if(this.dby == 9 || this.dby == 10 || this.dby == 11)
-							{
-								check = 91011;
-								this.turn = 0;
-								this.status = 1;
-							}
-							if(this.dby == 14 || this.dby == 15 || this.dby == 16)
-							{
-								check = 141516;
+								check = 4914;
 								this.turn = 0;
 								this.status = 1;
 							}
 						}
-						if(this.dbx == 3 || this.dbx == 6)
+						else if(this.dbx == 3 || this.dbx == 6)
 						{
 							check = 36;
 							this.turn = 0;
-							if(this.dby == 2)	this.status = 4;
-							else if(this.dby == 6 || this.dby == 7)
-										this.status = 4;
-							else if(this.dby == 11 || this.dby == 12)
-										this.status = 4;
-							else if(this.dby == 16 || this.dby == 17)
-										this.status = 4;
+							if(this.dby ==  2 || this.dby ==  6 || this.dby ==  7 ||
+							   this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17)	
+								this.status = 4;
 
-							else if(this.dby == 3 || this.dby == 4)
-										this.status = 2;
-							else if(this.dby == 8 || this.dby == 9)
-										this.status = 2;
-							else if(this.dby == 13 || this.dby == 14)
-										this.status = 2;
-							else if(this.dby == 18)	this.status = 2;
+							else if(this.dby == 3 || this.dby == 4 || this.dby == 8 ||
+								this.dby == 9 || this.dby == 13 || this.dby == 14 || this.dby == 18)
+								this.status = 2;
 						}
+						
 						if(check == 0)		this.status = 0;
 
+						//set status while turning with traffic light
 						if(this.status == 0 && this.turn == 0)
 						{
 							// up right 1 / up left 2 / up up 3
@@ -413,6 +388,7 @@
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
 
+							//get mysql data
 							mysql_conn();
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							if(this.dby == 2 || this.dby == 3)
@@ -451,13 +427,15 @@
 								if(this.dbx == 7 || this.dbx == 8)
 									this.turn = light[12];
 							}
-
+							
+							//set detail value while turning
 							if(this.turn % 2 == 1)
 								this.n = 0.95*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)
 								this.n = 1.9*road;
 						}
 
+						//right before turn
 						if(this.turn != 0 && this.n > 0)
 						{
 							this.n -= this.speed;
@@ -470,10 +448,12 @@
 							else if(this.turn <=12)
 								this.status = 4;
 						}
+						//turn
 						else if(this.turn != 0 && this.n < 0)
 						{
 							this.n = 0;
 						}
+						//right after turn
 						else if(this.turn != 0 && this.n == 0)
 						{
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)
@@ -570,6 +550,9 @@
 					if(numcar >= 9) { truck09 = new Truck(canvas.width-40,  9*park,  9) }
 					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10) }
 					mysql_conn();
+					var light = document.getElementById('outputt').innerHTML; 
+					document.getElementById('outputt').innerHTML = light+"1";
+					
 				}
 				function animate(){
 
@@ -608,7 +591,13 @@
 					//animation and cancel animation
 					stopani = requestAnimationFrame(animate);
 				}
-				init();
+				
+				var light = document.getElementById('outputt').innerHTML.split(" "); 
+				alert(light[13]);
+				if(light[13] == 0){	
+					init();
+				}
+				
 				animate();
 			}
 			
@@ -763,7 +752,7 @@
 			status_list  +=  " " + contact["light05"] + " " + contact["light06"];
 			status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 			status_list  +=  " " + contact["light09"] + " " + contact["light10"];
-			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+			status_list  +=  " " + contact["light11"] + " " + contact["light12"]+"0";
 			document.getElementById('outputt').innerHTML = status_list;
 
 			var up		= "<img src='go.png'   width='45%' style='transform:rotate(270deg);'/>";
