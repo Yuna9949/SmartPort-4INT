@@ -264,6 +264,8 @@
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
 						this.speed = parseInt(numspd);
+						
+						alert("x:"+this.x+" y:"+this.y);
 
 						//get section position
 						if(this.x >= 2*road && this.x < 3*road)
@@ -322,7 +324,7 @@
 							this.dby = 17;
 						else if(this.y >= 21*road && this.y < 22*road)
 							this.dby = 18;
-						else 	this.dby = 0;
+						else 	this.dby = 0
 
 						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
