@@ -435,7 +435,7 @@
 									this.n = 0;
 									this.corner = 0;
 								}
-								alert(this.corner+" u:"+ud+" y:"+this.y);
+								//alert(this.corner+" u:"+ud+" y:"+this.y);
 							}
 
 							if(this.warnu == 0)
@@ -467,7 +467,7 @@
 									this.n = 0;
 									this.corner = 0;
 								}
-								alert(this.corner+" r:"+lr+" x:"+this.x);
+								//alert(this.corner+" r:"+lr+" x:"+this.x);
 							}
 							
 							if(this.warnr == 0)
@@ -499,7 +499,7 @@
 									this.n = 0;
 									this.corner = 0;
 								}
-								alert(this.corner+" d:"+ud+" y:"+this.y);
+								//alert(this.corner+" d:"+ud+" y:"+this.y);
 							}
 							
 							if(this.warnd == 0)
@@ -531,7 +531,7 @@
 									this.n = 0;
 									this.corner = 0;
 								}
-								alert(this.corner+" l:"+lr+" x:"+this.x);
+								//alert(this.corner+" l:"+lr+" x:"+this.x);
 							}
 							
 							if(this.warnl == 0)
