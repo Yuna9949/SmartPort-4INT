@@ -429,7 +429,7 @@
 								this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tlu+this.tld)/2 > this.y-this.speed) {
-								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed)-span);
+								//this.y += ((this.tlu+this.tld)/2-(this.y-this.speed)-span);
 								alert("w");
 							}
 							
@@ -446,7 +446,7 @@
 								this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tll+this.tlr)/2 < this.x+this.speed) {
-								this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2-span);
+								//this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2-span);
 								alert("w");
 							}
 							
@@ -463,7 +463,7 @@
 								this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tlu+this.tld)/2 < this.y+this.speed) {
-								this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2-span);
+								//this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2-span);
 								alert("w");
 							}
 							
@@ -480,7 +480,7 @@
 								this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tll+this.tlr)/2 > this.x-this.speed) {
-								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed)-2*span);
+								//this.x += ((this.tll+this.tlr)/2-(this.x-this.speed)-span);
 								alert("w");
 							}
 							
