@@ -413,32 +413,32 @@
 							this.sizey = 50;
 							if(this.warnu == 0)					this.y -= this.speed;
 							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
-								alert("u:"+(this.tlu-(this.y-this.sizey/2-this.speed)));}
+							   this.tlu > this.y-this.sizey/2-this.speed){		//this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
+								alert("u:"+this.tlu+" "+this.y);}
 						}
 						if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnr == 0)					this.x += this.speed;
 							if(this.turn == 0 && 
-							   this.tlr < this.x+this.sizex/2+this.speed){		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr+span);
-								alert("r:"+((this.x+this.sizex/2+this.speed)-this.tlr));}
+							   this.tlr < this.x+this.sizex/2+this.speed){		//this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr+span);
+								alert("r:"+this.tlr+" "+this.x);}
 						}
 						if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnd == 0)					this.y += this.speed;
 							if(this.turn == 0 && 
-							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld+span);
-								alert("d:"+((this.y+this.sizey/2+this.speed)-this.tld));}
+							   this.tld < this.y+this.sizey/2+this.speed){		//this.y -= ((this.y+this.sizey/2+this.speed)-this.tld+span);
+								alert("d:"+this.tld+" "+this.y);}
 						}
 						if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnl == 0)					this.x -= this.speed;
 							if(this.turn == 0 && this.dbx != 9 &&
-							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
-								alert("l:"+(this.tll-(this.x-this.sizex/2-this.speed)));}
+							   this.tll > this.x-this.sizex/2-this.speed){		//this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
+								alert("l:"+this.tll+" "+this.x);}
 						}
 					}
 					draw(){
