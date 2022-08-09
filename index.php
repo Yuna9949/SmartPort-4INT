@@ -303,7 +303,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
-						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						//set status if not turning
 						// 1 up  2 right  3 down  4 left
@@ -500,7 +500,7 @@
 							}
 							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
 								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
-								alert((this.tll+this.tlr)/2-(this.x-this.speed));
+								alert(this.tll+" "+this.x+" "+this.tlr+" "+(this.tll+this.tlr)/2-(this.x-this.speed));
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								this.n = 0;
 							}
