@@ -423,7 +423,7 @@
 								this.n = 0;
 								alert("1");
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road 
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tlu+this.tld)/2 > this.y-this.speed) {
 								this.y += ((this.tlu+this.tld)/2-this.y-this.speed);
 								this.n = 0;
@@ -448,7 +448,7 @@
 								this.n = 0;
 								alert("1");
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tll+this.tlr)/2 < this.x-this.speed) {
 								this.x -= (this.x-this.speed-(this.tll+this.tlr)/2);
 								this.n = 0;
@@ -473,7 +473,7 @@
 								this.n = 0;
 								alert("1");
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tlu+this.tld)/2 < this.y-this.speed) {
 								this.y -= (this.y-this.speed-(this.tlu+this.tld)/2);
 								this.n = 0;
@@ -498,7 +498,7 @@
 								this.n = 0;
 								alert("1");
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
 								this.x -= ((this.tll+this.tlr)/2-this.x-this.speed-span);
 								this.n = 0;
