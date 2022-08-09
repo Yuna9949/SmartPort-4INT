@@ -263,6 +263,8 @@
 						this.tlr = 0;
 						this.tld = 0;
 						this.tll = 0;
+						
+						this.ch = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -406,6 +408,7 @@
 							if(this.turn == 5 || this.turn == 9 || this.turn == 10)	this.status = 3;
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
+						if(this.ch == 1) alert("w");
 						
 						var span = 2;
 						if(this.status == 1){ //up
@@ -413,7 +416,8 @@
 							this.sizey = 50;
 							if(this.turn == 0 && 
 							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
-								alert("u:"+this.tlu+" "+this.y);}
+								this.ch = 1;}
+							else this.ch = 0;
 							if(this.warnu == 0)					this.y -= this.speed;
 						}
 						if(this.status == 2){ //right
@@ -421,7 +425,8 @@
 							this.sizey = 30;
 							if(this.turn == 0 && 
 							   this.tlr < this.x+this.sizex/2+this.speed){		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
-								alert("r:"+this.tlr+" "+this.x);}
+								this.ch = 1;}
+							else this.ch = 0;
 							if(this.warnr == 0)					this.x += this.speed;
 						}
 						if(this.status == 3){ //down
@@ -429,7 +434,8 @@
 							this.sizey = 50;
 							if(this.turn == 0 && 
 							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
-								alert("d:"+this.tld+" "+this.y);}
+								this.ch = 1;}
+							else this.ch = 0;
 							if(this.warnd == 0)					this.y += this.speed;
 						}
 						if(this.status == 4){ //left
@@ -437,7 +443,8 @@
 							this.sizey = 30;
 							if(this.turn == 0 && this.dbx != 9 &&
 							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
-								alert("l:"+this.tll+" "+this.x);}
+								this.ch = 1;}
+							else this.ch = 0;
 							if(this.warnl == 0)					this.x -= this.speed;
 						}
 					}
