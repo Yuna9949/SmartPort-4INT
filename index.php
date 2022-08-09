@@ -406,6 +406,8 @@
 							if(this.turn == 5 || this.turn == 9 || this.turn == 10)	this.status = 3;
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
+						
+						alert(this.tll+" "+this.x+" "+this.tlr+" / "+this.tlu+" "+this.y+" "+this.tld);
 
 						if(this.status == 1){ //up
 							this.sizex = 30;
