@@ -405,6 +405,12 @@
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
 						
+						if(this.turn !=0 && (this.tlu+this.tld)/2 - this.y < 0.5 && (this.tlu+this.tld)/2 - this.y > -0.5)
+							alert("ud");
+						
+						if(this.turn !=0 && (this.tll+this.tlr)/2 - this.x < 0.5 && (this.tll+this.tlr)/2 - this.x > -0.5)
+							alert("lr");
+						
 						var span = 2;
 						if(this.status == 1){ //up
 							//turn shape
@@ -412,7 +418,7 @@
 							this.sizey = 50;
 							
 							//set start line in front of traffic light
-							if(this.turn == 0 && this.tlu > this.y-this.sizey/2-this.speed) {
+							if(this.turn == 0 && this.dbx != 9 && this.tlu > this.y-this.sizey/2-this.speed) {
 								this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 							}
 							//set detail location while turing
@@ -426,7 +432,7 @@
 							this.sizey = 30;
 							
 							//set start line in front of traffic light
-							if(this.turn == 0 && this.tlr < this.x+this.sizex/2+this.speed) {
+							if(this.turn == 0 && this.dbx != 9 && this.tlr < this.x+this.sizex/2+this.speed) {
 								this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
 							}
 							//set detail location while turing
@@ -440,7 +446,7 @@
 							this.sizey = 50;
 							
 							//set start line in front of traffic light
-							if(this.turn == 0 && this.tld < this.y+this.sizey/2+this.speed) {
+							if(this.turn == 0 && this.dbx != 9 && this.tld < this.y+this.sizey/2+this.speed) {
 								this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 							}
 							//set detail location while turing
