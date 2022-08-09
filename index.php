@@ -503,6 +503,7 @@
 								alert(this.tll+" "+this.x+" "+this.tlr);
 								if((this.tll+this.tlr)/2 < this.x) {
 									this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
+									alert("do");
 									this.n = 0;
 								}
 							}
