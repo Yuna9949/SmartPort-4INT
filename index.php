@@ -280,7 +280,7 @@
 						else if(this.x >= 5*road+wth/2+25 && this.x < 4*road+wth  -25) {this.dbx = 6; this.tll = 5*road+wth/2; 	this.tlr = 4*road+wth;	}
 						else if(this.x >= 4*road+wth  -25 && this.x < 5*road+wth     ) {this.dbx = 7; this.tll = 4*road+wth; 	this.tlr = 5*road+wth;	}
 						else if(this.x >= 5*road+wth      && this.x < 6*road+wth     ) {this.dbx = 8; this.tll = 5*road+wth; 	this.tlr = 6*road+wth;	}
-						else if(this.x >= 6*road+wth				     ) {this.dbx = 9; this.tll = 6*road+wth; 				}
+						else if(this.x >= 6*road+wth				     ) {this.dbx = 9; this.tll = 6*road+wth; 	this.tlr = 9*road+wth;	}
 						else								this.dbx = 0;
 						
 						if     (this.y >=    road         && this.y <  2*road        ) {this.dby =  1; this.tlu =    road; this.tld =  2*road;}
@@ -413,25 +413,29 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnu == 0)					this.y -= this.speed;
-							//if(this.tlu > this.y-this.sizey/2-this.speed)		this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
+							if(this.turn == 0 && 
+							   this.tlu > this.y-this.sizey/2-this.speed)		this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
 						}
 						if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnr == 0)					this.x += this.speed;
-							//if(this.tlr < this.x+this.sizex/2+this.speed)		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
+							if(this.turn == 0 && 
+							   this.tlr < this.x+this.sizex/2+this.speed)		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
 						}
 						if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnd == 0)					this.y += this.speed;
-							//if(this.tld < this.y+this.sizey/2+this.speed)		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
+							if(this.turn == 0 && 
+							   this.tld < this.y+this.sizey/2+this.speed)		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
 						}
 						if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnl == 0)					this.x -= this.speed;
-							//if(this.tll > this.x-this.sizex/2-this.speed)		this.x += (this.tll-(this.x-this.sizex/2-this.speed));
+							if(this.turn == 0 && 
+							   this.tll > this.x-this.sizex/2-this.speed)		this.x += (this.tll-(this.x-this.sizex/2-this.speed));
 						}
 					}
 					draw(){
