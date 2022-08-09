@@ -86,6 +86,7 @@
 				position: absolute;
 				left: -1370px;
 				color: red;
+				visibility : hidden;
 			}
 			#outputt{
 				top: 210px;
