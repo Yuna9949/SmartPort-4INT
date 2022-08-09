@@ -412,7 +412,7 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
+							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)+span);
 								alert("u:"+this.tlu+" "+this.y);}
 							if(this.warnu == 0)					this.y -= this.speed;
 						}
@@ -428,7 +428,7 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.turn == 0 && 
-							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld+span);
+							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 								alert("d:"+this.tld+" "+this.y);}
 							if(this.warnd == 0)					this.y += this.speed;
 						}
