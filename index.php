@@ -431,9 +431,9 @@
 							
 							//set detail value while turning
 							if(this.turn % 2 == 1)
-								this.n = 1.2*road;
+								this.n = 1.1*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)
-								this.n = 1.95*road;
+								this.n = 2.0*road;
 						}
 
 						//right before turn
