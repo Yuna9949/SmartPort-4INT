@@ -480,7 +480,7 @@
 								this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tll+this.tlr)/2 > this.x-this.speed) {
-								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed)-span);
+								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed)-2*span);
 								alert("w");
 							}
 							
