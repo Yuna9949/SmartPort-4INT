@@ -269,7 +269,7 @@
 						var wth = canvas.width-8*road;
 						this.speed = parseInt(document.getElementById('speednum').value);
 						
-						//alert("x:"+this.x+" y:"+this.y);
+						alert("x:"+this.x+" y:"+this.y);
 
 						//get section position
 						if     (this.x >= 2*road          && this.x < 3*road         ) {this.dbx = 1; this.tll = 2*road;	this.tlr = 3*road;	}
@@ -407,12 +407,12 @@
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
 						
-						var span = 10;
+						var span = 0;
 						if(this.status == 1){ //up
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		//this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
+							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 								alert("u:"+this.tlu+" "+this.y);}
 							if(this.warnu == 0)					this.y -= this.speed;
 						}
@@ -420,7 +420,7 @@
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.turn == 0 && 
-							   this.tlr < this.x+this.sizex/2+this.speed){		//this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr+span);
+							   this.tlr < this.x+this.sizex/2+this.speed){		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr+span);
 								alert("r:"+this.tlr+" "+this.x);}
 							if(this.warnr == 0)					this.x += this.speed;
 						}
@@ -428,7 +428,7 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.turn == 0 && 
-							   this.tld < this.y+this.sizey/2+this.speed){		//this.y -= ((this.y+this.sizey/2+this.speed)-this.tld+span);
+							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld+span);
 								alert("d:"+this.tld+" "+this.y);}
 							if(this.warnd == 0)					this.y += this.speed;
 						}
@@ -436,7 +436,7 @@
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.turn == 0 && this.dbx != 9 &&
-							   this.tll > this.x-this.sizex/2-this.speed){		//this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
+							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 								alert("l:"+this.tll+" "+this.x);}
 							if(this.warnl == 0)					this.x -= this.speed;
 						}
