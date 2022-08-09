@@ -263,8 +263,6 @@
 						this.tlr = 0;
 						this.tld = 0;
 						this.tll = 0;
-						
-						this.ch = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -387,8 +385,8 @@
 							}
 							
 							//set detail value while turning
-							if(this.turn % 2 == 1)					this.n = 1.05*road;
-							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 2.0*road;
+							if(this.turn % 2 == 1)					this.n =   road;
+							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 2*road;
 						}
 
 						//right before turn
@@ -408,44 +406,107 @@
 							if(this.turn == 5 || this.turn == 9 || this.turn == 10)	this.status = 3;
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
-						if(this.ch == 1) alert("w");
 						
 						var span = 2;
 						if(this.status == 1){ //up
+							//turn shape
 							this.sizex = 30;
 							this.sizey = 50;
-							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
-								this.ch = 1;}
-							else this.ch = 0;
-							if(this.warnu == 0)					this.y -= this.speed;
+							
+							//set start line in front of traffic light
+							if(this.turn == 0 && this.tlu > this.y-this.sizey/2-this.speed) {
+								this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
+							}
+							//set detail location while turing
+							else if(this.turn % 2 == 1 && this.n > 0 && (this.tlu+this.tld)/2 > this.y-this.speed) {
+								this.y += ((this.tlu+this.tld)/2-this.y-this.speed);
+								this.n = 0;
+								alert("1");
+							}
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road 
+								&& (this.tlu+this.tld)/2 > this.y-this.speed) {
+								this.y += ((this.tlu+this.tld)/2-this.y-this.speed);
+								this.n = 0;
+								alert("0");
+							}
+							
+							if(this.warnu == 0)
+								this.y -= this.speed;
 						}
 						if(this.status == 2){ //right
+							//turn shape
 							this.sizex = 50;
 							this.sizey = 30;
-							if(this.turn == 0 && 
-							   this.tlr < this.x+this.sizex/2+this.speed){		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
-								this.ch = 1;}
-							else this.ch = 0;
-							if(this.warnr == 0)					this.x += this.speed;
+							
+							//set start line in front of traffic light
+							if(this.turn == 0 && this.tlr < this.x+this.sizex/2+this.speed) {
+								this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
+							}
+							//set detail location while turing
+							else if(this.turn % 2 == 1 && this.n > 0 && (this.tll+this.tlr)/2 < this.x-this.speed) {
+								this.x -= (this.x-this.speed-(this.tll+this.tlr)/2);
+								this.n = 0;
+								alert("1");
+							}
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road
+								&& (this.tll+this.tlr)/2 < this.x-this.speed) {
+								this.x -= (this.x-this.speed-(this.tll+this.tlr)/2);
+								this.n = 0;
+								alert("0");
+							}
+							
+							if(this.warnr == 0)
+								this.x += this.speed;
 						}
 						if(this.status == 3){ //down
+							//turn shape
 							this.sizex = 30;
 							this.sizey = 50;
-							if(this.turn == 0 && 
-							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
-								this.ch = 1;}
-							else this.ch = 0;
-							if(this.warnd == 0)					this.y += this.speed;
+							
+							//set start line in front of traffic light
+							if(this.turn == 0 && this.tld < this.y+this.sizey/2+this.speed) {
+								this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
+							}
+							//set detail location while turing
+							else if(this.turn % 2 == 1 && this.n > 0 && (this.tlu+this.tld)/2 < this.y-this.speed) {
+								this.y -= (this.y-this.speed-(this.tlu+this.tld)/2);
+								this.n = 0;
+								alert("1");
+							}
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road
+								&& (this.tlu+this.tld)/2 < this.y-this.speed) {
+								this.y -= (this.y-this.speed-(this.tlu+this.tld)/2);
+								this.n = 0;
+								alert("0");
+							}
+							
+							if(this.warnd == 0)
+								this.y += this.speed;
 						}
 						if(this.status == 4){ //left
+							//turn shape
 							this.sizex = 50;
 							this.sizey = 30;
-							if(this.turn == 0 && this.dbx != 9 &&
-							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
-								this.ch = 1;}
-							else this.ch = 0;
-							if(this.warnl == 0)					this.x -= this.speed;
+							
+							//set start line in front of traffic light
+							if(this.turn == 0 && this.dbx != 9 && this.tll > this.x-this.sizex/2-this.speed) {
+								this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
+							}
+							//set detail location while turing
+							else if(this.turn % 2 == 1 && this.n > 0 && (this.tll+this.tlr)/2 > this.x-this.speed) {
+								this.x -= ((this.tll+this.tlr)/2-this.x-this.speed-span);
+								this.n = 0;
+								alert("1");
+							}
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < road
+								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
+								this.x -= ((this.tll+this.tlr)/2-this.x-this.speed-span);
+								this.n = 0;
+								alert("0");
+							}
+							
+							if(this.warnl == 0)
+								this.x -= this.speed;
 						}
 					}
 					draw(){
