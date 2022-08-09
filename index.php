@@ -590,7 +590,6 @@
 					stopani = requestAnimationFrame(animate);
 				}
 				var nodata = document.getElementById('outputt').innerHTML;
-				alert(nodata);
 				if(nodata == "no data input") init();
 				animate();
 			}
