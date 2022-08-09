@@ -411,25 +411,25 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnu == 0)					this.y -= this.speed;
-							if(this.tlu > this.y-this.sizey/2-this.speed)		this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
+							//if(this.tlu > this.y-this.sizey/2-this.speed)		this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
 						}
 						if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnr == 0)					this.x += this.speed;
-							if(this.tlr < this.x+this.sizex/2+this.speed)		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
+							//if(this.tlr < this.x+this.sizex/2+this.speed)		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
 						}
 						if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnd == 0)					this.y += this.speed;
-							if(this.tld < this.y+this.sizey/2+this.speed)		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
+							//if(this.tld < this.y+this.sizey/2+this.speed)		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
 						}
 						if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnl == 0)					this.x -= this.speed;
-							if(this.tll > this.x-this.sizex/2-this.speed)		this.x += (this.tll-(this.x-this.sizex/2-this.speed));
+							//if(this.tll > this.x-this.sizex/2-this.speed)		this.x += (this.tll-(this.x-this.sizex/2-this.speed));
 						}
 					}
 					draw(){
