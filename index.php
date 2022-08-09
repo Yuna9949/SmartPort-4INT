@@ -224,8 +224,6 @@
 			var stopani = null;
 
 			function start() {
-				const numcar = document.getElementById('carnum').value;
-				const numspd = document.getElementById('speednum').value;
 				const canvas = document.getElementById('canvas');
 
 				var ctx = canvas.getContext('2d');
@@ -259,44 +257,50 @@
 						this.warnr = 0;
 						this.warnd = 0;
 						this.warnl = 0;
+						
+						//check where traffic light is
+						this.tlu = 0;
+						this.tlr = 0;
+						this.tld = 0;
+						this.tll = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
-						this.speed = parseInt(numspd);
+						this.speed = parseInt(document.getElementById('speednum').value);
 						
 						//alert("x:"+this.x+" y:"+this.y);
 
 						//get section position
-						if     (this.x >= 2*road          && this.x < 3*road         )	this.dbx = 1;
-						else if(this.x >= 3*road          && this.x < 4*road      +25)	this.dbx = 2;
-						else if(this.x >= 4*road      +25 && this.x < 3*road+wth/2-25)	this.dbx = 3;
-						else if(this.x >= 3*road+wth/2-25 && this.x < 4*road+wth/2   )	this.dbx = 4;
-						else if(this.x >= 4*road+wth/2    && this.x < 5*road+wth/2+25)	this.dbx = 5;
-						else if(this.x >= 5*road+wth/2+25 && this.x < 4*road+wth  -25)	this.dbx = 6;
-						else if(this.x >= 4*road+wth  -25 && this.x < 5*road+wth     )	this.dbx = 7;
-						else if(this.x >= 5*road+wth      && this.x < 6*road+wth     )	this.dbx = 8;
-						else if(this.x >= 6*road+wth				     )	this.dbx = 9;
+						if     (this.x >= 2*road          && this.x < 3*road         ) {this.dbx = 1; this.tll = 2*road;	this.tlr = 3*road;	}
+						else if(this.x >= 3*road          && this.x < 4*road      +25) {this.dbx = 2; this.tll = 3*road; 	this.tlr = 4*road;	}
+						else if(this.x >= 4*road      +25 && this.x < 3*road+wth/2-25) {this.dbx = 3; this.tll = 4*road; 	this.tlr = 3*road+wth/2;}
+						else if(this.x >= 3*road+wth/2-25 && this.x < 4*road+wth/2   ) {this.dbx = 4; this.tll = 3*road+wth/2; 	this.tlr = 4*road+wth/2;}
+						else if(this.x >= 4*road+wth/2    && this.x < 5*road+wth/2+25) {this.dbx = 5; this.tll = 4*road+wth/2; 	this.tlr = 5*road+wth/2;}
+						else if(this.x >= 5*road+wth/2+25 && this.x < 4*road+wth  -25) {this.dbx = 6; this.tll = 5*road+wth/2; 	this.tlr = 4*road+wth;	}
+						else if(this.x >= 4*road+wth  -25 && this.x < 5*road+wth     ) {this.dbx = 7; this.tll = 4*road+wth; 	this.tlr = 5*road+wth;	}
+						else if(this.x >= 5*road+wth      && this.x < 6*road+wth     ) {this.dbx = 8; this.tll = 5*road+wth; 	this.tlr = 6*road+wth;	}
+						else if(this.x >= 6*road+wth				     ) {this.dbx = 9; this.tll = 6*road+wth; 				}
 						else								this.dbx = 0;
 						
-						if     (this.y >=    road         && this.y <  2*road        )	this.dby = 1;
-						else if(this.y >=  2*road         && this.y <  3*road        )	this.dby = 2;
-						else if(this.y >=  3*road         && this.y <  4*road+25     )	this.dby = 3;
-						else if(this.y >=  4*road+25      && this.y <  5*road        )	this.dby = 4;
-						else if(this.y >=  5*road         && this.y <  7*road        )	this.dby = 5;
-						else if(this.y >=  7*road         && this.y <  8*road-25     )	this.dby = 6;
-						else if(this.y >=  8*road-25      && this.y <  9*road        )	this.dby = 7;
-						else if(this.y >=  9*road         && this.y < 10*road+25     )	this.dby = 8;
-						else if(this.y >= 10*road+25      && this.y < 11*road        )	this.dby = 9;
-						else if(this.y >= 11*road         && this.y < 13*road        )	this.dby = 10;
-						else if(this.y >= 13*road         && this.y < 14*road-25     )	this.dby = 11;
-						else if(this.y >= 14*road-25      && this.y < 15*road        )	this.dby = 12;
-						else if(this.y >= 15*road         && this.y < 16*road+25     )	this.dby = 13;
-						else if(this.y >= 16*road+25      && this.y < 17*road        )	this.dby = 14;
-						else if(this.y >= 17*road         && this.y < 19*road        )	this.dby = 15;
-						else if(this.y >= 19*road         && this.y < 20*road-25     )	this.dby = 16;
-						else if(this.y >= 20*road-25      && this.y < 21*road        )	this.dby = 17;
-						else if(this.y >= 21*road         && this.y < 22*road        )	this.dby = 18;
+						if     (this.y >=    road         && this.y <  2*road        ) {this.dby =  1; this.tlu =    road; this.tld =  2*road;}
+						else if(this.y >=  2*road         && this.y <  3*road        ) {this.dby =  2; this.tlu =  2*road; this.tld =  3*road;}
+						else if(this.y >=  3*road         && this.y <  4*road+25     ) {this.dby =  3; this.tlu =  3*road; this.tld =  4*road;}
+						else if(this.y >=  4*road+25      && this.y <  5*road        ) {this.dby =  4; this.tlu =  4*road; this.tld =  5*road;}
+						else if(this.y >=  5*road         && this.y <  7*road        ) {this.dby =  5; this.tlu =  5*road; this.tld =  7*road;}
+						else if(this.y >=  7*road         && this.y <  8*road-25     ) {this.dby =  6; this.tlu =  7*road; this.tld =  8*road;}
+						else if(this.y >=  8*road-25      && this.y <  9*road        ) {this.dby =  7; this.tlu =  8*road; this.tld =  9*road;}
+						else if(this.y >=  9*road         && this.y < 10*road+25     ) {this.dby =  8; this.tlu =  9*road; this.tld = 10*road;}
+						else if(this.y >= 10*road+25      && this.y < 11*road        ) {this.dby =  9; this.tlu = 10*road; this.tld = 11*road;}
+						else if(this.y >= 11*road         && this.y < 13*road        ) {this.dby = 10; this.tlu = 11*road; this.tld = 13*road;}
+						else if(this.y >= 13*road         && this.y < 14*road-25     ) {this.dby = 11; this.tlu = 13*road; this.tld = 14*road;}
+						else if(this.y >= 14*road-25      && this.y < 15*road        ) {this.dby = 12; this.tlu = 14*road; this.tld = 15*road;}
+						else if(this.y >= 15*road         && this.y < 16*road+25     ) {this.dby = 13; this.tlu = 15*road; this.tld = 16*road;}
+						else if(this.y >= 16*road+25      && this.y < 17*road        ) {this.dby = 14; this.tlu = 16*road; this.tld = 17*road;}
+						else if(this.y >= 17*road         && this.y < 19*road        ) {this.dby = 15; this.tlu = 17*road; this.tld = 19*road;}
+						else if(this.y >= 19*road         && this.y < 20*road-25     ) {this.dby = 16; this.tlu = 19*road; this.tld = 20*road;}
+						else if(this.y >= 20*road-25      && this.y < 21*road        ) {this.dby = 17; this.tlu = 20*road; this.tld = 21*road;}
+						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
@@ -407,21 +411,25 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnu == 0)					this.y -= this.speed;
+							if(this.tlu > this.y-this.sizey/2-this.speed)			this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
 						}
 						if(this.status == 2){ //right
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnr == 0)					this.x += this.speed;
+							if(this.tlr < this.x+this.sizex/2+this.speed)			this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
 						}
 						if(this.status == 3){ //down
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.warnd == 0)					this.y += this.speed;
+							if(this.tld < this.y+this.sizey/2+this.speed)			this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
 						}
 						if(this.status == 4){ //left
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.warnl == 0)					this.x -= this.speed;
+							if(this.tll > this.x-this.sizex/2-this.speed)			this.x += (this.tll-(this.x-this.sizex/2-this.speed));
 						}
 					}
 					draw(){
@@ -432,8 +440,10 @@
 						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), (this.sizey/2)*(-1));
 					}
 					check(){
+						var btwcar = 36;
+						
 						//up
-						var imgData    = ctx.getImageData(this.x, this.y-this.sizey/2-36, 1, 1);
+						var imgData    = ctx.getImageData(this.x, this.y-this.sizey/2-btwcar, 1, 1);
 						var redcolor   = imgData.data[0];
 						var greencolor = imgData.data[1];
 						var bluecolor  = imgData.data[2];
@@ -441,7 +451,7 @@
 						else								this.warnu = 0;
 						
 						//right
-						imgData    = ctx.getImageData(this.x+this.sizex/2+36, this.y, 1, 1);
+						imgData    = ctx.getImageData(this.x+this.sizex/2+btwcar, this.y, 1, 1);
 						redcolor   = imgData.data[0];
 						greencolor = imgData.data[1];
 						bluecolor  = imgData.data[2];
@@ -449,7 +459,7 @@
 						else 								this.warnr = 0;
 
 						//down
-						imgData    = ctx.getImageData(this.x, this.y+this.sizey/2+36, 1, 1);
+						imgData    = ctx.getImageData(this.x, this.y+this.sizey/2+btwcar, 1, 1);
 						redcolor   = imgData.data[0];
 						greencolor = imgData.data[1];
 						bluecolor  = imgData.data[2];
@@ -457,7 +467,7 @@
 						else								this.warnd = 0;
 
 						//left
-						imgData    = ctx.getImageData(this.x-this.sizex/2-36, this.y, 1, 1);
+						imgData    = ctx.getImageData(this.x-this.sizex/2-btwcar, this.y, 1, 1);
 						redcolor   = imgData.data[0];
 						greencolor = imgData.data[1];
 						bluecolor  = imgData.data[2];
@@ -466,8 +476,10 @@
 					}
 
 				}
+				
+				const numcar = document.getElementById('carnum').value;
 				var park = 85;	
-				init = () => { // 그려질 truck의 개체를 설정하는 함수
+				init = () => { // 그려질 truck의 개체를 설정하는 함수	
 					if(numcar >= 1) { truck01 = new Truck(canvas.width-40,    park,  1) }
 					if(numcar >= 2) { truck02 = new Truck(canvas.width-40,  2*park,  2) }
 					if(numcar >= 3) { truck03 = new Truck(canvas.width-40,  3*park,  3) }
@@ -479,10 +491,9 @@
 					if(numcar >= 9) { truck09 = new Truck(canvas.width-40,  9*park,  9) }
 					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10) }
 					mysql_conn();
-					
 				}
+				
 				function animate(){
-
 					drawMap();
 					
 					//update and draw
