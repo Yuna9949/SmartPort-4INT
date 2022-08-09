@@ -419,15 +419,15 @@
 							}
 							//set detail location while turing
 							else if(this.turn % 2 == 1 && this.n > 0 && (this.tlu+this.tld)/2 > this.y-this.speed) {
+								alert("1");
 								this.y += ((this.tlu+this.tld)/2-this.y-this.speed);
 								this.n = 0;
-								alert("1");
 							}
 							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tlu+this.tld)/2 > this.y-this.speed) {
+								alert(this.tlu+" "+this.y+" "+this.tld);
 								this.y += ((this.tlu+this.tld)/2-this.y-this.speed);
 								this.n = 0;
-								alert(this.tlu+" "+this.y+" "+this.tld);
 							}
 							
 							if(this.warnu == 0)
@@ -444,15 +444,15 @@
 							}
 							//set detail location while turing
 							else if(this.turn % 2 == 1 && this.n > 0 && (this.tll+this.tlr)/2 < this.x-this.speed) {
+								alert("1");
 								this.x -= (this.x-this.speed-(this.tll+this.tlr)/2);
 								this.n = 0;
-								alert("1");
 							}
 							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tll+this.tlr)/2 < this.x-this.speed) {
+								alert(this.tll+" "+this.x+" "+this.tlr);
 								this.x -= (this.x-this.speed-(this.tll+this.tlr)/2);
 								this.n = 0;
-								alert(this.tll+" "+this.x+" "+this.tlr);
 							}
 							
 							if(this.warnr == 0)
@@ -469,15 +469,15 @@
 							}
 							//set detail location while turing
 							else if(this.turn % 2 == 1 && this.n > 0 && (this.tlu+this.tld)/2 < this.y-this.speed) {
+								alert("1");
 								this.y -= (this.y-this.speed-(this.tlu+this.tld)/2);
 								this.n = 0;
-								alert("1");
 							}
 							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tlu+this.tld)/2 < this.y-this.speed) {
+								alert(this.tlu+" "+this.y+" "+this.tld);
 								this.y -= (this.y-this.speed-(this.tlu+this.tld)/2);
 								this.n = 0;
-								alert(this.tlu+" "+this.y+" "+this.tld);
 							}
 							
 							if(this.warnd == 0)
@@ -494,15 +494,15 @@
 							}
 							//set detail location while turing
 							else if(this.turn % 2 == 1 && this.n > 0 && (this.tll+this.tlr)/2 > this.x-this.speed) {
+								alert("1");
 								this.x -= ((this.tll+this.tlr)/2-this.x-this.speed-span);
 								this.n = 0;
-								alert("1");
 							}
 							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
 								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
+								alert(this.tll+" "+this.x+" "+this.tlr);
 								this.x -= ((this.tll+this.tlr)/2-this.x-this.speed-span);
 								this.n = 0;
-								alert(this.tll+" "+this.x+" "+this.tlr);
 							}
 							
 							if(this.warnl == 0)
