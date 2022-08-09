@@ -304,6 +304,11 @@
 						else if(this.y >= 20*road-25      && this.y < 21*road        ) {this.dby = 17; this.tlu = 20*road; this.tld = 21*road;}
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
+						
+						this.tlu += 1;
+						this.tlr += 1;
+						this.tld += 1;
+						this.tll += 1;
 
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
@@ -415,7 +420,7 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span+5);
+							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 								this.ch = 1;}
 							else this.ch = 0;
 							if(this.warnu == 0)					this.y -= this.speed;
@@ -442,7 +447,7 @@
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.turn == 0 && this.dbx != 9 &&
-							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span+5);
+							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 								this.ch = 1;}
 							else this.ch = 0;
 							if(this.warnl == 0)					this.x -= this.speed;
