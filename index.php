@@ -269,7 +269,7 @@
 						var wth = canvas.width-8*road;
 						this.speed = parseInt(document.getElementById('speednum').value);
 						
-						alert("x:"+this.x+" y:"+this.y);
+						//alert("x:"+this.x+" y:"+this.y);
 
 						//get section position
 						if     (this.x >= 2*road          && this.x < 3*road         ) {this.dbx = 1; this.tll = 2*road;	this.tlr = 3*road;	}
@@ -303,7 +303,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
-						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n);
 
 						//set status if not turning
 						// 1 up  2 right  3 down  4 left
@@ -423,9 +423,9 @@
 								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
 								this.n = 0;
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
 								&& (this.tlu+this.tld)/2 > this.y-this.speed) {
-								alert(this.tlu+" "+this.y+" "+this.tld);
+								alert("0");
 								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
 								this.n = 0;
 							}
@@ -448,9 +448,9 @@
 								this.x -= ((this.x-this.speed)-(this.tll+this.tlr)/2);
 								this.n = 0;
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
 								&& (this.tll+this.tlr)/2 < this.x-this.speed) {
-								alert(this.tll+" "+this.x+" "+this.tlr);
+								alert("0");
 								this.x -= ((this.x-this.speed)-(this.tll+this.tlr)/2);
 								this.n = 0;
 							}
@@ -473,9 +473,9 @@
 								this.y -= ((this.y-this.speed)-(this.tlu+this.tld)/2);
 								this.n = 0;
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
 								&& (this.tlu+this.tld)/2 < this.y-this.speed) {
-								alert(this.tlu+" "+this.y+" "+this.tld);
+								alert("0");
 								this.y -= ((this.y-this.speed)-(this.tlu+this.tld)/2);
 								this.n = 0;
 							}
@@ -498,9 +498,9 @@
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								this.n = 0;
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 30
+							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
 								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
-								alert((this.tll+this.tlr)/2-(this.x-this.speed));
+								alert("0");
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								this.n = 0;
 							}
