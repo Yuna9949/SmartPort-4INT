@@ -421,12 +421,6 @@
 								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
 								this.n = 0;
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
-								&& (this.tlu+this.tld)/2 > this.y-this.speed) {
-								alert((this.tlu+this.tld)/2-(this.y-this.speed));
-								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
-								this.n = 0;
-							}
 							
 							if(this.warnu == 0)
 								this.y -= this.speed;
@@ -443,12 +437,6 @@
 							//set detail location while turing
 							else if(this.turn % 2 == 1 && this.n > 0 && (this.tll+this.tlr)/2 < this.x-this.speed) {
 								alert("1");
-								this.x -= ((this.x-this.speed)-(this.tll+this.tlr)/2);
-								this.n = 0;
-							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
-								&& (this.tll+this.tlr)/2 < this.x-this.speed) {
-								alert((this.x-this.speed)-(this.tll+this.tlr)/2);
 								this.x -= ((this.x-this.speed)-(this.tll+this.tlr)/2);
 								this.n = 0;
 							}
@@ -471,12 +459,6 @@
 								this.y -= ((this.y-this.speed)-(this.tlu+this.tld)/2);
 								this.n = 0;
 							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
-								&& (this.tlu+this.tld)/2 < this.y-this.speed) {
-								alert((this.y-this.speed)-(this.tlu+this.tld)/2);
-								this.y -= ((this.y-this.speed)-(this.tlu+this.tld)/2);
-								this.n = 0;
-							}
 							
 							if(this.warnd == 0)
 								this.y += this.speed;
@@ -495,15 +477,6 @@
 								alert("1");
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								this.n = 0;
-							}
-							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
-								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
-								alert(this.tll+" "+this.x+" "+this.tlr);
-								if((this.tll+this.tlr)/2 < this.x) {
-									this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
-									alert("do");
-									this.n = 0;
-								}
 							}
 							
 							if(this.warnl == 0)
