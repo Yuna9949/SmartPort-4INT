@@ -251,6 +251,7 @@
 						this.dbx = 0;
 						this.dby = 0;
 						this.turn = 0;
+						this.corner = 0;
 						
 						//check not to crash
 						this.warnu = 0;
@@ -384,7 +385,7 @@
 							
 							//set detail value while turning
 							if(this.turn % 2 == 1)					this.n = 2*road;
-							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 2*road;
+							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 2.3*road;
 						}
 
 						//right before turn
@@ -424,6 +425,14 @@
 								this.n = 0;
 								//alert("u:"+ud+" y:"+this.y);
 							}
+							else if(this.turn % 2 == 0 && this.dbx != 9 && (this.tlu+this.tld)/2 > this.y-this.speed
+							       && this.turn != 0 && this.n > 0 && (this.tlu+this.tld)/2 <= this.y) {
+								if(this.corner == 1) {
+									this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
+									this.n = 0;
+								}
+								alert("u:"+ud+" y:"+this.y);
+							}
 
 							if(this.warnu == 0)
 								this.y -= this.speed;
@@ -443,6 +452,14 @@
 								this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2);
 								this.n = 0;
 								//alert("r:"+lr+" x:"+this.x);
+							}
+							else if(this.turn % 2 == 0 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed
+							       && this.turn != 0 && this.n > 0 && (this.tll+this.tlr)/2 >= this.x) {
+								if(this.corner == 1) {
+									this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2);
+									this.n = 0;
+								}
+								alert("r:"+lr+" x:"+this.x);
 							}
 							
 							if(this.warnr == 0)
@@ -464,6 +481,14 @@
 								this.n = 0;
 								//alert("d:"+ud+" y:"+this.y);
 							}
+							else if(this.turn % 2 == 0 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed
+							       && this.turn != 0 && this.n > 0 && (this.tlu+this.tld)/2 >= this.y) {
+								if(this.corner == 1) {
+									this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2);
+									this.n = 0;
+								}
+								alert("d:"+ud+" y:"+this.y);
+							}
 							
 							if(this.warnd == 0)
 								this.y += this.speed;
@@ -483,6 +508,14 @@
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								this.n = 0;
 								//alert("l:"+lr+" x:"+this.x);
+							}
+							else if(this.turn % 2 == 0 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed
+							       && this.turn != 0 && this.n > 0 && (this.tll+this.tlr)/2 <= this.x) {
+								if(this.corner == 1) {
+									this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
+									this.n = 0;
+								}
+								alert("l:"+lr+" x:"+this.x);
 							}
 							
 							if(this.warnl == 0)
