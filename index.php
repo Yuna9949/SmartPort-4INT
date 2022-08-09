@@ -416,7 +416,8 @@
 								this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 							}
 							//set detail location while turing
-							else if(this.turn != 0 && this.dbx != 9 && (this.tlu+this.tld)/2 > this.y-this.speed) {
+							else if(this.turn != 0 && this.dbx != 9 && (this.tlu+this.tld)/2 > this.y-this.speed
+							       && (this.tlu+this.tld)/2 <= this.y) {
 								//this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 								alert("u");
 							}
@@ -434,7 +435,8 @@
 								this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
 							}
 							//set detail location while turing							
-							else if(this.turn != 0 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed) {
+							else if(this.turn != 0 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed
+							       && (this.tll+this.tlr)/2 >= this.x) {
 								//this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
 								alert("r");
 							}
@@ -452,7 +454,8 @@
 								this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 							}
 							//set detail location while turing
-							else if(this.turn != 0 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed) {
+							else if(this.turn != 0 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed
+							       && (this.tlu+this.tld)/2 >= this.y) {
 								//this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 								alert("d");
 							}
@@ -470,7 +473,8 @@
 								this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 							}
 							//set detail location while turing
-							else if(this.turn != 0 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed) {
+							else if(this.turn != 0 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed
+							       && (this.tll+this.tlr)/2 <= this.x) {
 								//this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 								alert("l");
 							}
