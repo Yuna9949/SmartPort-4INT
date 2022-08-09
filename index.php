@@ -251,7 +251,6 @@
 						this.dbx = 0;
 						this.dby = 0;
 						this.turn = 0;
-						this.corner = 0;
 						
 						//check not to crash
 						this.warnu = 0;
@@ -430,12 +429,8 @@
 								this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tlu+this.tld)/2 > this.y-this.speed) {
-								if(this.corner == 1) {
-									this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
-									this.corner = 0;
-									alert("1:"+((this.tlu+this.tld)/2-(this.y-this.speed)));
-								}
-								else{	this.corner = 1;alert("0:"+((this.tlu+this.tld)/2-(this.y-this.speed)));}
+								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed)-span);
+								alert("w");
 							}
 							
 							if(this.warnu == 0)
@@ -451,13 +446,8 @@
 								this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tll+this.tlr)/2 < this.x+this.speed) {
-								if(this.corner == 1) {
-									this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2);
-									this.corner == 0;
-									alert("1:"+((this.x+this.speed)-(this.tll+this.tlr)/2));
-								}
-								else{	this.corner = 1;lert("0:"+((this.x+this.speed)-(this.tll+this.tlr)/2));}
-								
+								this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2-span);
+								alert("w");
 							}
 							
 							if(this.warnr == 0)
@@ -473,13 +463,8 @@
 								this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tlu+this.tld)/2 < this.y+this.speed) {
-								if(this.corner == 1) {
-									this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2);
-									this.corner == 0;
-									alert("1:"+((this.y+this.speed)-(this.tlu+this.tld)/2));
-								}
-								else{	this.corner = 1;alert("0:"+((this.y+this.speed)-(this.tlu+this.tld)/2));}
-								
+								this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2-span);
+								alert("w");
 							}
 							
 							if(this.warnd == 0)
@@ -495,13 +480,8 @@
 								this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 							//set detail location while turing
 							else if(this.n > 0 && (this.tll+this.tlr)/2 > this.x-this.speed) {
-								if(this.corner == 1) {
-									this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
-									this.corner == 0;
-									alert("1:"+((this.tll+this.tlr)/2-(this.x-this.speed)));
-								}
-								else{	this.corner = 1;alert("0:"+((this.tll+this.tlr)/2-(this.x-this.speed)));}
-								
+								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed)-span);
+								alert("w");
 							}
 							
 							if(this.warnl == 0)
