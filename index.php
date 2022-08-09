@@ -422,6 +422,7 @@
 							       && this.n > 0 && (this.tlu+this.tld)/2 <= this.y+1) {
 								alert("u:"+ud+" y:"+this.y);
 							}
+							else alert("nu:"+ud+" y:"+this.y);
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tlu+this.tld)/2 > this.y-this.speed
 							       && this.n > 0 && (this.tlu+this.tld)/2 <= this.y+1) {
 								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
@@ -446,6 +447,7 @@
 							       && this.n > 0 && (this.tll+this.tlr)/2 >= this.x-1) {
 								alert("r:"+lr+" x:"+this.x);
 							}
+							else alert("nr:"+lr+" x:"+this.x);
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed
 							       && this.n > 0 && (this.tll+this.tlr)/2 >= this.x-1) {
 								this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2);
@@ -470,6 +472,7 @@
 							       && this.n > 0 && (this.tlu+this.tld)/2 >= this.y-1) {
 								alert("d:"+ud+" y:"+this.y);
 							}
+							else alert("nd:"+ud+" y:"+this.y);
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed
 							       && this.n > 0 && (this.tlu+this.tld)/2 >= this.y-1) {
 								this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2);
@@ -494,6 +497,7 @@
 							       && this.n > 0 && (this.tll+this.tlr)/2 <= this.x+1) {
 								alert("l:"+lr+" x:"+this.x);
 							}
+							else alert("nl:"+lr+" x:"+this.x);
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed
 							       && this.n > 0 && (this.tll+this.tlr)/2 <= this.x+1) {
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
