@@ -436,7 +436,7 @@
 							}
 							//set detail location while turing
 							else if(this.turn % 2 == 1 && this.n > 0 && (this.tll+this.tlr)/2 < this.x-this.speed) {
-								alert("1");
+								alert(this.tll+" "+this.x+" "+this.tlr);
 								this.x -= ((this.x-this.speed)-(this.tll+this.tlr)/2);
 								this.n = 0;
 							}
