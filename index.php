@@ -262,7 +262,7 @@
 					update(){
 						var road = canvas.height*0.045;
 						var wth = canvas.width-8*road;
-						this.speed = numspd;
+						this.speed = parseInt(numspd);
 
 						if(this.x >= 2*road && this.x < 3*road)
 							this.dbx = 1;
