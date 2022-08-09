@@ -407,7 +407,7 @@
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
 						
-						var span = 0;
+						var span = 2;
 						if(this.status == 1){ //up
 							this.sizex = 30;
 							this.sizey = 50;
