@@ -413,7 +413,7 @@
 							this.sizey = 50;
 							if(this.warnu == 0)					this.y -= this.speed;
 							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		//this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
+							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed));
 								alert("u:"+(this.tlu-(this.y-this.sizey/2-this.speed)));}
 						}
 						if(this.status == 2){ //right
@@ -421,7 +421,7 @@
 							this.sizey = 30;
 							if(this.warnr == 0)					this.x += this.speed;
 							if(this.turn == 0 && 
-							   this.tlr < this.x+this.sizex/2+this.speed){		//this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
+							   this.tlr < this.x+this.sizex/2+this.speed){		this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr);
 								alert("r:"+((this.x+this.sizex/2+this.speed)-this.tlr));}
 						}
 						if(this.status == 3){ //down
@@ -429,7 +429,7 @@
 							this.sizey = 50;
 							if(this.warnd == 0)					this.y += this.speed;
 							if(this.turn == 0 && 
-							   this.tld < this.y+this.sizey/2+this.speed){		//this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
+							   this.tld < this.y+this.sizey/2+this.speed){		this.y -= ((this.y+this.sizey/2+this.speed)-this.tld);
 								alert("d:"+((this.y+this.sizey/2+this.speed)-this.tld));}
 						}
 						if(this.status == 4){ //left
@@ -437,7 +437,7 @@
 							this.sizey = 30;
 							if(this.warnl == 0)					this.x -= this.speed;
 							if(this.turn == 0 && 
-							   this.tll > this.x-this.sizex/2-this.speed){		//this.x += (this.tll-(this.x-this.sizex/2-this.speed));
+							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed));
 								alert("l:"+(this.tll-(this.x-this.sizex/2-this.speed)));}
 						}
 					}
