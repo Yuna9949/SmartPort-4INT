@@ -415,7 +415,7 @@
 							this.sizex = 30;
 							this.sizey = 50;
 							if(this.turn == 0 && 
-							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
+							   this.tlu > this.y-this.sizey/2-this.speed){		this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span+5);
 								this.ch = 1;}
 							else this.ch = 0;
 							if(this.warnu == 0)					this.y -= this.speed;
@@ -442,7 +442,7 @@
 							this.sizex = 50;
 							this.sizey = 30;
 							if(this.turn == 0 && this.dbx != 9 &&
-							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
+							   this.tll > this.x-this.sizex/2-this.speed){		this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span+5);
 								this.ch = 1;}
 							else this.ch = 0;
 							if(this.warnl == 0)					this.x -= this.speed;
