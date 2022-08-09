@@ -384,7 +384,7 @@
 							
 							//set detail value while turning
 							if(this.turn % 2 == 1)					this.n = 1.2*road;
-							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 2.2*road;
+							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 2.3*road;
 						}
 
 						//right before turn
@@ -449,6 +449,7 @@
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed
 							       && this.n > 0 && (this.tll+this.tlr)/2 >= this.x) {
 								this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2);
+								this.n = 0;
 								alert("r");
 							}
 							
@@ -473,6 +474,7 @@
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed
 							       && this.n > 0 && (this.tlu+this.tld)/2 >= this.y) {
 								this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2);
+								this.n = 0;
 								alert("d");
 							}
 							
@@ -497,6 +499,7 @@
 							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed
 							       && this.n > 0 && (this.tll+this.tlr)/2 <= this.x) {
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
+								this.n = 0;
 								alert("l");
 							}
 							
