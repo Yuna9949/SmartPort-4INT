@@ -500,7 +500,7 @@
 							}
 							else if(this.turn % 2 == 0 && this.turn != 0 && this.n > 0 && this.n < 20
 								&& (this.tll+this.tlr)/2 > this.x-this.speed) {
-								alert(this.tll+" "+this.x+" "+this.tlr+" "+(this.tll+this.tlr)/2-(this.x-this.speed));
+								alert(this.tll+" "+this.x+" "+this.tlr);
 								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								this.n = 0;
 							}
