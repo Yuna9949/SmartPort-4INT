@@ -417,8 +417,14 @@
 							}
 							//set detail location while turing
 							else if(this.turn != 0 && this.dbx != 9 && (this.tlu+this.tld)/2 > this.y-this.speed
-							       && (this.tlu+this.tld)/2 <= this.y) {
+							       && this.n > 0 && (this.tlu+this.tld)/2 <= this.y) {
 								//this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
+								alert("u");
+							}
+							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tlu+this.tld)/2 > this.y-this.speed
+							       && this.n > 0 && (this.tlu+this.tld)/2 <= this.y) {
+								this.y += ((this.tlu+this.tld)/2-(this.y-this.speed));
+								this.n = 0;
 								alert("u");
 							}
 
@@ -436,8 +442,13 @@
 							}
 							//set detail location while turing							
 							else if(this.turn != 0 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed
-							       && (this.tll+this.tlr)/2 >= this.x) {
+							       && this.n > 0 && (this.tll+this.tlr)/2 >= this.x) {
 								//this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
+								alert("r");
+							}
+							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tll+this.tlr)/2 < this.x+this.speed
+							       && this.n > 0 && (this.tll+this.tlr)/2 >= this.x) {
+								this.x -= ((this.x+this.speed)-(this.tll+this.tlr)/2);
 								alert("r");
 							}
 							
@@ -455,8 +466,13 @@
 							}
 							//set detail location while turing
 							else if(this.turn != 0 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed
-							       && (this.tlu+this.tld)/2 >= this.y) {
+							       && this.n > 0 && (this.tlu+this.tld)/2 >= this.y) {
 								//this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
+								alert("d");
+							}
+							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tlu+this.tld)/2 < this.y+this.speed
+							       && this.n > 0 && (this.tlu+this.tld)/2 >= this.y) {
+								this.y -= ((this.y+this.speed)-(this.tlu+this.tld)/2);
 								alert("d");
 							}
 							
@@ -474,8 +490,13 @@
 							}
 							//set detail location while turing
 							else if(this.turn != 0 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed
-							       && (this.tll+this.tlr)/2 <= this.x) {
+							       && this.n > 0 && (this.tll+this.tlr)/2 <= this.x) {
 								//this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
+								alert("l");
+							}
+							if(this.turn % 2 == 1 && this.dbx != 9 && (this.tll+this.tlr)/2 > this.x-this.speed
+							       && this.n > 0 && (this.tll+this.tlr)/2 <= this.x) {
+								this.x += ((this.tll+this.tlr)/2-(this.x-this.speed));
 								alert("l");
 							}
 							
