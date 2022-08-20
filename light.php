@@ -9,7 +9,7 @@
 					<table>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↰' onclick='mysql_conn("light01",2)'/></td>
+							<td><input type='button' value='↰' onclick='test("light01",2)'/></td>
 							<td><input type='button' value='↟' onclick='alert("up up 3")'/></td>
 							<td><input type='button' value='↱' onclick='alert("up right 1")'/></td>
 							<td></td>
@@ -140,6 +140,9 @@
 			</tr>
 		</table>	
 		<?php
+			function test($traffic, $light){
+				echo "<script>alert({$traffic})</script>";
+			}
 			function mysql_conn($traffic, $light){
 				$conn = mysqli_connect("localhost","root","smartport4int","test");
 
