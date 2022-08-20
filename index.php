@@ -596,7 +596,7 @@
 						else								this.warnl = 0;
 						
 						if(this.warnu || this.warnr || this.warnd || this.warnl) 
-							alert( this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
+							alert( this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
 					}
 
 				}
