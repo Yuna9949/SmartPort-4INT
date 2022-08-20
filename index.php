@@ -595,8 +595,8 @@
 						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.warnl = 1;
 						else								this.warnl = 0;
 						
-						if(this.warnu || this.warnr || this.warnd || this.warnl) 
-							alert( this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
+						//if(this.warnu || this.warnr || this.warnd || this.warnl) 
+							//alert( this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
 					}
 
 				}
