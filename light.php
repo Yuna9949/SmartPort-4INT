@@ -9,7 +9,7 @@
 					<table>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↰' onclick="mysql_conn('light01',2)"/></td>
+							<td><input type='button' value='↰' onclick='mysql_conn("light01",2)'/></td>
 							<td><input type='button' value='↟' onclick='alert("up up 3")'/></td>
 							<td><input type='button' value='↱' onclick='alert("up right 1")'/></td>
 							<td></td>
@@ -148,9 +148,9 @@
 
 					$row = mysqli_fetch_assoc($result);
 					
-					$row[$traffic] = $light;
+					//$row[$traffic] = $light;
 					
-					echo "<script>alert({$row[$traffic]})</script>";
+					echo "<script>alert({$row['light01']})</script>";
 		
 					$sql = "INSERT INTO traffic ( 
 							light01, light02, light03, 
