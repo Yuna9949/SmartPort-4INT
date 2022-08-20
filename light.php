@@ -1,12 +1,6 @@
-<?php
-	function test($val, $light){
-		echo "<script>alert('이건 {$val} 입니다.');</script>";
-	}
-?>
 <html>
 	<head>
 		<title>traffic light</title>
-		
 	</head>
 	<body>
 		<div id = "testbox"></div>
@@ -16,7 +10,7 @@
 					<table>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↰' onclick='test("light01",2)'/></td>
+							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
 							<td><input type='button' value='↟' onclick='alert("up up 3")'/></td>
 							<td><input type='button' value='↱' onclick='alert("up right 1")'/></td>
 							<td></td>
