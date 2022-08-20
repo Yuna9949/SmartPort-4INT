@@ -1,3 +1,9 @@
+<?php
+	function test($traffic, $light){
+		echo "<script>alert({$traffic})</script>";
+	}
+			
+?>
 <html>
 	<head>
 		<title>traffic light</title>
@@ -138,14 +144,7 @@
 				<td>2</td>
 				<td>3</td>
 			</tr>
-		</table>	
-		<?php
-			function test($traffic, $light){
-				echo "<script>alert({$traffic})</script>";
-			}
-			
-		?>
-			
+		</table>				
 	</body>
 </html>
 	
