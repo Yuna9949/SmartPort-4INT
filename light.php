@@ -1,14 +1,15 @@
 <?php
-	function test($traffic, $light){
-		echo "<script>alert({$traffic})</script>";
+	function test($val, $light){
+		echo "<script>alert('이건 {$val} 입니다.');</script>";
 	}
-			
 ?>
 <html>
 	<head>
 		<title>traffic light</title>
+		
 	</head>
 	<body>
+		<div id = "testbox"></div>
 		<table border = "1">
 			<tr>
 				<td>
