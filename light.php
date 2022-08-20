@@ -143,34 +143,7 @@
 			function test($traffic, $light){
 				echo "<script>alert({$traffic})</script>";
 			}
-			function mysql_conn($traffic, $light){
-				$conn = mysqli_connect("localhost","root","smartport4int","test");
-
-				$sql = "SELECT * FROM traffic ORDER BY time DESC";
-				$result = mysqli_query($conn, $sql);
-
-				$row = mysqli_fetch_assoc($result);
-					
-				//$row[$traffic] = $light;
-					
-				echo "<script>alert({$row['light01']})</script>";
-		
-				$sql = "INSERT INTO traffic ( 
-						light01, light02, light03, 
-						light04, light05, light06, 
-						light07, light08, light09, 
-						light10, light11, light12, time
-					) VALUES (
-						$row['light01'], $row['light02'], $row['light03'],
-						$row['light04'], $row['light05'], $row['light06'],
-						$row['light07'], $row['light08'], $row['light09'],
-						$row['light10'], $row['light11'], $row['light12'], NOW()
-					)"
-		
-				//mysqli_query($conn, $sql);
-				mysqli_free_result($result);
-				mysqli_close($conn);
-			}
+			
 		?>
 			
 	</body>
