@@ -125,7 +125,8 @@
 				</td>
 			</tr>
 			<tr>
-				<table>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -162,7 +163,9 @@
 							<td></td>
 						</tr>
 					</table>
-				<table>
+				</td>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -199,7 +202,9 @@
 							<td></td>
 						</tr>
 					</table>
-				<table>
+				</td>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -236,9 +241,11 @@
 							<td></td>
 						</tr>
 					</table>
+				</td>
 			</tr>
 			<tr>
-				<table>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -275,7 +282,9 @@
 							<td></td>
 						</tr>
 					</table>
-				<table>
+				</td>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -312,7 +321,9 @@
 							<td></td>
 						</tr>
 					</table>
-				<table>
+				</td>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -349,9 +360,11 @@
 							<td></td>
 						</tr>
 					</table>
+				</td>
 			</tr>
 			<tr>
-				<table>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -388,7 +401,9 @@
 							<td></td>
 						</tr>
 					</table>
-				<table>
+				</td>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -425,7 +440,9 @@
 							<td></td>
 						</tr>
 					</table>
-				<table>
+				</td>
+				<td>
+					<table>
 						<tr>
 							<td></td>
 							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
@@ -462,6 +479,7 @@
 							<td></td>
 						</tr>
 					</table>
+				</td>
 			</tr>
 		</table>				
 	</body>
