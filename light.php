@@ -1,7 +1,67 @@
-<?php
-	$conn = mysqli_connect("localhost","root","smartport4int","test");
-	$sql = "SELECT * FROM traffic ORDER BY time DESC";
-	$result = mysqli_query($conn, $sql);
-
-	$row = mysqli_fetch_assoc($result);
-?>
+<html>
+	<head>
+		<title>traffic light</title>
+	</head>
+	<body>
+		<table border = "1">
+			<tr>
+				<td>
+					<table border = "1">
+						<tr>
+							<td></td>
+							<td>↰</td>
+							<td>↟</td>
+							<td>↱</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>↻</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>⤴</td>
+						</tr>
+						<tr>
+							<td>↞</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>↠</td>
+						</tr>
+						<tr>
+							<td>↶</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>⤵</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>↲</td>
+							<td>↡</td>
+							<td>↳</td>
+							<td></td>
+						</tr>
+					</table>
+				</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			
+	</body>
+</html>
