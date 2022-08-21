@@ -538,21 +538,27 @@
 				url: "insertMysql.php",
 				type: "GET",
 				data: {
-					"t1": light[1],
-					"t2": light[2],
-					"t3": light[3],
-					"t4": light[4],
-					"t5": light[5],
-					"t6": light[6],
-					"t7": light[7],
-					"t8": light[8],
-					"t9": light[9],
-					"t10": light[10],
-					"t11": light[11],
-					"t12": light[12]
+					t1 : light[1],
+					t2 : light[2],
+					t3 : light[3],
+					t4 : light[4],
+					t5 : light[5],
+					t6 : light[6],
+					t7 : light[7],
+					t8 : light[8],
+					t9 : light[9],
+					t10: light[10],
+					t11: light[11],
+					t12: light[12]
+				},
+				dataType: 'json',
+				success: function(result) {
+					if(result.succcess == false) {
+						alert(result.msg);
+						return;
+					}
+					alert(result.data);
 				}
-			}).done(function(data){
-				alert("success");
 			});
 		}
 		
