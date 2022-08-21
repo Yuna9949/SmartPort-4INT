@@ -561,16 +561,16 @@
 					}
 					draw(){
 						ctx.fillStyle = this.c;
-						ctx.fillRect(this.x, this.y, this.sizex/2, this.sizey/2);
-						ctx.fillRect(this.x, this.y, this.sizex/2, (this.sizey/2)*(-1));
-						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), this.sizey/2);
-						ctx.fillRect(this.x, this.y, (this.sizex/2)*(-1), (this.sizey/2)*(-1));
+						ctx.fillRect(this.x-1, this.y-1, this.sizex/2+1, this.sizey/2+1);
+						ctx.fillRect(this.x-1, this.y+1, this.sizex/2+1, (this.sizey/2)*(-1)-1);
+						ctx.fillRect(this.x+1, this.y-1, (this.sizex/2)*(-1)-1, this.sizey/2+1);
+						ctx.fillRect(this.x+1, this.y+1, (this.sizex/2)*(-1)-1, (this.sizey/2)*(-1)-1);
 					}
 					check(){
 						var btwcar = 36;
 						
 						//up
-						var imgData    = ctx.getImageData(this.x+5, this.y-this.sizey/2-btwcar, 1, 1);
+						var imgData    = ctx.getImageData(this.x, this.y-this.sizey/2-btwcar, 1, 1);
 						var redcolor   = imgData.data[0];
 						var greencolor = imgData.data[1];
 						var bluecolor  = imgData.data[2];
@@ -578,7 +578,7 @@
 						else								this.warnu = 0;
 						
 						//right
-						imgData    = ctx.getImageData(this.x+this.sizex/2+btwcar, this.y+5, 1, 1);
+						imgData    = ctx.getImageData(this.x+this.sizex/2+btwcar, this.y, 1, 1);
 						redcolor   = imgData.data[0];
 						greencolor = imgData.data[1];
 						bluecolor  = imgData.data[2];
@@ -586,7 +586,7 @@
 						else 								this.warnr = 0;
 
 						//down
-						imgData    = ctx.getImageData(this.x+5, this.y+this.sizey/2+btwcar, 1, 1);
+						imgData    = ctx.getImageData(this.x, this.y+this.sizey/2+btwcar, 1, 1);
 						redcolor   = imgData.data[0];
 						greencolor = imgData.data[1];
 						bluecolor  = imgData.data[2];
@@ -594,7 +594,7 @@
 						else								this.warnd = 0;
 
 						//left
-						imgData    = ctx.getImageData(this.x-this.sizex/2-btwcar, this.y+5, 1, 1);
+						imgData    = ctx.getImageData(this.x-this.sizex/2-btwcar, this.y, 1, 1);
 						redcolor   = imgData.data[0];
 						greencolor = imgData.data[1];
 						bluecolor  = imgData.data[2];
