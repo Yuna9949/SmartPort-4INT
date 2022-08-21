@@ -13,6 +13,20 @@
     $t11 = $_GET['t11'];
     $t12 = $_GET['t12'];
     
+    $conn = mysqli_connect("localhost","root","smartport4int","test");
+    $sql = "INSERT INTO traffic (
+        light01, light02, light03, 
+        light04, light05, light06, 
+        light07, light08, light09, 
+        light10, light11, light12, time
+      ) VALUES (
+        '$t1', '$t2', '$t3',
+        '$t4', '$t5', '$t6',
+        '$t7', '$t8', '$t9', NOW()
+      );";
+    mysqli_query($conn, $sql);
+    mysqli_close($conn);
+    
     $result['success'] = true;
     $result['data'] = "success";
     
