@@ -2,6 +2,11 @@
 <html>
 	<head>
 		<title>traffic light</title>
+		<style>
+			table {
+				margin-left:auto;
+				margin-right:auto;
+			}
 	</head>
 	<body>
 		
