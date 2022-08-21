@@ -533,7 +533,20 @@
 		}
 		
 		function mysql_update(){
-			var light = document.getElementById('outputt').innerHTML.split(" "); 
+			var light = new Array(); 
+			light[1] = document.getElementById("t1").innerText;
+			light[2] = document.getElementById("t2").innerText;
+			light[3] = document.getElementById("t3").innerText;
+			light[4] = document.getElementById("t4").innerText;
+			light[5] = document.getElementById("t5").innerText;
+			light[6] = document.getElementById("t6").innerText;
+			light[7] = document.getElementById("t7").innerText;
+			light[8] = document.getElementById("t8").innerText;
+			light[9] = document.getElementById("t9").innerText;
+			light[10] = document.getElementById("t10").innerText;
+			light[11] = document.getElementById("t11").innerText;
+			light[12] = document.getElementById("t12").innerText;
+			
 			$.ajax({
 				url: "insertMysql.php",
 				type: "GET",
