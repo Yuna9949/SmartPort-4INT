@@ -532,7 +532,7 @@
 		
 		function status($traffic, $light){
 			document.getElementById($traffic).innerHTML = $light;
-			dobument.getElementById($traffic).style.backgroundColor = "red";
+			dobument.getElementById($traffic).getElementsByTagName("td").style.backgroundColor = "red";
 		}
 
 	</script>
