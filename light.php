@@ -446,9 +446,9 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↲' onclick='status("t12", 7)'/></td>
-							<td id="t12dw1"><input type='button' value='↡' onclick='status("t12", 9)'/></td>
-							<td><input type='button' value='↳' onclick='status("t12", 8)'/></td>
+							<td><input type='button' value='↲' onclick='status("t11", 7)'/></td>
+							<td id="t11dw1"><input type='button' value='↡' onclick='status("t11", 9)'/></td>
+							<td><input type='button' value='↳' onclick='status("t11", 8)'/></td>
 							<td></td>
 						</tr>
 					</table>
