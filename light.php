@@ -512,7 +512,7 @@
 				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
 				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
-				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+				status_list  +=  " " + contact["light11"] + " " + contact["light12"] + " " + 0;
 				
 				document.getElementById('outputt').innerHTML = status_list;
 				
