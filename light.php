@@ -9,8 +9,8 @@
 	</head>
 	<body>
 		<div id = "testbox">
-			<p id="outputt"></p>
-			<p id="outputa"></p>
+			<p id="outputt">t</p>
+			<p id="outputa">a</p>
 			<input type='button' value='mysql_conn' onclick='mysql_conn()'/>
 		</div>
 		
