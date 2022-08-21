@@ -538,7 +538,6 @@
 		}
 		
 		function status($traffic, $light){
-			alert($traffic+" "+$light);
 			document.getElementById($traffic).innerHTML = $light;
 			
 			// reset
@@ -551,6 +550,8 @@
 			document.getElementById($traffic+"l2").style.backgroundColor = "white";
 			document.getElementById($traffic+"r1").style.backgroundColor = "white";
 			document.getElementById($traffic+"r2").style.backgroundColor = "white";
+			
+			alert($traffic+" "+$light);
 			
 			if($light != 0){ // go
 			alert($traffic+" "+$light);
