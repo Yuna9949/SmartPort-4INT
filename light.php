@@ -538,7 +538,8 @@
 		}
 		
 		function status($traffic, $light){
-			document.getElementById($traffic).innerText = $light;
+			alert(typeof($light));
+			document.getElementById($traffic).innerText = $.trim($light);
 			
 			// reset
 			/*
