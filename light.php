@@ -504,26 +504,23 @@
 		function mysql_conn(){
 			alert("mysql_conn");
 			$.ajax({
-				method: "GET",
-				url: "getMysql.php",
-				dataType: 'json'
+				type: "GET",
+				url: "getMysql.php"
 			}).done(function(data){
 				$("#outputa").text(data);
+				var info_temp = document.getElementById('outputa').innerText;
+			
+				var contact = JSON.parse(info_temp);
+				var status_list = "light: "+contact["light01"]+" "+contact["light02"];
+				status_list  +=  " " + contact["light03"] + " " + contact["light04"];
+				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
+				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
+				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
+				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+
+				document.getElementById('outputt').innerHTML = status_list;
 			});
 			
-			
-			
-			var info_temp = document.getElementById('outputa').innerText;
-			
-			var contact = JSON.parse(info_temp);
-			var status_list = "light: "+contact["light01"]+" "+contact["light02"];
-			status_list  +=  " " + contact["light03"] + " " + contact["light04"];
-			status_list  +=  " " + contact["light05"] + " " + contact["light06"];
-			status_list  +=  " " + contact["light07"] + " " + contact["light08"];
-			status_list  +=  " " + contact["light09"] + " " + contact["light10"];
-			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
-
-			document.getElementById('outputt').innerHTML = status_list;
 		}
 
 	</script>
