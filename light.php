@@ -512,37 +512,29 @@
 				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
 				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
-				status_list  +=  " " + contact["light11"] + " " + contact["light12"] + " " + 0;
+				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 				
 				document.getElementById('outputt').innerHTML = status_list;
 				
-				default_set();
-			});
-			
-		}
-		function default_set(){
-			var light = document.getElementById('outputt').innerHTML.split(" "); 
-			
-			status("t1", light[1]);
-			status("t2", light[2]);
-			status("t3", light[3]);
-			status("t4", light[4]);
-			status("t5", light[5]);
-			status("t6", light[6]);
-			status("t7", light[7]);
-			status("t8", light[8]);
-			status("t9", light[9]);
-			status("t10", light[10]);
-			status("t11", light[11]);
-			status("t12", light[12]);
+				status("t1", contact["light01"]);
+				status("t2", contact["light02"]);
+				status("t3", contact["light03"]);
+				status("t4", contact["light04"]);
+				status("t5", contact["light05"]);
+				status("t6", contact["light06"]);
+				status("t7", contact["light07"]);
+				status("t8", contact["light08"]);
+				status("t9", contact["light09"]);
+				status("t10",contact["light10"]);
+				status("t11",contact["light11"]);
+				status("t12",contact["light12"]);
+			});	
 		}
 		
 		function status($traffic, $light){
-			alert(typeof($light));
 			document.getElementById($traffic).innerText = $.trim($light);
 			
 			// reset
-			/*
 			document.getElementById($traffic).style.backgroundColor = "white";
 			document.getElementById($traffic+"up1").style.backgroundColor = "white";
 			document.getElementById($traffic+"up2").style.backgroundColor = "white";
@@ -552,94 +544,78 @@
 			document.getElementById($traffic+"l2").style.backgroundColor = "white";
 			document.getElementById($traffic+"r1").style.backgroundColor = "white";
 			document.getElementById($traffic+"r2").style.backgroundColor = "white";
-			*/
-			
-			alert($traffic+" "+$light);
 			
 			if($light != 0){ // go
-			alert($traffic+" "+$light);
 				document.getElementById($traffic).style.backgroundColor = "gray";
 			}
 			
 			if($light == 1){ //up right
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 			}
 			else if($light == 2){ // up left
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 			}
 			else if($light == 3){ // up up
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 			}
 			else if($light == 4){ // right up
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 			}
 			else if($light == 5){ // right down
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 			}
 			else if($light == 6){ // right right
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 			}
 			else if($light == 7){ // down left
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 			}
 			else if($light == 8){ // down right
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 			}
 			else if($light == 9){ // down down
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 			}
 			else if($light == 10){ // left down
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 			}
 			else if($light == 11){ // left up
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 			}
 			else if($light == 12){ // left left
-			alert($traffic+" "+$light);
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
