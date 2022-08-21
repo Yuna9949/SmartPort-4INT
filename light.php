@@ -512,6 +512,8 @@
 				status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
 				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+				
+				alert(contact["light12"]+"A");
 
 				document.getElementById('outputt').innerHTML = status_list;
 				
