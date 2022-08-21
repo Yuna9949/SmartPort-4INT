@@ -29,11 +29,14 @@
     
     $result['success'] = true;
     $result['data'] = "success";
+    $result['msg'] = $t1;
+    $result['code']	= $t2;
     
   } catch(exception $e) {
     $result['success'] = false;
+    $result['data'] = "fail";
     $result['msg'] = $e->getMessage();
-    $result['code']		= $e->getCode();
+    $result['code']	= $e->getCode();
   } finally {
     echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
   } 
