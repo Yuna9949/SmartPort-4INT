@@ -22,7 +22,7 @@
 					<table>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↰' onclick='alert("up left 2")'/></td>
+							<td><input type='button' value='↰' onclick='status("t1", 2)'/></td>
 							<td><input type='button' value='↟' onclick='alert("up up 3")'/></td>
 							<td><input type='button' value='↱' onclick='alert("up right 1")'/></td>
 							<td></td>
@@ -37,7 +37,7 @@
 						<tr>
 							<td><input type='button' value='↞' onclick='alert("left left 12")'/></td>
 							<td></td>
-							<td>1</td>
+							<td id="t1">0</td>
 							<td></td>
 							<td><input type='button' value='↠' onclick='alert("right right 6")'/></td>
 						</tr>
@@ -516,6 +516,10 @@
 				document.getElementById('outputt').innerHTML = status_list;
 			});
 			
+		}
+		
+		function status($traffic, $light){
+			document.getElementById($traffic).innerHTML = $light;
 		}
 
 	</script>
