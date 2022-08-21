@@ -513,7 +513,9 @@
 				status_list  +=  " " + contact["light09"] + " " + contact["light10"];
 				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 				
-				alert(contact["light12"]+"A");
+				var twelve = contact["light12"];
+				
+				alert(twelve+"A");
 
 				document.getElementById('outputt').innerHTML = status_list;
 				
@@ -528,8 +530,8 @@
 				status("t9", contact["light09"]);
 				status("t10", contact["light10"]);
 				status("t11", contact["light11"]);
-				status("t12", contact["light12"]);
-				alert(contact["light12"]+"A");
+				status("t12", twelve);
+				alert(twelve+"A");
 			});
 			
 		}
