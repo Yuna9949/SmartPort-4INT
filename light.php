@@ -7,13 +7,13 @@
 		
 		<table border = "1">
 			<tr>
-				<td><p id="outputa">a</p></td>
+				<td colspan="3"><p id="outputa" style="word-break:break-all">a</p></td>
 			</tr>
 			<tr>
-				<td><p id="outputt">t</p></td>
+				<td colspan="3"><p id="outputt" style="word-break:break-all">t</p></td>
 			</tr>
 			<tr>
-				<td><input type='button' value='mysql_conn' onclick='conn()'/></td>
+				<td colspan="3"><input type='button' value='mysql_conn' onclick='conn()'/></td>
 			</tr>
 			<tr>
 				<td>
