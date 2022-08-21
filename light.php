@@ -6,6 +6,8 @@
 			table {
 				margin-left:auto;
 				margin-right:auto;
+				padding-left:auto;
+				padding-right:auto;
 			}
 		</style>
 	</head>
