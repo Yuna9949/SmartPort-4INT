@@ -7,7 +7,7 @@
 		
 		<table border = "1">
 			<tr>
-				<td colspan="3" id="outputa" width="500px" style="word-break:break-all">
+				<td colspan="3" id="outputa" width="500px" style="word-break:break-all" bgcolor="black">
 					a<br />a<br />a
 				</td>
 			</tr>
