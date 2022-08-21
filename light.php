@@ -3,7 +3,12 @@
 		<title>traffic light</title>
 	</head>
 	<body>
-		<div id = "testbox"></div>
+		<div id = "testbox">
+			<p id="outputt"></p>
+			<p id="outputa"></p>
+			<input type='button' value='mysql_conn' onclick='mysql_conn()'/>
+		</div>
+		
 		<table border = "1">
 			<tr>
 				<td>
@@ -481,8 +486,30 @@
 					</table>
 				</td>
 			</tr>
-		</table>				
+		</table>			
 	</body>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
+	<script>
+		function mysql_conn(){
+			$.ajax({
+				url: "getMysql.php",
+				type: "get",
+			}).done(function(data){
+				$("#outputa").text(data);
+			});
+
+			var info_temp = document.getElementById('outputa').innerText;
+
+			var contact = JSON.parse(info_temp);
+			var status_list = "light: "+contact["light01"]+" "+contact["light02"];
+			status_list  +=  " " + contact["light03"] + " " + contact["light04"];
+			status_list  +=  " " + contact["light05"] + " " + contact["light06"];
+			status_list  +=  " " + contact["light07"] + " " + contact["light08"];
+			status_list  +=  " " + contact["light09"] + " " + contact["light10"];
+			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+			document.getElementById('outputt').innerHTML = status_list;
+
+	</script>
 </html>
 	
 	
