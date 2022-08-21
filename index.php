@@ -440,7 +440,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.corner+" u:"+ud+" y:"+this.y);
+									alert(this.num +" : "+this.corner+" u:"+ud+" y:"+this.y);
 								}
 								
 								this.y -= this.speed;
@@ -477,7 +477,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.corner+" r:"+lr+" x:"+this.x);
+									alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
 								}
 
 								this.x += this.speed;
@@ -514,7 +514,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.corner+" d:"+ud+" y:"+this.y);
+									alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
 								}
 							
 								this.y += this.speed;
@@ -551,7 +551,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.corner+" l:"+lr+" x:"+this.x);
+									alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
 								}
 								
 								//move
