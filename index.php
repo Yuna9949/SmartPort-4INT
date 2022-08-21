@@ -408,9 +408,6 @@
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
 						
-						//if(this.warnu || this.warnr || this.warnd || this.warnl) 
-							//alert( "before"+this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
-						
 						var span = 2;
 						if(this.status == 1){ //up
 							//turn shape
@@ -428,7 +425,7 @@
 								       && this.n > 0 && ud <= this.y) {
 									this.y += (ud-(this.y-this.speed));
 									this.n = 0;
-									//alert("u:"+ud+" y:"+this.y);
+									alert("u:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud > this.y-this.speed
 								       && this.turn != 0 && this.n > 0 && ud <= this.y) {
@@ -465,7 +462,7 @@
 								       && this.n > 0 && lr >= this.x) {
 									this.x -= ((this.x+this.speed)-lr);
 									this.n = 0;
-									//alert("r:"+lr+" x:"+this.x);
+									alert("r:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr < this.x+this.speed
 								       && this.turn != 0 && this.n > 0 && lr >= this.x) {
@@ -502,7 +499,7 @@
 								       && this.n > 0 && ud >= this.y) {
 									this.y -= ((this.y+this.speed)-ud);
 									this.n = 0;
-									//alert("d:"+ud+" y:"+this.y);
+									alert("d:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud < this.y+this.speed
 								       && this.turn != 0 && this.n > 0 && ud >= this.y) {
@@ -539,7 +536,7 @@
 							       		&& this.n > 0 && lr <= this.x) {
 									this.x += (lr-(this.x-this.speed));
 									this.n = 0;
-									//alert("l:"+lr+" x:"+this.x);
+									alert("l:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr > this.x-this.speed
 							       		&& this.turn != 0 && this.n > 0 && lr <= this.x) {
