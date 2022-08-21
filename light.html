@@ -15,7 +15,8 @@
 				<td colspan="3" id="outputt" width="500px" style="word-break:break-all">t</td>
 			</tr>
 			<tr>
-				<td colspan="3"><input type='button' value='mysql_conn' onclick='mysql_conn()'/></td>
+				<td><input type='button' value='mysql_conn' onclick='mysql_conn()'/></td>
+				<td colspan="2"><input type='button' value='mysql_update' onclick='mysql_update()'/></td>
 			</tr>
 			<tr>
 				<td>
@@ -529,6 +530,30 @@
 				status("t11",contact["light11"]);
 				status("t12",contact["light12"]);
 			});	
+		}
+		
+		function mysql_update(){
+			var light = document.getElementById('outputt').innerHTML.split(" "); 
+			$.ajax({
+				url: "getMysql.php",
+				type: "GET",
+				data: {
+					"t1": light[1],
+					"t2": light[2],
+					"t3": light[3],
+					"t4": light[4],
+					"t5": light[5],
+					"t6": light[6],
+					"t7": light[7],
+					"t8": light[8],
+					"t9": light[9],
+					"t10": light[10],
+					"t11": light[11],
+					"t12": light[12]
+				}
+			}).done(function(data){
+				alert("success");
+			});
 		}
 		
 		function status($traffic, $light){
