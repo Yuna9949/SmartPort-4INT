@@ -521,7 +521,7 @@
 			
 		}
 		function default_set(){
-			var light = var light = document.getElementById('outputt').innerHTML.split(" "); 
+			var light = document.getElementById('outputt').innerHTML.split(" "); 
 			
 			status("t1", light[1]);
 			status("t2", light[2]);
