@@ -526,6 +526,7 @@
 				status("t10", contact["light10"]);
 				status("t11", contact["light11"]);
 				status("t12", contact["light12"]);
+				alert(contact["light12"]+"
 			});
 			
 		}
@@ -543,7 +544,6 @@
 			document.getElementById($traffic+"l2").style.backgroundColor = "white";
 			document.getElementById($traffic+"r1").style.backgroundColor = "white";
 			document.getElementById($traffic+"r2").style.backgroundColor = "white";
-			
 			
 			if($light != 0) // go
 				document.getElementById($traffic).style.backgroundColor = "gray";
