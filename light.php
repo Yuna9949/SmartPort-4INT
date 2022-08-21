@@ -526,7 +526,7 @@
 				status("t10", contact["light10"]);
 				status("t11", contact["light11"]);
 				status("t12", contact["light12"]);
-				alert(contact["light12"]+"
+				alert(contact["light12"]+"O");
 			});
 			
 		}
