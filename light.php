@@ -553,11 +553,10 @@
 				},
 				dataType: 'json',
 				success: function(result) {
-					if(result.succcess == false) {
-						alert(result.msg);
-						return;
-					}
+					alert(result.success);
 					alert(result.data);
+					alert(result.msg);
+					alert(result.code);
 				}
 			});
 		}
