@@ -507,19 +507,6 @@
 			
 				var contact = JSON.parse(info_temp);
 				
-				status("t1", contact["light01"]);
-				status("t2", contact["light02"]);
-				status("t3", contact["light03"]);
-				status("t4", contact["light04"]);
-				status("t5", contact["light05"]);
-				status("t6", contact["light06"]);
-				status("t7", contact["light07"]);
-				status("t8", contact["light08"]);
-				status("t9", contact["light09"]);
-				status("t10", contact["light10"]);
-				status("t11", contact["light11"]);
-				status("t12", contact["light12"]);
-				
 				var status_list = "light: "+contact["light01"]+" "+contact["light02"];
 				status_list  +=  " " + contact["light03"] + " " + contact["light04"];
 				status_list  +=  " " + contact["light05"] + " " + contact["light06"];
@@ -528,8 +515,26 @@
 				status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 				
 				document.getElementById('outputt').innerHTML = status_list;
+				
+				default_set();
 			});
 			
+		}
+		function default_set(){
+			var light = var light = document.getElementById('outputt').innerHTML.split(" "); 
+			
+			status("t1", light[1]);
+			status("t2", light[2]);
+			status("t3", light[3]);
+			status("t4", light[4]);
+			status("t5", light[5]);
+			status("t6", light[6]);
+			status("t7", light[7]);
+			status("t8", light[8]);
+			status("t9", light[9]);
+			status("t10", light[10]);
+			status("t11", light[11]);
+			status("t12", light[12]);
 		}
 		
 		function status($traffic, $light){
