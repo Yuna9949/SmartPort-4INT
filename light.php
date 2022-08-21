@@ -499,7 +499,6 @@
 	<script>
 		function conn(){
 			mysql_conn();
-			mysql_conn();
 		}
 		function mysql_conn(){
 			alert("mysql_conn");
