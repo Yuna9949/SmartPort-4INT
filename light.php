@@ -3,6 +3,7 @@
 		<title>traffic light</title>
 		<script>
 			function conn(){
+				alert("conn");
 				mysql_conn();
 			}
 		</script>
@@ -496,6 +497,7 @@
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
 		function mysql_conn(){
+			alert("mysql_conn");
 			$.ajax({
 				url: "getMysql.php",
 				type: "get",
