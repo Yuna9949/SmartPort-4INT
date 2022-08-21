@@ -408,8 +408,8 @@
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
 						
-						if(this.warnu || this.warnr || this.warnd || this.warnl) 
-							alert( "before"+this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
+						//if(this.warnu || this.warnr || this.warnd || this.warnl) 
+							//alert( "before"+this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
 						
 						var span = 2;
 						if(this.status == 1){ //up
