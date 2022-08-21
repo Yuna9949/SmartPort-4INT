@@ -532,6 +532,7 @@
 		}
 		
 		function status($traffic, $light){
+			alert($traffic+" "+$light);
 			document.getElementById($traffic).innerHTML = $light;
 			
 			// reset
