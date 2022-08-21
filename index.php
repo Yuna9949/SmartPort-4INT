@@ -408,6 +408,9 @@
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
 						
+						if(this.warnu || this.warnr || this.warnd || this.warnl) 
+							alert( "before"+this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
+						
 						var span = 2;
 						if(this.status == 1){ //up
 							//turn shape
@@ -443,6 +446,7 @@
 								this.y -= this.speed;
 							}
 						}
+						
 						if(this.status == 2){ //right
 							//turn shape
 							this.sizex = 50;
@@ -479,6 +483,7 @@
 								this.x += this.speed;
 							}
 						}
+						
 						if(this.status == 3){ //down
 							//turn shape
 							this.sizex = 30;
@@ -515,6 +520,7 @@
 								this.y += this.speed;
 							}
 						}
+						
 						if(this.status == 4){ //left
 							//turn shape
 							this.sizex = 50;
