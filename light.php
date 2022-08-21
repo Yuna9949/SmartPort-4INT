@@ -4,13 +4,17 @@
 		<title>traffic light</title>
 	</head>
 	<body>
-		<div id = "testbox">
-			<p id="outputt">t</p>
-			<p id="outputa">a</p>
-			<input type='button' value='mysql_conn' onclick='conn()'/>
-		</div>
 		
 		<table border = "1">
+			<tr>
+				<td><p id="outputa">a</p></td>
+			</tr>
+			<tr>
+				<td><p id="outputt">t</p></td>
+			</tr>
+			<tr>
+				<td><input type='button' value='mysql_conn' onclick='conn()'/></td>
+			</tr>
 			<tr>
 				<td>
 					<table>
