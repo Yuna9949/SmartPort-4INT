@@ -546,8 +546,10 @@
 			document.getElementById($traffic+"r1").style.backgroundColor = "white";
 			document.getElementById($traffic+"r2").style.backgroundColor = "white";
 			
-			if($light != 0) // go
+			if($light != 0){ // go
+			alert($traffic+" "+$light);
 				document.getElementById($traffic).style.backgroundColor = "gray";
+			}
 			
 			if($light == 1){ //up right
 			alert($traffic+" "+$light);
