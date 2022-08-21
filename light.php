@@ -1,12 +1,17 @@
 <html>
 	<head>
 		<title>traffic light</title>
+		<script>
+			function conn(){
+				mysql_conn();
+			}
+		</script>
 	</head>
 	<body>
 		<div id = "testbox">
 			<p id="outputt"></p>
 			<p id="outputa"></p>
-			<input type='button' value='mysql_conn' onclick='mysql_conn()'/>
+			<input type='button' value='mysql_conn' onclick='conn()'/>
 		</div>
 		
 		<table border = "1">
