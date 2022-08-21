@@ -6,18 +6,12 @@
 			content="width=device-width, height=device-height,
 			minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 		<title>traffic light</title>
-		<script type="text/javascript">
-			function conn(){
-				alert("conn");
-				mysql_conn();
-			}
-		</script>
 	</head>
 	<body>
 		<div id = "testbox">
 			<p id="outputt"></p>
 			<p id="outputa"></p>
-			<input type='button' value='mysql_conn' onclick='conn()'/>
+			<input type='button' value='mysql_conn' onclick='mysql_conn()'/>
 		</div>
 		
 		<table border = "1">
