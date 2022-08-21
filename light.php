@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport"
-			content="width=device-width, height=device-height,
-			minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 		<title>traffic light</title>
 	</head>
 	<body>
@@ -513,6 +509,7 @@
 			status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 			status_list  +=  " " + contact["light09"] + " " + contact["light10"];
 			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+			alert(status_list);
 			document.getElementById('outputt').innerHTML = status_list;
 		}
 
