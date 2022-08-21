@@ -756,7 +756,14 @@
 									<td>시작/일시정지</td>
 									<td style="border-left:1px solid #e7e7e7;"></td>
 									<td id="playbtn"><button id="play" class="btn" onclick="start()">►</button></td>
-									<td><button class="btn" id="pause" onclick="stop()"}>I I</button></td>
+									<td>
+										<table>
+											<tr>
+												<td><button class="btn" id="pause" onclick="stop()"}>I I</button></td>
+												<td><button class="btn" id="reload" onclick="window.location.reload()"}>⟳</button></td>
+											</tr>
+										</table>
+									</td>
 								</tr>
 							</table>
 							<p class="output" id="outputt">no data input</p>
