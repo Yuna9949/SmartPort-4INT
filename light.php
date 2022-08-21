@@ -538,9 +538,10 @@
 		}
 		
 		function status($traffic, $light){
-			document.getElementById($traffic).innerHTML = $light;
+			document.getElementById($traffic).innerText = $light;
 			
 			// reset
+			/*
 			document.getElementById($traffic).style.backgroundColor = "white";
 			document.getElementById($traffic+"up1").style.backgroundColor = "white";
 			document.getElementById($traffic+"up2").style.backgroundColor = "white";
@@ -550,6 +551,7 @@
 			document.getElementById($traffic+"l2").style.backgroundColor = "white";
 			document.getElementById($traffic+"r1").style.backgroundColor = "white";
 			document.getElementById($traffic+"r2").style.backgroundColor = "white";
+			*/
 			
 			alert($traffic+" "+$light);
 			
