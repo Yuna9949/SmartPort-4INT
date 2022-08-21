@@ -5,12 +5,12 @@
 	</head>
 	<body>
 		
-		<table border = "1">
+		<table border = "1" style="width:500px;">
 			<tr>
-				<td colspan="3" id="outputa" style="word-break:break-all">a</td>
+				<td colspan="3" id="outputa">a</td>
 			</tr>
 			<tr>
-				<td colspan="3" id="outputt" style="word-break:break-all">t</td>
+				<td colspan="3" id="outputt">t</td>
 			</tr>
 			<tr>
 				<td colspan="3"><input type='button' value='mysql_conn' onclick='conn()'/></td>
