@@ -4,10 +4,9 @@
 		<title>traffic light</title>
 		<style>
 			table {
-				margin-left:auto;
-				margin-right:auto;
-				padding-left:auto;
-				padding-right:auto;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
 			}
 		</style>
 	</head>
