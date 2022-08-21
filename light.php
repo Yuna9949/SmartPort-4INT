@@ -7,7 +7,7 @@
 		<div id = "testbox">
 			<p id="outputt">t</p>
 			<p id="outputa">a</p>
-			<input type='button' value='mysql_conn' onclick='mysql_conn()'/>
+			<input type='button' value='mysql_conn' onclick='conn()'/>
 		</div>
 		
 		<table border = "1">
@@ -491,6 +491,10 @@
 	</body>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
+		function conn(){
+			mysql_conn();
+			mysql_conn();
+		}
 		function mysql_conn(){
 			alert("mysql_conn");
 			$.ajax({
@@ -499,9 +503,9 @@
 			}).done(function(data){
 				$("#outputa").text(data);
 			});
-			alert("get a");
+			
 			var info_temp = document.getElementById('outputa').innerText;
-			alert("set t");
+			
 			var contact = JSON.parse(info_temp);
 			var status_list = "light: "+contact["light01"]+" "+contact["light02"];
 			status_list  +=  " " + contact["light03"] + " " + contact["light04"];
@@ -509,7 +513,7 @@
 			status_list  +=  " " + contact["light07"] + " " + contact["light08"];
 			status_list  +=  " " + contact["light09"] + " " + contact["light10"];
 			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
-			alert(status_list);
+
 			document.getElementById('outputt').innerHTML = status_list;
 		}
 
