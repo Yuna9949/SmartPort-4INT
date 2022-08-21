@@ -499,9 +499,9 @@
 			}).done(function(data){
 				$("#outputa").text(data);
 			});
-
+			alert("get a");
 			var info_temp = document.getElementById('outputa').innerText;
-
+			alert("set t");
 			var contact = JSON.parse(info_temp);
 			var status_list = "light: "+contact["light01"]+" "+contact["light02"];
 			status_list  +=  " " + contact["light03"] + " " + contact["light04"];
