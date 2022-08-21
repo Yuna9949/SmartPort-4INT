@@ -520,6 +520,7 @@
 			status_list  +=  " " + contact["light09"] + " " + contact["light10"];
 			status_list  +=  " " + contact["light11"] + " " + contact["light12"];
 			document.getElementById('outputt').innerHTML = status_list;
+		}
 
 	</script>
 </html>
