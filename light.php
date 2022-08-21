@@ -7,7 +7,9 @@
 		
 		<table border = "1">
 			<tr>
-				<td colspan="3" id="outputa" width="500px" style="word-break:break-all">a<br>a<br>a</td>
+				<td colspan="3" id="outputa" width="500px" style="word-break:break-all">
+					a<br />a<br />a
+				</td>
 			</tr>
 			<tr>
 				<td colspan="3" id="outputt" width="500px" style="word-break:break-all">t</td>
@@ -502,11 +504,14 @@
 		function mysql_conn(){
 			alert("mysql_conn");
 			$.ajax({
+				method: "GET",
 				url: "getMysql.php",
-				type: "get",
+				dataType: 'json'
 			}).done(function(data){
 				$("#outputa").text(data);
 			});
+			
+			
 			
 			var info_temp = document.getElementById('outputa').innerText;
 			
