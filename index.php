@@ -419,14 +419,14 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.tlu > this.y-this.sizey/2-this.speed) {
 									this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
-									alert(this.num +" : "+"stop"+" u:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"stop"+" u:"+ud+" y:"+this.y);
 								}
 								//set detail location while turing
 								if(this.turn % 2 == 1 && this.dbx != 9 && ud > this.y-this.speed
 								       && this.n > 0 && ud <= this.y) {
 									this.y += (ud-(this.y-this.speed));
 									this.n = 0;
-									alert(this.num +" : "+"in"+" u:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"in"+" u:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud > this.y-this.speed
 								       && this.turn != 0 && this.n > 0 && ud <= this.y) {
@@ -438,7 +438,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" u:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+this.corner+" u:"+ud+" y:"+this.y);
 								}
 								
 								this.y -= this.speed;
@@ -456,7 +456,7 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.tlr < this.x+this.sizex/2+this.speed) {
 									this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
-									alert(this.num +" : "+"stop"+" r:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+"stop"+" r:"+lr+" x:"+this.x);
 								}
 								
 								//set detail location while turing
@@ -464,7 +464,7 @@
 								       && this.n > 0 && lr >= this.x) {
 									this.x -= ((this.x+this.speed)-lr);
 									this.n = 0;
-									alert(this.num +" : "+"in"+" r:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+"in"+" r:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr < this.x+this.speed
 								       && this.turn != 0 && this.n > 0 && lr >= this.x) {
@@ -476,7 +476,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
 								}
 
 								this.x += this.speed;
@@ -494,7 +494,7 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.tld < this.y+this.sizey/2+this.speed) {
 									this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
-									alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
 								}
 								
 								//set detail location while turing
@@ -502,7 +502,7 @@
 								       && this.n > 0 && ud >= this.y) {
 									this.y -= ((this.y+this.speed)-ud);
 									this.n = 0;
-									alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud < this.y+this.speed
 								       && this.turn != 0 && this.n > 0 && ud >= this.y) {
@@ -514,7 +514,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
 								}
 							
 								this.y += this.speed;
@@ -532,7 +532,7 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.tll > this.x-this.sizex/2-this.speed) {
 									this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
-									alert(this.num +" : "+"stop"+" l:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+"stop"+" l:"+lr+" x:"+this.x);
 								}
 								
 								//set detail location while turing
@@ -540,7 +540,7 @@
 							       		&& this.n > 0 && lr <= this.x) {
 									this.x += (lr-(this.x-this.speed));
 									this.n = 0;
-									alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr > this.x-this.speed
 							       		&& this.turn != 0 && this.n > 0 && lr <= this.x) {
@@ -552,7 +552,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
 								}
 								
 								//move
