@@ -424,7 +424,7 @@
 							this.status = 1;
 							this.turn = 0;
 							check = 90031;
-							this.temp = (this.y-2*road+15)-this.speed+3;
+							this.temp = (this.y-2*road+15)-this.speed;
 						}
 						
 						if(this.crain == 2 && this.dby == 1 && this.x < wth/2-0.5*road) {
@@ -437,7 +437,7 @@
 							this.status = 1;
 							this.turn = 0;
 							check = 90021;
-							this.temp = (this.y-2*road+15)-this.speed+3;
+							this.temp = (this.y-2*road+15)-this.speed;
 						}
 						
 						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
@@ -450,7 +450,7 @@
 							this.status = 1;
 							this.turn = 0;
 							check = 90011;
-							this.temp = (this.y-2*road+15)-this.speed+3;
+							this.temp = (this.y-2*road+15)-this.speed;
 						}
 						
 						if(this.temp < this.speed && this.temp > 0) {
