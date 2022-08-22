@@ -334,6 +334,9 @@
 								this.crain = 1;
 								this.carry = 1;
 							}
+							else {
+								this.crain = 5;
+							}
 						}
 						
 						// 1 up  2 right  3 down  4 left
@@ -548,6 +551,8 @@
 						
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
+						
+						if(this.crain == 5)						this.status = 0;
 						
 						var span = 2;
 						if(this.status == 1){ //up
