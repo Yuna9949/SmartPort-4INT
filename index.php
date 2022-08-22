@@ -670,8 +670,7 @@
 							
 						}
 						//turn
-						else if(this.turn != 0 && this.n < 0) {				this.n = 0;
-										       				alert(this.num+": n=0");
+						else if(this.turn != 0 && this.n < 0) {				this.n = 0
 						}
 						//right after turn
 						else if(this.turn != 0 && this.n == 0) {
