@@ -371,7 +371,7 @@
 							this.carrying = 0;
 							this.turn = 0;
 							check = 918;
-							alert(this.x+" "+canvas.width-40);
+							alert(this.x+" "+(canvas.width-40));
 						}
 						else if(this.dbx == 9 && this.crain == 5) {
 							if(this.y-this.speed < 3*road-15) {
