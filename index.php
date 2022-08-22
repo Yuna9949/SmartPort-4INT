@@ -371,8 +371,8 @@
 							this.turn = 0;
 							check = 905;
 						}
-						else if(this.dbx == 9 && this.dby == 18) {
-							if(this.x < canvas.width-40){
+						else if(this.dbx == 9) {
+							if(this.x < canvas.width){
 								this.status = 2;
 							}
 							else 			this.status = 1;
@@ -380,11 +380,6 @@
 							this.carrying = 0;
 							this.turn = 0;
 							check = 918;
-						}
-						else if(this.dbx == 9) {
-							this.status = 1;
-							this.turn = 0;
-							check = 900;
 						}
 						else if(this.dbx != 1 && this.dbx != 2 && this.dbx != 4 && this.dbx != 5 && this.dby == 1) {
 							this.status = 4;
