@@ -349,11 +349,10 @@
 							this.turn = 0;
 							check = 903;
 						}
-						else if(this.dbx != 1 && this.dbx != 5 && this.dby == 1) {
+						else if(this.dbx != 1 && this.dbx != 5 && this.dbx != 4 && this.dby == 1) {
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
-							alert("1 "+this.turn);
 						}
 						
 						//set status if not turning
@@ -435,7 +434,6 @@
 							this.crain = 0;
 							this.carry = 10;
 						}
-						alert("2 "+this.turn);
 						
 						if(check == 0)							this.status = 0;
 
