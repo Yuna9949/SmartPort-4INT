@@ -412,13 +412,17 @@
 							this.status = 1;
 							this.turn = 0;
 							check = 90021;
-							alert(check);
 						}
 						
 						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9001;
+						}
+						else if(this.crain == 1 && this.x < 8*road && this.y > 2*road-15) {
+							this.status = 1;
+							this.turn = 0;
+							check = 90011;
 						}
 						   
                			//ctx.fillRect (6*road, 0, road, 2*road);
