@@ -498,6 +498,10 @@
 						
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
+						
+						if(this.x == lr)
+							alert("lr");
+						
 						var span = 2;
 						if(this.status == 1){ //up
 							//turn shape
