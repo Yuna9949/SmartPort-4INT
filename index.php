@@ -375,14 +375,11 @@
 							if(this.x < canvas.width-40){
 								this.status = 2;
 							}
-							else if(this.y-this.speed < 3*road-15) {
-								this.status = 0;
-								this.y -= this.y-3*road+16;
-							}
 							else 			this.status = 1;
+							this.carry = 0;
 							this.turn = 0;
 							check = 918;
-						
+						}
 						else if(this.dbx != 1 && this.dbx != 2 && this.dbx != 4 && this.dbx != 5 && this.dby == 1) {
 							this.status = 4;
 							this.turn = 0;
