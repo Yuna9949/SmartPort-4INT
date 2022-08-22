@@ -392,8 +392,12 @@
 							this.turn = 0;
 							check = 9004;
 							this.carrying += 1;
+						}
+						
+						if(this.carrying >= 100){
 							this.crain = 0;
 							this.carry = 10;
+							check = 100;
 						}
 						
 						if(this.crain == 3 && this.dby == 1 && this.x < 8.5*road+wth/2) {
