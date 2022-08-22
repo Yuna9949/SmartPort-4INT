@@ -427,7 +427,7 @@
 							check = 9003;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 3 && this.x < 10.5*road+wth/2 && this.y-this.speed > 2*road-15) {
+						else if(this.crain == 3 && this.x < 10.5*road+wth/2 && this.y-this.speed > 2*road-16) {
 							
 							imgData    = ctx.getImageData(this.x-this.sizex/2, this.y-road, 1, 1);
 							redcolor   = imgData.data[0];
@@ -467,7 +467,7 @@
 							
 							this.turn = 0;
 							check = 90031;
-							this.temp = (this.y-2*road+15)-this.speed;
+							this.temp = (this.y-2*road+16)-this.speed;
 						}
 						
 						if(this.crain == 2 && this.dby == 1 && this.x < wth/2-0.5*road) {
@@ -476,7 +476,7 @@
 							check = 9002;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 2 && this.x < wth/2+1.5*road && this.y-this.speed > 2*road-15) {
+						else if(this.crain == 2 && this.x < wth/2+1.5*road && this.y-this.speed > 2*road-16) {
 							
 							imgData    = ctx.getImageData(this.x-this.sizex/2, this.y-road, 1, 1);
 							redcolor   = imgData.data[0];
@@ -516,7 +516,7 @@
 							
 							this.turn = 0;
 							check = 90021;
-							this.temp = (this.y-2*road+15)-this.speed;
+							this.temp = (this.y-2*road+16)-this.speed;
 						}
 						
 						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
@@ -525,7 +525,7 @@
 							check = 9001;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 1 && this.x < 8.5*road && this.y-this.speed > 2*road-15) {
+						else if(this.crain == 1 && this.x < 8.5*road && this.y-this.speed > 2*road-16) {
 							
 							imgData    = ctx.getImageData(this.x-this.sizex/2, this.y-road, 1, 1);
 							redcolor   = imgData.data[0];
@@ -565,7 +565,7 @@
 							
 							this.turn = 0;
 							check = 90011;
-							this.temp = (this.y-2*road+15)-this.speed;
+							this.temp = (this.y-2*road+16)-this.speed;
 						}
 						
 						if(this.temp < this.speed && this.temp > 0) {
