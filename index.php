@@ -353,6 +353,7 @@
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
+							alert("1 "+this.turn);
 						}
 						
 						//set status if not turning
@@ -434,6 +435,7 @@
 							this.crain = 0;
 							this.carry = 10;
 						}
+						alert("2 "+this.turn);
 						
 						if(check == 0)							this.status = 0;
 
@@ -443,7 +445,6 @@
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
-							alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 
 							//get mysql data
 							mysql_conn();
@@ -476,6 +477,8 @@
 							//set detail value while turning
 							if(this.turn % 2 == 1)					this.n = 3*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 3*road;
+							
+							alert("3 "+this.turn);
 						}
 
 						//right before turn
