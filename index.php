@@ -413,7 +413,7 @@
 							this.status = 1;
 							this.turn = 0;
 							check = 90031;
-							this.temp = (this.y-2*road+15);
+							this.temp = (this.y-2*road+15)-this.speed;
 						}
 						else if(this.temp > 0) {
 							alert(" 1:"+this.y+" "+(2*road-15)+" "+this.temp);
