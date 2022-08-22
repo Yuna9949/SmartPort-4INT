@@ -311,6 +311,7 @@
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
+						/*
 						if(this.carry == 0) {
 							if(crain_status[4] == 0) {
 								crain_status[4] = this.num;
@@ -332,7 +333,7 @@
 								this.crain = 1;
 								this.carry = 1;
 							}
-						}
+						}*/
 						
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
@@ -387,7 +388,8 @@
 						}
 						
 						//set way to crain
-						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth && this.carrying < 100) {
+						/*
+						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth ){//&& this.carrying < 100) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9004;
@@ -432,6 +434,7 @@
 							this.turn = 0;
 							check = 90011;
 						}
+						*/
 						
 						if(check == 0)							this.status = 0;
 
