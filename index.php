@@ -341,6 +341,7 @@
 							alert(this.y+" "+(2*road-15)+" "+(this.y-2*road+15))
 							if(this.y-this.speed < 2*road-15) {
 								this.status = 4;
+								this.y -= (this.y-2*road+15);
 							}
 							else 				this.status = 1;
 							this.turn = 0;
