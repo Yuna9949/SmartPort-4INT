@@ -374,7 +374,7 @@
 						else if(this.dbx == 9) {
 							if(this.x < canvas.width){
 								this.stauts = 2;
-								alert(this.x);
+								alert(this.x+":"+canvas.width);
 							}
 							this.status = 1;
 							this.carry = 0;
