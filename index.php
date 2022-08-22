@@ -313,8 +313,7 @@
 							this.turn = 0;
 							check = 900;
 						}
-						
-						if(this.dbx != 1 && this.dby == 1) {
+						else if(this.dbx != 1 && this.dby == 1) {
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
