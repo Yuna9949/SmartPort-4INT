@@ -307,7 +307,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
-						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain"+this.crain+" carry"+this.carry);
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
 						if(this.carry == 0) {
@@ -359,10 +359,27 @@
 							this.turn = 0;
 							check = 9004;
 						}
+						
 						if(this.crain == 3 && this.dby == 1 && this.x < 7.5*road+wth/2) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9003;
+						}
+						else if(this.crain == 3 && this.x < 4.5*road+wth/4*3 && this.y > 2*road-15) {
+							this.status = 1;
+							this.turn = 0;
+							check = 90031;
+						}
+						
+						if(this.crain == 2 && this.dby == 1 && this.x < 0.5*road+wth/2) {
+							this.status = 0;
+							this.turn = 0;
+							check = 9002;
+						}
+						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
+							this.status = 0;
+							this.turn = 0;
+							check = 9001;
 						}
 						   
                			//ctx.fillRect (6*road, 0, road, 2*road);
