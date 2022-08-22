@@ -206,7 +206,7 @@
 
 				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,		 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		 1*road+2, 2*road-2, 3*road-2);
 				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		20*road+2, 2*road-2, 2*road-2);
