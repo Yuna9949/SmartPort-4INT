@@ -344,7 +344,7 @@
 							this.turn = 0;
 							check = 904;
 						}
-						else if(this.dbx == 9 && this.crain != 0) {
+						else if(this.dbx == 9)// && this.crain != 0) {
 							if(this.y < 3*road-15)	this.status = 4;
 							else 			this.status = 1;
 							this.turn = 0;
