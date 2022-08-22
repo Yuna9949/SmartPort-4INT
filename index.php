@@ -340,15 +340,16 @@
 						if(this.dbx == 9 && this.crain == 4) {
 							if(this.y-this.speed < 2*road-15) {
 								this.status = 4;
-								this.y -= (this.y-2*road+15);
+								this.y -= this.y-2*road+16;
 							}
 							else 				this.status = 1;
 							this.turn = 0;
 							check = 904;
 						}
 						else if(this.dbx == 9 && this.crain != 0) {
-							if(this.y < 3*road-15) {
+							if(this.y-this.speed < 3*road-15) {
 								this.status = 4;
+								this.y -= this.y-3*road+16;
 							}
 							else 			this.status = 1;
 							this.turn = 0;
