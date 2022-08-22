@@ -272,6 +272,8 @@
 						this.carrying = 0;
 						
 						this.temp = 0;
+						
+						this.front = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -595,6 +597,7 @@
 								}
 								
 								this.y -= this.speed;
+								this.front = 1;
 							}
 						}
 						
@@ -633,6 +636,7 @@
 								}
 
 								this.x += this.speed;
+								this.front = 2;
 							}
 						}
 						
@@ -671,6 +675,7 @@
 								}
 							
 								this.y += this.speed;
+								this.front = 3;
 							}
 						}
 						
@@ -710,6 +715,7 @@
 								
 								//move
 								this.x -= this.speed;
+								this.front = 4;
 							}
 						}
 					}
@@ -719,6 +725,22 @@
 						ctx.fillRect(this.x-1, this.y+1, this.sizex/2+1, (this.sizey/2)*(-1)-1);
 						ctx.fillRect(this.x+1, this.y-1, (this.sizex/2)*(-1)-1, this.sizey/2+1);
 						ctx.fillRect(this.x+1, this.y+1, (this.sizex/2)*(-1)-1, (this.sizey/2)*(-1)-1);
+						
+						if(this.num == 1)		ctx.fillStyle = this.c;
+						else if(this.num == 2)		ctx.fillStyle = this.c;
+						else if(this.num == 3)		ctx.fillStyle = this.c;
+						else if(this.num == 4)		ctx.fillStyle = this.c;
+						else if(this.num == 5)		ctx.fillStyle = this.c;
+						else if(this.num == 6)		ctx.fillStyle = this.c;
+						else if(this.num == 7)		ctx.fillStyle = this.c;
+						else if(this.num == 8)		ctx.fillStyle = this.c;
+						else if(this.num == 9)		ctx.fillStyle = this.c;
+						else if(this.num ==10)		ctx.fillStyle = this.c;
+						
+						if(this.front == 1)		ctx.fillRect(this.x, this.y-this.sizey/2, 4, 2);
+						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2, this.y, 2, 4);
+						else if(this.front == 3)	ctx.fillRect(this.x, this.y+this.sizey/2, 4, 2);
+						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2, this.y, 2, 2);
 					}
 					check(){
 						var btwcar = 36;
