@@ -430,7 +430,8 @@
 							check = 90011;
 						}
 						
-						if(this.carrying > 100) {
+						if(this.carrying > 300) {
+							crain_status[this.crain] = 0;
 							this.crain = 0;
 							this.carry = 10;
 						}
