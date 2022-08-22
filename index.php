@@ -372,10 +372,7 @@
 							check = 905;
 						}
 						else if(this.dbx == 9) {
-							if(this.x < canvas.width){
-								this.status = 2;
-							}
-							else 			this.status = 1;
+							this.status = 1;
 							this.carry = 0;
 							this.carrying = 0;
 							this.turn = 0;
