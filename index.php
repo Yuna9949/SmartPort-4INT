@@ -408,6 +408,11 @@
 								this.status = 2;
 						}
 						
+						var imgData = null;
+						var redcolor = null;
+						var greencolor = null;
+						var bluecolor = null;
+						
 						//set way to crain
 						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth) {
 							this.status = 0;
@@ -424,13 +429,20 @@
 						}
 						else if(this.crain == 3 && this.x < 10.5*road+wth/2 && this.y-this.speed > 2*road-15) {
 							
-							var imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
-							var redcolor   = imgData.data[0];
-							var greencolor = imgData.data[1];
-							var bluecolor  = imgData.data[2];
+							imgData    = ctx.getImageData(this.x-this.sizex/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
 							
 							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							else								this.status = 1;
+							
+							imgData    = ctx.getImageData(this.x+this.sizex/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							
 							this.turn = 0;
 							check = 90031;
@@ -445,13 +457,20 @@
 						}
 						else if(this.crain == 2 && this.x < wth/2+1.5*road && this.y-this.speed > 2*road-15) {
 							
-							var imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
-							var redcolor   = imgData.data[0];
-							var greencolor = imgData.data[1];
-							var bluecolor  = imgData.data[2];
+							imgData    = ctx.getImageData(this.x-this.sizex/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
 							
 							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							else								this.status = 1;
+							
+							imgData    = ctx.getImageData(this.x+this.sizex/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							
 							this.turn = 0;
 							check = 90021;
@@ -466,13 +485,20 @@
 						}
 						else if(this.crain == 1 && this.x < 8.5*road && this.y-this.speed > 2*road-15) {
 							
-							var imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
-							var redcolor   = imgData.data[0];
-							var greencolor = imgData.data[1];
-							var bluecolor  = imgData.data[2];
+							imgData    = ctx.getImageData(this.x-this.sizex/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
 							
 							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							else								this.status = 1;
+							
+							imgData    = ctx.getImageData(this.x+this.sizex/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							
 							this.turn = 0;
 							check = 90011;
