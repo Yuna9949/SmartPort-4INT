@@ -495,6 +495,10 @@
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
 						
+						if(this.n >= 42 && this.n <= 43){
+							this.n = 0;
+						}
+						
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
 						
