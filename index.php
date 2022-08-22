@@ -475,8 +475,6 @@
 							//set detail value while turning
 							if(this.turn % 2 == 1)					this.n = 3*road;
 							else if(this.turn % 2 == 0 && this.turn != 0)		this.n = 3*road;
-							
-							alert("3 "+this.turn);
 						}
 
 						//right before turn
@@ -491,16 +489,10 @@
 						else if(this.turn != 0 && this.n < 0)				this.n = 0;
 						//right after turn
 						else if(this.turn != 0 && this.n == 0) {
-							alert("wt");
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)	this.status = 1;
 							if(this.turn == 1 || this.turn == 6 || this.turn ==  8)	this.status = 2;
 							if(this.turn == 5 || this.turn == 9 || this.turn == 10)	this.status = 3;
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
-						}
-						
-						if(this.n <= 42 && this.n >= 30){
-							alert("sss");
-							this.n = 0;
 						}
 						
 						var ud = (this.tlu+this.tld)/2;
