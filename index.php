@@ -396,13 +396,11 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9003;
-							alert(check);
 						}
 						else if(this.crain == 3 && this.x < 9*road+wth/2 && this.y > 2*road-15) {
 							this.status = 1;
 							this.turn = 0;
 							check = 90031;
-							alert(check);
 						}
 						
 						if(this.crain == 2 && this.dby == 1 && this.x < 0.5*road+wth/2) {
@@ -410,6 +408,13 @@
 							this.turn = 0;
 							check = 9002;
 						}
+						else if(this.crain == 2 && this.dby == 1 && this.dbx == 5 && this.y > 2*road-15) {
+							this.status = 1;
+							this.turn = 0;
+							check = 90021;
+							alert(check);
+						}
+						
 						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
 							this.status = 0;
 							this.turn = 0;
