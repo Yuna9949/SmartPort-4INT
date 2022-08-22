@@ -333,9 +333,9 @@
 							}
 						}
 						
-						//set status if not turning
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
+						//set start position
 						if(this.dbx == 9 && this.crain == 4) {
 							if(this.y < 2*road-15)	this.status = 4;
 							else 			this.status = 1;
@@ -354,6 +354,38 @@
 							check = 101;
 						}
 						
+						//set status if not turning
+						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
+							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
+							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
+							   this.dby == 14 || this.dby == 15 || this.dby == 16) {
+								check = 4914;
+								this.turn = 0;
+								this.status = 3;
+							}
+						}
+						else if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
+							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
+							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
+							   this.dby == 14 || this.dby == 15 || this.dby == 16) {
+								check = 4914;
+								this.turn = 0;
+								this.status = 1;
+							}
+						}
+						else if(this.dbx == 3 || this.dbx == 6)	{
+							check = 36;
+							this.turn = 0;
+							if(this.dby ==  2 || this.dby ==  6 || this.dby ==  7 ||
+							   this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17)
+								this.status = 4;
+
+							else if(this.dby == 3 || this.dby == 4 || this.dby == 8 ||
+								this.dby == 9 || this.dby == 13 || this.dby == 14 || this.dby == 18)
+								this.status = 2;
+						}
+						
+						//set way to crain
 						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth) {
 							this.status = 0;
 							this.turn = 0;
@@ -388,36 +420,6 @@
                			//ctx.fillRect (wth/2, 0, road, 2*road);
                			//ctx.fillRect (7*road+wth/2, 0, road, 2*road);
                			//ctx.fillRect (road+wth, 0, road, 2*road);
-						
-						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
-							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
-							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
-							   this.dby == 14 || this.dby == 15 || this.dby == 16) {
-								check = 4914;
-								this.turn = 0;
-								this.status = 3;
-							}
-						}
-						else if(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
-							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
-							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
-							   this.dby == 14 || this.dby == 15 || this.dby == 16) {
-								check = 4914;
-								this.turn = 0;
-								this.status = 1;
-							}
-						}
-						else if(this.dbx == 3 || this.dbx == 6)	{
-							check = 36;
-							this.turn = 0;
-							if(this.dby ==  2 || this.dby ==  6 || this.dby ==  7 ||
-							   this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17)
-								this.status = 4;
-
-							else if(this.dby == 3 || this.dby == 4 || this.dby == 8 ||
-								this.dby == 9 || this.dby == 13 || this.dby == 14 || this.dby == 18)
-								this.status = 2;
-						}
 						
 						if(check == 0)							this.status = 0;
 
