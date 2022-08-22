@@ -344,12 +344,22 @@
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
 						//set start position
-						if(this.dbx == 9 && this.crain == 4) {
+						if(this.dbx == 9 && this.dby == 18) {
+							if(this.x < canvas.width-40){
+								this.stauts = 2;
+							}
+							else			this.status = 1;
+							this.carry = 0;
+							this.carrying = 0;
+							this.turn = 0;
+							check = 918;
+						}
+						else if(this.dbx == 9 && this.crain == 4) {
 							if(this.y-this.speed < 2*road-15) {
 								this.status = 4;
 								this.y -= this.y-2*road+16;
 							}
-							else 				this.status = 1;
+							else 			this.status = 1;
 							this.turn = 0;
 							check = 904;
 						}
@@ -361,17 +371,6 @@
 							else 			this.status = 1;
 							this.turn = 0;
 							check = 903;
-						}
-						else if(this.dbx == 9 && this.dby == 18) {
-							if(this.x < canvas.width-40){
-								this.stauts = 2;
-							}
-							else			this.status = 1;
-							this.carry = 0;
-							this.carrying = 0;
-							this.turn = 0;
-							check = 918;
-							alert(this.x+" "+(canvas.width-40));
 						}
 						else if(this.dbx == 9 && this.crain == 5) {
 							if(this.y-this.speed < 3*road-15) {
