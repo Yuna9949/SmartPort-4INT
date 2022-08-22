@@ -449,6 +449,7 @@
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							if(this.dby == 1) {
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[2];
+								alert("whattttttt");
 							}
 							if(this.dby ==  2 || this.dby ==  3) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
