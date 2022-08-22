@@ -479,7 +479,6 @@
 
 						//right before turn
 						if(this.turn != 0 && this.n > 0) {
-							alert(this.n);
 							this.n -= this.speed;
 							if     (this.turn <= 3)					this.status = 1;
 							else if(this.turn <= 6)					this.status = 2;
@@ -500,7 +499,7 @@
 						var lr = (this.tll+this.tlr)/2;
 						
 						if(this.x < lr+5 && this.x > lr-5)
-							alert("lr");
+							alert(this.n);
 						
 						var span = 2;
 						if(this.status == 1){ //up
