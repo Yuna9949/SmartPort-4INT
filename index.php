@@ -338,7 +338,7 @@
 						var check = 0;
 						//set start position
 						if(this.dbx == 9 && this.crain == 4) {
-							alert(this.y)
+							alert(this.y+" "+(2*road-15))
 							if(this.y < 2*road-15) {
 								this.status = 4;
 								this.y += (this.speed - (this.y-2*road+15));
@@ -348,9 +348,8 @@
 							check = 904;
 						}
 						else if(this.dbx == 9 && this.crain != 0) {
-							if(this.y-this.speed < 3*road-15) {
+							if(this.y < 3*road-15) {
 								this.status = 4;
-								this.y += (this.speed - (this.y-3*road+15));
 							}
 							else 			this.status = 1;
 							this.turn = 0;
