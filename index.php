@@ -351,7 +351,7 @@
 							this.turn = 0;
 							check = 904;
 						}
-						else if(this.dbx == 9 && this.crain != 0) {
+						else if(this.dbx == 9 && this.crain != 0 && this.crain != 5) {
 							if(this.y-this.speed < 3*road-15) {
 								this.status = 4;
 								this.y -= this.y-3*road+16;
@@ -359,6 +359,15 @@
 							else 			this.status = 1;
 							this.turn = 0;
 							check = 903;
+						}
+						else if(this.dbx == 9 && this.crain == 5) {
+							if(this.y-this.speed < 3*road-15) {
+								this.status = 0;
+								this.y -= this.y-3*road+16;
+							}
+							else 			this.status = 1;
+							this.turn = 0;
+							check = 905;
 						}
 						else if(this.dbx != 1 && this.dbx != 2 && this.dbx != 4 && this.dbx != 5 && this.dby == 1) {
 							this.status = 4;
@@ -551,8 +560,6 @@
 						
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
-						
-						if(this.crain == 5)						this.status = 0;
 						
 						var span = 2;
 						if(this.status == 1){ //up
