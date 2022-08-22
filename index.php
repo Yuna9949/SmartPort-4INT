@@ -307,7 +307,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
-						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain"+this.crain+" carry"+this.carry);
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain"+this.crain+" carry"+this.carry);
 						
 						//get goods
 						if(this.carry == 0) {
@@ -403,7 +403,7 @@
 						if(check == 0)							this.status = 0;
 
 						//set status while turning with traffic light
-						if(this.status == 0 && this.turn == 0 && this.crain == 0) {
+						if(this.status == 0 && this.turn == 0 && this.crain != 4) {
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
