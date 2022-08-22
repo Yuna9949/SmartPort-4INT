@@ -422,8 +422,16 @@
 							check = 9003;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y-this.speed > 2*road-15) {
-							this.status = 1;
+						else if(this.crain == 3 && this.x < 10.5*road+wth/2 && this.y-this.speed > 2*road-15) {
+							
+							var imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
+							var redcolor   = imgData.data[0];
+							var greencolor = imgData.data[1];
+							var bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							else								this.status = 1;
+							
 							this.turn = 0;
 							check = 90031;
 							this.temp = (this.y-2*road+15)-this.speed;
@@ -435,8 +443,16 @@
 							check = 9002;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 2 && this.x < wth/2+road && this.y-this.speed > 2*road-15) {
-							this.status = 1;
+						else if(this.crain == 2 && this.x < wth/2+1.5*road && this.y-this.speed > 2*road-15) {
+							
+							var imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
+							var redcolor   = imgData.data[0];
+							var greencolor = imgData.data[1];
+							var bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							else								this.status = 1;
+							
 							this.turn = 0;
 							check = 90021;
 							this.temp = (this.y-2*road+15)-this.speed;
@@ -448,8 +464,16 @@
 							check = 9001;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 1 && this.x < 8*road && this.y-this.speed > 2*road-15) {
-							this.status = 1;
+						else if(this.crain == 1 && this.x < 8.5*road && this.y-this.speed > 2*road-15) {
+							
+							var imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
+							var redcolor   = imgData.data[0];
+							var greencolor = imgData.data[1];
+							var bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							else								this.status = 1;
+							
 							this.turn = 0;
 							check = 90011;
 							this.temp = (this.y-2*road+15)-this.speed;
@@ -777,8 +801,8 @@
 						if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.warnl = 1;
 						else								this.warnl = 0;
 						
-						if(this.dbx != 9 && (this.warnu || this.warnr || this.warnd || this.warnl)) 
-							alert( this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
+						//if(this.dbx != 9 && (this.warnu || this.warnr || this.warnd || this.warnl)) 
+							//alert( this.num +" : "+ this.warnu +" "+ this.warnr +" "+ this.warnd +" "+ this.warnl );
 					}
 
 				}
