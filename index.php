@@ -479,6 +479,7 @@
 
 						//right before turn
 						if(this.turn != 0 && this.n > 0) {
+							alert(this.n);
 							this.n -= this.speed;
 							if     (this.turn <= 3)					this.status = 1;
 							else if(this.turn <= 6)					this.status = 2;
