@@ -406,17 +406,12 @@
 							check = 9003;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y-this.speed >= 2*road-15) {
+						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y > 2*road-15) {
 							this.status = 1;
 							this.turn = 0;
 							check = 90031;
 						}
-						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y-this.speed < 2*road-15) {
-							this.status = 1;
-							this.turn = 0;
-							this.y -= this.y-2*road+16;
-							check = 90031;
-						}
+						
 						if(this.crain == 2 && this.dby == 1 && this.x < wth/2-0.5*road) {
 							this.status = 0;
 							this.turn = 0;
