@@ -222,6 +222,7 @@
 			}
 
 			var stopani = null;
+			var crain_status = [0, 0, 0, 0, 0];
 
 			function start() {
 				const canvas = document.getElementById('canvas');
@@ -264,6 +265,10 @@
 						this.tlr = 0;
 						this.tld = 0;
 						this.tll = 0;
+						
+						//carrying
+						this.crain = 0;
+						this.carry = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -304,14 +309,44 @@
 
 						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y);
 						
+						//get goods
+						if(this.carry == 0) {
+							if(crain_status[4] == 0) {
+								crain_status[4] = this.num;
+								this.crain = 4;
+								this.carry = 1;
+							}
+							else if(crain_status[3] == 0) {
+								crain_status[3] = this.num;
+								this.crain = 3;
+								this.carry = 1;
+							}
+							else if(crain_status[2] == 0) {
+								crain_status[2] = this.num;
+								this.crain = 2;
+								this.carry = 1;
+							}
+							else if(crain_status[1] == 0) {
+								crain_status[1] = this.num;
+								this.crain = 1;
+								this.carry = 1;
+							}
+						}
+						
 						//set status if not turning
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
-						if(this.dbx == 9) {
+						if(this.dbx == 9 && this.crain == 4) {
 							if(this.y < 2*road-15)	this.status = 4;
 							else 			this.status = 1;
 							this.turn = 0;
-							check = 900;
+							check = 904;
+						}
+						else if(this.dbx == 9 && this.crain == 3) {
+							if(this.y < 3*road-15)	this.status = 4;
+							else 			this.status = 1;
+							this.turn = 0;
+							check = 903;
 						}
 						else if(this.dbx != 1 && this.dby == 1) {
 							this.status = 4;
