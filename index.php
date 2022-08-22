@@ -406,7 +406,7 @@
 							check = 9003;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y > 2*road-15) {
+						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y+this.speed > 2*road-15) {
 							this.status = 1;
 							this.turn = 0;
 							check = 90031;
