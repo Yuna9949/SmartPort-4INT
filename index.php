@@ -210,7 +210,7 @@
 				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,	 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(3*road+wth/2+2,	 1*road+2, 2*road-2, 3*road-2);
 				ctx.fillRect(3*road+wth/2+2,	 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	20*road+2, 2*road-2, 2*road-2);
