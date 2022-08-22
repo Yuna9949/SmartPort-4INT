@@ -315,7 +315,7 @@
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
-						if(this.dbx == 9 && this.dby != 18) {
+						if(this.carry = 0 && this.dbx == 9 && this.dby !=18) {
 							if(crain_status[4] == 0) {
 								crain_status[4] = this.num;
 								this.crain = 4;
