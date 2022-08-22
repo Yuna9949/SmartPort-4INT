@@ -372,6 +372,10 @@
 							check = 905;
 						}
 						else if(this.dbx == 9) {
+							if(this.x < canvas.width){
+								this.stauts = 2;
+								alert(this.x);
+							}
 							this.status = 1;
 							this.carry = 0;
 							this.carrying = 0;
