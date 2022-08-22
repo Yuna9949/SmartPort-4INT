@@ -311,8 +311,9 @@
 						else if(this.y >= 20*road-25      && this.y < 21*road        ) {this.dby = 17; this.tlu = 20*road; this.tld = 21*road;}
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
-
-						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
+						
+						if(this.num == 7)
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
 						if(this.carry == 0) {
@@ -851,7 +852,7 @@
 						else if(this.num ==10)		ctx.fillStyle = "Purple";
 						
 						if(this.front == 1)		ctx.fillRect(this.x-5, this.y-this.sizey/2, 10, 2);
-						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2, this.y-5, 2, 10);
+						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2-2, this.y-5, 2, 10);
 						else if(this.front == 3)	ctx.fillRect(this.x-5, this.y+this.sizey/2-2, 10, 2);
 						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2, this.y-5, 2, 10);
 					}
