@@ -269,6 +269,7 @@
 						//carrying
 						this.crain = 0;
 						this.carry = 0;
+						this.carrying = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -390,12 +391,14 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9004;
+							this.carrying += 1;
 						}
 						
 						if(this.crain == 3 && this.dby == 1 && this.x < 8.5*road+wth/2) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9003;
+							this.carrying += 1;
 						}
 						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y > 2*road-15) {
 							this.status = 1;
@@ -407,6 +410,7 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9002;
+							this.carrying += 1;
 						}
 						else if(this.crain == 2 && this.dby == 1 && this.dbx == 5 && this.y > 2*road-15) {
 							this.status = 1;
@@ -418,11 +422,17 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9001;
+							this.carrying += 1;
 						}
 						else if(this.crain == 1 && this.x < 8*road && this.y > 2*road-15) {
 							this.status = 1;
 							this.turn = 0;
 							check = 90011;
+						}
+						
+						if(this.carrying > 100) {
+							this.crain = 0;
+							this.carry = 10;
 						}
 						
 						if(check == 0)							this.status = 0;
