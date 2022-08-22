@@ -852,8 +852,8 @@
 						
 						if(this.front == 1)		ctx.fillRect(this.x-5, this.y-this.sizey/2, 10, 2);
 						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2, this.y-5, 2, 10);
-						else if(this.front == 3)	ctx.fillRect(this.x-5, this.y+this.sizey/2, 10, 2);
-						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2-2, this.y-5, 2, 10);
+						else if(this.front == 3)	ctx.fillRect(this.x-5, this.y+this.sizey/2-2, 10, 2);
+						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2, this.y-5, 2, 10);
 					}
 					check(){
 						var btwcar = 36;
