@@ -657,11 +657,17 @@
 
 						//right before turn
 						if(this.turn != 0 && this.n > 0) {
-							this.n -= this.speed;
 							if     (this.turn <= 3)					this.status = 1;
 							else if(this.turn <= 6)					this.status = 2;
 							else if(this.turn <= 9)					this.status = 3;
 							else if(this.turn <=12)					this.status = 4;
+							
+							if     (this.status == 1 && this.warnu == 0)			this.n -= this.speed;
+							else if(this.status == 2 && this.warnr == 0)			this.n -= this.speed;
+							else if(this.status == 3 && this.warnd == 0)			this.n -= this.speed;
+							else if(this.status == 4 && this.warnl == 0)			this.n -= this.speed;
+							
+							
 						}
 						//turn
 						else if(this.turn != 0 && this.n < 0) {				this.n = 0;
