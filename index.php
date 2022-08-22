@@ -362,6 +362,16 @@
 							this.turn = 0;
 							check = 903;
 						}
+						else if(this.dbx == 9 && this.dby == 18) {
+							if(this.x < canvas.width-40){
+								this.stauts = 2;
+							}
+							else			this.status = 1;
+							this.carry = 0;
+							this.carrying = 0;
+							this.turn = 0;
+							check = 918;
+						}
 						else if(this.dbx == 9 && this.crain == 5) {
 							if(this.y-this.speed < 3*road-15) {
 								this.status = 0;
@@ -370,18 +380,6 @@
 							else 			this.status = 1;
 							this.turn = 0;
 							check = 905;
-						}
-						else if(this.dbx == 9) {
-							if(this.x < canvas.width){
-								this.stauts = 2;
-								alert(this.x+":"+canvas.width);
-							}
-							else{			this.status = 1;alert(this.x+" "+canvas.width);
-							    }
-							this.carry = 0;
-							this.carrying = 0;
-							this.turn = 0;
-							check = 918;
 						}
 						else if(this.dbx != 1 && this.dbx != 2 && this.dbx != 4 && this.dbx != 5 && this.dby == 1) {
 							this.status = 4;
