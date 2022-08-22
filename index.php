@@ -726,16 +726,16 @@
 						ctx.fillRect(this.x+1, this.y-1, (this.sizex/2)*(-1)-1, this.sizey/2+1);
 						ctx.fillRect(this.x+1, this.y+1, (this.sizex/2)*(-1)-1, (this.sizey/2)*(-1)-1);
 						
-						if(this.num == 1)		ctx.fillStyle = this.c;
-						else if(this.num == 2)		ctx.fillStyle = this.c;
-						else if(this.num == 3)		ctx.fillStyle = this.c;
-						else if(this.num == 4)		ctx.fillStyle = this.c;
-						else if(this.num == 5)		ctx.fillStyle = this.c;
-						else if(this.num == 6)		ctx.fillStyle = this.c;
-						else if(this.num == 7)		ctx.fillStyle = this.c;
-						else if(this.num == 8)		ctx.fillStyle = this.c;
-						else if(this.num == 9)		ctx.fillStyle = this.c;
-						else if(this.num ==10)		ctx.fillStyle = this.c;
+						if(this.num == 1)		ctx.fillStyle = "Pink";
+						else if(this.num == 2)		ctx.fillStyle = "Red";
+						else if(this.num == 3)		ctx.fillStyle = "Orange";
+						else if(this.num == 4)		ctx.fillStyle = "Yellow";
+						else if(this.num == 5)		ctx.fillStyle = "YellowGreen";
+						else if(this.num == 6)		ctx.fillStyle = "Green";
+						else if(this.num == 7)		ctx.fillStyle = "SkyBlue";
+						else if(this.num == 8)		ctx.fillStyle = "Blue";
+						else if(this.num == 9)		ctx.fillStyle = "Navy";
+						else if(this.num ==10)		ctx.fillStyle = "Purple";
 						
 						if(this.front == 1)		ctx.fillRect(this.x, this.y-this.sizey/2, 4, 2);
 						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2, this.y, 2, 4);
