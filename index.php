@@ -496,7 +496,8 @@
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
 						
-						if(this.n >= 42 && this.n <= 43){
+						if(this.n >= 41 && this.n <= 43){
+							alert("sss");
 							this.n = 0;
 						}
 						
