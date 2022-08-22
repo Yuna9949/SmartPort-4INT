@@ -308,7 +308,7 @@
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
 						if(this.dbx == 9) {
-							if(this.y < 3*road-15)	this.status = 4;
+							if(this.y < 2*road-15)	this.status = 4;
 							else 			this.status = 1;
 							this.turn = 0;
 							check = 900;
