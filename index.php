@@ -376,7 +376,8 @@
 								this.stauts = 2;
 								alert(this.x+":"+canvas.width);
 							}
-							this.status = 1;
+							else{			this.status = 1;alert(this.x+" "+canvas.width);
+							    }
 							this.carry = 0;
 							this.carrying = 0;
 							this.turn = 0;
