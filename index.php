@@ -312,8 +312,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 						
-						if(this.num == 7)
-						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
+						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
 						if(this.carry == 0) {
@@ -665,7 +664,9 @@
 							else if(this.turn <=12)					this.status = 4;
 						}
 						//turn
-						else if(this.turn != 0 && this.n < 0)				this.n = 0;
+						else if(this.turn != 0 && this.n < 0) {				this.n = 0;
+										       				alert("n=0");
+						}
 						//right after turn
 						else if(this.turn != 0 && this.n == 0) {
 							if(this.turn == 3 || this.turn == 4 || this.turn == 11)	this.status = 1;
@@ -812,7 +813,7 @@
 							       		&& this.n > 0 && lr <= this.x) {
 									this.x += (lr-(this.x-this.speed));
 									this.n = 0;
-									//alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
+									alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr > this.x-this.speed
 							       		&& this.turn != 0 && this.n > 0 && lr <= this.x) {
@@ -824,7 +825,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
+									alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
 								}
 								
 								//move
