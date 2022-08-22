@@ -387,11 +387,13 @@
 						}
 						
 						//set way to crain
-						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth && this.carrying < 20) {
+						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth && this.carrying < 100) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9004;
 							this.carrying += 1;
+							this.crain = 0;
+							this.carry = 10;
 						}
 						
 						if(this.crain == 3 && this.dby == 1 && this.x < 8.5*road+wth/2) {
@@ -426,11 +428,12 @@
 							this.turn = 0;
 							check = 90011;
 						}
-						   
-               			//ctx.fillRect (6*road, 0, road, 2*road);
-               			//ctx.fillRect (wth/2, 0, road, 2*road);
-               			//ctx.fillRect (7*road+wth/2, 0, road, 2*road);
-               			//ctx.fillRect (road+wth, 0, road, 2*road);
+						
+						if(this.dby == 1 && this.x < 5*road+wth/2){
+							this.status = 0;
+							this.turn = 0;
+							check = 0;
+						}
 						
 						if(check == 0)							this.status = 0;
 
@@ -444,7 +447,9 @@
 							//get mysql data
 							mysql_conn();
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
-							if     (this.dby ==  2 || this.dby ==  3) {
+							if(this.dbx == 6 && this.dby == 1) 			this.turn = light[2];
+								
+							else if(this.dby ==  2 || this.dby ==  3) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[2];
 								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[3];
