@@ -529,7 +529,7 @@
 							if(this.warnl == 0) {
 								
 								//set start line in front of traffic light
-								if(this.turn == 0 && this.dbx != 9 && this.tll > this.x-this.sizex/2-this.speed) {
+								if(this.turn == 0 && this.dbx != 9 && this.dby != 1 && this.tll > this.x-this.sizex/2-this.speed) {
 									this.x += (this.tll-(this.x-this.sizex/2-this.speed)-span);
 									alert(this.num +" : "+"stop"+" l:"+lr+" x:"+this.x);
 								}
