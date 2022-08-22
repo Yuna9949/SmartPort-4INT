@@ -391,14 +391,14 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9004;
-							this.carrying += 1;
+							this.carrying += this.speed;
 						}
 						
 						if(this.crain == 3 && this.dby == 1 && this.x < 8.5*road+wth/2) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9003;
-							this.carrying += 1;
+							this.carrying += this.speed;
 						}
 						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y > 2*road-15) {
 							this.status = 1;
@@ -410,7 +410,7 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9002;
-							this.carrying += 1;
+							this.carrying += this.speed;
 						}
 						else if(this.crain == 2 && this.dby == 1 && this.dbx == 5 && this.y > 2*road-15) {
 							this.status = 1;
@@ -422,7 +422,7 @@
 							this.status = 0;
 							this.turn = 0;
 							check = 9001;
-							this.carrying += 1;
+							this.carrying += this.speed;
 						}
 						else if(this.crain == 1 && this.x < 8*road && this.y > 2*road-15) {
 							this.status = 1;
@@ -450,7 +450,7 @@
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							if(this.dby == 1) {
 								if(this.dbx == 4 || this.dbx == 5){		this.turn = light[2];
-								alert("whattttttt");}
+								//alert("whattttttt");}
 							}
 							if(this.dby ==  2 || this.dby ==  3) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
@@ -510,14 +510,14 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.crain == 0 &&this.tlu > this.y-this.sizey/2-this.speed) {
 									this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
-									alert(this.num +" : "+"stop"+" u:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"stop"+" u:"+ud+" y:"+this.y);
 								}
 								//set detail location while turing
 								if(this.turn % 2 == 1 && this.dbx != 9 && ud > this.y-this.speed
 								       && this.n > 0 && ud <= this.y) {
 									this.y += (ud-(this.y-this.speed));
 									this.n = 0;
-									alert(this.num +" : "+"in"+" u:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"in"+" u:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud > this.y-this.speed
 								       && this.turn != 0 && this.n > 0 && ud <= this.y) {
@@ -529,7 +529,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" u:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+this.corner+" u:"+ud+" y:"+this.y);
 								}
 								
 								this.y -= this.speed;
