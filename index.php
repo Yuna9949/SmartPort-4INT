@@ -451,6 +451,20 @@
 							
 							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							
+							imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							
+							imgData    = ctx.getImageData(this.x+this.sizey/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							
 							this.turn = 0;
 							check = 90031;
 							this.temp = (this.y-2*road+15)-this.speed;
@@ -486,6 +500,20 @@
 							
 							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							
+							imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							
+							imgData    = ctx.getImageData(this.x+this.sizey/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							
 							this.turn = 0;
 							check = 90021;
 							this.temp = (this.y-2*road+15)-this.speed;
@@ -515,6 +543,20 @@
 							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
 							
 							imgData    = ctx.getImageData(this.x, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							
+							imgData    = ctx.getImageData(this.x-this.sizey/2, this.y-road, 1, 1);
+							redcolor   = imgData.data[0];
+							greencolor = imgData.data[1];
+							bluecolor  = imgData.data[2];
+							
+							if(redcolor == 9 && greencolor == 96 && bluecolor == 47)	this.status = 0;
+							
+							imgData    = ctx.getImageData(this.x+this.sizey/2, this.y-road, 1, 1);
 							redcolor   = imgData.data[0];
 							greencolor = imgData.data[1];
 							bluecolor  = imgData.data[2];
