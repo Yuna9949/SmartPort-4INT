@@ -342,7 +342,7 @@
 							this.turn = 0;
 							check = 904;
 						}
-						else if(this.dbx == 9 && this.crain == 3) {
+						else if(this.dbx == 9 && this.crain != 0) {
 							if(this.y < 3*road-15)	this.status = 4;
 							else 			this.status = 1;
 							this.turn = 0;
@@ -353,6 +353,17 @@
 							this.turn = 0;
 							check = 101;
 						}
+						
+						if(this.dby == 1 && this.x > road+wth && this.x < 2*road+wth) {
+							this.status = 0;
+							this.turn = 0;
+							check = 9004;
+						}
+						   
+               			//ctx.fillRect (6*road, 0, road, 2*road);
+               			//ctx.fillRect (wth/2, 0, road, 2*road);
+               			//ctx.fillRect (7*road+wth/2, 0, road, 2*road);
+               			//ctx.fillRect (road+wth, 0, road, 2*road);
 						
 						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
 							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
@@ -387,7 +398,7 @@
 						if(check == 0)							this.status = 0;
 
 						//set status while turning with traffic light
-						if(this.status == 0 && this.turn == 0) {
+						if(this.status == 0 && this.turn == 0 && this.crain == 0) {
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
