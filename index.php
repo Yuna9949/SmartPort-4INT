@@ -349,7 +349,7 @@
 							this.turn = 0;
 							check = 903;
 						}
-						else if(this.dbx != 1 && this.dby == 1) {
+						else if(this.dbx != 1 && this.dbx != 5 && this.dby == 1) {
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
@@ -431,12 +431,6 @@
 							this.status = 1;
 							this.turn = 0;
 							check = 90011;
-						}
-						
-						if(this.dby == 1 && this.x < 5*road+wth/2){
-							this.status = 0;
-							this.turn = 0;
-							check = 0;
 						}
 						
 						if(check == 0)							this.status = 0;
