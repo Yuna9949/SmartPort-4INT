@@ -377,6 +377,7 @@
 							}
 							else 			this.status = 1;
 							this.carry = 0;
+							this.carrying = 0;
 							this.turn = 0;
 							check = 918;
 						}
