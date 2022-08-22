@@ -269,6 +269,7 @@
 						//carrying
 						this.crain = 0;
 						this.carry = 0;
+						this.carrying = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -386,10 +387,11 @@
 						}
 						
 						//set way to crain
-						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth) {
+						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth && this.carrying < 5) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9004;
+							this.carrying += 1;
 						}
 						
 						if(this.crain == 3 && this.dby == 1 && this.x < 7.5*road+wth/2) {
