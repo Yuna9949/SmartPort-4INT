@@ -308,7 +308,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 
-						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
+						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
 						if(this.carry == 0) {
@@ -496,7 +496,7 @@
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
 						
-						if(this.n >= 41 && this.n <= 43){
+						if(this.n <= 42){
 							alert("sss");
 							this.n = 0;
 						}
