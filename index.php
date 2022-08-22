@@ -357,7 +357,7 @@
 							this.turn = 0;
 							check = 903;
 						}
-						else if(this.dbx == 3 && this.dbx > 5 && this.dby == 1) {
+						else if(this.dbx != 1 && this.dbx != 5 && this.dbx != 4 && this.dby == 1) {
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
@@ -425,15 +425,10 @@
 							check = 9002;
 							this.carrying += this.speed;
 						}
-						else if(this.crain == 2 && this.dby == 1 && this.dbx == 5 && this.y-this.speed > 2*road-15) {
+						else if(this.crain == 2 && this.dby == 1 && this.dbx == 5 && this.y > 2*road-15) {
 							this.status = 1;
 							this.turn = 0;
 							check = 90021;
-							this.temp = (this.y-2*road+15)-this.speed+1;
-						}
-						else if(this.temp > 0) {
-							this.y -= this.temp;
-							this.temp = 0;
 						}
 						
 						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
