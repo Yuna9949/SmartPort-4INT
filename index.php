@@ -272,7 +272,6 @@
 						this.carrying = 0;
 						
 						this.temp = 0;
-						this.t = 0;
 						
 						this.front = 0;
 					}
@@ -316,7 +315,7 @@
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
-						if(this.carry = 0) {
+						if(this.carry == 0) {
 							if(crain_status[4] == 0) {
 								crain_status[4] = this.num;
 								this.crain = 4;
@@ -349,12 +348,9 @@
 							if(this.x < canvas.width-40){
 								this.stauts = 2;
 							}
-							else if(this.t == 0){	
-										this.t = 1;
-										this.carry = 0;
-										this.carrying = 0;
-							}
-							else 			this.status = 1;
+							else			this.status = 1;
+							this.carry = 0;
+							this.carrying = 0;
 							this.turn = 0;
 							check = 918;
 						}
@@ -636,9 +632,7 @@
 							else if(this.dby == 17 || this.dby == 18) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[10];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[11];
-								if(this.dbx == 7 || this.dbx == 8){		this.turn = light[12];
-												   		this.t = 0;
-								}
+								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[12];
 							}
 							
 							//up
