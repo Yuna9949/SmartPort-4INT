@@ -350,6 +350,7 @@
 						}
 						
 						if(check == 0)							this.status = 0;
+						alert(check);
 
 						//set status while turning with traffic light
 						if(this.status == 0 && this.turn == 0) {
@@ -404,9 +405,9 @@
 							if(this.turn == 5 || this.turn == 9 || this.turn == 10)	this.status = 3;
 							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
 						}
+						
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
-						
 						var span = 2;
 						if(this.status == 1){ //up
 							//turn shape
