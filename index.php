@@ -163,15 +163,15 @@
                 		<!-- 선박 -->
                 		ctx.fillStyle = "rgb(211, 211, 211)";
                 		ctx.fillRect (5.5*road, 0, 2*road, road);
-                		ctx.fillRect (wth/2 - 1.5*road, 0, 2*road, road);
-                		ctx.fillRect (7.5*road+wth/2, 0, 2*road, road);
+                		ctx.fillRect (wth/2 - 0.5*road, 0, 2*road, road);
+                		ctx.fillRect (6.5*road+wth/2, 0, 2*road, road);
                 		ctx.fillRect (0.5*road+wth, 0, 2*road, road);
 
                			<!-- 하역 크레인 -->
                			ctx.fillStyle = "rgb(255, 192, 203)";
                			ctx.fillRect (6*road, 0, road, 2*road);
-               			ctx.fillRect (wth/2-road, 0, road, 2*road);
-               			ctx.fillRect (8*road+wth/2, 0, road, 2*road);
+               			ctx.fillRect (wth/2, 0, road, 2*road);
+               			ctx.fillRect (7*road+wth/2, 0, road, 2*road);
                			ctx.fillRect (road+wth, 0, road, 2*road);
 
 				<!-- 도로 -->
@@ -210,7 +210,7 @@
 				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(2*road+2,		20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,	 1*road+2, 2*road-2, 3*road-2);
+				ctx.fillRect(3*road+wth/2+2,	 2*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	20*road+2, 2*road-2, 2*road-2);
@@ -269,7 +269,6 @@
 						//carrying
 						this.crain = 0;
 						this.carry = 0;
-						this.carrying = 0;
 					}
 					update(){
 						var road = canvas.height*0.045;
@@ -349,7 +348,7 @@
 							this.turn = 0;
 							check = 903;
 						}
-						else if(this.dbx != 1 && this.dbx != 5 && this.dby == 1) {
+						else if(this.dbx != 1 && this.dby == 1) {
 							this.status = 4;
 							this.turn = 0;
 							check = 101;
@@ -387,31 +386,24 @@
 						}
 						
 						//set way to crain
-						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth && this.carrying < 100) {
+						if(this.crain == 4 && this.dby == 1 && this.x < 1.5*road+wth) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9004;
-							this.carrying += 1;
 						}
 						
-						if(this.carrying >= 100){
-							this.crain = 0;
-							this.carry = 10;
-							check = 100;
-						}
-						
-						if(this.crain == 3 && this.dby == 1 && this.x < 8.5*road+wth/2) {
+						if(this.crain == 3 && this.dby == 1 && this.x < 7.5*road+wth/2) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9003;
 						}
-						else if(this.crain == 3 && this.x < 10*road+wth/2 && this.y > 2*road-15) {
+						else if(this.crain == 3 && this.x < 9*road+wth/2 && this.y > 2*road-15) {
 							this.status = 1;
 							this.turn = 0;
 							check = 90031;
 						}
 						
-						if(this.crain == 2 && this.dby == 1 && this.x < wth/2-0.5*road) {
+						if(this.crain == 2 && this.dby == 1 && this.x < 0.5*road+wth/2) {
 							this.status = 0;
 							this.turn = 0;
 							check = 9002;
@@ -432,6 +424,11 @@
 							this.turn = 0;
 							check = 90011;
 						}
+						   
+               			//ctx.fillRect (6*road, 0, road, 2*road);
+               			//ctx.fillRect (wth/2, 0, road, 2*road);
+               			//ctx.fillRect (7*road+wth/2, 0, road, 2*road);
+               			//ctx.fillRect (road+wth, 0, road, 2*road);
 						
 						if(check == 0)							this.status = 0;
 
@@ -445,9 +442,7 @@
 							//get mysql data
 							mysql_conn();
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
-							if(this.dbx == 6 && this.dby == 1) 			this.turn = light[2];
-								
-							else if(this.dby ==  2 || this.dby ==  3) {
+							if     (this.dby ==  2 || this.dby ==  3) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[2];
 								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[3];
