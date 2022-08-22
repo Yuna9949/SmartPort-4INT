@@ -488,7 +488,7 @@
 							//if not gonna crash
 							if(this.warnu == 0) {
 								//set start line in front of traffic light
-								if(this.turn == 0 && this.dbx != 9 && this.tlu > this.y-this.sizey/2-this.speed) {
+								if(this.turn == 0 && this.dbx != 9 && this.crain != 3 &&this.tlu > this.y-this.sizey/2-this.speed) {
 									this.y += (this.tlu-(this.y-this.sizey/2-this.speed)-span);
 									alert(this.num +" : "+"stop"+" u:"+ud+" y:"+this.y);
 								}
