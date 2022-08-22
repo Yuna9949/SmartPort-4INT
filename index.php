@@ -414,6 +414,10 @@
 							check = 90031;
 							this.temp = (this.y-2*road+15)-this.speed+1;
 						}
+						else if(this.temp > 0) {
+							this.y -= this.temp;
+							this.temp = 0;
+						}
 						
 						if(this.crain == 2 && this.dby == 1 && this.x < wth/2-0.5*road) {
 							this.status = 0;
@@ -426,6 +430,10 @@
 							this.turn = 0;
 							check = 90021;
 							this.temp = (this.y-2*road+15)-this.speed+1;
+						}
+						else if(this.temp > 0) {
+							this.y -= this.temp;
+							this.temp = 0;
 						}
 						
 						if(this.crain == 1 && this.dby == 1 && this.x < 6.5*road) {
@@ -440,11 +448,11 @@
 							check = 90011;
 							this.temp = (this.y-2*road+15)-this.speed+1;
 						}
-						
-						if(this.temp > 0) {
+						else if(this.temp > 0) {
 							this.y -= this.temp;
 							this.temp = 0;
 						}
+						
 						
 						if(this.carrying > 300) {
 							crain_status[this.crain] = 0;
