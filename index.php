@@ -499,7 +499,7 @@
 						var ud = (this.tlu+this.tld)/2;
 						var lr = (this.tll+this.tlr)/2;
 						
-						if(this.x == lr)
+						if(this.x < lr+5 && this.x > lr-5)
 							alert("lr");
 						
 						var span = 2;
