@@ -819,7 +819,7 @@
 							       		&& this.n > 0 && lr <= this.x) {
 									this.x += (lr-(this.x-this.speed));
 									this.n = 0;
-									alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr > this.x-this.speed
 							       		&& this.turn != 0 && this.n > 0 && lr <= this.x) {
@@ -831,7 +831,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
+									//alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
 								}
 								
 								//move
