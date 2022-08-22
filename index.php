@@ -496,7 +496,7 @@
 							
 							//up
 							if((this.dbx == 2 || this.dbx == 5 || this.dbx == 8) && 
-							   (this.dby == 3 || this.dby == 8 || this.dby == 13) {
+							   (this.dby == 3 || this.dby == 8 || this.dby == 13)) {
 								if(this.turn < 1 || this.turn > 3)		this.turn = 0;
 							}
 							
