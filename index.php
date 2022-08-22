@@ -416,6 +416,7 @@
 							this.temp = (this.y-2*road+15);
 						}
 						else if(this.temp > 0) {
+							alert(" 1:"+this.y+" "+(2*road-15)+" "+this.temp);
 							this.y -= this.temp;
 							this.temp = 0;
 						}
