@@ -189,11 +189,11 @@
 				ctx.fillRect (2*road, 21*road, wth+4*road, 2);
 				ctx.fillRect (2*road, 22*road, wth+4*road, 2);
 
-				ctx.fillRect (2*road, 2*road, 2, 20*road);
+				ctx.fillRect (2*road, road, 2, 21*road);
 				ctx.fillRect (3*road, 2*road, 2, 20*road);
 				ctx.fillRect ((wth-2*road)/2+5*road, 2*road, 2, 20*road);
 				ctx.fillRect (wth+5*road, 2*road, 2, 20*road);
-				ctx.fillRect (wth+6*road, 2*road, 2, 20*road+2);
+				ctx.fillRect (wth+6*road, road, 2, 21*road+2);
 
 				<!-- 적재된 컨테이너 -->
 				ctx.fillStyle = "rgb(176, 176, 228)";
@@ -214,7 +214,7 @@
 				ctx.fillRect(3*road+wth/2+2,	 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(3*road+wth/2+2,	20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,	 2*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(4*road+wth+2,	 1*road+2, 2*road-2, 3*road-2);
 				ctx.fillRect(4*road+wth+2,	 8*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(4*road+wth+2,	14*road+2, 2*road-2, 2*road-2);
 				ctx.fillRect(4*road+wth+2,	20*road+2, 2*road-2, 2*road-2);
