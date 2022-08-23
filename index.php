@@ -342,7 +342,7 @@
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
-						if(this.carry == 0) {
+						if(this.carry == 0) {		
 							if(crain_status[1] == 0) {
 								crain_status[1] = this.num;
 								this.crain = 1;
@@ -618,6 +618,9 @@
 						if(this.carrying > 300) {
 							crain_status[this.crain] = 0;
 							this.crain = 0;
+							
+							getCrain(this.crain);
+							
 							this.carry = 10;
 						}
 						
@@ -1146,10 +1149,22 @@
 	</body>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
+		function getCrain($crain){
+			$.ajax({
+				type: "GET",
+				url: "getCrainMySql.php"
+				data: {num : $crain},
+			       	dataType: 'json'
+			       	success: function(result) {
+					alert(result);
+				}
+			)};
+				
+		}
 		function mysql_conn(){
 			$.ajax({
 				url: "getMysql.php",
-				type: "get",
+				type: "get"
 			}).done(function(data){
 				$("#outputa").text(data);
 				
