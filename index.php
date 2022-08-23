@@ -615,7 +615,7 @@
 						}
 						
 						if(this.carrying > 300) {
-							getCrain(this.crain);
+							if(this.crain > 0)	getCrain(this.crain);
 							this.carry = 10;
 							
 							crain_status[this.crain] = 0;
@@ -1149,7 +1149,6 @@
 	<script>
 		
 		function getCrain(crain){
-			/*
 			$.ajax({
 				type: "GET",
 				url: "getCrainMySql.php",
@@ -1159,9 +1158,6 @@
 					alert(result);
 				}
 			)};
-			*/
-			alert(crain);
-				
 		}
 		
 		function mysql_conn(){
