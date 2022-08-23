@@ -1152,9 +1152,9 @@
 		function getCrain($crain){
 			$.ajax({
 				type: "GET",
-				url: "getCrainMySql.php"
+				url: "getCrainMySql.php",
 				data: {num : $crain},
-			       	dataType: 'json'
+			       	dataType: 'json',
 			       	success: function(result) {
 					alert(result);
 				}
