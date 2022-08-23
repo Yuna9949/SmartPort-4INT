@@ -7,13 +7,12 @@
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
-		$return_value = $row['carry'];
-    $time = $row['time'];
+		$result = $row['carry'];
+    		$time = $row['time'];
 
-    $sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = ".$time;
-    mysqli_query($conn, $sql);
-    
-		mysqli_free_result($result);
+    		$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = ".$time;
+    		mysqli_query($conn, $sql);
+   
 		mysqli_close($conn);
-		echo $return_value;
+		echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 ?>
