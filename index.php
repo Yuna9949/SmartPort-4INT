@@ -615,12 +615,11 @@
 						}
 						
 						if(this.carrying > 300) {
+							getCrain(this.crain);
+							this.carry = 10;
+							
 							crain_status[this.crain] = 0;
 							this.crain = 0;
-							
-							getCrain(this.crain);
-							
-							this.carry = 10;
 						}
 						
 						if(check == 0)							this.status = 0;
