@@ -1149,17 +1149,22 @@
 	<script>
 		
 		function getCrain(crain){
-			/*
 			$.ajax({
-				type: "GET",
 				url: "getCrainMySql.php",
-				data: {num : crain},
-			       	dataType: 'json',
-			       	success: function(result) {
-					alert(result);
+				type: "GET",
+				data: {
+					num : crain
+				},
+				dataType: 'json',
+				success: function(data) {
+					//if(data.success == false){
+						alert(data.success);
+						alert(data.data);
+						alert(data.msg);
+						alert(data.code);
+					//}
 				}
-			)};*/
-			alert(crain);
+			});
 		}
 		
 		function mysql_conn(){
