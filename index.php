@@ -272,6 +272,7 @@
 						this.carrying = 0;
 						
 						this.temp = 0;
+						this.tmp = 0;
 						
 						this.front = 0;
 					}
@@ -344,13 +345,17 @@
 						// 1 up  2 right  3 down  4 left
 						var check = 0;
 						//set start position
+						if(this.tmp == 1) {
+							this.carry = 0;
+							this.carrying = 0;
+							this.tmp = 0;
+						}
+						
 						if(this.dbx == 9 && this.dby == 18) {
 							if(this.x < canvas.width-40){
 								this.stauts = 2;
 							}
 							else			this.status = 1;
-							this.carry = 0;
-							this.carrying = 0;
 							this.turn = 0;
 							check = 918;
 						}
@@ -763,6 +768,9 @@
 										this.corner = 0;
 									}
 									if(this.dby==18)alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
+									if(this.dby == 18 && this.dbx >= 8 && 
+									   this.corner == 0 && lr-this.speed == this.x) 
+										this.tmp = 1;
 								}
 
 								this.x += this.speed;
