@@ -316,14 +316,9 @@
 						
 						//get goods
 						if(this.carry == 0) {
-							if(crain_status[4] == 0) {
-								crain_status[4] = this.num;
-								this.crain = 4;
-								this.carry = 1;
-							}
-							else if(crain_status[3] == 0) {
-								crain_status[3] = this.num;
-								this.crain = 3;
+							if(crain_status[1] == 0) {
+								crain_status[1] = this.num;
+								this.crain = 1;
 								this.carry = 1;
 							}
 							else if(crain_status[2] == 0) {
@@ -331,9 +326,14 @@
 								this.crain = 2;
 								this.carry = 1;
 							}
-							else if(crain_status[1] == 0) {
-								crain_status[1] = this.num;
-								this.crain = 1;
+							else if(crain_status[3] == 0) {
+								crain_status[3] = this.num;
+								this.crain = 3;
+								this.carry = 1;
+							}
+							else if(crain_status[4] == 0) {
+								crain_status[4] = this.num;
+								this.crain = 4;
 								this.carry = 1;
 							}
 							else {
