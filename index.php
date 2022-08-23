@@ -742,7 +742,7 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.tlr < this.x+this.sizex/2+this.speed) {
 									this.x -= ((this.x+this.sizex/2+this.speed)-this.tlr-span);
-									//alert(this.num +" : "+"stop"+" r:"+lr+" x:"+this.x);
+									if(this.dby==18)alert(this.num +" : "+"stop"+" r:"+lr+" x:"+this.x);
 								}
 								
 								//set detail location while turing
@@ -750,7 +750,7 @@
 								       && this.n > 0 && lr >= this.x) {
 									this.x -= ((this.x+this.speed)-lr);
 									this.n = 0;
-									//alert(this.num +" : "+"in"+" r:"+lr+" x:"+this.x);
+									if(this.dby==18)alert(this.num +" : "+"in"+" r:"+lr+" x:"+this.x);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && lr < this.x+this.speed
 								       && this.turn != 0 && this.n > 0 && lr >= this.x) {
@@ -762,7 +762,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
+									if(this.dby==18)alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
 								}
 
 								this.x += this.speed;
