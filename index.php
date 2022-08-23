@@ -615,7 +615,7 @@
 						}
 						
 						if(this.carrying > 300) {
-							if(this.crain > 0){	var what = getCrain(this.crain); alert(what);}
+							if(this.crain > 0){	getCrain(this.crain);}
 							this.carry = 10;
 							
 							crain_status[this.crain] = 0;
@@ -1162,10 +1162,10 @@
 						alert(data.data);
 						alert(data.msg);
 						alert(data.code);
-					}
-					else return data.data;
-					
+					}			
+					alert(data.data);		
 				}
+				
 			});
 		}
 		
