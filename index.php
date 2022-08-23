@@ -1163,10 +1163,10 @@
 						alert(data.msg);
 						alert(data.code);
 					}
+					else return data.data;
 					
 				}
 			});
-			return data.data;
 		}
 		
 		function mysql_conn(){
