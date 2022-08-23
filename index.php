@@ -203,6 +203,32 @@
 				ctx.fillRect ((wth-2*road)/2+6*road, 11*road, (wth-2*road)/2, 2*road);
 				ctx.fillRect (4*road, 17*road, (wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road, 17*road, (wth-2*road)/2, 2*road);
+				
+				<!-- 컨테이너 내부물품 -->
+				ctx.fillStyle = "Pink";
+				ctx.fillRect (2*road+(wth-2*road)/4, 5*road+2, 4*road, road-2);
+				ctx.fillStyle = "Red";
+				ctx.fillRect (2*road+(wth-2*road)/4, 6*road+2, 4*road, road-2);
+				ctx.fillStyle = "Orange";
+				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 5*road+2, 4*road, road-2);
+				ctx.fillStyle = "Yellow";
+				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 6*road+2, 4*road, road-2);
+				ctx.fillStyle = "YellowGreen";
+				ctx.fillRect (2*road+(wth-2*road)/4, 11*road+2, 4*road, road-2);
+				ctx.fillStyle = "Green";
+				ctx.fillRect (2*road+(wth-2*road)/4, 12*road+2, 4*road, road-2);
+				ctx.fillStyle = "SkyBlue";
+				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 11*road+2, 4*road, road-2);
+				ctx.fillStyle = "Blue";
+				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 12*road+2, 4*road, road-2);
+				ctx.fillStyle = "Navy";
+				ctx.fillRect (2*road+(wth-2*road)/4, 17*road+2, 4*road, road-2);
+				ctx.fillStyle = "Purple";
+				ctx.fillRect (2*road+(wth-2*road)/4, 18*road+2, 4*road, road-2);
+				ctx.fillStyle = "SlateGray";
+				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 17*road+2, 4*road, road-2);
+				ctx.fillStyle = "Black";
+				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 18*road+2, 4*road, road-2);
 
 				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
