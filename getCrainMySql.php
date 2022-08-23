@@ -1,6 +1,6 @@
 <?php
 	try{
-		$num = $_GET['num'];
+		$num = (string)$_GET['num'];
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
