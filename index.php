@@ -1149,6 +1149,7 @@
 	<script>
 		
 		function getCrain(crain){
+			/*
 			$.ajax({
 				type: "GET",
 				url: "getCrainMySql.php",
@@ -1157,7 +1158,8 @@
 			       	success: function(result) {
 					alert(result);
 				}
-			)};
+			)};*/
+			alert(crain);
 		}
 		
 		function mysql_conn(){
