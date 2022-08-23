@@ -1,18 +1,30 @@
 <?php
-	$num = $_GET['num'];
+	try{
+		$num = $_GET['num'];
 
-	$conn = mysqli_connect("localhost","root","smartport4int","test");
+		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-	$sql = "SELECT * FROM crain".$num." ORDER BY num ASC WHERE loaded = 0";
-	$result = mysqli_query($conn, $sql);
+		$sql = "SELECT * FROM crain".$num." ORDER BY num ASC WHERE loaded = 0";
+		$result = mysqli_query($conn, $sql);
 
-	$row = mysqli_fetch_assoc($result);
-	$result = $row['carry'];
-    	$time = $row['time'];
+		$row = mysqli_fetch_assoc($result);
+		$data['data'] = $row['carry'];
+    		$time = $row['time'];
 
-    	$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = ".$time;
-    	mysqli_query($conn, $sql);
+    		$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = ".$time;
+    		mysqli_query($conn, $sql);
    
-	mysqli_close($conn);
-	echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+		mysqli_close($conn);
+		
+		$data['success'] = true;
+		$data['msg'] = $time;
+		$data['code'] = $num;
+	} catch(exception $e) {
+		$data['success'] = false;
+    		$data['data'] = "fail";
+    		$data['msg'] = $e->getMessage();
+    		$data['code']	= $e->getCode();
+	} finally {
+		echo json_encode($data, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
+	}
 ?>
