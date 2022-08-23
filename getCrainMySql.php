@@ -4,7 +4,7 @@
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-		$sql = "SELECT * FROM crain".$num." WHERE loaded='0' ORDER BY num ASC;";
+		$sql = "SELECT * FROM crain".$num." WHERE loaded='0' ORDER BY time ASC;";
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
