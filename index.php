@@ -615,7 +615,7 @@
 						}
 						
 						if(this.carrying > 300) {
-							if(this.crain > 0)	getCrain(this.crain);
+							if(this.crain > 0){	var what = getCrain(this.crain); alert(what);}
 							this.carry = 10;
 							
 							crain_status[this.crain] = 0;
@@ -1157,14 +1157,16 @@
 				},
 				dataType: 'json',
 				success: function(data) {
-					//if(data.success == false){
+					if(data.success == false){
 						alert(data.success);
 						alert(data.data);
 						alert(data.msg);
 						alert(data.code);
-					//}
+					}
+					
 				}
 			});
+			return data.data;
 		}
 		
 		function mysql_conn(){
