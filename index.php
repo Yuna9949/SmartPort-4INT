@@ -217,7 +217,7 @@
 				ctx.fillRect (2*road+(wth-2*road)/4, 11*road+2, 4*road, road-4);
 				ctx.fillStyle = "Green";
 				ctx.fillRect (2*road+(wth-2*road)/4, 12*road+2, 4*road, road-4);
-				ctx.fillStyle = "SkyBlue";
+				ctx.fillStyle = "Turquoise";
 				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 11*road+2, 4*road, road-4);
 				ctx.fillStyle = "Blue";
 				ctx.fillRect (4*road+(wth-2*road)/2+(wth-2*road)/4, 12*road+2, 4*road, road-4);
