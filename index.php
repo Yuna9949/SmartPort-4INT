@@ -1149,11 +1149,11 @@
 	</body>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
-		function getCrain($crain){
+		function getCrain(crain){
 			$.ajax({
 				type: "GET",
 				url: "getCrainMySql.php",
-				data: {num : $crain},
+				data: {num : crain},
 			       	dataType: 'json',
 			       	success: function(result) {
 					alert(result);
