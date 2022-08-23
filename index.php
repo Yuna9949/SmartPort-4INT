@@ -614,12 +614,11 @@
 							this.temp = 0;
 						}
 						
-						
 						if(this.carrying > 300) {
 							crain_status[this.crain] = 0;
 							this.crain = 0;
 							
-							getCrain(this.crain);
+							//getCrain(this.crain);
 							
 							this.carry = 10;
 						}
@@ -1149,6 +1148,7 @@
 	</body>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
+		/*
 		function getCrain(crain){
 			$.ajax({
 				type: "GET",
@@ -1160,7 +1160,8 @@
 				}
 			)};
 				
-		}
+		}*/
+		
 		function mysql_conn(){
 			$.ajax({
 				url: "getMysql.php",
