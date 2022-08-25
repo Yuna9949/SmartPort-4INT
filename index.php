@@ -1165,11 +1165,13 @@
 						alert(data.msg);
 						alert(data.code);
 					}
-					if     (crain == 1)	$("#crain1").text(data.data);
-					else if(crain == 2)	$("#crain2").text(data.data);
-					else if(crain == 3)	$("#crain3").text(data.data);
-					else if(crain == 4)	$("#crain4").text(data.data);
-					//alert(data.data);		
+					else{
+						if     (crain == 1)	$("#crain1").text(data.data);
+						else if(crain == 2)	$("#crain2").text(data.data);
+						else if(crain == 3)	$("#crain3").text(data.data);
+						else if(crain == 4)	$("#crain4").text(data.data);	
+						alert("update");
+					}
 				}
 				
 			});
