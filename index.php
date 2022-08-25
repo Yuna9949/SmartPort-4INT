@@ -339,7 +339,7 @@
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
 						
-						alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
+						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
 						//get goods
 						if(this.carry == 0) {		
@@ -646,12 +646,12 @@
 						// yellowgreen 2
 						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road && this.y < 11*road) {
 							
-							if(this.y < 11*road-16) 	this.status = 3;
+							if(this.y < 11*road-20) 	this.status = 3;
 							else 				this.status = 2;
 							this.turn = 0;
 							check = 238;
 							
-							alert(this.num+" : "+(9*road)+" "+this.y+" "+(11*road)+" "+this.status);
+							//alert(this.num+" : "+(9*road)+" "+this.y+" "+(11*road)+" "+this.status);
 							
 						}
 						// skyblue 3
@@ -857,7 +857,7 @@
 								if(this.turn == 0 && this.dbx != 9 && this.tld < this.y+this.sizey/2+this.speed
 								  && this.dbx != 3 && this.dbx != 6) {
 									this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
-									alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
 								}
 								
 								//set detail location while turing
@@ -865,7 +865,7 @@
 								       && this.n > 0 && ud >= this.y) {
 									this.y -= ((this.y+this.speed)-ud);
 									this.n = 0;
-									alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud < this.y+this.speed
 								       && this.turn != 0 && this.n > 0 && ud >= this.y) {
@@ -877,7 +877,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
+									//alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
 								}
 							
 								this.y += this.speed;
