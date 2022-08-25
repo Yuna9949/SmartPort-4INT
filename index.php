@@ -615,9 +615,11 @@
 						}
 						
 						if(this.carrying > 300) {
-							if(this.crain > 0){	getCrain(this.crain);}
-							this.carry = 10;
-							
+							if(this.crain > 0){	
+								getCrain(this.crain);
+								this.carry = document.getElementById('crain'+this.crain).innerText;
+								alert(this.carry);
+							}
 							crain_status[this.crain] = 0;
 							this.crain = 0;
 						}
@@ -1163,18 +1165,10 @@
 						alert(data.msg);
 						alert(data.code);
 					}
-					if(crain == 1){
-						$("#crain1").text(data.data);
-					}
-					else if(crain == 2){
-						$("#crain2").text(data.data);
-					}
-					else if(crain == 3){
-						$("#crain3").text(data.data);
-					}
-					else if(crain == 4){
-						$("#crain4").text(data.data);
-					}
+					if     (crain == 1)	$("#crain1").text(data.data);
+					else if(crain == 2)	$("#crain2").text(data.data);
+					else if(crain == 3)	$("#crain3").text(data.data);
+					else if(crain == 4)	$("#crain4").text(data.data);
 					//alert(data.data);		
 				}
 				
