@@ -449,6 +449,8 @@
 								this.status = 2;
 						}
 						
+						
+						//loading carry
 						var imgData = null;
 						var redcolor = null;
 						var greencolor = null;
@@ -639,6 +641,23 @@
 								this.crain = 0;
 							}
 						}
+						
+						//unloading carry
+						// yellowgreen 2
+						if(this.carry == 2 && this.dbx == 3 && this.y > 9*road && this.y < 11*road) {
+							if(this.y < 11*road-16) 	this.status = 3;
+							else 				this.status = 0;
+							this.turn = 0;
+							check = 238;
+							
+						}
+						// skyblue 3
+						// green 4
+						// blue 5
+						
+						
+						
+						
 						
 						if(check == 0)							this.status = 0;
 
