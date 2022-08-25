@@ -232,15 +232,15 @@
 
 				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,		 1*road  , 2*road-2, 3*road  );
+				ctx.fillRect(2*road+2,		 1*road  , 2*road-2, 4*road  );
 				ctx.fillRect(2*road+2,		 7*road  , 2*road-2, 4*road  );
 				ctx.fillRect(2*road+2,		13*road  , 2*road-2, 4*road  );
 				ctx.fillRect(2*road+2,		19*road  , 2*road-2, 3*road  );
-				ctx.fillRect(3*road+wth/2+2,	 1*road  , 2*road-2, 3*road  );
+				ctx.fillRect(3*road+wth/2+2,	 1*road  , 2*road-2, 4*road  );
 				ctx.fillRect(3*road+wth/2+2,	 7*road  , 2*road-2, 4*road  );
 				ctx.fillRect(3*road+wth/2+2,	13*road  , 2*road-2, 4*road  );
 				ctx.fillRect(3*road+wth/2+2,	19*road  , 2*road-2, 3*road  );
-				ctx.fillRect(4*road+wth+2,	 1*road  , 2*road-2, 3*road  );
+				ctx.fillRect(4*road+wth+2,	 1*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,	 7*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,	13*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,	19*road  , 2*road-2, 3*road  );
@@ -672,6 +672,7 @@
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
+							// right up13 down14 right15  / left down16 up17 left18
 
 							//get mysql data
 							mysql_conn();
@@ -681,29 +682,23 @@
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
 							}
 							
-							if(this.dby ==  2) {
+							else if(this.dby ==  2 || this.dby ==  3 || this.dby ==  4) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[2];
 								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[3];
 							}
 							
-							if(this.dby ==  3) {
-								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[1];
-								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[2];
-								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[3];
-							}
-							
-							else if(this.dby ==  7 || this.dby ==  8) {
+							else if(this.dby ==  6 || this.dby ==  7 || this.dby ==  8 || this.dby ==  9) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[4];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[5];
 								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[6];
 							}
-							else if(this.dby == 12 || this.dby == 13) {
+							else if(this.dby == 11 || this.dby == 12 || this.dby == 13 || this.dby == 14) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[7];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[8];
 								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[9];
 							}
-							else if(this.dby == 17 || this.dby == 18) {
+							else if(this.dby == 16 || this.dby == 17 || this.dby == 18) {
 								if(this.dbx == 1 || this.dbx == 2)		this.turn = light[10];
 								if(this.dbx == 4 || this.dbx == 5)		this.turn = light[11];
 								if(this.dbx == 7 || this.dbx == 8)		this.turn = light[12];
@@ -729,9 +724,20 @@
 							
 							//left
 							if((this.dbx == 2 || this.dbx ==  5) && 
-							   (this.dby == 1 || this.dby ==  2 || this.dby == 7 
-							                  || this.dby == 12 || this.dby == 17)) {
+							   (this.dby == 2 || this.dby == 7 || this.dby == 12 || this.dby == 17)) {
 								if(this.turn < 10 || this.turn > 12)		this.turn = 0;
+							}
+							
+							//after loading
+							//right
+							if((this.dbx == 4 || this.dbx == 7) &&
+							   (this.dby == 4 || thid.dby == 9 || this.dby == 14)) {
+								if(this.turn < 13 || this.turn > 15)		this.turn = 0;
+							}
+							//left
+							if((this.dbx == 2 || this.dbx ==  5) && 
+							   (this.dby == 1 || this.dby == 6 || this.dby == 11 || this.dby == 16)) {
+								if(this.turn < 16 || this.turn > 18)		this.turn = 0;
 							}
 							
 							//set detail value while turning
