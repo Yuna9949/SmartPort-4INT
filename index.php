@@ -715,7 +715,7 @@
 							if((this.dbx == 4 || this.dbx == 7) && 
 							   (this.dby == 3 || this.dby == 8 || this.dby == 13 || this.dby == 18)) {
 								if(this.turn < 4 || this.turn > 6)		this.turn = 0;
-								alert(this.num +" "+this.dbx +" "+this.dby);
+								alert(this.num +" "+this.dbx +" "+this.dby+" "+this.x+" "+this.y);
 							}
 							
 							//down
