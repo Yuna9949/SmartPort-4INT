@@ -651,7 +651,7 @@
 							this.turn = 0;
 							check = 238;							
 						}
-						if(this.carry == 5 && this.dbx == 3 && this.y < 11*road-16 && this.y+this.speed > 11*road-16) {
+						if(this.carry == 5 && this.dbx == 3 && this.y <= 11*road-16 && this.y+this.speed >= 11*road-16) {
 							alert(this.num+" "+this.y+" "+(11*road-16));
 						}
 						// skyblue 3
