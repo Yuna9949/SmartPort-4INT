@@ -232,18 +232,18 @@
 
 				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,		 1*road+2, 2*road-2, 3*road-2);
-				ctx.fillRect(2*road+2,		 8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,		14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(2*road+2,		20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,	 1*road+2, 2*road-2, 3*road-2);
-				ctx.fillRect(3*road+wth/2+2,	 8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,	14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(3*road+wth/2+2,	20*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,	 1*road+2, 2*road-2, 3*road-2);
-				ctx.fillRect(4*road+wth+2,	 8*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,	14*road+2, 2*road-2, 2*road-2);
-				ctx.fillRect(4*road+wth+2,	20*road+2, 2*road-2, 2*road-2);
+				ctx.fillRect(2*road+2,		 1*road  , 2*road-2, 3*road  );
+				ctx.fillRect(2*road+2,		 7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,		13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,		19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(3*road+wth/2+2,	 1*road  , 2*road-2, 3*road  );
+				ctx.fillRect(3*road+wth/2+2,	 7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2,	13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2,	19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(4*road+wth+2,	 1*road  , 2*road-2, 3*road  );
+				ctx.fillRect(4*road+wth+2,	 7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	19*road  , 2*road-2, 3*road  );
 
 			}
 
@@ -644,7 +644,7 @@
 						
 						//unloading carry
 						// yellowgreen 2
-						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road) {
+						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road && (this.dby == 8 || this.dby == 9)) {
 							
 							if(this.y < 11*road-16) 		this.status = 3;
 							else 					this.status = 2;
@@ -653,9 +653,9 @@
 						}
 						if(this.carry == 5 && this.dbx == 3 && this.y < 11*road-16 && this.y+this.speed >= 11*road-16) {
 							this.y = (11*road-16)-this.speed;
-							alert(this.num+" "+this.y+" "+(11*road-16));
 							
 						}
+						
 						// skyblue 3
 						// green 4
 						// blue 5
