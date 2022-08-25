@@ -846,7 +846,7 @@
 										this.x -= ((this.x+this.speed)-lr);
 										this.n = 0;
 										this.corner = 0;
-										if(this.turn == 15)	this.y -= road;
+										//if(this.turn == 15)	this.y -= road;
 									}
 									//alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
 									if(this.dby == 18 && this.dbx >= 8 && 
@@ -932,7 +932,7 @@
 										this.x += (lr-(this.x-this.speed));
 										this.n = 0;
 										this.corner = 0;
-										if(this.turn == 18) 	this.y += road;
+										//if(this.turn == 18) 	this.y += road;
 									}
 									//alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
 								}
