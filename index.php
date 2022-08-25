@@ -618,7 +618,7 @@
 							if(this.crain > 0 && this.crain < 5){	
 								getCrain(this.crain);
 								this.carry = document.getElementById('crain'+this.crain).innerText;
-								alert(this.num +" "+this.carry);
+								alert(this.num +" : "+this.carry);
 							}
 							crain_status[this.crain] = 0;
 							this.crain = 0;
