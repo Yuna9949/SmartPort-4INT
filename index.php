@@ -1119,7 +1119,7 @@
             			<td class="controler">
 					<div class="panel">
 						<div class="title">
-							선적 현황
+							선적 현황 <i id="crain1"></i><i id="crain2"></i><i id="crain3"></i><i id="crain4"></i>
 						</div>
 						<div class="statuspanel">
 							<table>
@@ -1162,7 +1162,19 @@
 						alert(data.data);
 						alert(data.msg);
 						alert(data.code);
-					}			
+					}
+					if(crain == 1){
+						$("#crain1").text(data.data);
+					}
+					else if(crain == 2){
+						$("#crain2").text(data.data);
+					}
+					else if(crain == 3){
+						$("#crain3").text(data.data);
+					}
+					else if(crain == 4){
+						$("#crain4").text(data.data);
+					}
 					//alert(data.data);		
 				}
 				
