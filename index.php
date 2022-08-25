@@ -425,7 +425,8 @@
 						//set status if not turning
 						if(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
 							if(this.dby ==  4 || this.dby ==  5 || this.dby ==  6 ||
-							   this.dby ==  9 || this.dby == 10 || this.dby == 11 ||
+							   //this.dby ==  9 || 
+							   this.dby == 10 || this.dby == 11 ||
 							   this.dby == 14 || this.dby == 15 || this.dby == 16) {
 								check = 4914;
 								this.turn = 0;
