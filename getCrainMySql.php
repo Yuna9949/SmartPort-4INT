@@ -11,8 +11,8 @@
 		$data['data'] = $row['carry'];
     		$time = $row['time'];
 
-    		$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = '".$time."'";
-    		mysqli_query($conn, $sql);
+    		//$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = '".$time."'";
+    		//mysqli_query($conn, $sql);
    
 		mysqli_close($conn);
 		
