@@ -672,6 +672,7 @@
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
+							
 							// right up13 down14 right15  / left down16 up17 left18
 
 							//get mysql data
@@ -731,7 +732,7 @@
 							//after loading
 							//right
 							if((this.dbx == 4 || this.dbx == 7) &&
-							   (this.dby == 4 || thid.dby == 9 || this.dby == 14)) {
+							   (this.dby == 4 || this.dby == 9 || this.dby == 14)) {
 								if(this.turn < 13 || this.turn > 15)		this.turn = 0;
 							}
 							//left
