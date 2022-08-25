@@ -940,10 +940,10 @@
 						if(this.carry == 13)		ctx.fillStyle = "Black";
 						
 						if(this.carry > 1) {
-							if(this.front == 1)		ctx.fillRect(this.x-15, this.y+this.sizey/2, 30, 2);
-							else if(this.front == 2)	ctx.fillRect(this.x-this.sizex/2-2, this.y-15, 2, 30);
-							else if(this.front == 3)	ctx.fillRect(this.x-15, this.y-this.sizey/2-2, 30, 2);
-							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2, this.y-15, 2, 30);
+							if(this.front == 1)		ctx.fillRect(this.x-15, this.y+this.sizey/2-15, 30, 2);
+							else if(this.front == 2)	ctx.fillRect(this.x-this.sizex/2-2+15, this.y-15, 2, 30);
+							else if(this.front == 3)	ctx.fillRect(this.x-15, this.y-this.sizey/2-2+15, 30, 2);
+							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2-15, this.y-15, 2, 30);
 						}
 							
 					}
