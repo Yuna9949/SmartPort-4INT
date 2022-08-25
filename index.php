@@ -622,28 +622,24 @@
 									alert(this.num+" :1: "+this.carrying);
 								}
 							}
-							else if(this.carrying == 300+this.speed*2) {
-								if(this.crain > 0 && this.crain < 5){
-									this.carry = document.getElementById('crain'+this.crain).innerText;
-									this.crain = 0;
-									alert(this.num+" :2: "+this.carry);
-								}
-							}
 						}
 						else {
-							if(this.carrying == 301 || this.carrying == 304 || this.carrying == 297) {
+							if(this.carrying == 301 || this.carrying == 304 || this.carrying == 306) {
 								if(this.crain > 0 && this.crain < 5){
 									getCrain(this.crain);
 									crain_status[this.crain] = 0;
 									alert(this.num+" :1: "+this.carrying);
 								}
 							}
-							else if(this.carrying > 313) {
-								if(this.crain > 0 && this.crain < 5){
-									this.carry = document.getElementById('crain'+this.crain).innerText;
-									this.crain = 0;
-									alert(this.num+" :2: "+this.carry);
-								}
+						}
+						
+						if(this.crain > 0  && this.crain < 5) {
+							var crainch = document.getElementById('craincheck'+this.crain).innerText;
+							if(crainch == 1) {
+								this.carry = document.getElementById('crain'+this.crain).innerText;
+								document.getElementById('craincheck'+this.crain).innerText = "0";
+								this.crain = 0;
+								alert(this.num+" :2: "+this.carry);
 							}
 						}
 						
@@ -1145,6 +1141,7 @@
 					<div class="panel">
 						<div class="title">
 							선적 현황 <i id="crain1"></i><i id="crain2"></i><i id="crain3"></i><i id="crain4"></i>
+							<i id="craincheck1">0</i><i id="craincheck2">0</i><i id="craincheck3">0</i><i id="craincheck4">0</i>
 						</div>
 						<div class="statuspanel">
 							<table>
@@ -1189,11 +1186,22 @@
 						alert(data.code);
 					}
 					else{
-						if     (crain == 1)	$("#crain1").text(data.data);
-						else if(crain == 2)	$("#crain2").text(data.data);
-						else if(crain == 3)	$("#crain3").text(data.data);
-						else if(crain == 4)	$("#crain4").text(data.data);	
-						alert(crain+" update");
+						if     (crain == 1) {
+							$("#crain1").text(data.data);
+							$("#craincheck1").text("1");
+						}
+						else if(crain == 2) {
+							$("#crain2").text(data.data);
+							$("#craincheck2").text("1");
+						}
+						else if(crain == 3) {
+							$("#crain3").text(data.data);
+							$("#craincheck3").text("1");
+						}
+						else if(crain == 4) {
+							$("#crain4").text(data.data);	
+							$("#craincheck4").text("1");
+						}
 					}
 				}
 				
