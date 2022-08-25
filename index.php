@@ -925,8 +925,7 @@
 						else if(this.front == 3)	ctx.fillRect(this.x-5, this.y+this.sizey/2-2, 10, 2);
 						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2, this.y-5, 2, 10);
 						
-						
-						if(this.carry > 1)		alert(this.carry);
+
 						if(this.carry == 2) 		ctx.fillStyle = "Pink";
 						if(this.carry == 3)		ctx.fillStyle = "Red";
 						if(this.carry == 4)		ctx.fillStyle = "Orange";
@@ -941,10 +940,10 @@
 						if(this.carry == 13)		ctx.fillStyle = "Black";
 						
 						if(this.carry > 1) {
-							if(this.front == 1)		ctx.fillRect(this.x-10, this.y+this.sizey/2-2, 20, 2);
-							else if(this.front == 2)	ctx.fillRect(this.x-this.sizex/2, this.y-10, 2, 20);
-							else if(this.front == 3)	ctx.fillRect(this.x-10, this.y-this.sizey/2, 20, 2);
-							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2-2, this.y-10, 2, 20);
+							if(this.front == 1)		ctx.fillRect(this.x-15, this.y+this.sizey/2, 30, 2);
+							else if(this.front == 2)	ctx.fillRect(this.x-this.sizex/2-2, this.y-15, 2, 30);
+							else if(this.front == 3)	ctx.fillRect(this.x-15, this.y-this.sizey/2-2, 30, 2);
+							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2, this.y-15, 2, 30);
 						}
 							
 					}
