@@ -751,6 +751,8 @@
 							else if(this.turn <= 6)					this.status = 2;
 							else if(this.turn <= 9)					this.status = 3;
 							else if(this.turn <=12)					this.status = 4;
+							else if(this.turn <=15)					this.status = 2;
+							else if(this.turn <=18)					this.status = 4;
 							
 							if     (this.status == 1 && this.warnu == 0)			this.n -= this.speed;
 							else if(this.status == 2 && this.warnr == 0)			this.n -= this.speed;
@@ -764,10 +766,10 @@
 						}
 						//right after turn
 						else if(this.turn != 0 && this.n == 0) {
-							if(this.turn == 3 || this.turn == 4 || this.turn == 11)	this.status = 1;
-							if(this.turn == 1 || this.turn == 6 || this.turn ==  8)	this.status = 2;
-							if(this.turn == 5 || this.turn == 9 || this.turn == 10)	this.status = 3;
-							if(this.turn == 2 || this.turn == 7 || this.turn == 12)	this.status = 4;
+							if(this.turn == 3 || this.turn == 4 || this.turn == 11 || this.turn == 13 || this.turn == 17)	this.status = 1;
+							if(this.turn == 1 || this.turn == 6 || this.turn ==  8 || this.turn == 15)			this.status = 2;
+							if(this.turn == 5 || this.turn == 9 || this.turn == 10 || this.turn == 14 || this.turn == 16)	this.status = 3;
+							if(this.turn == 2 || this.turn == 7 || this.turn == 12 || this.turn == 18)			this.status = 4;
 						}
 						
 						var ud = (this.tlu+this.tld)/2;
