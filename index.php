@@ -647,7 +647,7 @@
 						if(this.carry == 2 && this.dbx == 3 && this.y > 9*road && this.y < 11*road) {
 							
 							if(this.y < 11*road-16) 	this.status = 3;
-							else 				this.status = 0;
+							else 				this.status = 2;
 							this.turn = 0;
 							check = 238;
 							
