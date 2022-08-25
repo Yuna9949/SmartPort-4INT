@@ -644,19 +644,28 @@
 						
 						//unloading carry
 						// yellowgreen 2
-						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road && (this.dby == 8 || this.dby == 9)) {
+						if(this.carry == 2 && this.dbx == 3 && this.y > 9*road && (this.dby == 8 || this.dby == 9)) {
 							
 							if(this.y < 11*road-16) 		this.status = 3;
 							else 					this.status = 2;
 							this.turn = 0;
 							check = 238;							
 						}
-						if(this.carry == 5 && this.dbx == 3 && this.y < 11*road-16 && this.y+this.speed >= 11*road-16) {
+						if(this.carry == 2 && this.dbx == 3 && this.y < 11*road-16 && this.y+this.speed >= 11*road-16) {
 							this.y = (11*road-16)-this.speed;
-							
 						}
 						
 						// skyblue 3
+						if(this.carry == 5 && this.dbx == 6 && this.y > 9*road && (this.dby == 8 || this.dby == 9)) {
+							
+							if(this.y < 11*road-16) 		this.status = 3;
+							else 					this.status = 2;
+							this.turn = 0;
+							check = 338;							
+						}
+						if(this.carry == 5 && this.dbx == 6 && this.y < 11*road-16 && this.y+this.speed >= 11*road-16) {
+							this.y = (11*road-16)-this.speed;
+						}
 						// green 4
 						// blue 5
 						
