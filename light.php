@@ -30,37 +30,37 @@
 					<table>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↰' onclick='status("t1", 2)'/></td>
-							<td id="t1up1"><input type='button' value='↟' onclick='status("t1", 3)'/></td>
-							<td><input type='button' value='↱' onclick='status("t1", 1)'/></td>
+							<td style="border-bottom: 1;"><input type='button' value='↰' onclick='status("t1", 2)'/></td>
+							<td style="border-bottom: 1;" id="t1up1"><input type='button' value='↟' onclick='status("t1", 3)'/></td>
+							<td style="border-bottom: 1;"><input type='button' value='↱' onclick='status("t1", 1)'/></td>
 							<td></td>
 						</tr>
 						<tr>
 							<td><input type='button' value='↻' onclick='status("t1", 11)'/></td>
-							<td><input type='button' value='↻' onclick='status("t1", 17)'/></td>
+							<td style="border-left: 1;"><input type='button' value='↻' onclick='status("t1", 17)'/></td>
 							<td id="t1up2"><input type='button' value='↞' onclick='status("t1", 18)'/></td>
-							<td><input type='button' value='↶' onclick='status("t1", 16)'/></td>
+							<td style="border-right: 1;"><input type='button' value='↶' onclick='status("t1", 16)'/></td>
 							<td><input type='button' value='⤴' onclick='status("t1", 4)'/></td>
 						</tr>
 						<tr>
 							<td id="t1l1"><input type='button' value='↞' onclick='status("t1", 12)'/></td>
-							<td id="t1l2"></td>
+							<td id="t1l2" style="border-left: 1;"></td>
 							<td id="t1">0</td>
-							<td id="t1r2"><input type='button' value='■' onclick='status("t1", 0)'/></td>
+							<td id="t1r2" style="border-right: 1;"><input type='button' value='■' onclick='status("t1", 0)'/></td>
 							<td id="t1r1"><input type='button' value='↠' onclick='status("t1", 6)'/></td>
 						</tr>
 						<tr>
 							<td><input type='button' value='↶' onclick='status("t1", 10)'/></td>
-							<td><input type='button' value='⤴' onclick='status("t1", 13)'/></td>
+							<td style="border-left: 1;"><input type='button' value='⤴' onclick='status("t1", 13)'/></td>
 							<td id="t1dw2"><input type='button' value='↠' onclick='status("t1", 15)'/></td>
-							<td><input type='button' value='⤵' onclick='status("t1", 14)'/></td>
+							<td style="border-right: 1;"><input type='button' value='⤵' onclick='status("t1", 14)'/></td>
 							<td><input type='button' value='⤵' onclick='status("t1", 5)'/></td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><input type='button' value='↲' onclick='status("t1", 7)'/></td>
-							<td id="t1dw1"><input type='button' value='↡' onclick='status("t1", 9)'/></td>
-							<td><input type='button' value='↳' onclick='status("t1", 8)'/></td>
+							<td style="border-top: 1;"><input type='button' value='↲' onclick='status("t1", 7)'/></td>
+							<td style="border-top: 1;" id="t1dw1"><input type='button' value='↡' onclick='status("t1", 9)'/></td>
+							<td style="border-top: 1;"><input type='button' value='↳' onclick='status("t1", 8)'/></td>
 							<td></td>
 						</tr>
 					</table>
