@@ -25,7 +25,7 @@
 				<td><input type='button' value='mysql_conn' onclick='mysql_conn()'/></td>
 				<td colspan="2"><input type='button' value='mysql_update' onclick='mysql_update()'/></td>
 			</tr>
-			<tr>
+			<tr>//right up13 down14 right15  / left down16 up17 left18
 				<td>
 					<table>
 						<tr>
@@ -37,9 +37,9 @@
 						</tr>
 						<tr>
 							<td><input type='button' value='↻' onclick='status("t1", 11)'/></td>
-							<td></td>
-							<td id="t1up2"></td>
-							<td></td>
+							<td><input type='button' value='↻' onclick='status("t1", 17)'/></td>
+							<td id="t1up2"><input type='button' value='↞' onclick='status("t1", 18)'/></td>
+							<td><input type='button' value='↶' onclick='status("t1", 16)'/></td>
 							<td><input type='button' value='⤴' onclick='status("t1", 4)'/></td>
 						</tr>
 						<tr>
@@ -51,9 +51,9 @@
 						</tr>
 						<tr>
 							<td><input type='button' value='↶' onclick='status("t1", 10)'/></td>
-							<td></td>
-							<td id="t1dw2"></td>
-							<td></td>
+							<td><input type='button' value='⤴' onclick='status("t1", 13)'/></td>
+							<td id="t1dw2"><input type='button' value='↠' onclick='status("t1", 15)'/></td>
+							<td><input type='button' value='⤵' onclick='status("t1", 14)'/></td>
 							<td><input type='button' value='⤵' onclick='status("t1", 5)'/></td>
 						</tr>
 						<tr>
@@ -620,19 +620,19 @@
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 			}
-			else if($light == 4){ // right up
+			else if($light == 4 || $light == 13){ // right up
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 			}
-			else if($light == 5){ // right down
+			else if($light == 5 || $light == 14){ // right down
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 			}
-			else if($light == 6){ // right right
+			else if($light == 6 || $light == 15){ // right right
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
@@ -656,19 +656,19 @@
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 			}
-			else if($light == 10){ // left down
+			else if($light == 10 || $light == 16){ // left down
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 			}
-			else if($light == 11){ // left up
+			else if($light == 11 || $light == 17){ // left up
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
 			}
-			else if($light == 12){ // left left
+			else if($light == 12 || $light == 18){ // left left
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
