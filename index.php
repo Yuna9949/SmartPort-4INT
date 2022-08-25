@@ -626,7 +626,7 @@
 								if(this.crain > 0 && this.crain < 5){
 									this.carry = document.getElementById('crain'+this.crain).innerText;
 									this.crain = 0;
-									alert(this.num+" :2: "+this.carrying);
+									alert(this.num+" :2: "+this.carry);
 								}
 							}
 						}
