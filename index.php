@@ -622,7 +622,7 @@
 									alert(this.num+" :1: "+this.carrying);
 								}
 							}
-							else if(this.carrying > 300) {
+							else if(this.carrying == 300+this.speed*2) {
 								if(this.crain > 0 && this.crain < 5){
 									this.carry = document.getElementById('crain'+this.crain).innerText;
 									this.crain = 0;
@@ -631,14 +631,14 @@
 							}
 						}
 						else {
-							if(this.carrying == 301 || this.carrying == 304 || this.carrying == 306) {
+							if(this.carrying == 301 || this.carrying == 304 || this.carrying == 297) {
 								if(this.crain > 0 && this.crain < 5){
 									getCrain(this.crain);
 									crain_status[this.crain] = 0;
 									alert(this.num+" :1: "+this.carrying);
 								}
 							}
-							else if(this.carrying > 307) {
+							else if(this.carrying > 313) {
 								if(this.crain > 0 && this.crain < 5){
 									this.carry = document.getElementById('crain'+this.crain).innerText;
 									this.crain = 0;
