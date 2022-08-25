@@ -321,6 +321,7 @@
 						
 						var margin = 25;
 						if(this.dbx == 3 || this.dbx == 6)				margin = 0;
+						if(this.status == 2 || this.status == 4)			margin = 0;
 						
 						if     (this.y >=    road         && this.y <  2*road        ) {this.dby =  1; this.tlu =    road; this.tld =  2*road;}
 						else if(this.y >=  2*road         && this.y <  3*road        ) {this.dby =  2; this.tlu =  2*road; this.tld =  3*road;}
@@ -341,8 +342,6 @@
 						else if(this.y >= 20*road-margin  && this.y < 21*road        ) {this.dby = 17; this.tlu = 20*road; this.tld = 21*road;}
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
 						else 								this.dby = 0;
-						
-						if(this.x >= 3*road+wth/2-25 && this.x < 3*road+wth/2 && this.y >= 10*road  && this.y < 11*road  ) this.dby = 9;
 						
 						//alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
