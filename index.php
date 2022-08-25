@@ -854,7 +854,8 @@
 							if(this.warnd == 0) {
 							
 								//set start line in front of traffic light
-								if(this.turn == 0 && this.dbx != 9 && this.tld < this.y+this.sizey/2+this.speed) {
+								if(this.turn == 0 && this.dbx != 9 && this.tld < this.y+this.sizey/2+this.speed
+								  && this.dbx != 3 && this.dbx != 6) {
 									this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
 									alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
 								}
