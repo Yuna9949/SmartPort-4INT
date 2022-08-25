@@ -1163,7 +1163,7 @@
 						alert(data.msg);
 						alert(data.code);
 					}			
-					alert(data.data);		
+					//alert(data.data);		
 				}
 				
 			});
