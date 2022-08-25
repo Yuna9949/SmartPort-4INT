@@ -645,11 +645,13 @@
 						//unloading carry
 						// yellowgreen 2
 						if(this.carry == 2 && this.dbx == 3 && this.y > 9*road && this.y < 11*road) {
-							alert(this.num+" : "+this.x+" "+this.y+" "+this.status);
+							
 							if(this.y < 11*road-16) 	this.status = 3;
 							else 				this.status = 0;
 							this.turn = 0;
 							check = 238;
+							
+							alert(this.num+" : "+(9*road)+" "+this.y+" "+(11*road)+" "+this.status);
 							
 						}
 						// skyblue 3
