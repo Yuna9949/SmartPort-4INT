@@ -615,7 +615,7 @@
 						}
 						
 						if(this.carrying > 300) {
-							if(this.crain > 0){	
+							if(this.crain > 0 && this.crain < 5){	
 								getCrain(this.crain);
 								this.carry = document.getElementById('crain'+this.crain).innerText;
 								alert(this.carry);
