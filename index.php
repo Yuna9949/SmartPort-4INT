@@ -712,28 +712,25 @@
 							if((this.dbx == 2 || this.dbx == 5 || this.dbx == 8) && 
 							   (this.dby == 3 || this.dby == 8 || this.dby == 13)) {
 								if(this.turn < 1 || this.turn > 3)		this.turn = 0;
-								alert("up");
 							}
 							
 							//right
 							if((this.dbx == 4 || this.dbx == 7) && 
 							   (this.dby == 3 || this.dby == 8 || this.dby == 13 || this.dby == 18)) {
 								if(this.turn < 4 || this.turn > 6)		this.turn = 0;
-								alert("right");
+								alert("right"+this.dbx+" "+this.dby);
 							}
 							
 							//down
 							if((this.dbx == 1 || this.dbx ==  4 || this.dbx == 7) && 
 							   (this.dby == 7 || this.dby == 12 || this.dby == 17)) {
 								if(this.turn < 7 || this.turn > 9)		this.turn = 0;
-								alert("down");
 							}
 							
 							//left
 							if((this.dbx == 2 || this.dbx ==  5) && 
 							   (this.dby == 2 || this.dby == 7 || this.dby == 12 || this.dby == 17)) {
 								if(this.turn < 10 || this.turn > 12)		this.turn = 0;
-								alert("left");
 							}
 							
 							//after loading
@@ -741,13 +738,12 @@
 							if((this.dbx == 4 || this.dbx == 7) &&
 							   (this.dby == 4 || this.dby == 9 || this.dby == 14)) {
 								if(this.turn < 13 || this.turn > 15)		this.turn = 0;
-								alert("right load");
+								alert("right load"+this.dbx+" "+this.dby);
 							}
 							//left
 							if((this.dbx == 2 || this.dbx ==  5) && 
 							   (this.dby == 1 || this.dby == 6 || this.dby == 11 || this.dby == 16)) {
 								if(this.turn < 16 || this.turn > 18)		this.turn = 0;
-								alert("left load");
 							}
 							
 							//set detail value while turning
