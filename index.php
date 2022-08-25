@@ -206,29 +206,29 @@
 				
 				<!-- 컨테이너 내부물품 -->
 				ctx.fillStyle = "Pink";
-				ctx.fillRect ((wth-2*road)/4  -road, 5*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4  -road, 5*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Red";
-				ctx.fillRect ((wth-2*road)/4  -road, 6*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4  -road, 6*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Orange";
-				ctx.fillRect ((wth-2*road)/4*3+road, 5*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4*3+road, 5*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Yellow";
-				ctx.fillRect ((wth-2*road)/4*3+road, 6*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4*3+road, 6*road+road/2, 10*road, 4);
 				ctx.fillStyle = "YellowGreen";
-				ctx.fillRect ((wth-2*road)/4  -road, 11*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4  -road, 11*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Teal";
-				ctx.fillRect ((wth-2*road)/4  -road, 12*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4  -road, 12*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Turquoise";
-				ctx.fillRect ((wth-2*road)/4*3+road, 11*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4*3+road, 11*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Blue";
-				ctx.fillRect ((wth-2*road)/4*3+road, 12*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4*3+road, 12*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Navy";
-				ctx.fillRect ((wth-2*road)/4  -road, 17*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4  -road, 17*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Purple";
-				ctx.fillRect ((wth-2*road)/4  -road, 18*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4  -road, 18*road+road/2, 10*road, 4);
 				ctx.fillStyle = "SlateGray";
-				ctx.fillRect ((wth-2*road)/4*3+road, 17*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4*3+road, 17*road+road/2, 10*road, 4);
 				ctx.fillStyle = "Black";
-				ctx.fillRect ((wth-2*road)/4*3+road, 18*road+2, 10*road, 4);
+				ctx.fillRect ((wth-2*road)/4*3+road, 18*road+road/2, 10*road, 4);
 
 				<!-- 신호등 -->
 				ctx.fillStyle = "rgb(192, 244, 241)";
