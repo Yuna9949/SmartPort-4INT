@@ -780,6 +780,7 @@
 							//turn shape
 							this.sizex = 30;
 							this.sizey = 50;
+							this.front = 1;
 							
 							//if not gonna crash
 							if(this.warnu == 0) {
@@ -789,14 +790,15 @@
 									//alert(this.num +" : "+"stop"+" u:"+ud+" y:"+this.y);
 								}
 								//set detail location while turing
-								if(this.turn % 2 == 1 && this.dbx != 9 && ud > this.y-this.speed
-								       && this.n > 0 && ud <= this.y) {
+								if(((this.turn % 2 == 1 && this.turn <= 12) || (this.turn == 14 || this.turn == 17))
+								   && this.dbx != 9 && ud > this.y-this.speed && this.n > 0 && ud <= this.y) {
 									this.y += (ud-(this.y-this.speed));
 									this.n = 0;
 									//alert(this.num +" : "+"in"+" u:"+ud+" y:"+this.y);
 								}
-								else if(this.turn % 2 == 0 && this.dbx != 9 && ud > this.y-this.speed
-								       && this.turn != 0 && this.n > 0 && ud <= this.y) {
+								else if(((this.turn % 2 == 0 && this.turn != 0 && this.turn <= 12) 
+									 || (this.turn == 13 || this.turn == 16)) 
+									&& this.dbx != 9 && ud > this.y-this.speed && this.n > 0 && ud <= this.y) {
 									if(this.corner == 0) {
 										this.corner = 1;
 									}
@@ -809,7 +811,6 @@
 								}
 								
 								this.y -= this.speed;
-								this.front = 1;
 							}
 						}
 						
@@ -817,6 +818,7 @@
 							//turn shape
 							this.sizex = 50;
 							this.sizey = 30;
+							this.front = 2;
 							
 							//if not gonna crash
 							if(this.warnr == 0) {
@@ -828,14 +830,15 @@
 								}
 								
 								//set detail location while turing
-								if(this.turn % 2 == 1 && this.dbx != 9 && lr < this.x+this.speed
-								       && this.n > 0 && lr >= this.x) {
+								if(((this.turn % 2 == 1 && this.turn <= 12) || (this.turn == 14 || this.turn == 17))
+								   && this.dbx != 9 && lr < this.x+this.speed && this.n > 0 && lr >= this.x) {
 									this.x -= ((this.x+this.speed)-lr);
 									this.n = 0;
 									//alert(this.num +" : "+"in"+" r:"+lr+" x:"+this.x);
 								}
-								else if(this.turn % 2 == 0 && this.dbx != 9 && lr < this.x+this.speed
-								       && this.turn != 0 && this.n > 0 && lr >= this.x) {
+								else if(((this.turn % 2 == 0 && this.turn != 0 && this.turn <= 12) 
+									 || (this.turn == 13 || this.turn == 16 || this.turn == 15)) 
+									&& this.dbx != 9 && lr < this.x+this.speed && this.n > 0 && lr >= this.x) {
 									if(this.corner == 0) {
 										this.corner = 1;
 									}
@@ -843,6 +846,7 @@
 										this.x -= ((this.x+this.speed)-lr);
 										this.n = 0;
 										this.corner = 0;
+										if(this.turn == 15)	this.y -= road;
 									}
 									//alert(this.num +" : "+this.corner+" r:"+lr+" x:"+this.x);
 									if(this.dby == 18 && this.dbx >= 8 && 
@@ -851,7 +855,6 @@
 								}
 
 								this.x += this.speed;
-								this.front = 2;
 							}
 						}
 						
@@ -859,6 +862,7 @@
 							//turn shape
 							this.sizex = 30;
 							this.sizey = 50;
+							this.front = 3;
 							
 							//if not gonna crash
 							if(this.warnd == 0) {
@@ -871,14 +875,15 @@
 								}
 								
 								//set detail location while turing
-								if(this.turn % 2 == 1 && this.dbx != 9 && ud < this.y+this.speed
-								       && this.n > 0 && ud >= this.y) {
+								if(((this.turn % 2 == 1 && this.turn <= 12) || (this.turn == 14 || this.turn == 17))
+								   && this.dbx != 9 && ud < this.y+this.speed && this.n > 0 && ud >= this.y) {
 									this.y -= ((this.y+this.speed)-ud);
 									this.n = 0;
 									//alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
 								}
-								else if(this.turn % 2 == 0 && this.dbx != 9 && ud < this.y+this.speed
-								       && this.turn != 0 && this.n > 0 && ud >= this.y) {
+								else if(((this.turn % 2 == 0 && this.turn != 0 && this.turn <= 12) 
+									 || (this.turn == 13 || this.turn == 16)) 
+									&& this.dbx != 9 && ud < this.y+this.speed && this.n > 0 && ud >= this.y) {
 									if(this.corner == 0) {
 										this.corner = 1;
 									}
@@ -891,7 +896,6 @@
 								}
 							
 								this.y += this.speed;
-								this.front = 3;
 							}
 						}
 						
@@ -899,6 +903,7 @@
 							//turn shape
 							this.sizex = 50;
 							this.sizey = 30;
+							this.front = 4;
 							
 							//if not gonna crash
 							if(this.warnl == 0) {
@@ -910,14 +915,16 @@
 								}
 								
 								//set detail location while turing
-								if(this.turn % 2 == 1 && this.dbx != 9 && lr > this.x-this.speed
+								if(((this.turn % 2 == 1 && this.turn <= 12) || (this.turn == 14 || this.turn == 17)) 
+								   && this.dbx != 9 && lr > this.x-this.speed
 							       		&& this.n > 0 && lr <= this.x) {
 									this.x += (lr-(this.x-this.speed));
 									this.n = 0;
 									//alert(this.num +" : "+"in"+" l:"+lr+" x:"+this.x);
 								}
-								else if(this.turn % 2 == 0 && this.dbx != 9 && lr > this.x-this.speed
-							       		&& this.turn != 0 && this.n > 0 && lr <= this.x) {
+								else if(((this.turn % 2 == 0 && this.turn != 0 && this.turn <= 12) 
+									 || (this.turn == 13 || this.turn == 16 || this.turn == 18)) 
+									&& this.dbx != 9 && lr > this.x-this.speed && this.n > 0 && lr <= this.x) {
 									if(this.corner == 0) {
 										this.corner = 1;
 									}
@@ -925,13 +932,13 @@
 										this.x += (lr-(this.x-this.speed));
 										this.n = 0;
 										this.corner = 0;
+										if(this.turn == 18) 	this.y += road;
 									}
 									//alert(this.num +" : "+this.corner+" l:"+lr+" x:"+this.x);
 								}
 								
 								//move
 								this.x -= this.speed;
-								this.front = 4;
 							}
 						}
 					}
