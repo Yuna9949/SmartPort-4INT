@@ -653,6 +653,7 @@
 						}
 						if(this.carry == 5 && this.dbx == 3 && this.y <= 11*road-16 && this.y+this.speed >= 11*road-16) {
 							this.y += (11*road-16)-this.y;
+							this.y -= this.speed;
 							alert(this.num+" "+this.y+" "+(11*road-16));
 							
 						}
