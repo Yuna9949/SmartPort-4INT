@@ -734,6 +734,7 @@
 							if((this.dbx == 4 || this.dbx == 7) &&
 							   (this.dby == 4 || this.dby == 9 || this.dby == 14)) {
 								if(this.turn < 13 || this.turn > 15)		this.turn = 0;
+								alert(this.turn);
 							}
 							//left
 							if((this.dbx == 2 || this.dbx ==  5) && 
