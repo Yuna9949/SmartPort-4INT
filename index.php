@@ -644,16 +644,15 @@
 						
 						//unloading carry
 						// yellowgreen 2
-						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road && this.y < 11*road-16) {
+						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road) {
 							
-							if(this.y < 11*road-16) 	this.status = 3;
-							else 				this.status = 2;
+							if(this.y < 11*road-16) 		this.status = 3;
+							else 					this.status = 2;
 							this.turn = 0;
 							check = 238;							
 						}
-						if(this.carry == 5 && this.dbx == 3 && this.y <= 11*road-16 && this.y+this.speed >= 11*road-16) {
-							this.y += (11*road-16)-this.y;
-							this.y -= this.speed;
+						if(this.carry == 5 && this.dbx == 3 && this.y < 11*road-16 && this.y+this.speed >= 11*road-16) {
+							this.y = (11*road-16)-this.speed;
 							alert(this.num+" "+this.y+" "+(11*road-16));
 							
 						}
