@@ -320,8 +320,8 @@
 						else								this.dbx = 0;
 						
 						var margin = 25;
-						if(this.dbx == 3 || this.dbx == 6)				margin = 0;
-						if(this.status == 2 || this.status == 4)			margin = 0;
+						if(this.x >= 4*road && this.x < 3*road+wth/2) 			margin = 0;
+						if(this.x >= 5*road+wth/2 && this.x < 4*road+wth) 		margin = 0;
 						
 						if     (this.y >=    road         && this.y <  2*road        ) {this.dby =  1; this.tlu =    road; this.tld =  2*road;}
 						else if(this.y >=  2*road         && this.y <  3*road        ) {this.dby =  2; this.tlu =  2*road; this.tld =  3*road;}
