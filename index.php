@@ -644,7 +644,7 @@
 						
 						//unloading carry
 						// yellowgreen 2
-						if(this.carry == 2 && this.dbx == 3 && this.y > 9*road && this.y < 11*road) {
+						if(this.carry == 5 && this.dbx == 3 && this.y > 9*road && this.y < 11*road) {
 							
 							if(this.y < 11*road-16) 	this.status = 3;
 							else 				this.status = 2;
@@ -856,7 +856,7 @@
 								//set start line in front of traffic light
 								if(this.turn == 0 && this.dbx != 9 && this.tld < this.y+this.sizey/2+this.speed) {
 									this.y -= ((this.y+this.sizey/2+this.speed)-this.tld-span);
-									//alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
+									alert(this.num +" : "+"stop"+" d:"+ud+" y:"+this.y);
 								}
 								
 								//set detail location while turing
@@ -864,7 +864,7 @@
 								       && this.n > 0 && ud >= this.y) {
 									this.y -= ((this.y+this.speed)-ud);
 									this.n = 0;
-									//alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
+									alert(this.num +" : "+"in"+" d:"+ud+" y:"+this.y);
 								}
 								else if(this.turn % 2 == 0 && this.dbx != 9 && ud < this.y+this.speed
 								       && this.turn != 0 && this.n > 0 && ud >= this.y) {
@@ -876,7 +876,7 @@
 										this.n = 0;
 										this.corner = 0;
 									}
-									//alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
+									alert(this.num +" : "+this.corner+" d:"+ud+" y:"+this.y);
 								}
 							
 								this.y += this.speed;
