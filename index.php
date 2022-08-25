@@ -319,25 +319,28 @@
 						else if(this.x >= 6*road+wth				     ) {this.dbx = 9; this.tll = 6*road+wth; 	this.tlr = 9*road+wth;	}
 						else								this.dbx = 0;
 						
+						var margin = 25;
+						if(this.dbx == 3 || this.dbx == 6)		margin = 0;
+						
 						if     (this.y >=    road         && this.y <  2*road        ) {this.dby =  1; this.tlu =    road; this.tld =  2*road;}
 						else if(this.y >=  2*road         && this.y <  3*road        ) {this.dby =  2; this.tlu =  2*road; this.tld =  3*road;}
-						else if(this.y >=  3*road         && this.y <  4*road+25     ) {this.dby =  3; this.tlu =  3*road; this.tld =  4*road;}
-						else if(this.y >=  4*road+25      && this.y <  5*road        ) {this.dby =  4; this.tlu =  4*road; this.tld =  8*road;}
+						else if(this.y >=  3*road         && this.y <  4*road+margin ) {this.dby =  3; this.tlu =  3*road; this.tld =  4*road;}
+						else if(this.y >=  4*road+margin  && this.y <  5*road        ) {this.dby =  4; this.tlu =  4*road; this.tld =  8*road;}
 						else if(this.y >=  5*road         && this.y <  7*road        ) {this.dby =  5; this.tlu =  4*road; this.tld =  8*road;}
-						else if(this.y >=  7*road         && this.y <  8*road-25     ) {this.dby =  6; this.tlu =  4*road; this.tld =  8*road;}
-						else if(this.y >=  8*road-25      && this.y <  9*road        ) {this.dby =  7; this.tlu =  8*road; this.tld =  9*road;}
-						else if(this.y >=  9*road         && this.y < 10*road+25     ) {this.dby =  8; this.tlu =  9*road; this.tld = 10*road;}
-						else if(this.y >= 10*road+25      && this.y < 11*road        ) {this.dby =  9; this.tlu = 10*road; this.tld = 14*road;}
+						else if(this.y >=  7*road         && this.y <  8*road-margin ) {this.dby =  6; this.tlu =  4*road; this.tld =  8*road;}
+						else if(this.y >=  8*road-margin  && this.y <  9*road        ) {this.dby =  7; this.tlu =  8*road; this.tld =  9*road;}
+						else if(this.y >=  9*road         && this.y < 10*road+margin ) {this.dby =  8; this.tlu =  9*road; this.tld = 10*road;}
+						else if(this.y >= 10*road+margin  && this.y < 11*road        ) {this.dby =  9; this.tlu = 10*road; this.tld = 14*road;}
 						else if(this.y >= 11*road         && this.y < 13*road        ) {this.dby = 10; this.tlu = 10*road; this.tld = 14*road;}
-						else if(this.y >= 13*road         && this.y < 14*road-25     ) {this.dby = 11; this.tlu = 10*road; this.tld = 14*road;}
-						else if(this.y >= 14*road-25      && this.y < 15*road        ) {this.dby = 12; this.tlu = 14*road; this.tld = 15*road;}
-						else if(this.y >= 15*road         && this.y < 16*road+25     ) {this.dby = 13; this.tlu = 15*road; this.tld = 16*road;}
-						else if(this.y >= 16*road+25      && this.y < 17*road        ) {this.dby = 14; this.tlu = 16*road; this.tld = 20*road;}
+						else if(this.y >= 13*road         && this.y < 14*road-margin ) {this.dby = 11; this.tlu = 10*road; this.tld = 14*road;}
+						else if(this.y >= 14*road-margin  && this.y < 15*road        ) {this.dby = 12; this.tlu = 14*road; this.tld = 15*road;}
+						else if(this.y >= 15*road         && this.y < 16*road+margin ) {this.dby = 13; this.tlu = 15*road; this.tld = 16*road;}
+						else if(this.y >= 16*road+margin  && this.y < 17*road        ) {this.dby = 14; this.tlu = 16*road; this.tld = 20*road;}
 						else if(this.y >= 17*road         && this.y < 19*road        ) {this.dby = 15; this.tlu = 16*road; this.tld = 20*road;}
-						else if(this.y >= 19*road         && this.y < 20*road-25     ) {this.dby = 16; this.tlu = 16*road; this.tld = 20*road;}
-						else if(this.y >= 20*road-25      && this.y < 21*road        ) {this.dby = 17; this.tlu = 20*road; this.tld = 21*road;}
+						else if(this.y >= 19*road         && this.y < 20*road-margin ) {this.dby = 16; this.tlu = 16*road; this.tld = 20*road;}
+						else if(this.y >= 20*road-margin  && this.y < 21*road        ) {this.dby = 17; this.tlu = 20*road; this.tld = 21*road;}
 						else if(this.y >= 21*road         && this.y < 22*road        ) {this.dby = 18; this.tlu = 21*road; this.tld = 22*road;}
-						else 								this.dby = 0;
+						else 								this.dby = 0;					
 						
 						if(this.dby > 7) alert("num:"+this.num+" dbx:"+this.dbx+" dby:"+this.dby+" st:"+this.status+" turn:"+this.turn+" n:"+this.n+" x:"+this.x+" y:"+this.y+" crain:"+this.crain+" carry:"+this.carry);
 						
