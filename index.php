@@ -925,18 +925,20 @@
 						else if(this.front == 3)	ctx.fillRect(this.x-5, this.y+this.sizey/2-2, 10, 2);
 						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2, this.y-5, 2, 10);
 						
-						if(this.carry == 2) 		ctx.fillStyle = "Pink";
-						if(this.carry == 3)		ctx.fillStyle = "Red";
-						if(this.carry == 4)		ctx.fillStyle = "Orange";
-						if(this.carry == 5)		ctx.fillStyle = "Yellow";
-						if(this.carry == 6)		ctx.fillStyle = "YellowGreen";
-						if(this.carry == 7)		ctx.fillStyle = "Green";
-						if(this.carry == 8)		ctx.fillStyle = "Turquoise";
-						if(this.carry == 9)		ctx.fillStyle = "Blue";
-						if(this.carry == 10)		ctx.fillStyle = "Navy";
-						if(this.carry == 11)		ctx.fillStyle = "Purple";
-						if(this.carry == 12)		ctx.fillStyle = "SlateGray";
-						if(this.carry == 13)		ctx.fillStyle = "Black";
+						if(this.carry == 2) 		ctx.strokeStyle = "Pink";
+						if(this.carry == 3)		ctx.strokeStyle = "Red";
+						if(this.carry == 4)		ctx.strokeStyle = "Orange";
+						if(this.carry == 5)		ctx.strokeStyle = "Yellow";
+						if(this.carry == 6)		ctx.strokeStyle = "YellowGreen";
+						if(this.carry == 7)		ctx.strokeStyle = "Green";
+						if(this.carry == 8)		ctx.strokeStyle = "Turquoise";
+						if(this.carry == 9)		ctx.strokeStyle = "Blue";
+						if(this.carry == 10)		ctx.strokeStyle = "Navy";
+						if(this.carry == 11)		ctx.strokeStyle = "Purple";
+						if(this.carry == 12)		ctx.strokeStyle = "SlateGray";
+						if(this.carry == 13)		ctx.strokeStyle = "Black";
+						
+						if(this.carry > 1)		ctx.lineWidth = 2;
 						
 						if(this.carry > 1) 		ctx.strokeRect(this.x-this.size/2-2, this.y-this.sizey/2-2, this.sizex+4, this.sizey+4);
 					}
