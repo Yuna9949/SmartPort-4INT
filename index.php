@@ -614,16 +614,37 @@
 							this.temp = 0;
 						}
 						
-						if(this.carrying > 300) {
-							alert(this.num+" : "+this.carrying);
-							if(this.crain > 0 && this.crain < 5){	
-								getCrain(this.crain);
-								this.carry = document.getElementById('crain'+this.crain).innerText;
-								//alert(this.num +" : "+this.carry);
+						if(this.speed < 7 || this.speed == 10) {
+							if(this.carrying == 300) {
+								if(this.crain > 0 && this.crain < 5){
+									getCrain(this.crain);
+									crain_status[this.crain] = 0;
+									alert(this.num+" :1: "+this.carrying);
+								}
 							}
-							this.carrying += this.speed;
-							crain_status[this.crain] = 0;
-							this.crain = 0;
+							else if(this.carrying > 300) {
+								if(this.crain > 0 && this.crain < 5){
+									this.carry = document.getElementById('crain'+this.crain).innerText;
+									this.crain = 0;
+									alert(this.num+" :2: "+this.carrying);
+								}
+							}
+						}
+						else {
+							if(this.carrying == 301 || this.carrying == 304 || this.carrying == 306) {
+								if(this.crain > 0 && this.crain < 5){
+									getCrain(this.crain);
+									crain_status[this.crain] = 0;
+									alert(this.num+" :1: "+this.carrying);
+								}
+							}
+							else if(this.carrying > 307) {
+								if(this.crain > 0 && this.crain < 5){
+									this.carry = document.getElementById('crain'+this.crain).innerText;
+									this.crain = 0;
+									alert(this.num+" :2: "+this.carrying);
+								}
+							}
 						}
 						
 						if(check == 0)							this.status = 0;
