@@ -9,6 +9,16 @@
     <title>SPTS</title>
     
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+      html, body {
+        margin: 0;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      body {
+        background-image : url("pg.png");
+        background-repeat : no-repeat;
+        background-size : 100% 100%;
+      }
     </style>
     
     <script type="text/javascript">
