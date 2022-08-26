@@ -171,6 +171,7 @@
           <div class="panel">
             <div class="title">
               신호등 지시 현황
+              <i class="output">no data input</i>
             </div>
             <table class="traffic">
               <tr>
@@ -202,6 +203,9 @@
           <div class="panel">
             <div class="title">
               설정 제어판
+              <i class="output">
+                {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
+              </i>
             </div>
             <div class="controlpanel">
               <table>
@@ -220,7 +224,7 @@
                 <tr>
                   <td>시작/일시정지</td>
                   <td class="paneltb"></td>
-                  <td><button>►</button></td>
+                  <td><button class="btn">►</button></td>
                   <td>
                     <table>
                       <tr>
@@ -231,10 +235,6 @@
                   </td>
                 </tr>
               </table>
-              <i class="output">no data input</i>
-              <i class="output">
-                {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
-              </i>
             </div>
           </div>
         </td>
@@ -244,10 +244,10 @@
           <div class="panel">
             <div class="title">
               선적현황
-              <i class="output" id="crain1"></i>
-              <i class="output" id="crain2"></i>
-              <i class="output" id="crain3"></i>
-              <i class="output" id="crain4"></i>
+              <i class="output" id="crain1">0</i>
+              <i class="output" id="crain2">0</i>
+              <i class="output" id="crain3">0</i>
+              <i class="output" id="crain4">0</i>
               <i class="output" id="craincheck1">0</i>
               <i class="output" id="craincheck2">0</i>
               <i class="output" id="craincheck3">0</i>
@@ -258,17 +258,38 @@
                 <tr>
                   <td class="subtitlewth">평균 대기시간</td>
                   <td class="paneltb"></td>
-                  <td><div>005</div>분</td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>005</td>
+                        <td>분</td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
                 <tr>
                   <td>평균 소요시간</td>
                   <td class="paneltb"></td>
-                  <td><div>030</div>분</td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>030</td>
+                        <td>분</td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
                 <tr>
                   <td>물건 적재율</td>
                   <td class="paneltb"></td>
-                  <td><div>010</div>%</td>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>010</td>
+                        <td>%</td>
+                      </tr>
+                    </table>
+                  </td>
                 </tr>
               </table>
             </div>
