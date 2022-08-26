@@ -14,11 +14,8 @@
           <div>
             <canvas id="canvas" width="100" height="100"></canvas>
           </div>
-          <br>
-          <br>
         </td>
         <th>
-          <br>
           Smart Port Traffic Simulator
         </th>
       </tr>
