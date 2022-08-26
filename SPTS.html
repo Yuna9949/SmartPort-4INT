@@ -304,6 +304,10 @@
 					drawMap();
 					
 					// update and draw
+					if(numcar >= 1) { truck01.update(); truck01.draw(); }
+					
+					// warning
+					if(numcar >= 1) { truck01.check(); }
 					
 					// resize window
 					window.addEventListener("resize", function() {
