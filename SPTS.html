@@ -19,6 +19,116 @@
         background-repeat : no-repeat;
         background-size : 100% 100%;
       }
+      
+      
+            select {
+				-o-appearance:none;
+				-webkit-appearance:none;
+				-moz-appearance:none;
+				appearance:none;
+
+				width: 100%;
+				margin: 7px 0 0 0;
+				padding: 5px 0 5px 35px;
+
+				color: #ffffff;
+				background-color: #7cade7;
+
+				border-radius: 5px;
+				border : 1px solid #e7e7e7;
+				box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+			}
+			select option {
+				background: #f9f9f9;
+				color: black;
+				padding: 5px 0 5px 35px;
+			}
+			select:hover {
+				border-color: #6382d5;
+			}
+			select:focus {
+				border-color: #6382d5;
+				box-shadow: 0 0 1px 1px rgba(99,130,213, .7);
+				box-shadow: 0 0 0 1px -moz-mac-focusring;
+				color: #e7e7e7;
+				outline: none;
+			}
+			select:disabled {
+				opacity: 0.5;
+			}
+      
+      
+      .bglayout {
+        width: 100vw;
+        height: 100vh;
+        table-layout: fixed;
+        border-collapse: collapse;
+      }
+      .controler {
+        background-color: #f4fcff;
+      }
+      .panel {
+        background-color: #ffffff;
+        margin: 0px 40px 0px 20px;
+        padding: 10px;
+        border-radius: 10px;
+        outline : solid 2px #e7e7e7;
+      }
+      .title {
+        padding: 0px 0px 5px 10px;
+        border-bottom: solid 1px #e7e7e7;
+      }
+      
+      .controlpanel {
+				padding : 5px 0 5px 35px;
+				position: relative;
+			}
+      .statuspanel {
+        padding: 5px 0px 0px 35px;
+      }
+      
+      .traffic {
+				width: 100%;
+			}
+      .lights {
+        padding: 10px 10px 5px 10px;
+        text-align: center;
+      }
+      
+      .btn {
+				margin: 3px 20px 0px 0px;
+
+				color: #ffffff;
+				background-color: #7cade7;
+				border : 1px solid #7cade7;
+				border-radius: 5px;
+				width:50px;
+				height:25px;
+			}
+			.btn:hover {
+					box-shadow: 0 0 0 5px rgba(124,173,233, 0.7);
+					animation: pulse 1s;
+			}
+			@keyframes pulse {
+				from {
+					box-shadow: 0 0 0 0 var(--btn-bg);
+				}
+			}
+      
+      .output {
+				color: red;
+			}
+      
+      .txtcenter {
+        text-align : center;
+      }
+      .subtitlewth {
+        width:110px;
+      }
+      .paneltb {
+        width:15px;
+        border-left: 1px solid #e7e7e7;
+      }
     </style>
     
     <script type="text/javascript">
@@ -26,24 +136,24 @@
     
   </head>
   <body>
-    <table>
+    <table class="bglayout">
       <tr>
-        <td colspan="2" rowspan="5" width="70%">
-          <div>
+        <td class="txtcenter" colspan="2" rowspan="5" width="70%">
+          <div id="map">
             <canvas id="canvas" width="100" height="100"></canvas>
           </div>
-          <br />
-          <br />
+          <br>
+          <br>
         </td>
-        <th>
-          <br />
+        <th class="title">
+          <br>
           Smart Port Traffic Simulator
         </th>
       </tr>
       <tr>
-        <td>
-          <div>
-            <div>
+        <td class="controler">
+          <div class="panel">
+            <div class="title">
               시나리오 선택
             </div>
             <select>
@@ -57,12 +167,12 @@
         </td>
       </tr>
       <tr>
-        <td>
-          <div>
-            <div>
+        <td class="controler">
+          <div class="panel">
+            <div class="title">
               신호등 지시 현황
             </div>
-            <table>
+            <table class="traffic">
               <tr>
                 <td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
                 <td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
@@ -88,41 +198,41 @@
         </td>
       </tr>
       <tr>
-        <td>
-          <div>
-            <div>
+        <td class="controler">
+          <div class="panel">
+            <div class="title">
               설정 제어판
             </div>
-            <div>
+            <div class="controlpanel">
               <table>
                 <tr>
-                  <td>차량 대수</td>
-                  <td></td>
+                  <td class="subtitlewth">차량 대수</td>
+                  <td class="paneltb"></td>
                   <td><div>1</div></td>
                   <td>1 <input type="range" min="1" max="10" value="1" /> 10</td>
                 </tr>
                 <tr>
                   <td>현재 배속</td>
-                  <td></td>
+                  <td class="paneltb"></td>
                   <td><div>1</div></td>
                   <td>1 <input type="range" min="1" max="10" value="1" /> 10</td>
                 </tr>
                 <tr>
                   <td>시작/일시정지</td>
-                  <td></td>
+                  <td class="paneltb"></td>
                   <td><button>►</button></td>
                   <td>
                     <table>
                       <tr>
-                        <td><button>I I</button></td>
-                        <td><button>⟳</button></td>
+                        <td><button class="btn">I I</button></td>
+                        <td><button class="btn">⟳</button></td>
                       </tr>
                     </table>
                   </td>
                 </tr>
               </table>
-              <p>no data input</p>
-              <p>
+              <p class="output">no data input</p>
+              <p class="output">
                 {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
               </p>
             </div>
@@ -130,26 +240,34 @@
         </td>
       </tr>
       <tr>
-        <td>
-          <div>
-            <div>
+        <td class="controler">
+          <div class="panel">
+            <div class="title">
               선적현황
+              <i class="output" id="crain1"></i>
+              <i class="output" id="crain2"></i>
+              <i class="output" id="crain3"></i>
+              <i class="output" id="crain4"></i>
+							<i class="output" id="craincheck1">0</i>
+              <i class="output" id="craincheck2">0</i>
+              <i class="output" id="craincheck3">0</i>
+              <i class="output" id="craincheck4">0</i>
             </div>
-            <div>
+            <div class="statuspanel">
               <table>
                 <tr>
-                  <td>평균 대기시간</td>
-                  <td></td>
+                  <td class="subtitlewth">평균 대기시간</td>
+                  <td class="paneltb"></td>
                   <td><div>005</div>분</td>
                 </tr>
                 <tr>
                   <td>평균 소요시간</td>
-                  <td></td>
+                  <td class="paneltb"></td>
                   <td><div>030</div>분</td>
                 </tr>
                 <tr>
                   <td>물건 적재율</td>
-                  <td></td>
+                  <td class="paneltb"></td>
                   <td><div>010</div>%</td>
                 </tr>
               </table>
