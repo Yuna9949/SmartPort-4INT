@@ -255,18 +255,18 @@
 
 				// 신호등
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,			  1*road  , 2*road-2, 4*road  );
-				ctx.fillRect(2*road+2,			  7*road  , 2*road-2, 4*road  );
-				ctx.fillRect(2*road+2,			 13*road  , 2*road-2, 4*road  );
-				ctx.fillRect(2*road+2,			 19*road  , 2*road-2, 3*road  );
-				ctx.fillRect(3*road+wth/2+2,  1*road  , 2*road-2, 4*road  );
-				ctx.fillRect(3*road+wth/2+2,  7*road  , 2*road-2, 4*road  );
-				ctx.fillRect(3*road+wth/2+2, 13*road  , 2*road-2, 4*road  );
-				ctx.fillRect(3*road+wth/2+2, 19*road  , 2*road-2, 3*road  );
-				ctx.fillRect(4*road+wth+2,	  1*road  , 2*road-2, 4*road  );
-				ctx.fillRect(4*road+wth+2,	  7*road  , 2*road-2, 4*road  );
-				ctx.fillRect(4*road+wth+2,	 13*road  , 2*road-2, 4*road  );
-				ctx.fillRect(4*road+wth+2,	 19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(2*road+2,		 1*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,		 7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,		13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,		19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(3*road+wth/2+2,	 1*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2,	 7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2,	13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2,	19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(4*road+wth+2,	 1*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	 7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	19*road  , 2*road-2, 3*road  );
 			}
 			
 			var stopani = null;
@@ -282,13 +282,10 @@
 					constructor(x, y, num) {
 					}
 					update() {
-						alert("update");
 					}
 					draw() {
-						alert("draw");
 					}
 					check() {
-						alert("check");
 					}
 				}
 				const numcar =  document.getElementById("carnum").value;
@@ -297,6 +294,16 @@
 				init = () => {
 					// 그려질 truck의 개체 설정
 					if(numcar >= 1) { truck01 = new Truck(canvas.width-40,    park,  1) }
+					if(numcar >= 2) { truck02 = new Truck(canvas.width-40,  2*park,  2) }
+					if(numcar >= 3) { truck03 = new Truck(canvas.width-40,  3*park,  3) }
+					if(numcar >= 4) { truck04 = new Truck(canvas.width-40,  4*park,  4) }
+					if(numcar >= 5) { truck05 = new Truck(canvas.width-40,  5*park,  5) }
+					if(numcar >= 6) { truck06 = new Truck(canvas.width-40,  6*park,  6) }
+					if(numcar >= 7) { truck07 = new Truck(canvas.width-40,  7*park,  7) }
+					if(numcar >= 8) { truck08 = new Truck(canvas.width-40,  8*park,  8) }
+					if(numcar >= 9) { truck09 = new Truck(canvas.width-40,  9*park,  9) }
+					if(numcar >=10) { truck10 = new Truck(canvas.width-40, 10*park, 10) }
+					
 					mysql_conn();
 				}
 				
@@ -305,9 +312,27 @@
 					
 					// update and draw
 					if(numcar >= 1) { truck01.update(); truck01.draw(); }
+					if(numcar >= 2) { truck02.update(); truck02.draw(); }
+					if(numcar >= 3) { truck03.update(); truck03.draw(); }
+					if(numcar >= 4) { truck04.update(); truck04.draw(); }
+					if(numcar >= 5) { truck05.update(); truck05.draw(); }
+					if(numcar >= 6) { truck06.update(); truck06.draw(); }
+					if(numcar >= 7) { truck07.update(); truck07.draw(); }
+					if(numcar >= 8) { truck08.update(); truck08.draw(); }
+					if(numcar >= 9) { truck09.update(); truck09.draw(); }
+					if(numcar >=10) { truck10.update(); truck10.draw(); }
 					
 					// warning
 					if(numcar >= 1) { truck01.check(); }
+					if(numcar >= 2) { truck02.check(); }
+					if(numcar >= 3) { truck03.check(); }
+					if(numcar >= 4) { truck04.check(); }
+					if(numcar >= 5) { truck05.check(); }
+					if(numcar >= 6) { truck06.check(); }
+					if(numcar >= 7) { truck07.check(); }
+					if(numcar >= 8) { truck08.check(); }
+					if(numcar >= 9) { truck09.che ck(); }
+					if(numcar >=10) { truck10.check(); }
 					
 					// resize window
 					window.addEventListener("resize", function() {
