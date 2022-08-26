@@ -15,17 +15,17 @@
         font-family: 'Noto Sans KR', sans-serif;
       }
       body {
-        background-image : url("pg.png");
-        background-repeat : no-repeat;
-        background-size : 100% 100%;
+        background-image: url("pg.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
       }
       
       
       select {
-        -o-appearance:none;
-        -webkit-appearance:none;
-        -moz-appearance:none;
-        appearance:none;
+        -o-appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 
         width: 100%;
         margin: 7px 0 0 0;
@@ -72,7 +72,7 @@
         margin: 0px 40px 0px 20px;
         padding: 10px;
         border-radius: 10px;
-        outline : solid 2px #e7e7e7;
+        outline: solid 2px #e7e7e7;
       }
       .title {
         padding: 0px 0px 5px 10px;
@@ -80,7 +80,7 @@
       }
       
       .controlpanel {
-        padding : 5px 0 5px 35px;
+        padding: 5px 0 5px 35px;
         position: relative;
       }
       .statuspanel {
@@ -100,10 +100,10 @@
 
         color: #ffffff;
         background-color: #7cade7;
-        border : 1px solid #7cade7;
+        border: 1px solid #7cade7;
         border-radius: 5px;
-        width:50px;
-        height:25px;
+        width: 50px;
+        height: 25px;
       }
       .btn:hover {
         box-shadow: 0 0 0 5px rgba(124,173,233, 0.7);
@@ -120,14 +120,17 @@
       }
       
       .txtcenter {
-        text-align : center;
+        text-align: center;
       }
       .subtitlewth {
-        width:110px;
+        width: 110px;
       }
       .paneltb {
-        width:15px;
+        width: 15px;
         border-left: 1px solid #e7e7e7;
+      }
+      .statustb {
+        padding: 0px;
       }
     </style>
     
@@ -259,7 +262,7 @@
                   <td class="subtitlewth">평균 대기시간</td>
                   <td class="paneltb"></td>
                   <td>
-                    <table>
+                    <table class="statustb">
                       <tr>
                         <td>005</td>
                         <td>분</td>
@@ -271,7 +274,7 @@
                   <td>평균 소요시간</td>
                   <td class="paneltb"></td>
                   <td>
-                    <table>
+                    <table class="statustb">
                       <tr>
                         <td>030</td>
                         <td>분</td>
@@ -283,7 +286,7 @@
                   <td>물건 적재율</td>
                   <td class="paneltb"></td>
                   <td>
-                    <table>
+                    <table class="statustb">
                       <tr>
                         <td>010</td>
                         <td>%</td>
