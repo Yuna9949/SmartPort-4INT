@@ -9,7 +9,7 @@
     <title>SPTS</title>
     
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
       html, body {
         margin: 0;
         font-family: 'Noto Sans KR', sans-serif;
