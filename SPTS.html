@@ -151,6 +151,178 @@
     </style>
     
     <script type="text/javascript">
+			
+			// show input bar valuse
+			function show_carnum() {
+				const carN = document.getElementById("carnum").value;
+				document.getElementById("carshw").innerText = carN;
+			}
+			function show_speed()  {
+				const spdvalue = document.getElementById("speednum").value;
+				document.getElementById("speedshw").innerText = spdvalue;
+			}
+			
+			// draw map
+			function drawMap() {
+				const canvas = document.getElementById('canvas');
+				var ctx = canvas.getContext('2d');
+				
+				canvas.width  = window.innerWidth*0.635;
+				canvas.height = window.innerHeight*0.793;
+				
+				var road = canvas.height*0.045;
+				var wth  = canvas.width-8*road;
+				
+				// background
+				var round = 15;
+				ctx.fillStyle = 'rgb(255,255,255)';
+				ctx.fillRect(0,0, canvas.width, canvas.height);
+				
+				// 바다
+				ctx.fillStyle = "rgb(113, 156, 255)";
+				ctx.fillRect (0, 0, 1500, road);
+				
+				// 선박
+				ctx.fillStyle = "rgb(211, 211, 211)";
+				ctx.fillRect (5.5*road, 0, 2*road, road);
+				ctx.fillRect (wth/2 - 1.5*road, 0, 2*road, road);
+				ctx.fillRect (7.5*road+wth/2, 0, 2*road, road);
+				ctx.fillRect (0.5*road+wth, 0, 2*road, road);
+				
+				// 하역 크레인
+				ctx.fillStyle = "rgb(255, 192, 203)";
+				ctx.fillRect (6*road, 0, road, 2*road);
+				ctx.fillRect (wth/2-road, 0, road, 2*road);
+				ctx.fillRect (8*road+wth/2, 0, road, 2*road);
+				ctx.fillRect (road+wth, 0, road, 2*road);
+				
+				// 도로
+				// 가로
+				ctx.fillStyle = "rgb(150, 150, 150)";
+				ctx.fillRect (2*road, 2*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 3*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 4*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 8*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 9*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 10*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 14*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 15*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 16*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 20*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 21*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 22*road, wth+4*road, 2);
+				// 세로
+				ctx.fillRect (2*road, road, 2, 21*road);
+				ctx.fillRect (3*road, 2*road, 2, 20*road);
+				ctx.fillRect ((wth-2*road)/2+5*road, 2*road, 2, 20*road);
+				ctx.fillRect (wth+5*road, 2*road, 2, 20*road);
+				ctx.fillRect (wth+6*road, road, 2, 21*road+2);
+				
+				// 적재된 컨테이너
+				ctx.fillStyle = "rgb(176, 176, 228)";
+				ctx.fillRect (4*road, 5*road,(wth-2*road)/2, 2*road);
+				ctx.fillRect ((wth-2*road)/2+6*road , 5*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect (4*road, 11*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect ((wth-2*road)/2+6*road, 11*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect (4*road, 17*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect ((wth-2*road)/2+6*road, 17*road, (wth-2*road)/2, 2*road);
+				
+				// 컨테이너 내부물품
+				ctx.fillStyle = "Pink";
+				ctx.fillRect ((wth-2*road)/4  -road, 5*road+road/2, 10*road, 5);
+				ctx.fillStyle = "Red";
+				ctx.fillRect ((wth-2*road)/4  -road, 6*road+road/2-5, 10*road, 5);
+				ctx.fillStyle = "Orange";
+				ctx.fillRect ((wth-2*road)/4*3+road, 5*road+road/2, 10*road, 5);
+				ctx.fillStyle = "Yellow";
+				ctx.fillRect ((wth-2*road)/4*3+road, 6*road+road/2-5, 10*road, 5);
+				ctx.fillStyle = "YellowGreen";
+				ctx.fillRect ((wth-2*road)/4  -road, 11*road+road/2, 10*road, 5);
+				ctx.fillStyle = "Teal";
+				ctx.fillRect ((wth-2*road)/4  -road, 12*road+road/2-5, 10*road, 5);
+				ctx.fillStyle = "Turquoise";
+				ctx.fillRect ((wth-2*road)/4*3+road, 11*road+road/2, 10*road, 5);
+				ctx.fillStyle = "Blue";
+				ctx.fillRect ((wth-2*road)/4*3+road, 12*road+road/2-5, 10*road, 5);
+				ctx.fillStyle = "Navy";
+				ctx.fillRect ((wth-2*road)/4  -road, 17*road+road/2, 10*road, 5);
+				ctx.fillStyle = "Purple";
+				ctx.fillRect ((wth-2*road)/4  -road, 18*road+road/2-5, 10*road, 5);
+				ctx.fillStyle = "SlateGray";
+				ctx.fillRect ((wth-2*road)/4*3+road, 17*road+road/2, 10*road, 5);
+				ctx.fillStyle = "Black";
+				ctx.fillRect ((wth-2*road)/4*3+road, 18*road+road/2-5, 10*road, 5);
+
+				// 신호등
+				ctx.fillStyle = "rgb(192, 244, 241)";
+				ctx.fillRect(2*road+2,			  1*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,			  7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,			 13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(2*road+2,			 19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(3*road+wth/2+2,  1*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2,  7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2, 13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(3*road+wth/2+2, 19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(4*road+wth+2,	  1*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	  7*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	 13*road  , 2*road-2, 4*road  );
+				ctx.fillRect(4*road+wth+2,	 19*road  , 2*road-2, 3*road  );
+			}
+			
+			var stopani = null;
+			var crain_status = [0, 0, 0, 0, 0];
+			
+			function start() {
+				alert("start");
+				const canvas = document.getElementById("canvas");
+				
+				var ctx = canvas.getContext("2d");
+				
+				class Truck {
+					constructor(x, y, num) {
+					}
+					update() {
+						alert("update");
+					}
+					draw() {
+						alert("draw");
+					}
+					check() {
+						alert("check");
+					}
+				}
+				const numcar =  document.getElementById("carnum").value;
+				var park = 85;
+				var truck01 = null;
+				init = () => {
+					// 그려질 truck의 개체 설정
+					if(numcar >= 1) { truck01 = new Truck(canvas.width-40,    park,  1) }
+					mysql_conn();
+				}
+				
+				function animate() {
+					drawMap();
+					
+					// update and draw
+					
+					// resize window
+					window.addEventListener("resize", function() {
+						canvas.width = window.innerWidth*0.695;
+						canvas.height = window.innerHeight*0.985;
+					} )
+					
+					// animation and cancel animation
+					stopani = requestAnimationFrame(animate);
+				}
+				var nodata = document.getElementById("outputt").innerHTML;
+				if(nodata == "no data input") init();
+				animate();
+			}
+							
+			// stop animation
+			function stop() {
+				cancelAnimationFrame(stopani);
+			}
     </script>
     
   </head>
@@ -191,7 +363,8 @@
             <div class="title">
               신호등 지시 현황
               <i class="output" id="outputa">
-                {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
+                {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0",
+                 "light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
               </i>
             </div>
             <table class="traffic">
@@ -232,23 +405,23 @@
                   <td class="subtitlewth">차량 대수</td>
                   <td class="paneltb"></td>
                   <td><div class="shw" id="carshw">1</div></td>
-                  <td>1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" /> 10</td>
+                  <td>1 <input class="valuenum" id="carnum"   type="range" min="1" max="10" value="1" onchange="show_carnum()" /> 10</td>
                 </tr>
                 <tr>
                   <td>현재 배속</td>
                   <td class="paneltb"></td>
                   <td><div class="shw" id="speedshw">1</div></td>
-                  <td>1 <input class="valuenum" id="speednum" type="range" min="1" max="10" value="1" /> 10</td>
+                  <td>1 <input class="valuenum" id="speednum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
                 </tr>
                 <tr>
                   <td>시작/일시정지</td>
                   <td class="paneltb"></td>
-                  <td><button class="btn">►</button></td>
+                  <td>			<button class="btn" id="play" onclick="start()"										 >►</button></td>
                   <td>
                     <table>
                       <tr>
-                        <td><button class="btn">I I</button></td>
-                        <td><button class="btn">⟳</button></td>
+                        <td><button class="btn" id="pause"  onclick="stop()"                 >I I</button></td>
+                        <td><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
                       </tr>
                     </table>
                   </td>
@@ -317,7 +490,101 @@
       </tr>
     </table>
   </body>
-  <script></script>
-  <script>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+	<script>
+		// get traffic light data
+    function mysql_conn() {
+			$.ajax( {
+				url: "getMysql.php",
+        type: "GET",
+        success: function(data) {
+					$("#outputa").text(data);
+          
+          var info_temp = document.getElementById('outputa').innerText;
+          
+          var contact = JSON.parse(info_temp);
+          var status_list = "light: "+contact["light01"]+" "+contact["light02"];
+          status_list  +=  " " + contact["light03"] + " " + contact["light04"];
+          status_list  +=  " " + contact["light05"] + " " + contact["light06"];
+          status_list  +=  " " + contact["light07"] + " " + contact["light08"];
+          status_list  +=  " " + contact["light09"] + " " + contact["light10"];
+          status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+          document.getElementById('outputt').innerHTML = status_list;
+          
+          // update light panel image
+          var up		= "<img src='go.png'   width='45%' style='transform:rotate(270deg);'/>";
+          var right	= "<img src='go.png'   width='45%' style='transform:rotate(  0deg);'/>";
+          var down	= "<img src='go.png'   width='45%' style='transform:rotate( 90deg);'/>";
+          var left	= "<img src='go.png'   width='45%' style='transform:rotate(180deg);'/>";
+          var stay 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
+          
+          // up 3 4 11
+          // right 1 6 8
+          // down 5 9 10
+          // left 2 7 12
+					
+					var lightnum = [" ",
+													"light01", "light02", "light03", 
+													"light04", "light05", "light06", 
+													"light07", "light08", "light09", 
+													"light10", "light11", "light12"];
+					var lightid = [" ",
+												 "l1" , "l2" , "l3" ,
+												 "l4" , "l5" , "l6" ,
+												 "l7" , "l8" , "l9" ,
+												 "l10", "l11", "l12"];
+					
+					for(var i = 1; i < lightid.length; i++) {
+          	if     (contact[lightnum[i]] == 0)                                                             document.getElementById(lightid[i]).innerHTML = stay;
+          	else if(contact[lightnum[i]] == 3 || contact[lightnum[i]] == 4 || contact[lightnum[i]] == 11)  document.getElementById(lightid[i]).innerHTML = up;
+          	else if(contact[lightnum[i]] == 1 || contact[lightnum[i]] == 6 || contact[lightnum[i]] == 8 )  document.getElementById(lightid[i]).innerHTML = right;
+          	else if(contact[lightnum[i]] == 5 || contact[lightnum[i]] == 9 || contact[lightnum[i]] == 10)  document.getElementById(lightid[i]).innerHTML = down;
+          	else if(contact[lightnum[i]] == 2 || contact[lightnum[i]] == 7 || contact[lightnum[i]] == 12)  document.getElementById(lightid[i]).innerHTML = left;
+					}
+				}
+      } );
+    }
+		
+    // get crain data
+		function getCrain(crain) {
+			$.ajax( {
+				url: "getCrainMySql.php",
+				type: "GET",
+				data: {
+					num : crain
+				},
+				dataType: 'json',
+				success: function(data) {
+					if(data.success == false) {
+						alert(data.success);
+						alert(data.data);
+						alert(data.msg);
+						alert(data.code);
+					}
+					else {
+						if     (crain == 1) {
+							$("#crain1").text(data.data);
+							$("#craincheck1").text("1");
+						}
+						else if(crain == 2) {
+							$("#crain2").text(data.data);
+							$("#craincheck2").text("1");
+						}
+						else if(crain == 3) {
+							$("#crain3").text(data.data);
+							$("#craincheck3").text("1");
+						}
+						else if(crain == 4) {
+							$("#crain4").text(data.data);
+							$("#craincheck4").text("1");
+						}
+					}
+				}
+			} );
+		}
+		
+		// redraw Map
+		window.onload = drawMap();
+					 
   </script>
 </html>
