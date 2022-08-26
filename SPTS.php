@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, height=device-height,
+                   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
     
     <title>SPTS</title>
     
@@ -85,13 +89,13 @@
                   <td>차량 대수</td>
                   <td></td>
                   <td><div>1</div></td>
-                  <td>1 <input type="range" min="1" max="10" value="1"> 10</td>
+                  <td>1 <input type="range" min="1" max="10" value="1" /> 10</td>
                 </tr>
                 <tr>
                   <td>현재 배속</td>
                   <td></td>
                   <td><div>1</div></td>
-                  <td>1 <input type="range" min="1" max="10" value="1"> 10</td>
+                  <td>1 <input type="range" min="1" max="10" value="1" /> 10</td>
                 </tr>
                 <tr>
                   <td>시작/일시정지</td>
