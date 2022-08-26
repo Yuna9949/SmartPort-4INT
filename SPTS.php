@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, height=device-height,
-                   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+                   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" />
     
     <title>SPTS</title>
     
@@ -22,11 +22,11 @@
           <div>
             <canvas id="canvas" width="100" height="100"></canvas>
           </div>
-          <br>
-          <br>
+          <br />
+          <br />
         </td>
         <th>
-          <br>
+          <br />
           Smart Port Traffic Simulator
         </th>
       </tr>
@@ -54,24 +54,24 @@
             </div>
             <table>
               <tr>
-                <td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l3" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l3" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
               </tr>
               <tr>
-                <td class="lights" id="l4" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l5" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l6" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l4" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l5" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l6" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
               </tr>
               <tr>
-                <td class="lights" id="l7" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l8" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l9" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l7" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l8" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l9" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
               </tr>
               <tr>
-                <td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
               </tr>
             </table>
           </div>
