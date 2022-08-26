@@ -86,6 +86,16 @@
       .statuspanel {
         padding: 5px 0px 0px 35px;
       }
+      .shw {
+        color: #ffffff;
+        background-color: #7cade7;
+        border-radius: 5px;
+        width: 50px;
+        text-align: center;
+      }
+      .valuenum {
+        width:70%;
+      }
       
       .traffic {
         width: 100%;
@@ -118,6 +128,10 @@
       .output {
         color: red;
       }
+      #outputa{
+        position: absolute;
+        left: -1370px;
+      } 
       
       .txtcenter {
         text-align: center;
@@ -174,7 +188,7 @@
           <div class="panel">
             <div class="title">
               신호등 지시 현황
-              <i class="output">no data input</i>
+              <i class="output" id="outputt">no data input</i>
             </div>
             <table class="traffic">
               <tr>
@@ -206,7 +220,7 @@
           <div class="panel">
             <div class="title">
               설정 제어판
-              <i class="output">
+              <i class="output" id="outputa">
                 {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0","light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
               </i>
             </div>
@@ -215,14 +229,14 @@
                 <tr>
                   <td class="subtitlewth">차량 대수</td>
                   <td class="paneltb"></td>
-                  <td><div>1</div></td>
-                  <td>1 <input type="range" min="1" max="10" value="1" /> 10</td>
+                  <td><div class="shw" id="carshw">1</div></td>
+                  <td>1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" /> 10</td>
                 </tr>
                 <tr>
                   <td>현재 배속</td>
                   <td class="paneltb"></td>
-                  <td><div>1</div></td>
-                  <td>1 <input type="range" min="1" max="10" value="1" /> 10</td>
+                  <td><div class="shw" id="speedshw">1</div></td>
+                  <td>1 <input class="valuenum" id="speednum" type="range" min="1" max="10" value="1" /> 10</td>
                 </tr>
                 <tr>
                   <td>시작/일시정지</td>
