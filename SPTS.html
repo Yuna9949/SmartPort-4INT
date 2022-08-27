@@ -363,7 +363,10 @@
 						else if(this.y >= 20*road 	&& this.y < 21*road 	) {this.dby = 17; this.tlu = 20*road; 		this.tld = 21*road;	}
 						else if(this.y >= 21*road 	&& this.y < 22*road 	) {this.dby = 18; this.tlu = 21*road; 		this.tld = 22*road;	}
 						else							  {this.dby =  0;							}
-						
+					
+						if(this.status == 1) { // up
+							this.x -= this.speed;
+						}
 					}
 					draw() {
 						ctx.fillStyle = "rgb(9, 96, 47)";
@@ -410,7 +413,8 @@
 						
 					stopani = requestAnimationFrame(animate);
 				}
-				init();
+				var nodata = document.getElementById("outputt").innerHTML;
+				if(nodata == "no data input") init();
 				animate();
 			}
 			
