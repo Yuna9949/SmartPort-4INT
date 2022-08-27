@@ -167,6 +167,12 @@
 				canvas.width  = window.innerWidth*0.635;
 				canvas.height = window.innerHeight*0.793;
 				
+				// resize window
+				window.addEventListener('resize', function(){
+					canvas.width = window.innerWidth*0.635;
+					canvas.height = window.innerHeight*0.793;
+				})
+				
 				var road = canvas.height*0.045;
 				var wth  = canvas.width-8*road;
 				
