@@ -222,11 +222,11 @@
 				ctx.fillRect (2*road, 21*road-1, wth+4*road, 2);
 				ctx.fillRect (2*road, 22*road-1, wth+4*road, 2);
 				// 세로
-				ctx.fillRect (2*road			   -1,   road, 2, 21*road  );
-				ctx.fillRect (3*road			   -1, 2*road, 2, 20*road  );
-				ctx.fillRect ((wth-2*road)/2+5*road-1, 2*road, 2, 20*road  );
-				ctx.fillRect (wth+5*road		   -1, 2*road, 2, 20*road  );
-				ctx.fillRect (wth+6*road		   -1,   road, 2, 21*road  );
+				ctx.fillRect (2*road-1				 ,   road, 2, 21*road);
+				ctx.fillRect (3*road-1				 , 2*road, 2, 20*road);
+				ctx.fillRect ((wth-2*road)/2+5*road-1, 2*road, 2, 20*road);
+				ctx.fillRect (wth+5*road-1			 , 2*road, 2, 20*road);
+				ctx.fillRect (wth+6*road-1			 ,   road, 2, 21*road);
 				
 				// 적재된 컨테이너
 				ctx.fillStyle = "rgb(176, 176, 228)";
@@ -265,18 +265,18 @@
 
 				// 신호등
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+2,			 1*road  , 2*road-2, 4*road  );
-				ctx.fillRect(2*road+2,			 7*road  , 2*road-2, 4*road  );
-				ctx.fillRect(2*road+2,			13*road  , 2*road-2, 4*road  );
-				ctx.fillRect(2*road+2,			19*road  , 2*road-2, 3*road  );
-				ctx.fillRect(3*road+wth/2+2,	 1*road  , 2*road-2, 4*road  );
-				ctx.fillRect(3*road+wth/2+2,	 7*road  , 2*road-2, 4*road  );
-				ctx.fillRect(3*road+wth/2+2,	13*road  , 2*road-2, 4*road  );
-				ctx.fillRect(3*road+wth/2+2,	19*road  , 2*road-2, 3*road  );
-				ctx.fillRect(4*road+wth+2,		 1*road  , 2*road-2, 4*road  );
-				ctx.fillRect(4*road+wth+2,		 7*road  , 2*road-2, 4*road  );
-				ctx.fillRect(4*road+wth+2,		13*road  , 2*road-2, 4*road  );
-				ctx.fillRect(4*road+wth+2,		19*road  , 2*road-2, 3*road  );
+				ctx.fillRect(2*road+1,			 1*road  , 2*road-2, 4*road);
+				ctx.fillRect(2*road+1,			 7*road  , 2*road-2, 4*road);
+				ctx.fillRect(2*road+1,			13*road  , 2*road-2, 4*road);
+				ctx.fillRect(2*road+1,			19*road  , 2*road-2, 3*road);
+				ctx.fillRect(3*road+wth/2+1,	 1*road  , 2*road-2, 4*road);
+				ctx.fillRect(3*road+wth/2+1,	 7*road  , 2*road-2, 4*road);
+				ctx.fillRect(3*road+wth/2+1,	13*road  , 2*road-2, 4*road);
+				ctx.fillRect(3*road+wth/2+1,	19*road  , 2*road-2, 3*road);
+				ctx.fillRect(4*road+wth+1,		 1*road  , 2*road-2, 4*road);
+				ctx.fillRect(4*road+wth+1,		 7*road  , 2*road-2, 4*road);
+				ctx.fillRect(4*road+wth+1,		13*road  , 2*road-2, 4*road);
+				ctx.fillRect(4*road+wth+1,		19*road  , 2*road-2, 3*road);
 				
 				// 도로
 				// 가로
