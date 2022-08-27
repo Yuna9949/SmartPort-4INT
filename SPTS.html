@@ -278,8 +278,8 @@
 			
 			var stopani = null;
 			var crain_status = [0, 0, 0, 0, 0];
-			var color_st = ["White", "Pink", "Red", "Orange", "Yellow", "YellowGreen", "Teal", 
-					"SkyBlue", "Blue", "Navy", "Purple", "SlateGray", "Black"];
+			var color_st = ["White", "Pink", "Red", "Orange", "Yellow", "YellowGreen", "Green", 
+							"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			
 			function start() {
 				const canvas = document.getElementById("canvas");
@@ -353,9 +353,6 @@
 						
 					}
 					draw() {
-						var color_st = ["White", "Pink", "Red", "Orange", "Yellow", "YellowGreen", "Teal", 
-										"SkyBlue", "Blue", "Navy", "Purple", "SlateGray", "Black"];
-						
 						ctx.fillStyle = "rgb(9, 96, 47)";
 						ctx.fillRect(this.x-1, this.y-1, this.sizex/2+1			, this.sizey/2+1		);
 						ctx.fillRect(this.x  , this.y  , this.sizex/2			, (this.sizey/2)*(-1)	);
@@ -366,10 +363,10 @@
 							if(this.num == i)	ctx.fillStyle = color_st[i];
 						}
 						
-						if	   (this.front == 1)	ctx.fillRect(this.x-5				, this.y-this.sizey/2	, 10, 2);
-						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2-2	, this.y-5				, 2, 10);
-						else if(this.front == 3)	ctx.fillRect(this.x-5				, this.y+this.sizey/2-2	, 10, 2);
-						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5				, 2, 10);
+						if	   (this.front == 1)	ctx.fillRect(this.x-5				, this.y-this.sizey/2	, 10, 4);
+						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5				, 4, 10);
+						else if(this.front == 3)	ctx.fillRect(this.x-5				, this.y+this.sizey/2-4	, 10, 4);
+						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5				, 4, 10);
 						
 					}
 					check() {
