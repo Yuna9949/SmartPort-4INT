@@ -291,6 +291,9 @@
 						this.x = x;
 						this.y = y;
 						this.num = num;
+						
+						this.sizex = road-2;
+						this.sizey = this.sizex/3*5;
 					}
 					update() {
 					}
@@ -317,16 +320,13 @@
 				
 				function animate() {
 					drawMap();
-					alert("!");
 					
 					for(var i = 1; i <= numcar; i++) {
-					alert("!!");
 						truck[i].update();
 						truck[i].draw();
 					}
 					
 					for(var i = 1; i <= numcar; i++) {
-					alert("!!!");
 						truck[i].check();
 					}
 						
