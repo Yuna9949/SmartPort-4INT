@@ -359,9 +359,9 @@
 						ctx.fillRect(this.x  , this.y  , (this.sizex/2)*(-1)	, this.sizey/2			);
 						ctx.fillRect(this.x+1, this.y+1, (this.sizex/2)*(-1)-1	, (this.sizey/2)*(-1)-1	);
 						
-						for(var i = 1; i <= 10; i++) {
-							if(this.num == i)	ctx.fillStyle = color_st[i];
-						}
+						//for(var i = 1; i <= 10; i++) {
+							if(this.num == 1)	ctx.fillStyle = color_st[1];
+						//}
 						
 						if(this.front == 1)			ctx.fillRect(this.x-5				, this.y-this.sizey/2	, 10, 2);
 						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2-2	, this.y-5				, 2, 10);
