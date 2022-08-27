@@ -193,8 +193,8 @@
 				
 				// 하역 크레인
 				ctx.fillStyle = "rgb(255, 192, 203)";
-				ctx.fillRect (6*road, 0, road, 2*road);
-				ctx.fillRect (wth/2-road, 0, road, 2*road);
+				ctx.fillRect (4*road+(wth/2-road)*0.3, 0, road, 2*road);
+				ctx.fillRect (4*road+(wth/2-road)*0.6, 0, road, 2*road);
 				ctx.fillRect (8*road+wth/2, 0, road, 2*road);
 				ctx.fillRect (road+wth, 0, road, 2*road);
 				
@@ -237,23 +237,23 @@
 				ctx.fillStyle = "Orange";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1, 5*road+road/2, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Yellow";
-				ctx.fillRect (4*road+(wth/2-road)*0.1, 6*road+road/2-5, (wth/2-road)*0.8, 5);
+				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1, 6*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "YellowGreen";
 				ctx.fillRect (4*road+(wth/2-road)*0.1, 11*road+road/2, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Teal";
 				ctx.fillRect (4*road+(wth/2-road)*0.1, 12*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Turquoise";
-				ctx.fillRect (4*road+(wth/2-road)*0.1, 11*road+road/2, (wth/2-road)*0.8, 5);
+				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1, 11*road+road/2, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Blue";
-				ctx.fillRect (4*road+(wth/2-road)*0.1, 12*road+road/2-5, (wth/2-road)*0.8, 5);
+				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1, 12*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Navy";
 				ctx.fillRect (4*road+(wth/2-road)*0.1, 17*road+road/2, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Purple";
 				ctx.fillRect (4*road+(wth/2-road)*0.1, 18*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "SlateGray";
-				ctx.fillRect (4*road+(wth/2-road)*0.1, 17*road+road/2, (wth/2-road)*0.8, 5);
+				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1, 17*road+road/2, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "Black";
-				ctx.fillRect (4*road+(wth/2-road)*0.1, 18*road+road/2-5, (wth/2-road)*0.8, 5);
+				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1, 18*road+road/2-5, (wth/2-road)*0.8, 5);
 
 				// 신호등
 				ctx.fillStyle = "rgb(192, 244, 241)";
@@ -495,12 +495,12 @@
 					var info_temp = document.getElementById('outputa').innerText;
           
 					var contact = JSON.parse(info_temp);
-					var status_list = "light: "+contact["light01"]+" "+contact["light02"];
-					status_list  +=  " " + contact["light03"] + " " + contact["light04"];
-					status_list  +=  " " + contact["light05"] + " " + contact["light06"];
-					status_list  +=  " " + contact["light07"] + " " + contact["light08"];
-					status_list  +=  " " + contact["light09"] + " " + contact["light10"];
-					status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+					var status_list = "light: "+ contact["light01"] + " " + contact["light02"];
+						status_list  +=   " "  + contact["light03"] + " " + contact["light04"];
+						status_list  +=   " "  + contact["light05"] + " " + contact["light06"];
+						status_list  +=   " "  + contact["light07"] + " " + contact["light08"];
+						status_list  +=   " "  + contact["light09"] + " " + contact["light10"];
+						status_list  +=   " "  + contact["light11"] + " " + contact["light12"];
 					document.getElementById('outputt').innerHTML = status_list;
           
 					// update light panel image
