@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport"
-			  content="width=device-width, height=device-height,
-					   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+		      content="width=device-width, height=device-height,
+			       minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
 
 		<title>SPTS</title>
 
@@ -165,7 +165,7 @@
 			}
 			
 			var color_st = ["White", "Pink", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
-							"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
+					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			
 			// draw map
 			function drawMap() {
@@ -194,16 +194,16 @@
 				
 				// 선박
 				ctx.fillStyle = "rgb(211, 211, 211)";
-				ctx.fillRect (3*road+(wth/2-road)/4			, 0, 2*road, road);
+				ctx.fillRect (3*road+(wth/2-road)/4		, 0, 2*road, road);
 				ctx.fillRect (3*road+(wth/2-road)/4*3		, 0, 2*road, road);
 				ctx.fillRect (4*road+wth/2+(wth/2-road)/4	, 0, 2*road, road);
 				ctx.fillRect (4*road+wth/2+(wth/2-road)/4*3	, 0, 2*road, road);
 				
 				// 하역 크레인
 				ctx.fillStyle = "rgb(255, 192, 203)";
-				ctx.fillRect (3.5*road+(wth/2-road)/4			, 0, road, 2*road);
-				ctx.fillRect (3.5*road+(wth/2-road)/4*3			, 0, road, 2*road);
-				ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4		, 0, road, 2*road);
+				ctx.fillRect (3.5*road+(wth/2-road)/4		, 0, road, 2*road);
+				ctx.fillRect (3.5*road+(wth/2-road)/4*3		, 0, road, 2*road);
+				ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4	, 0, road, 2*road);
 				ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, 0, road, 2*road);
 				
 				// 도로
@@ -222,19 +222,19 @@
 				ctx.fillRect (2*road, 21*road-1, wth+4*road, 2);
 				//ctx.fillRect (2*road, 22*road-1, wth+4*road, 2);
 				// 세로
-				ctx.fillRect (2*road-1				 ,   road, 2, 21*road+1);
-				ctx.fillRect (3*road-1				 , 2*road, 2, 20*road  );
-				ctx.fillRect ((wth-2*road)/2+5*road-1, 2*road, 2, 20*road  );
-				ctx.fillRect (wth+5*road-1			 , 2*road, 2, 20*road  );
-				ctx.fillRect (wth+6*road-1			 ,   road, 2, 21*road+1);
+				ctx.fillRect (2*road-1			,   road, 2, 21*road+1);
+				ctx.fillRect (3*road-1			, 2*road, 2, 20*road  );
+				ctx.fillRect ((wth-2*road)/2+5*road-1	, 2*road, 2, 20*road  );
+				ctx.fillRect (wth+5*road-1		, 2*road, 2, 20*road  );
+				ctx.fillRect (wth+6*road-1		,   road, 2, 21*road+1);
 				
 				// 적재된 컨테이너
 				ctx.fillStyle = "rgb(176, 176, 228)";
-				ctx.fillRect (4*road				,  5*road, (wth-2*road)/2, 2*road);
-				ctx.fillRect ((wth-2*road)/2+6*road ,  5*road, (wth-2*road)/2, 2*road);
-				ctx.fillRect (4*road				, 11*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect (4*road			,  5*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect ((wth-2*road)/2+6*road 	,  5*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect (4*road			, 11*road, (wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road	, 11*road, (wth-2*road)/2, 2*road);
-				ctx.fillRect (4*road				, 17*road, (wth-2*road)/2, 2*road);
+				ctx.fillRect (4*road			, 17*road, (wth-2*road)/2, 2*road);
 				ctx.fillRect ((wth-2*road)/2+6*road	, 17*road, (wth-2*road)/2, 2*road);
 				
 				// 컨테이너 내부물품
@@ -265,18 +265,18 @@
 
 				// 신호등
 				ctx.fillStyle = "rgb(192, 244, 241)";
-				ctx.fillRect(2*road+1,			 1*road  , 2*road-2, 4*road);
-				ctx.fillRect(2*road+1,			 7*road  , 2*road-2, 4*road);
-				ctx.fillRect(2*road+1,			13*road  , 2*road-2, 4*road);
-				ctx.fillRect(2*road+1,			19*road  , 2*road-2, 3*road);
-				ctx.fillRect(3*road+wth/2+1,	 1*road  , 2*road-2, 4*road);
-				ctx.fillRect(3*road+wth/2+1,	 7*road  , 2*road-2, 4*road);
-				ctx.fillRect(3*road+wth/2+1,	13*road  , 2*road-2, 4*road);
-				ctx.fillRect(3*road+wth/2+1,	19*road  , 2*road-2, 3*road);
-				ctx.fillRect(4*road+wth+1,		 1*road  , 2*road-2, 4*road);
-				ctx.fillRect(4*road+wth+1,		 7*road  , 2*road-2, 4*road);
-				ctx.fillRect(4*road+wth+1,		13*road  , 2*road-2, 4*road);
-				ctx.fillRect(4*road+wth+1,		19*road  , 2*road-2, 3*road);
+				ctx.fillRect(2*road+1,		 1*road, 2*road-2, 4*road);
+				ctx.fillRect(2*road+1,		 7*road, 2*road-2, 4*road);
+				ctx.fillRect(2*road+1,		13*road, 2*road-2, 4*road);
+				ctx.fillRect(2*road+1,		19*road, 2*road-2, 3*road);
+				ctx.fillRect(3*road+wth/2+1,	 1*road, 2*road-2, 4*road);
+				ctx.fillRect(3*road+wth/2+1,	 7*road, 2*road-2, 4*road);
+				ctx.fillRect(3*road+wth/2+1,	13*road, 2*road-2, 4*road);
+				ctx.fillRect(3*road+wth/2+1,	19*road, 2*road-2, 3*road);
+				ctx.fillRect(4*road+wth+1,	 1*road, 2*road-2, 4*road);
+				ctx.fillRect(4*road+wth+1,	 7*road, 2*road-2, 4*road);
+				ctx.fillRect(4*road+wth+1,	13*road, 2*road-2, 4*road);
+				ctx.fillRect(4*road+wth+1,	19*road, 2*road-2, 3*road);
 				
 				// 도로
 				// 가로
@@ -341,45 +341,45 @@
 						else if(this.x >= 5*road+wth/2 	&& this.x < 4*road+wth  ) {this.dbx =  6; this.tll = 5*road+wth/2; 	this.tlr = 4*road+wth;	}
 						else if(this.x >= 4*road+wth   	&& this.x < 5*road+wth  ) {this.dbx =  7; this.tll = 4*road+wth; 	this.tlr = 5*road+wth;	}
 						else if(this.x >= 5*road+wth   	&& this.x < 6*road+wth  ) {this.dbx =  8; this.tll = 5*road+wth; 	this.tlr = 6*road+wth;	}
-						else if(this.x >= 6*road+wth							) {this.dbx =  9; this.tll = 6*road+wth; 	this.tlr = 9*road+wth;	}
-						else													  {this.dbx =  0;													}
+						else if(this.x >= 6*road+wth				) {this.dbx =  9; this.tll = 6*road+wth; 	this.tlr = 9*road+wth;	}
+						else							  {this.dbx =  0;							}
 						
-						if     (this.y >=    road 		&& this.y <  2*road 	) {this.dby =  1; this.tlu =    road; 		this.tld =  2*road;		}
-						else if(this.y >=  2*road		&& this.y <  3*road 	) {this.dby =  2; this.tlu =  2*road; 		this.tld =  3*road;		}
-						else if(this.y >=  3*road		&& this.y <  4*road 	) {this.dby =  3; this.tlu =  3*road; 		this.tld =  4*road;		}
-						else if(this.y >=  4*road		&& this.y <  5*road 	) {this.dby =  4; this.tlu =  4*road; 		this.tld =  5*road;		}
-						else if(this.y >=  5*road 		&& this.y <  7*road 	) {this.dby =  5; this.tlu =  5*road; 		this.tld =  7*road;		}
-						else if(this.y >=  7*road 		&& this.y <  8*road 	) {this.dby =  6; this.tlu =  7*road; 		this.tld =  8*road;		}
-						else if(this.y >=  8*road 		&& this.y <  9*road 	) {this.dby =  7; this.tlu =  8*road; 		this.tld =  9*road;		}
-						else if(this.y >=  9*road 		&& this.y < 10*road 	) {this.dby =  8; this.tlu =  9*road; 		this.tld = 10*road;		}
-						else if(this.y >= 10*road 		&& this.y < 11*road 	) {this.dby =  9; this.tlu = 10*road; 		this.tld = 11*road;		}
-						else if(this.y >= 11*road 		&& this.y < 13*road 	) {this.dby = 10; this.tlu = 11*road; 		this.tld = 13*road;		}
-						else if(this.y >= 13*road 		&& this.y < 14*road 	) {this.dby = 11; this.tlu = 13*road; 		this.tld = 14*road;		}
-						else if(this.y >= 14*road 		&& this.y < 15*road 	) {this.dby = 12; this.tlu = 14*road; 		this.tld = 15*road;		}
-						else if(this.y >= 15*road 		&& this.y < 16*road 	) {this.dby = 13; this.tlu = 15*road; 		this.tld = 16*road;		}
-						else if(this.y >= 16*road 		&& this.y < 17*road 	) {this.dby = 14; this.tlu = 16*road; 		this.tld = 17*road;		}
-						else if(this.y >= 17*road 		&& this.y < 19*road 	) {this.dby = 15; this.tlu = 17*road; 		this.tld = 19*road;		}
-						else if(this.y >= 19*road 		&& this.y < 20*road 	) {this.dby = 16; this.tlu = 19*road; 		this.tld = 20*road;		}
-						else if(this.y >= 20*road 		&& this.y < 21*road 	) {this.dby = 17; this.tlu = 20*road; 		this.tld = 21*road;		}
-						else if(this.y >= 21*road 		&& this.y < 22*road 	) {this.dby = 18; this.tlu = 21*road; 		this.tld = 22*road;		}
-						else 													  {this.dby =  0;													}
+						if     (this.y >=    road 	&& this.y <  2*road 	) {this.dby =  1; this.tlu =    road; 		this.tld =  2*road;	}
+						else if(this.y >=  2*road	&& this.y <  3*road 	) {this.dby =  2; this.tlu =  2*road; 		this.tld =  3*road;	}
+						else if(this.y >=  3*road	&& this.y <  4*road 	) {this.dby =  3; this.tlu =  3*road; 		this.tld =  4*road;	}
+						else if(this.y >=  4*road	&& this.y <  5*road 	) {this.dby =  4; this.tlu =  4*road; 		this.tld =  5*road;	}
+						else if(this.y >=  5*road 	&& this.y <  7*road 	) {this.dby =  5; this.tlu =  5*road; 		this.tld =  7*road;	}
+						else if(this.y >=  7*road 	&& this.y <  8*road 	) {this.dby =  6; this.tlu =  7*road; 		this.tld =  8*road;	}
+						else if(this.y >=  8*road 	&& this.y <  9*road 	) {this.dby =  7; this.tlu =  8*road; 		this.tld =  9*road;	}
+						else if(this.y >=  9*road 	&& this.y < 10*road 	) {this.dby =  8; this.tlu =  9*road; 		this.tld = 10*road;	}
+						else if(this.y >= 10*road 	&& this.y < 11*road 	) {this.dby =  9; this.tlu = 10*road; 		this.tld = 11*road;	}
+						else if(this.y >= 11*road 	&& this.y < 13*road 	) {this.dby = 10; this.tlu = 11*road; 		this.tld = 13*road;	}
+						else if(this.y >= 13*road 	&& this.y < 14*road 	) {this.dby = 11; this.tlu = 13*road; 		this.tld = 14*road;	}
+						else if(this.y >= 14*road 	&& this.y < 15*road 	) {this.dby = 12; this.tlu = 14*road; 		this.tld = 15*road;	}
+						else if(this.y >= 15*road 	&& this.y < 16*road 	) {this.dby = 13; this.tlu = 15*road; 		this.tld = 16*road;	}
+						else if(this.y >= 16*road 	&& this.y < 17*road 	) {this.dby = 14; this.tlu = 16*road; 		this.tld = 17*road;	}
+						else if(this.y >= 17*road 	&& this.y < 19*road 	) {this.dby = 15; this.tlu = 17*road; 		this.tld = 19*road;	}
+						else if(this.y >= 19*road 	&& this.y < 20*road 	) {this.dby = 16; this.tlu = 19*road; 		this.tld = 20*road;	}
+						else if(this.y >= 20*road 	&& this.y < 21*road 	) {this.dby = 17; this.tlu = 20*road; 		this.tld = 21*road;	}
+						else if(this.y >= 21*road 	&& this.y < 22*road 	) {this.dby = 18; this.tlu = 21*road; 		this.tld = 22*road;	}
+						else							  {this.dby =  0;							}
 						
 					}
 					draw() {
 						ctx.fillStyle = "rgb(9, 96, 47)";
-						ctx.fillRect(this.x-1, this.y-1, this.sizex/2+1			, this.sizey/2+1		);
-						ctx.fillRect(this.x  , this.y  , this.sizex/2			, (this.sizey/2)*(-1)	);
-						ctx.fillRect(this.x  , this.y  , (this.sizex/2)*(-1)	, this.sizey/2			);
+						ctx.fillRect(this.x-1, this.y-1, this.sizex/2+1		, this.sizey/2+1	);
+						ctx.fillRect(this.x  , this.y  , this.sizex/2		, (this.sizey/2)*(-1)	);
+						ctx.fillRect(this.x  , this.y  , (this.sizex/2)*(-1)	, this.sizey/2		);
 						ctx.fillRect(this.x+1, this.y+1, (this.sizex/2)*(-1)-1	, (this.sizey/2)*(-1)-1	);
 						
 						for(var i = 1; i <= 10; i++) {
 							if(this.num == i)	ctx.fillStyle = color_st[i];
 						}
 						
-						if	   (this.front == 1)	ctx.fillRect(this.x-5				, this.y-this.sizey/2	, 10, 4);
-						else if(this.front == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5				, 4, 10);
-						else if(this.front == 3)	ctx.fillRect(this.x-5				, this.y+this.sizey/2-4	, 10, 4);
-						else if(this.front == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5				, 4, 10);
+						if	(this.front == 1)	ctx.fillRect(this.x-5			, this.y-this.sizey/2	, 10, 4);
+						else if (this.front == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5		, 4, 10);
+						else if (this.front == 3)	ctx.fillRect(this.x-5			, this.y+this.sizey/2-4	, 10, 4);
+						else if (this.front == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5		, 4, 10);
 						
 					}
 					check() {
@@ -597,11 +597,11 @@
           
 					var contact = JSON.parse(info_temp);
 					var status_list = "light: "+ contact["light01"] + " " + contact["light02"];
-						status_list  +=   " "  + contact["light03"] + " " + contact["light04"];
-						status_list  +=   " "  + contact["light05"] + " " + contact["light06"];
-						status_list  +=   " "  + contact["light07"] + " " + contact["light08"];
-						status_list  +=   " "  + contact["light09"] + " " + contact["light10"];
-						status_list  +=   " "  + contact["light11"] + " " + contact["light12"];
+					    status_list  +=   " "  + contact["light03"] + " " + contact["light04"];
+					    status_list  +=   " "  + contact["light05"] + " " + contact["light06"];
+					    status_list  +=   " "  + contact["light07"] + " " + contact["light08"];
+					    status_list  +=   " "  + contact["light09"] + " " + contact["light10"];
+					    status_list  +=   " "  + contact["light11"] + " " + contact["light12"];
 					document.getElementById('outputt').innerHTML = status_list;
           
 					// update light panel image
