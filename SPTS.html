@@ -288,10 +288,11 @@
 				
 				class Truck {
 					constructor(x, y, num) {
-						alert(num);
+						this.x = x;
+						this.y = y;
+						this.num = num;
 					}
 					update() {
-						alert("u"+num);
 					}
 					draw() {
 						ctx.fillStyle = "rgb(9, 96, 47)";
@@ -326,7 +327,6 @@
 						truck[i].check();
 					}
 						
-					
 					stopani = requestAnimationFrame(animate);
 				}
 				init();
