@@ -171,7 +171,6 @@
 				var wth  = canvas.width-8*road;
 				
 				// background
-				var round = 15;
 				ctx.fillStyle = 'rgb(255,255,255)';
 				ctx.fillRect(0,0, canvas.width, canvas.height);
 				
@@ -264,6 +263,52 @@
 				ctx.fillRect(4*road+wth+2,	 7*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,	13*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,	19*road  , 2*road-2, 3*road  );
+			}
+			
+			var stopani = null;
+			var crain_status = [0, 0, 0, 0, 0];
+			
+			function start() {
+				const canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
+				
+				var road = canvas.height*0.045;
+				var wth  = canvas.width-8*road;
+				
+				class Truck {
+					constructor(x, y, num) {
+					}
+					update() {
+					}
+					draw() {
+					}
+					check() {
+					}
+				}
+				const numcar = document.getElementById("carnum").value;
+				var park = 85;
+				var truck01 = null;
+				init = () => {
+					if(numcar >= 1) { truck01 = new Truck(canvas.width-40,    park,  1) }
+					
+					mysql_conn();
+				}
+				
+				function animate() {
+					drawMap();
+					
+					if(numcar >= 1) { truck01.update(); truck01.draw(); }
+					
+					if(numcar >= 1) { truck01.check(); }
+					
+					stopani = requestAnimationFrame(animate);
+				}
+				init();
+				animate();
+			}
+			
+			function stop() {
+				cancelAnimationFrame(stopani);
 			}
 		</script>
     
