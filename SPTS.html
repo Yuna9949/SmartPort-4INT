@@ -316,15 +316,17 @@
 				}
 				
 				function animate() {
-					alert("!");
 					drawMap();
+					alert("!");
 					
 					for(var i = 1; i <= numcar; i++) {
+					alert("!!");
 						truck[i].update();
 						truck[i].draw();
 					}
 					
 					for(var i = 1; i <= numcar; i++) {
+					alert("!!!");
 						truck[i].check();
 					}
 						
