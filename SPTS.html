@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, height=device-height,
-                   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" />
+                   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
     
     <title>SPTS</title>
     
@@ -151,7 +151,14 @@
     </style>
     
     <script type="text/javascript">
-			// draw map
+			// show input bar value
+			function show_carnn() {
+				document.getElementById("carshw").innerText = document.getElementById("carnum").value;
+			}
+			function show_speed() {
+				document.getElementById("spdshw").innerText = document.getElementById("spdnum").value;
+			}
+	    // draw map
 			function drawMap() {
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
@@ -303,24 +310,24 @@
             </div>
             <table class="traffic">
               <tr>
-                <td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l3" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l3" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
               </tr>
               <tr>
-                <td class="lights" id="l4" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l5" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l6" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l4" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l5" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l6" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
               </tr>
               <tr>
-                <td class="lights" id="l7" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l8" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l9" ><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l7" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l8" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l9" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
               </tr>
               <tr>
-                <td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
-                <td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);" /></td>
+                <td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+                <td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
               </tr>
             </table>
           </div>
@@ -339,13 +346,15 @@
                   <td class="subtitlewth">차량 대수</td>
                   <td class="paneltb"></td>
                   <td><div class="shw" id="carshw">1</div></td>
-                  <td>1 <input class="valuenum" id="carnum"   type="range" min="1" max="10" value="1" onchange="show_carnum()" /> 10</td>
+                  <td>1 <input class="valuenum" id="carnum" type="range" 
+															 min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
                 </tr>
                 <tr>
                   <td>현재 배속</td>
                   <td class="paneltb"></td>
-                  <td><div class="shw" id="speedshw">1</div></td>
-                  <td>1 <input class="valuenum" id="speednum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
+                  <td><div class="shw" id="spdshw">1</div></td>
+                  <td>1 <input class="valuenum" id="spdnum" type="range" 
+															 min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
                 </tr>
                 <tr>
                   <td>시작/일시정지</td>
