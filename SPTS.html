@@ -164,23 +164,20 @@
 				document.getElementById("spdshw").innerText = document.getElementById("spdnum").value;
 			}
 			
-			const canvas = document.getElementById('canvas');
-			var ctx = canvas.getContext('2d');
-				
-			canvas.width  = window.innerWidth*0.635;
-			canvas.height = window.innerHeight*0.793;
-				
-			var road = canvas.height*0.045;
-			var wth  = canvas.width-8*road;
-			
-			// resize window
-			window.addEventListener('resize', function(){
-				canvas.width = window.innerWidth*0.635;
-				canvas.height = window.innerHeight*0.793;
-			});
+			var color_st = ["White", "Pink", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
+							"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			
 			// draw map
 			function drawMap() {
+				const canvas = document.getElementById('canvas');
+				var ctx = canvas.getContext('2d');
+				
+				canvas.width  = window.innerWidth*0.635;
+				canvas.height = window.innerHeight*0.793;
+				
+				var road = canvas.height*0.045;
+				var wth  = canvas.width-8*road;
+				
 				// resize window
 				window.addEventListener('resize', function(){
 					canvas.width = window.innerWidth*0.635;
@@ -241,29 +238,29 @@
 				ctx.fillRect ((wth-2*road)/2+6*road	, 17*road, (wth-2*road)/2, 2*road);
 				
 				// 컨테이너 내부물품
-				ctx.fillStyle = "Pink";
+				ctx.fillStyle = color_st[1];//ctx.fillStyle = "Pink";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		,  5*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Red";
+				ctx.fillStyle = color_st[2];//ctx.fillStyle = "Red";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		,  6*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Orange";
+				ctx.fillStyle = color_st[3];//ctx.fillStyle = "Orange";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  5*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Yellow";
+				ctx.fillStyle = color_st[4];//ctx.fillStyle = "Yellow";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  6*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "YellowGreen";
+				ctx.fillStyle = color_st[5];//ctx.fillStyle = "YellowGreen";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "OliveDrab";
+				ctx.fillStyle = color_st[6];//ctx.fillStyle = "OliveDrab";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 12*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "SkyBlue";
+				ctx.fillStyle = color_st[7];//ctx.fillStyle = "SkyBlue";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Blue";
+				ctx.fillStyle = color_st[8];//ctx.fillStyle = "Blue";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 12*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Navy";
+				ctx.fillStyle = color_st[9];//ctx.fillStyle = "Navy";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 17*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Purple";
+				ctx.fillStyle = color_st[10];//ctx.fillStyle = "Purple";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 18*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "SlateGray";
+				ctx.fillStyle = color_st[11];//ctx.fillStyle = "SlateGray";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 17*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "Black";
+				ctx.fillStyle = color_st[12];//ctx.fillStyle = "Black";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 18*road+road/2-5, (wth/2-road)*0.8, 5);
 
 				// 신호등
@@ -284,15 +281,13 @@
 			
 			var stopani = null;
 			var crain_status = [0, 0, 0, 0, 0];
-			var color_st = ["White", "Pink", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
-							"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			
 			function start() {
-				//const canvas = document.getElementById("canvas");
-				//var ctx = canvas.getContext("2d");
+				const canvas = document.getElementById("canvas");
+				var ctx = canvas.getContext("2d");
 				
-				//var road = canvas.height*0.045;
-				//var wth  = canvas.width-8*road;
+				var road = canvas.height*0.045;
+				var wth  = canvas.width-8*road;
 				
 				class Truck {
 					constructor(x, y, num) {
