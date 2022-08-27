@@ -238,29 +238,29 @@
 				ctx.fillRect ((wth-2*road)/2+6*road	, 17*road, (wth-2*road)/2, 2*road);
 				
 				// 컨테이너 내부물품
-				ctx.fillStyle = color_st[1];//ctx.fillStyle = "Pink";
+				ctx.fillStyle = color_st[1];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		,  5*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[2];//ctx.fillStyle = "Red";
+				ctx.fillStyle = color_st[2];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		,  6*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[3];//ctx.fillStyle = "Orange";
+				ctx.fillStyle = color_st[3];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  5*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[4];//ctx.fillStyle = "Yellow";
+				ctx.fillStyle = color_st[4];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  6*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[5];//ctx.fillStyle = "YellowGreen";
+				ctx.fillStyle = color_st[5];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[6];//ctx.fillStyle = "OliveDrab";
+				ctx.fillStyle = color_st[6];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 12*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[7];//ctx.fillStyle = "SkyBlue";
+				ctx.fillStyle = color_st[7];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[8];//ctx.fillStyle = "Blue";
+				ctx.fillStyle = color_st[8];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 12*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[9];//ctx.fillStyle = "Navy";
+				ctx.fillStyle = color_st[9];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 17*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[10];//ctx.fillStyle = "Purple";
+				ctx.fillStyle = color_st[10];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 18*road+road/2-5, (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[11];//ctx.fillStyle = "SlateGray";
+				ctx.fillStyle = color_st[11];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 17*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[12];//ctx.fillStyle = "Black";
+				ctx.fillStyle = color_st[12];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 18*road+road/2-5, (wth/2-road)*0.8, 5);
 
 				// 신호등
@@ -277,6 +277,18 @@
 				ctx.fillRect(4*road+wth+2,		 7*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,		13*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,		19*road  , 2*road-2, 3*road  );
+				
+				// 도로
+				// 가로
+				ctx.fillStyle = "rgb(150, 150, 150)";
+				ctx.fillRect (2*road,  2*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  4*road, wth+4*road, 2);
+				ctx.fillRect (2*road,  8*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 10*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 14*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 16*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 20*road, wth+4*road, 2);
+				ctx.fillRect (2*road, 22*road, wth+4*road, 2);
 			}
 			
 			var stopani = null;
