@@ -1,156 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, height=device-height,
-                   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			  content="width=device-width, height=device-height,
+					   minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
+
+		<title>SPTS</title>
+
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+			html, body {
+				margin: 0;
+				font-family: 'Noto Sans KR', sans-serif;
+			}
+			body {
+				background-image: url("pg.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+      
+      
+			select {
+				-o-appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+
+				width: 100%;
+				margin: 7px 0 0 0;
+				padding: 5px 0 5px 35px;
+
+				color: #ffffff;
+				background-color: #7cade7;
+
+				border-radius: 5px;
+				border : 1px solid #e7e7e7;
+				box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+			}
+			select option {
+				background: #f9f9f9;
+				color: black;
+				padding: 5px 0 5px 35px;
+			}
+			select:hover {
+				border-color: #6382d5;
+			}
+			select:focus {
+				border-color: #6382d5;
+				box-shadow: 0 0 1px 1px rgba(99,130,213, .7);
+				box-shadow: 0 0 0 1px -moz-mac-focusring;
+				color: #e7e7e7;
+				outline: none;
+			}
+			select:disabled {
+				opacity: 0.5;
+			}
+      
+      
+			.bglayout {
+				width: 100vw;
+				height: 100vh;
+				table-layout: fixed;
+				border-collapse: collapse;
+			}
+			.controler {
+				background-color: #f4fcff;
+			}
+			.panel {
+				background-color: #ffffff;
+				margin: 0px 40px 0px 20px;
+				padding: 10px;
+				border-radius: 10px;
+				outline: solid 2px #e7e7e7;
+			}
+			.title {
+				padding: 0px 0px 5px 10px;
+				border-bottom: solid 1px #e7e7e7;
+			}
+      
+			.controlpanel {
+				padding: 5px 0 5px 35px;
+				position: relative;
+			}
+			.statuspanel {
+				padding: 5px 0px 0px 35px;
+			}
+			.shw {
+				color: #ffffff;
+				background-color: #7cade7;
+				border-radius: 5px;
+				width: 50px;
+				text-align: center;
+			}
+			.valuenum {
+				width:70%;
+			}
+      
+			.traffic {
+				width: 100%;
+			}
+			.lights {
+				padding: 10px 10px 5px 10px;
+				text-align: center;
+			}
+      
+			.btn {
+				margin: 3px 20px 0px 0px;
+
+				color: #ffffff;
+				background-color: #7cade7;
+				border: 1px solid #7cade7;
+				border-radius: 5px;
+				width: 50px;
+				height: 25px;
+			}
+			.btn:hover {
+				box-shadow: 0 0 0 5px rgba(124,173,233, 0.7);
+				animation: pulse 1s;
+			}
+			@keyframes pulse {
+				from {
+					box-shadow: 0 0 0 0 var(--btn-bg);
+				}
+			}
+      
+			.output {
+				/*display : none;*/
+				color: red;
+			}
+			#outputa{
+				position: absolute;
+				left: 80px;
+				top: 10px;
+			} 
+      
+			.txtcenter {
+				text-align: center;
+			}
+			.subtitlewth {
+				width: 110px;
+			}
+			.paneltb {
+				width: 15px;
+				border-left: 1px solid #e7e7e7;
+			}
+			.statustb {
+				padding: 0px;
+			}
+		</style>
     
-    <title>SPTS</title>
-    
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-      html, body {
-        margin: 0;
-        font-family: 'Noto Sans KR', sans-serif;
-      }
-      body {
-        background-image: url("pg.png");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-      }
-      
-      
-      select {
-        -o-appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-
-        width: 100%;
-        margin: 7px 0 0 0;
-        padding: 5px 0 5px 35px;
-
-        color: #ffffff;
-        background-color: #7cade7;
-
-        border-radius: 5px;
-        border : 1px solid #e7e7e7;
-        box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-      }
-      select option {
-        background: #f9f9f9;
-        color: black;
-        padding: 5px 0 5px 35px;
-      }
-      select:hover {
-        border-color: #6382d5;
-      }
-      select:focus {
-        border-color: #6382d5;
-        box-shadow: 0 0 1px 1px rgba(99,130,213, .7);
-        box-shadow: 0 0 0 1px -moz-mac-focusring;
-        color: #e7e7e7;
-        outline: none;
-      }
-      select:disabled {
-        opacity: 0.5;
-      }
-      
-      
-      .bglayout {
-        width: 100vw;
-        height: 100vh;
-        table-layout: fixed;
-        border-collapse: collapse;
-      }
-      .controler {
-        background-color: #f4fcff;
-      }
-      .panel {
-        background-color: #ffffff;
-        margin: 0px 40px 0px 20px;
-        padding: 10px;
-        border-radius: 10px;
-        outline: solid 2px #e7e7e7;
-      }
-      .title {
-        padding: 0px 0px 5px 10px;
-        border-bottom: solid 1px #e7e7e7;
-      }
-      
-      .controlpanel {
-        padding: 5px 0 5px 35px;
-        position: relative;
-      }
-      .statuspanel {
-        padding: 5px 0px 0px 35px;
-      }
-      .shw {
-        color: #ffffff;
-        background-color: #7cade7;
-        border-radius: 5px;
-        width: 50px;
-        text-align: center;
-      }
-      .valuenum {
-        width:70%;
-      }
-      
-      .traffic {
-        width: 100%;
-      }
-      .lights {
-        padding: 10px 10px 5px 10px;
-        text-align: center;
-      }
-      
-      .btn {
-        margin: 3px 20px 0px 0px;
-
-        color: #ffffff;
-        background-color: #7cade7;
-        border: 1px solid #7cade7;
-        border-radius: 5px;
-        width: 50px;
-        height: 25px;
-      }
-      .btn:hover {
-        box-shadow: 0 0 0 5px rgba(124,173,233, 0.7);
-        animation: pulse 1s;
-      }
-      @keyframes pulse {
-        from {
-          box-shadow: 0 0 0 0 var(--btn-bg);
-        }
-      }
-      
-      .output {
-        /*display : none;*/
-        color: red;
-      }
-      #outputa{
-        position: absolute;
-        left: 80px;
-        top: 10px;
-      } 
-      
-      .txtcenter {
-        text-align: center;
-      }
-      .subtitlewth {
-        width: 110px;
-      }
-      .paneltb {
-        width: 15px;
-        border-left: 1px solid #e7e7e7;
-      }
-      .statustb {
-        padding: 0px;
-      }
-    </style>
-    
-    <script type="text/javascript">
+		<script type="text/javascript">
 			// show input bar value
 			function show_carnn() {
 				document.getElementById("carshw").innerText = document.getElementById("carnum").value;
@@ -158,7 +158,8 @@
 			function show_speed() {
 				document.getElementById("spdshw").innerText = document.getElementById("spdnum").value;
 			}
-	    // draw map
+			
+			// draw map
 			function drawMap() {
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
@@ -264,231 +265,228 @@
 				ctx.fillRect(4*road+wth+2,	13*road  , 2*road-2, 4*road  );
 				ctx.fillRect(4*road+wth+2,	19*road  , 2*road-2, 3*road  );
 			}
-    </script>
+		</script>
     
-  </head>
-  <body>
-    <table class="bglayout">
-      <tr>
-        <td class="txtcenter" colspan="2" rowspan="5" width="70%">
-          <div id="map">
-            <canvas id="canvas" width="100" height="100"></canvas>
-          </div>
-          <br>
-          <br>
-        </td>
-        <th class="title">
-          <br>
-          Smart Port Traffic Simulator
-        </th>
-      </tr>
-      <tr>
-        <td class="controler">
-          <div class="panel">
-            <div class="title">
-              시나리오 선택
-            </div>
-            <select>
-              <option value="1" selected>#1</option>
-              <option value="2">#2</option>
-              <option value="3">#3</option>
-              <option value="4">#4</option>
-              <option value="5">#5</option>
-            </select>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="controler">
-          <div class="panel">
-            <div class="title">
-              신호등 지시 현황
-              <i class="output" id="outputa">
-                {"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0",
-                 "light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
-              </i>
-            </div>
-            <table class="traffic">
-              <tr>
-                <td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l3" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-              </tr>
-              <tr>
-                <td class="lights" id="l4" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l5" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l6" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-              </tr>
-              <tr>
-                <td class="lights" id="l7" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l8" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l9" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-              </tr>
-              <tr>
-                <td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-                <td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="controler">
-          <div class="panel">
-            <div class="title">
-              설정 제어판
-              <i class="output" id="outputt">no data input</i>
-            </div>
-            <div class="controlpanel">
-              <table>
-                <tr>
-                  <td class="subtitlewth">차량 대수</td>
-                  <td class="paneltb"></td>
-                  <td><div class="shw" id="carshw">1</div></td>
-                  <td>1 <input class="valuenum" id="carnum" type="range" 
-															 min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
-                </tr>
-                <tr>
-                  <td>현재 배속</td>
-                  <td class="paneltb"></td>
-                  <td><div class="shw" id="spdshw">1</div></td>
-                  <td>1 <input class="valuenum" id="spdnum" type="range" 
-															 min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
-                </tr>
-                <tr>
-                  <td>시작/일시정지</td>
-                  <td class="paneltb"></td>
-                  <td>			<button class="btn" id="play" onclick="start()"										 >►</button></td>
-                  <td>
-                    <table>
-                      <tr>
-                        <td><button class="btn" id="pause"  onclick="stop()"                 >I I</button></td>
-                        <td><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="controler">
-          <div class="panel">
-            <div class="title">
-              선적현황
-              <i class="output" id="crain1">0</i>
-              <i class="output" id="crain2">0</i>
-              <i class="output" id="crain3">0</i>
-              <i class="output" id="crain4">0</i>
-              <i class="output" id="craincheck1">0</i>
-              <i class="output" id="craincheck2">0</i>
-              <i class="output" id="craincheck3">0</i>
-              <i class="output" id="craincheck4">0</i>
-            </div>
-            <div class="statuspanel">
-              <table>
-                <tr>
-                  <td class="subtitlewth">평균 대기시간</td>
-                  <td class="paneltb"></td>
-                  <td>
-                    <table class="statustb">
-                      <tr>
-                        <td>005</td>
-                        <td>분</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>평균 소요시간</td>
-                  <td class="paneltb"></td>
-                  <td>
-                    <table class="statustb">
-                      <tr>
-                        <td>030</td>
-                        <td>분</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td>물건 적재율</td>
-                  <td class="paneltb"></td>
-                  <td>
-                    <table class="statustb">
-                      <tr>
-                        <td>010</td>
-                        <td>%</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </body>
-  <script src="https://code.jquery.com/jquery.min.js"></script>
+	</head>
+	<body>
+		<table class="bglayout">
+			<tr>
+				<td class="txtcenter" colspan="2" rowspan="5" width="70%">
+					<div id="map">
+						<canvas id="canvas" width="100" height="100"></canvas>
+					</div>
+					<br>
+					<br>
+				</td>
+				<th class="title">
+					<br>
+					Smart Port Traffic Simulator
+				</th>
+			</tr>
+			<tr>
+				<td class="controler">
+					<div class="panel">
+						<div class="title">
+							시나리오 선택
+						</div>
+						<select>
+							<option value="1" selected>#1</option>
+							<option value="2">#2</option>
+							<option value="3">#3</option>
+							<option value="4">#4</option>
+							<option value="5">#5</option>
+						</select>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="controler">
+					<div class="panel">
+						<div class="title">
+							신호등 지시 현황
+							<i class="output" id="outputa">
+								{"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0",
+								"light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
+							</i>
+						</div>
+						<table class="traffic">
+							<tr>
+								<td class="lights" id="l1" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l2" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l3" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+							</tr>
+							<tr>
+								<td class="lights" id="l4" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l5" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l6" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+							</tr>
+							<tr>
+								<td class="lights" id="l7" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l8" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l9" ><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+							</tr>
+							<tr>
+								<td class="lights" id="l10"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l11"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+								<td class="lights" id="l12"><img src="stay.png" width="45%" style="transform:rotate(270deg);"/></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="controler">
+					<div class="panel">
+						<div class="title">
+							설정 제어판
+							<i class="output" id="outputt">no data input</i>
+						</div>
+						<div class="controlpanel">
+							<table>
+								<tr>
+									<td class="subtitlewth">차량 대수</td>
+									<td class="paneltb"></td>
+									<td><div class="shw" id="carshw">1</div></td>
+									<td>1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
+								</tr>
+								<tr>
+									<td>현재 배속</td>
+									<td class="paneltb"></td>
+									<td><div class="shw" id="spdshw">1</div></td>
+									<td>1 <input class="valuenum" id="spdnum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
+								</tr>
+								<tr>
+									<td>시작/일시정지</td>
+									<td class="paneltb"></td>
+									<td><button class="btn" id="play" onclick="start()">►</button></td>
+									<td>
+										<table>
+											<tr>
+												<td><button class="btn" id="pause" onclick="stop()">I I</button></td>
+												<td><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="controler">
+					<div class="panel">
+						<div class="title">
+							선적현황
+							<i class="output" id="crain1">0</i>
+							<i class="output" id="crain2">0</i>
+							<i class="output" id="crain3">0</i>
+							<i class="output" id="crain4">0</i>
+							<i class="output" id="craincheck1">0</i>
+							<i class="output" id="craincheck2">0</i>
+							<i class="output" id="craincheck3">0</i>
+							<i class="output" id="craincheck4">0</i>
+						</div>
+						<div class="statuspanel">
+							<table>
+								<tr>
+									<td class="subtitlewth">평균 대기시간</td>
+									<td class="paneltb"></td>
+									<td>
+										<table class="statustb">
+											<tr>
+												<td>005</td>
+												<td>분</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>평균 소요시간</td>
+									<td class="paneltb"></td>
+									<td>
+										<table class="statustb">
+											<tr>
+												<td>030</td>
+												<td>분</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>물건 적재율</td>
+									<td class="paneltb"></td>
+									<td>
+										<table class="statustb">
+											<tr>
+												<td>010</td>
+												<td>%</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
 		// get traffic light data
-    function mysql_conn() {
+		function mysql_conn() {
 			$.ajax( {
 				url: "getMysql.php",
-        type: "GET",
-        success: function(data) {
+				type: "GET",
+				success: function(data) {
 					$("#outputa").text(data);
+					var info_temp = document.getElementById('outputa').innerText;
           
-          var info_temp = document.getElementById('outputa').innerText;
+					var contact = JSON.parse(info_temp);
+					var status_list = "light: "+contact["light01"]+" "+contact["light02"];
+					status_list  +=  " " + contact["light03"] + " " + contact["light04"];
+					status_list  +=  " " + contact["light05"] + " " + contact["light06"];
+					status_list  +=  " " + contact["light07"] + " " + contact["light08"];
+					status_list  +=  " " + contact["light09"] + " " + contact["light10"];
+					status_list  +=  " " + contact["light11"] + " " + contact["light12"];
+					document.getElementById('outputt').innerHTML = status_list;
           
-          var contact = JSON.parse(info_temp);
-          var status_list = "light: "+contact["light01"]+" "+contact["light02"];
-          status_list  +=  " " + contact["light03"] + " " + contact["light04"];
-          status_list  +=  " " + contact["light05"] + " " + contact["light06"];
-          status_list  +=  " " + contact["light07"] + " " + contact["light08"];
-          status_list  +=  " " + contact["light09"] + " " + contact["light10"];
-          status_list  +=  " " + contact["light11"] + " " + contact["light12"];
-          document.getElementById('outputt').innerHTML = status_list;
+					// update light panel image
+					var up		= "<img src='go.png'   width='45%' style='transform:rotate(270deg);'/>";
+					var right	= "<img src='go.png'   width='45%' style='transform:rotate(  0deg);'/>";
+					var down	= "<img src='go.png'   width='45%' style='transform:rotate( 90deg);'/>";
+					var left	= "<img src='go.png'   width='45%' style='transform:rotate(180deg);'/>";
+					var stay 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
           
-          // update light panel image
-          var up		= "<img src='go.png'   width='45%' style='transform:rotate(270deg);'/>";
-          var right	= "<img src='go.png'   width='45%' style='transform:rotate(  0deg);'/>";
-          var down	= "<img src='go.png'   width='45%' style='transform:rotate( 90deg);'/>";
-          var left	= "<img src='go.png'   width='45%' style='transform:rotate(180deg);'/>";
-          var stay 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
-          
-          // up 3 4 11
-          // right 1 6 8
-          // down 5 9 10
-          // left 2 7 12
+					// up 3 4 11
+					// right 1 6 8
+					// down 5 9 10
+					// left 2 7 12
 					
 					var lightnum = [" ",
-													"light01", "light02", "light03", 
-													"light04", "light05", "light06", 
-													"light07", "light08", "light09", 
-													"light10", "light11", "light12"];
+							"light01", "light02", "light03", 
+							"light04", "light05", "light06", 
+							"light07", "light08", "light09", 
+							"light10", "light11", "light12"];
 					var lightid = [" ",
-												 "l1" , "l2" , "l3" ,
-												 "l4" , "l5" , "l6" ,
-												 "l7" , "l8" , "l9" ,
-												 "l10", "l11", "l12"];
+						       "l1" , "l2" , "l3" ,
+						       "l4" , "l5" , "l6" ,
+						       "l7" , "l8" , "l9" ,
+						       "l10", "l11", "l12"];
 					
 					for(var i = 1; i < lightid.length; i++) {
-          	if     (contact[lightnum[i]] == 0)                                                             document.getElementById(lightid[i]).innerHTML = stay;
-          	else if(contact[lightnum[i]] == 3 || contact[lightnum[i]] == 4 || contact[lightnum[i]] == 11)  document.getElementById(lightid[i]).innerHTML = up;
-          	else if(contact[lightnum[i]] == 1 || contact[lightnum[i]] == 6 || contact[lightnum[i]] == 8 )  document.getElementById(lightid[i]).innerHTML = right;
-          	else if(contact[lightnum[i]] == 5 || contact[lightnum[i]] == 9 || contact[lightnum[i]] == 10)  document.getElementById(lightid[i]).innerHTML = down;
-          	else if(contact[lightnum[i]] == 2 || contact[lightnum[i]] == 7 || contact[lightnum[i]] == 12)  document.getElementById(lightid[i]).innerHTML = left;
+						if     (contact[lightnum[i]] == 0)                                                             document.getElementById(lightid[i]).innerHTML = stay;
+						else if(contact[lightnum[i]] == 3 || contact[lightnum[i]] == 4 || contact[lightnum[i]] == 11)  document.getElementById(lightid[i]).innerHTML = up;
+						else if(contact[lightnum[i]] == 1 || contact[lightnum[i]] == 6 || contact[lightnum[i]] == 8 )  document.getElementById(lightid[i]).innerHTML = right;
+						else if(contact[lightnum[i]] == 5 || contact[lightnum[i]] == 9 || contact[lightnum[i]] == 10)  document.getElementById(lightid[i]).innerHTML = down;
+						else if(contact[lightnum[i]] == 2 || contact[lightnum[i]] == 7 || contact[lightnum[i]] == 12)  document.getElementById(lightid[i]).innerHTML = left;
 					}
 				}
-      } );
-    }
+			} );
+		}
 		
-    // get crain data
+		// get crain data
 		function getCrain(crain) {
 			$.ajax( {
 				url: "getCrainMySql.php",
