@@ -293,7 +293,11 @@
 			
 			var stopani = null;
 			var crain_status = [0, 0, 0, 0, 0];
-			const canvas = document.getElementById("canvas");
+			var truck = [null,null,null,null,null,null,null,null,null,null,null];
+			
+			
+			function start() {
+				const canvas = document.getElementById("canvas");
 				var ctx = canvas.getContext("2d");
 				
 				var road = canvas.height*0.045;
@@ -386,12 +390,9 @@
 					check() {
 					}
 				}
-			
-			function start() {
 				
 				const numcar = document.getElementById("carnum").value;
 				var park = 85;
-				var truck = [null,null,null,null,null,null,null,null,null,null,null];
 				init = () => {
 					for(var i = 1; i <= numcar; i++) {
 						truck[i] = new Truck(canvas.width-40, i*park, i);
