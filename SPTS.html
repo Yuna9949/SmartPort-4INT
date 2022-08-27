@@ -316,9 +316,15 @@
 				function animate() {
 					drawMap();
 					
-					if(numcar >= 1) { truck01.update(); truck01.draw(); }
+					for(var i = 1; i <= numcar; i++) {
+						truck[i].update();
+						truck[i].draw();
+					}
 					
-					if(numcar >= 1) { truck01.check(); }
+					for(var i = 1; i <= numcar; i++) {
+						truck[i].check();
+					}
+						
 					
 					stopani = requestAnimationFrame(animate);
 				}
