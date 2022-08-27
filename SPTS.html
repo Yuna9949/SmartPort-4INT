@@ -164,17 +164,23 @@
 				document.getElementById("spdshw").innerText = document.getElementById("spdnum").value;
 			}
 			
+			const canvas = document.getElementById('canvas');
+			var ctx = canvas.getContext('2d');
+				
+			canvas.width  = window.innerWidth*0.635;
+			canvas.height = window.innerHeight*0.793;
+				
+			var road = canvas.height*0.045;
+			var wth  = canvas.width-8*road;
+			
+			// resize window
+			window.addEventListener('resize', function(){
+				canvas.width = window.innerWidth*0.635;
+				canvas.height = window.innerHeight*0.793;
+			});
+			
 			// draw map
 			function drawMap() {
-				const canvas = document.getElementById('canvas');
-				var ctx = canvas.getContext('2d');
-				
-				canvas.width  = window.innerWidth*0.635;
-				canvas.height = window.innerHeight*0.793;
-				
-				var road = canvas.height*0.045;
-				var wth  = canvas.width-8*road;
-				
 				// resize window
 				window.addEventListener('resize', function(){
 					canvas.width = window.innerWidth*0.635;
@@ -245,7 +251,7 @@
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  6*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "YellowGreen";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = "LimeGreen";
+				ctx.fillStyle = "OliveDrab";
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 12*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = "SkyBlue";
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 11*road+road/2  , (wth/2-road)*0.8, 5);
@@ -282,11 +288,11 @@
 							"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			
 			function start() {
-				const canvas = document.getElementById("canvas");
-				var ctx = canvas.getContext("2d");
+				//const canvas = document.getElementById("canvas");
+				//var ctx = canvas.getContext("2d");
 				
-				var road = canvas.height*0.045;
-				var wth  = canvas.width-8*road;
+				//var road = canvas.height*0.045;
+				//var wth  = canvas.width-8*road;
 				
 				class Truck {
 					constructor(x, y, num) {
