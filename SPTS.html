@@ -459,8 +459,14 @@
 							if(crainch == 1) {
 								this.container = document.getElementById('crain'+this.crain).innerText;
 								document.getElementById('craincheck'+this.crain).innerText = "0";
+								crain_statue[this.crain] = 0;
 								this.crain = 0;
 							}
+						}
+						
+						// go after load
+						if(this.container > 0) {
+							this.status = 4;
 						}
 						
 						// change the location
