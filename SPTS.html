@@ -324,7 +324,7 @@
 						this.tll = 0;
 						
 						// status
-						this.status = 1; // stop
+						this.status = 0; // stop
 						this.speed = 1;
 						
 						// draw
@@ -374,7 +374,7 @@
 							if     (crain_status[1] == 0) {
 								crain_status[1] = this.num;
 								this.crain = 1;
-								this.container = -1;
+								this.container = -1; // wait to get container
 							}
 							else if(crain_status[2] == 0) {
 								crain_status[2] = this.num;
@@ -391,9 +391,24 @@
 								this.crain = 4;
 								this.container = -1;
 							}
+							else {
+								this.crain = -1; // wait for crain
+							}
 						}
 						
+						// set start position
+						if(this.dbx == 9) {
+							this.status = 1; // up
+							
+							if(this.crain == 1) {
+								if(this.dby == 1 && (this.tlu+this.tld)/2 >= this.y && (this.tlu+this.tld)/2 < this.y+this.speed) {
+									this.y = (this.tlu+this.tld)/2;
+									this.status = 0;
+								}
+							}
+						}
 						
+						// change the location
 						if(this.status == 1) { // up
 							this.y -= this.speed;
 						}
