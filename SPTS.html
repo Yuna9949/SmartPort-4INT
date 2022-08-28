@@ -327,9 +327,6 @@
 						this.status = 0; // stop
 						this.speed = 1;
 						
-						// draw
-						this.front = 1;
-						
 						// get container
 						this.crain = 0;
 						this.container = 0;
@@ -418,15 +415,31 @@
 						
 						// change the location
 						if	(this.status == 1) { // up
+							
+							this.sizex = road-4;
+							this.sizey = this.sizex/3*5;
+							
 							this.y -= this.speed;
 						}
 						else if	(this.status == 2) { // right
+							
+							this.sizex = this.sizex/3*5;
+							this.sizey = road-4;
+							
 							this.x += this.speed;
 						}
 						else if	(this.status == 3) { // down
+							
+							this.sizex = road-4;
+							this.sizey = this.sizex/3*5;
+							
 							this.y += this.speed;
 						}
 						else if	(this.status == 4) { // left
+							
+							this.sizex = this.sizex/3*5;
+							this.sizey = road-4;
+							
 							this.x -= this.speed;
 						}
 					}
@@ -443,10 +456,10 @@
 							if(this.num == i)	ctx.fillStyle = color_st[i];
 						}
 						
-						if	(this.front == 1)	ctx.fillRect(this.x-5			, this.y-this.sizey/2	, 10, 4);
-						else if (this.front == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5		, 4, 10);
-						else if (this.front == 3)	ctx.fillRect(this.x-5			, this.y+this.sizey/2-4	, 10, 4);
-						else if (this.front == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5		, 4, 10);
+						if	(this.status == 1)	ctx.fillRect(this.x-5			, this.y-this.sizey/2	, 10, 4);
+						else if (this.status == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5		, 4, 10);
+						else if (this.status == 3)	ctx.fillRect(this.x-5			, this.y+this.sizey/2-4	, 10, 4);
+						else if (this.status == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5		, 4, 10);
 						
 						// check crain
 						if(crain_status[1] != 0) {
