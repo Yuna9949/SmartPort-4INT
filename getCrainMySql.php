@@ -8,7 +8,7 @@
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
-		$data['data'] = $row['carry'];
+		$data['data'] = $row['container'];
     		$time = $row['time'];
 
     		//$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = '".$time."'";
