@@ -428,13 +428,19 @@
 						
 						// go to crain
 						if(this.crain != 0 && this.crain > 0) {
-							if(this.dby == 2 && beforeCrain[this.crain] > this.x) {
-								if(this.crain != 4) 	this.status = 1;
-								else 			this.status = 0;
+							if(this.crain != 4) {
+								if(this.dby == 2 && beforeCrain[this.crain] > this.x) {
+									this.status = 1;
+								}
+								if(this.dby == 1 && ud_middle) {
+									this.y = (this.tlu+this.tld)/2;
+									this.status = 0;
+								}
 							}
-							if(this.dby == 1 && ud_middle && this.crain != 4) {
-								this.y = (this.tlu+this.tld)/2;
-								this.status = 0;
+							else {
+								if(this.dby == 2 && beforeCrain[this.crain] > this.x) {
+									this.status = 0;
+								}
 							}
 						}
 						
