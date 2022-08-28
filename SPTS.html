@@ -399,13 +399,19 @@
 						if(this.dbx == 9) {
 							this.status = 1; // up
 							
-							if(this.crain == 4) {
+							if(this.crain == -1) {
+								if(this.dby == 2 && ud_middle) {
+									this.y = (this.tlu+this.tld)/2;
+									this.status = 0;
+								}
+							}
+							else if(this.crain == 4) {
 								if(this.dby == 1 && ud_middle) {
 									this.y = (this.tlu+this.tld)/2;
 									this.status = 4;
 								}
 							}
-							if(this.crain == 3) {
+							else {
 								if(this.dby == 2 && ud_middle) {
 									this.y = (this.tlu+this.tld)/2;
 									this.status = 4;
