@@ -424,39 +424,16 @@
 							}
 						}
 						
+						var beforeCrain = [0, 5.5*road+(wth/2-road)/4, 5.5*road+(wth/2-road)/4*3, 6.5*road+wth/2+(wth/2-road)/4, 6.5*road+wth/2+(wth/2-road)/4*3];
+						
 						// go to crain
 						if(this.crain != 0 && this.crain > 0) {
-							if(this.crain == 1) {
-								if(this.dby == 2 && 5.5*road+(wth/2-road)/4 > this.x) {
-									this.status = 1;
-								}
-								if(this.dby == 1 && ud_middle) {
-									this.y = (this.tlu+this.tld)/2;
-									this.status = 0;
-								}
+							if(this.dby == 2 && beforeCrain[this.crain] > this.x) {
+								this.status = 1;
 							}
-							else if(this.crain == 2) {
-								if(this.dby == 2 && 5.5*road+(wth/2-road)/4*3 > this.x) {
-									this.status = 1;
-								}
-								if(this.dby == 1 && ud_middle) {
-									this.y = (this.tlu+this.tld)/2;
-									this.status = 0;
-								}
-							}
-							else if(this.crain == 3) {
-								if(this.dby == 2 && 6.5*road+wth/2+(wth/2-road)/4 > this.x) {
-									this.status = 1;
-								}
-								if(this.dby == 1 && ud_middle) {
-									this.y = (this.tlu+this.tld)/2;
-									this.status = 0;
-								}
-							}
-							else if(this.crain == 4) {
-								if(this.dby == 1 && 6.5*road+wth/2+(wth/2-road)/4*3 > this.x) {
-									this.status = 0;
-								}
+							if(this.dby == 1 && ud_middle) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 0;
 							}
 						}
 						
