@@ -330,6 +330,9 @@
 						// get container
 						this.crain = 0;
 						this.container = 0;
+						
+						// draw
+						this.front = 1;
 					}
 					update() {
 						this.speed = parseInt(document.getElementById("spdnum").value);
@@ -424,6 +427,7 @@
 							
 							this.sizex = road-4;
 							this.sizey = this.sizex/3*5;
+							this.front = 1;
 							
 							this.y -= this.speed;
 						}
@@ -431,6 +435,7 @@
 							
 							this.sizey = road-4;
 							this.sizex = this.sizey/3*5;
+							this.front = 2;
 							
 							this.x += this.speed;
 						}
@@ -438,6 +443,7 @@
 							
 							this.sizex = road-4;
 							this.sizey = this.sizex/3*5;
+							this.front = 3;
 							
 							this.y += this.speed;
 						}
@@ -445,6 +451,7 @@
 							
 							this.sizey = road-4;
 							this.sizex = this.sizey/3*5;
+							this.front = 4;
 							
 							this.x -= this.speed;
 						}
@@ -462,10 +469,10 @@
 							if(this.num == i)	ctx.fillStyle = color_st[i];
 						}
 						
-						if	(this.status == 1)	ctx.fillRect(this.x-5			, this.y-this.sizey/2	, 10, 4);
-						else if (this.status == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5		, 4, 10);
-						else if (this.status == 3)	ctx.fillRect(this.x-5			, this.y+this.sizey/2-4	, 10, 4);
-						else if (this.status == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5		, 4, 10);
+						if	(this.front == 1)	ctx.fillRect(this.x-5			, this.y-this.sizey/2	, 10, 4);
+						else if (this.front == 2)	ctx.fillRect(this.x+this.sizex/2-4	, this.y-5		, 4, 10);
+						else if (this.front == 3)	ctx.fillRect(this.x-5			, this.y+this.sizey/2-4	, 10, 4);
+						else if (this.front == 4)	ctx.fillRect(this.x-this.sizex/2	, this.y-5		, 4, 10);
 						
 						// check crain
 						if(crain_status[1] != 0) {
