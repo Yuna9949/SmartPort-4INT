@@ -330,6 +330,7 @@
 						// get container
 						this.crain = 0;
 						this.container = 0;
+						this.loading = 0;
 						
 						// draw
 						this.front = 1;
@@ -370,6 +371,8 @@
 						else							  {this.dby =  0;							}
 						
 						// get container
+						// container 0=defalut -1=waiting 1~12=container
+						// crain     0=defalut -1=waiting 1~3=crain
 						if(this.container == 0) {
 							if     (crain_status[1] == 0) {
 								crain_status[1] = this.num;
@@ -426,8 +429,8 @@
 						
 						var beforeCrain = [0, 3.5*road+(wth/2-road)/4, 3.5*road+(wth/2-road)/4*3, 4.5*road+wth/2+(wth/2-road)/4, 4.5*road+wth/2+(wth/2-road)/4*3];
 						
-						// go to crain
-						if(this.crain != 0 && this.crain > 0) {
+						// go to crain and get container
+						if(this.crain != 0 && this.crain > 0 && this.loading < 300) {
 							if(this.crain != 4) {
 								if(this.dby == 2 && beforeCrain[this.crain]+2*road > this.x) {
 									this.status = 1; // up
@@ -438,13 +441,25 @@
 								}
 								if(this.dby == 1 && beforeCrain[this.crain]+road/2 > this.x) {
 									this.status = 0; // stop
+									this.loading += this.speed;
 								}
-								
 							}
 							else {
 								if(this.dby == 1 && beforeCrain[this.crain]+road/2 > this.x) {
 									this.status = 0;
+									this.loading += this.speed;
 								}
+							}
+						}
+						
+						// load container
+						if(this.loading >= 300 && this.crain != 0) {
+							getCrain(this.crain);
+							var crainch = document.getElementById('craincheck'+this.crain).innerText;
+							if(crainch == 1) {
+								this.container = document.getElementById('crain'+this.crain).innerText;
+								document.getElementById('craincheck'+this.crain).innerText = "0";
+								this.crain = 0;
 							}
 						}
 						
@@ -516,6 +531,16 @@
 						if(crain_status[4] != 0) {
 							ctx.fillStyle = color_st[crain_status[4]];
 							ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, road/2-2, road, 4);
+						}
+						
+						// load container
+						if(this.container > 0) {
+							ctx.fillStyle = color_st[this.container];
+							
+							if     (this.front == 1)	ctx.fillRect(this.x-this.sizex/2, this.y+this.sizey/2-this.sizex/2, this.sizex, 2);
+							else if(this.front == 2)	ctx.fillRect(this.x-this.sizex/2-2+this.sizey/2, this.y-this.sizey/2, 2, this.sizey);
+							else if(this.front == 3)	ctx.fillRect(this.x-this.sizex/2, this.y-this.sizey/2-2+this.sizex/2, this.sizex, 2);
+							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2-this.sizey/2, this.y-this.sizey/2, 2, this.sizey);
 						}
 					}
 					check() {
