@@ -312,7 +312,7 @@
 						this.num = num;
 						
 						// size
-						this.sizex = road-4;
+						this.sizex = road*0.9;
 						this.sizey = this.sizex/3*5;
 						
 						// position detail
@@ -502,8 +502,6 @@
 							this.status = 4;
 						}
 						
-						alert(road + " " + this.sizex/2 + " " + this.sizey/2);
-						
 						// check if stop infront of traffic light
 						var u_stop = this.tlu+this.sizey/2 <= this.y && this.tlu+this.sizey/2 > this.y-this.speed;
 						var r_stop = this.tlr-this.sizex/2 >= this.x && this.tlr-this.sizex/2 < this.x+this.speed;
@@ -599,7 +597,7 @@
 						// change the location
 						if	(this.status == 1) { // up
 							
-							this.sizex = road-4;
+							this.sizex = road*0.9;
 							this.sizey = this.sizex/3*5;
 							this.front = 1;
 							
@@ -607,7 +605,7 @@
 						}
 						else if	(this.status == 2) { // right
 							
-							this.sizey = road-4;
+							this.sizey = road*0.9;
 							this.sizex = this.sizey/3*5;
 							this.front = 2;
 							
@@ -615,7 +613,7 @@
 						}
 						else if	(this.status == 3) { // down
 							
-							this.sizex = road-4;
+							this.sizex = road*0.9;
 							this.sizey = this.sizex/3*5;
 							this.front = 3;
 							
@@ -623,7 +621,7 @@
 						}
 						else if	(this.status == 4) { // left
 							
-							this.sizey = road-4;
+							this.sizey = road*0.9;
 							this.sizex = this.sizey/3*5;
 							this.front = 4;
 							
