@@ -791,6 +791,7 @@
 								}
 							}
 							else if	(this.t_light == 15) { // right up right 
+								alert(this.num+" "+this.status+" "+this.t_light+" "+this.turn);
 								if(this.turn != 0.1) this.turn = 0;
 								if(this.turn != 0.9) this.status = 2;
 								if(r_middle && this.turn >= 2)	this.turn--;
@@ -807,6 +808,7 @@
 								if(this.turn == 0.1) this.status = 2;
 							} 
 							else if	(this.t_light == 18) { // left down left
+								alert(this.num+" "+this.status+" "+this.t_light+" "+this.turn);
 								if(this.turn != 0.1) this.turn = 0;
 								if(this.turn != 0.9) this.status = 4;
 								if(l_middle && this.turn >= 2)	this.turn--;
