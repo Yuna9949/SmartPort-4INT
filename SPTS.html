@@ -495,7 +495,7 @@
 						}
 						
 						// go after load
-						if(this.container > 0) {
+						if(this.container > 0 && this.dbx > 2) {
 							this.status = 4;
 						}
 						
@@ -800,7 +800,7 @@
 							this.x -= this.speed;
 						}
 						
-						alert(this.num+" "+this.status+" "+this.t_light+" "+this.turn);
+						//alert(this.num+" "+this.status+" "+this.t_light+" "+this.turn);
 					}
 					draw() {
 						// draw truck
