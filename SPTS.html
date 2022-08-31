@@ -803,9 +803,7 @@
 									this.x = (this.tll+this.tlr)/2;
 								}
 							}
-						}
-						if(this.t_light > 0 && this.enter == 5) {
-							if	(this.t_light == 12) { // left left
+							else if	(this.t_light == 12) { // left left
 								this.status = 4;
 								if(l_middle)		this.turn--;
 								if(this.turn == 0) {
