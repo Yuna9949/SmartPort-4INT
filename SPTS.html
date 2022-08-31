@@ -506,7 +506,12 @@
 						var l_stop = this.tll+this.sizex/2 <= this.x && this.tll+this.sizex/2 > this.x-this.speed;
 						
 						// stop infront of traffic light
-						if 	(this.dbx == 3 && this.dby == 1 && l_stop) {
+						if	(this.dbx == 9 && this.dby == 2 && l_stop) {
+							this.status = 0;
+							this.x = this.tll+this.sizex/2;
+							this.t_light = -1;
+						}
+						else if	(this.dbx == 3 && this.dby == 1 && l_stop) {
 							this.status = 0;
 							this.x = this.tll+this.sizex/2;
 							this.t_light = -1;
@@ -577,7 +582,8 @@
 							// light  3
 							if((this.dbx == 8 && this.dby == 5) || // up
 							   (this.dbx == 6 && this.dby == 3) || // right
-							   (this.dbx == 6 && this.dby == 4)) {
+							   (this.dbx == 6 && this.dby == 4) ||
+							   (this.dbx == 9 && this.dby == 2)) { // left
 								this.t_light = light[3];
 							}
 							
