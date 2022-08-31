@@ -683,10 +683,10 @@
 							
 							else if	(this.t_light == 13)	this.turn = 2;
 							else if	(this.t_light == 14)	this.turn = 1;
-							else if	(this.t_light == 15)	this.turn = 3;
+							else if	(this.t_light == 15)	this.turn = 4;
 							else if	(this.t_light == 16)	this.turn = 2;
 							else if	(this.t_light == 17)	this.turn = 1;
-							else if	(this.t_light == 18)	this.turn = 3;
+							else if	(this.t_light == 18)	this.turn = 4;
 						}
 						
 						// reset traffic light
@@ -792,28 +792,32 @@
 							}
 							else if	(this.t_light == 15) { // right up right 
 								this.status = 2;
-								if(r_middle && this.turn >= 2)	this.turn--;
+								if(r_middle && this.turn >= 3)	this.turn--;
 								else if(u_middle && this.turn < 1) {
 									this.y = (this.tlu+this.tld)/2;
 									this.turn = 0;
 								}
-								if(this.turn == 1) {
+								else if(u_middle) this.turn--;
+								
+								if(this.turn == 2) {
 									this.status = 1;
 									this.x = (this.tll+this.tlr)/2;
-									this.turn = 0.9;
+									this.turn = 1.9;
 								}
 							} 
 							else if	(this.t_light == 18) { // left down left
 								this.status = 4;
-								if(l_middle && this.turn >= 2)	this.turn--;
+								if(l_middle && this.turn >= 3)	this.turn--;
 								else if(d_middle && this.turn < 1) {
 									this.y = (this.tlu+this.tld)/2;
 									this.turn = 0;
 								}
-								if(this.turn == 1) {
+								else if(d_middle) this.turn--;
+								
+								if(this.turn == 2) {
 									this.status = 3;
 									this.x = (this.tll+this.tlr)/2;
-									this.turn = 0.9;
+									this.turn = 1.9;
 								}
 							}
 						}
