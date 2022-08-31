@@ -501,11 +501,11 @@
 						}
 						
 						// off container
-						if(this.container == 5 && this.dbx == 3 && this.dby == 8 && beforeCrain[1] < this.x) {
+						if(this.container == 5 && this.dbx == 3 && (this.dby == 8 || this.dby == 9) && beforeCrain[1] < this.x) {
 							this.status = 3;
 						}
-						if(this.container == 5 && this.dbx == 3 && this.dby == 9 && beforeCrain[1]+road < this.x) {
-							this.status = 0;
+						if(this.container == 5 && this.dbx == 3 && this.dby == 9 && d_middle) {
+							this.status = 2;
 						}
 						
 						
