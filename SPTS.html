@@ -493,15 +493,52 @@
 							this.status = 4;
 						}
 						
+						// check if stop infront of traffic light
 						var u_stop = this.tlu+this.sizey/2 <= this.y && this.tlu+this.sizey/2 > this.y-this.speed;
 						var r_stop = this.tlr-this.sizex/2 >= this.x && this.tlr-this.sizex/2 < this.x+this.speed;
 						var d_stop = this.tld-this.sizey/2 >= this.y && this.tld-this.sizey/2 < this.y+this.speed;
 						var l_stop = this.tll+this.sizex/2 <= this.x && this.tll+this.sizex/2 > this.x-this.speed;
 						
 						// stop infront of traffic light
-						if(this.dby == 1 && this.dbx == 3 && l_stop) {
-							this.x = this.tll+this.sizex/2;
+						if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
+								if(u_stop) {
+									this.status = 0;
+									this.y = this.tlu+this.sizey/2;
+								}
+							}
+						}
+						else if	(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
+								if(d_stop) {
+									this.status = 0;
+									this.y = this.tld-this.sizey/2;
+								}
+							}
+						}
+						else if	(this.dbx == 3 || this.dbx == 6) {
+							if	(this.dby == 3 || this.dby == 4 || this.dby == 8 || this.dby == 9 || 
+								 this.dby == 13 || this.dby == 14 || this.dby == 18) {
+								if(r_stop) {
+									this.status = 0;
+									this.x = this.tlr-this.sizex/2;
+								}
+							}
+							else if	(this.dby == 2 || this.dby == 6 || this.dby == 7 || 
+								 this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17) {
+								if(l_stop) {
+									this.status = 0;
+									this.x = this.tll+this.sizex/2;
+								}
+							}
+						}
+						else if (this.dbx == 3 && this.dby == 1 && l_stop) {
 							this.status = 0;
+							this.x = this.tll+this.sizex/2;
+						}
+						else if (this.dbx == 6 && this.dby == 1 && l_stop) {
+							this.status = 0;
+							this.x = this.tll+this.sizex/2;
 						}
 						
 						// go with traffic light
