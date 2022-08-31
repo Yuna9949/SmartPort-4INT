@@ -818,8 +818,11 @@
 								 this.dby == 13 || this.dby == 14 || this.dby == 18) {
 								this.status = 2;
 							}
-							else if	(this.dby == 2 || this.dby == 6 || this.dby == 7 || 
+							else if	(this.dby == 6 || this.dby == 7 || 
 								 this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17) {
+								this.status = 4;
+							}
+							else if (this.dby == 2 || this.container > 0) {
 								this.status = 4;
 							}
 						}
