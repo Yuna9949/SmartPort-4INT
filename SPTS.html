@@ -486,6 +486,7 @@
 						
 						// load container
 						if(this.loading >= 300 && this.crain != 0 && this.dby == 1) {
+							this.deloading = 0;
 							getCrain(this.crain);
 							var crainch = document.getElementById('craincheck'+this.crain).innerText;
 							if(crainch == 1) {
@@ -515,6 +516,7 @@
 						}
 						if(this.container == 5 && this.deloading >= 300) {
 							this.container = 0;
+							this.loading = 0;
 						}
 						
 						
