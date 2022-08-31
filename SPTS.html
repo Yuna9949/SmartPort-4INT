@@ -331,6 +331,7 @@
 						this.crain = 0;
 						this.container = 0;
 						this.loading = 0;
+						this.deloading = 0;
 						
 						// draw
 						this.front = 1;
@@ -507,6 +508,13 @@
 						if(this.container == 5 && this.dbx == 3 && this.dby == 9 && d_middle) {
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
+						}
+						if(this.container == 5 && this.dbx == 3 && this.dby == 9 && beforeCrain[2] < this.x) {
+							this.status = 0;
+							this.deloading+=this.speed;
+						}
+						if(this.container == 5 && this.deloading >= 300) {
+							this.container = 0;
 						}
 						
 						
