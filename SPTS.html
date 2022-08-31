@@ -503,18 +503,166 @@
 						}
 						
 						// off container
-						if(this.container == 5 && this.dbx == 3 && (this.dby == 8 || this.dby == 9) && beforeCrain[1] < this.x) {
-							this.status = 3;
+						if(this.container > 0 && beforeCrain[1] < this.x && this.dbx == 3) {
+							if(this.container == 1 && (this.dby == 3 || this.dby == 4)) {
+								this.status = 3;
+							}
+							else if(this.container == 5 && (this.dby == 8 || this.dby == 9)) {
+								this.status = 3;
+							}
+							else if(this.container == 9 && (this.dby == 13 || this.dby == 14)) {
+								this.status = 3;
+							}
 						}
-						if(this.container == 5 && this.dbx == 3 && this.dby == 9 && d_middle) {
-							this.y = (this.tlu+this.tld)/2;
-							this.status = 2;
+						else if(this.container > 0 && beforeCrain[2] > this.x && this.dbx == 3) {
+							if(this.container == 2 && (this.dby == 6 || this.dby == 7)) {
+								this.status = 1;
+							}
+							else if(this.container == 6 && (this.dby == 11 || this.dby == 12)) {
+								this.status = 1;
+							}
+							else if(this.container == 10 && (this.dby == 16 || this.dby == 17)) {
+								this.status = 1;
+							}
 						}
-						if(this.container == 5 && this.dbx == 3 && this.dby == 9 && beforeCrain[2] < this.x) {
-							this.status = 0;
-							this.deloading+=this.speed;
+						else if(this.container > 0 && beforeCrain[3] < this.x && this.dbx == 6) {
+							if(this.container == 3 && (this.dby == 3 || this.dby == 4)) {
+								this.status = 3;
+							}
+							else if(this.container == 7 && (this.dby == 8 || this.dby == 9)) {
+								this.status = 3;
+							}
+							else if(this.container == 11 && (this.dby == 13 || this.dby == 14)) {
+								this.status = 3;
+							}
 						}
-						if(this.container == 5 && this.deloading >= 300) {
+						else if(this.container > 0 && beforeCrain[4] > this.x && this.dbx == 6) {
+							if(this.container == 4 && (this.dby == 6 || this.dby == 7)) {
+								this.status = 1;
+							}
+							else if(this.container == 8 && (this.dby == 11 || this.dby == 12)) {
+								this.status = 1;
+							}
+							else if(this.container == 12 && (this.dby == 16 || this.dby == 17)) {
+								this.status = 1;
+							}
+						}
+						
+						if(this.container > 0 && d_middle && this.dbx == 3) {
+							if(this.container == 1 && this.dby == 4) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 2;
+							}
+							else if(this.container == 5 && this.dby == 9) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 2;
+							}
+							else if(this.container == 9 && this.dby == 14) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 2;
+							}
+						}
+						else if(this.container > 0 && u_middle && this.dbx == 3) {
+							if(this.container == 2 && this.dby == 6) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 4;
+							}
+							else if(this.container == 6 && this.dby == 11) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 4;
+							}
+							else if(this.container == 10 && this.dby == 16) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 4;
+							}
+						}
+						else if(this.container > 0 && d_middle && this.dbx == 6) {
+							if(this.container == 3 && this.dby == 4) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 2;
+							}
+							else if(this.container == 7 && this.dby == 9) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 2;
+							}
+							else if(this.container == 11 && this.dby == 14) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 2;
+							}
+						}
+						else if(this.container > 0 && u_middle && this.dbx == 6) {
+							if(this.container == 4 && this.dby == 6) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 4;
+							}
+							else if(this.container == 8 && this.dby == 11) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 4;
+							}
+							else if(this.container == 12 && this.dby == 16) {
+								this.y = (this.tlu+this.tld)/2;
+								this.status = 4;
+							}
+						}
+						
+						if(this.container > 0 && beforeCrain[2] < this.x && this.dbx == 3) {
+							if(this.container == 1 && (this.dby == 3 || this.dby == 4)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 5 && (this.dby == 8 || this.dby == 9)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 9 && (this.dby == 13 || this.dby == 14)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+						}
+						else if(this.container > 0 && beforeCrain[1] > this.x && this.dbx == 3) {
+							if(this.container == 2 && (this.dby == 6 || this.dby == 7)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 6 && (this.dby == 11 || this.dby == 12)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 10 && (this.dby == 16 || this.dby == 17)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+						}
+						else if(this.container > 0 && beforeCrain[4] < this.x && this.dbx == 6) {
+							if(this.container == 3 && (this.dby == 3 || this.dby == 4)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 7 && (this.dby == 8 || this.dby == 9)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 11 && (this.dby == 13 || this.dby == 14)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+						}
+						else if(this.container > 0 && beforeCrain[3] > this.x && this.dbx == 6) {
+							if(this.container == 4 && (this.dby == 6 || this.dby == 7)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 8 && (this.dby == 11 || this.dby == 12)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+							else if(this.container == 12 && (this.dby == 16 || this.dby == 17)) {
+								this.status = 0;
+								this.deloading+=this.speed;
+							}
+						}
+						
+						if(this.container > 0 && this.deloading >= 300) {
 							this.container = 0;
 							this.loading = 0;
 						}
