@@ -502,6 +502,8 @@
 							this.status = 4;
 						}
 						
+						alert(road + " " + this.sizex/2 + " " + this.sizey/2);
+						
 						// check if stop infront of traffic light
 						var u_stop = this.tlu+this.sizey/2 <= this.y && this.tlu+this.sizey/2 > this.y-this.speed;
 						var r_stop = this.tlr-this.sizex/2 >= this.x && this.tlr-this.sizex/2 < this.x+this.speed;
