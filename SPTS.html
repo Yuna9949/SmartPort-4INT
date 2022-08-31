@@ -744,7 +744,7 @@
 							}
 						}
 						if(this.t_light > 0 && this.enter == 2) {
-							if	(this.t_light ==  4 || this.t_light == 13) { // right up
+							if	(this.t_light ==  4) { // right up
 								this.status = 2;
 								if(r_middle)		this.turn--;
 								if(this.turn == 0) {
@@ -752,7 +752,7 @@
 									this.x = (this.tll+this.tlr)/2;
 								}
 							}
-							else if	(this.t_light ==  5 || this.t_light == 14) { // right down
+							else if	(this.t_light ==  5) { // right down
 								this.status = 2;
 								if(r_middle)		this.turn--;
 								if(this.turn == 0) {
@@ -796,7 +796,7 @@
 							}
 						}
 						if(this.t_light > 0 && this.enter == 4) {
-							if	(this.t_light == 10 || this.t_light == 16) { // left down
+							if	(this.t_light == 10) { // left down
 								this.status = 4;
 								if(l_middle)		this.turn--;
 								if(this.turn == 0) {
@@ -804,7 +804,7 @@
 									this.x = (this.tll+this.tlr)/2;
 								}
 							}
-							else if	(this.t_light == 11 || this.t_light == 17) { // left up
+							else if	(this.t_light == 11) { // left up
 								this.status = 4;
 								if(l_middle)		this.turn--;
 								if(this.turn == 0) {
@@ -822,7 +822,23 @@
 							}
 						}
 						if(this.t_light > 0 && this.enter == 5) {
-							if	(this.t_light == 15) { // right up right 
+							if	(this.t_light == 13) { // right up
+								this.status = 2;
+								if(r_middle)		this.turn--;
+								if(this.turn == 0) {
+									this.status = 1;
+									this.x = (this.tll+this.tlr)/2;
+								}
+							}
+							else if	(this.t_light == 14) { // right down
+								this.status = 2;
+								if(r_middle)		this.turn--;
+								if(this.turn == 0) {
+									this.status = 3;
+									this.x = (this.tll+this.tlr)/2;
+								}
+							}
+							else if	(this.t_light == 15) { // right up right 
 								if(this.turn == 0.1) this.turn = 0;
 								if(this.turn != 0.9) this.status = 2;
 								if(r_middle && this.turn >= 2)	this.turn--;
@@ -840,7 +856,23 @@
 							} 
 						}
 						if(this.t_light > 0 && this.enter == 6) {
-							if	(this.t_light == 18) { // left down left
+							if	(this.t_light == 16) { // left down
+								this.status = 4;
+								if(l_middle)		this.turn--;
+								if(this.turn == 0) {
+									this.status = 3;
+									this.x = (this.tll+this.tlr)/2;
+								}
+							}
+							else if	(this.t_light == 17) { // left up
+								this.status = 4;
+								if(l_middle)		this.turn--;
+								if(this.turn == 0) {
+									this.status = 1;
+									this.x = (this.tll+this.tlr)/2;
+								}
+							}
+							else if	(this.t_light == 18) { // left down left
 								if(this.turn == 0.1) this.turn = 0;
 								if(this.turn != 0.9) this.status = 4;
 								if(l_middle && this.turn >= 2)	this.turn--;
