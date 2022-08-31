@@ -791,11 +791,12 @@
 								}
 							}
 							else if	(this.t_light == 15) { // right up right 
+								if(this.turn == 0.1) this.turn = 0;
 								if(this.turn != 0.9) this.status = 2;
 								if(r_middle && this.turn >= 2)	this.turn--;
 								else if(u_middle && this.turn < 1) {
 									this.y = (this.tlu+this.tld)/2;
-									this.turn = 0;
+									this.turn = 0.1;
 								}
 								if(this.turn == 1) {
 									this.status = 1;
@@ -805,11 +806,12 @@
 								}
 							} 
 							else if	(this.t_light == 18) { // left down left
+								if(this.turn == 0.1) this.turn = 0;
 								if(this.turn != 0.9) this.status = 4;
 								if(l_middle && this.turn >= 2)	this.turn--;
 								else if(d_middle && this.turn < 1) {
 									this.y = (this.tlu+this.tld)/2;
-									this.turn = 0;
+									this.turn = 0.1;
 								}
 								if(this.turn == 1) {
 									this.status = 3;
