@@ -791,7 +791,7 @@
 								}
 							}
 							else if	(this.t_light == 15) { // right up right 
-								this.status = 2;
+								if(this.turn != 0.9) this.status = 2;
 								if(r_middle && this.turn >= 2)	this.turn--;
 								else if(u_middle && this.turn < 1) {
 									this.y = (this.tlu+this.tld)/2;
@@ -805,7 +805,7 @@
 								}
 							} 
 							else if	(this.t_light == 18) { // left down left
-								this.status = 4;
+								if(this.turn != 0.9) this.status = 4;
 								if(l_middle && this.turn >= 2)	this.turn--;
 								else if(d_middle && this.turn < 1) {
 									this.y = (this.tlu+this.tld)/2;
