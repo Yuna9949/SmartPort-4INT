@@ -312,7 +312,7 @@
 						this.num = num;
 						
 						// size
-						this.sizex = road*0.8;
+						this.sizex = road*0.9;
 						this.sizey = this.sizex/3*5;
 						
 						// position detail
@@ -338,6 +338,7 @@
 						// turn infront of traffic light
 						// t_light 0=defalut -1=waiting 1~18=traffic light
 						this.t_light = 0;
+						this.turn = 0;
 					}
 					update() {
 						this.speed = parseInt(document.getElementById("spdnum").value);
@@ -435,17 +436,13 @@
 						
 						// move on road
 						if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
-							if(this.dby == 4 || this.dby ==  9 || this.dby == 14 ||
-							   this.dby == 5 || this.dby == 10 || this.dby == 15 ||
-							   this.dby == 6 || this.dby == 11 || this.dby == 16) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
 								this.status = 1;
 							}
 							
 						}
 						else if	(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
-							if(this.dby == 4 || this.dby ==  9 || this.dby == 14 ||
-							   this.dby == 5 || this.dby == 10 || this.dby == 15 ||
-							   this.dby == 6 || this.dby == 11 || this.dby == 16) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
 								this.status = 3;
 							}
 						}
@@ -517,6 +514,25 @@
 						else if (this.dbx == 6 && this.dby == 1 && l_stop) {
 							this.status = 0;
 							this.x = this.tll+this.sizex/2;
+							this.t_light = -1;
+						}
+						else if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
+								if(u_stop) {
+									this.status = 0;
+									this.y = this.tlu+this.sizey/2;
+									this.t_light = -1;
+								}
+							}
+						}
+						else if	(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
+								if(d_stop) {
+									this.status = 0;
+									this.y = this.tld-this.sizey/2;
+									this.t_light = -1;
+								}
+							}
 						}
 						else if	(this.dbx == 3 || this.dbx == 6) {
 							if	(this.dby == 3 || this.dby == 4 || this.dby == 8 || this.dby == 9 || 
@@ -536,68 +552,218 @@
 								}
 							}
 						}
-						/*
-						else if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
-							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
-								if(u_stop) {
-									this.status = 0;
-									this.y = this.tlu+this.sizey/2;
-									this.t_light = -1;
-								}
-							}
-						}
-						else if	(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
-							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
-								if(d_stop) {
-									this.status = 0;
-									this.y = this.tld-this.sizey/2;
-									this.t_light = -1;
-								}
-							}
-						}*/
 						
-						// go with traffic light
-						/*
-						if(this.status == 0 && this.t_light == -1) {
+						// get traffic light
+						if(this.status == 0 && this.t_light == -1) {						
+							mysql_conn();
+							var light = document.getElementById('outputt').innerHTML.split(" "); 
+							
+							// light  1
+							if((this.dbx == 2 && this.dby == 5) || // up
+							   (this.dbx == 3 && this.dby == 1) || // left
+							   (this.dbx == 3 && this.dby == 2)) {
+								this.t_light = light[1];
+							}
+							
+							// light  2
+							if((this.dbx == 5 && this.dby == 5) || // up
+							   (this.dbx == 3 && this.dby == 3) || // right
+							   (this.dbx == 3 && this.dby == 4) ||
+							   (this.dbx == 6 && this.dby == 1) || // left
+							   (this.dbx == 6 && this.dby == 2)) {
+								this.t_light = light[2];
+							}
+							
+							// light  3
+							if((this.dbx == 8 && this.dby == 5) || // up
+							   (this.dbx == 6 && this.dby == 3) || // right
+							   (this.dbx == 6 && this.dby == 4)) {
+								this.t_light = light[3];
+							}
+							
+							// light  4
+							if((this.dbx == 2 && this.dby == 10) || // up
+							   (this.dbx == 1 && this.dby ==  5) || // down
+							   (this.dbx == 3 && this.dby ==  6) || // left
+							   (this.dbx == 3 && this.dby ==  7)) {
+								this.t_light = light[4];
+							}
+							
+							// light  5
+							if((this.dbx == 5 && this.dby == 10) || // up
+							   (this.dbx == 3 && this.dby ==  8) || // right
+							   (this.dbx == 3 && this.dby ==  9) ||
+							   (this.dbx == 4 && this.dby ==  5) || // down
+							   (this.dbx == 6 && this.dby ==  6) || // left
+							   (this.dbx == 6 && this.dby ==  7)) {
+								this.t_light = light[5];
+							}
+							
+							// light  6
+							if((this.dbx == 8 && this.dby == 10) || // up
+							   (this.dbx == 6 && this.dby ==  8) || // right
+							   (this.dbx == 6 && this.dby ==  9) ||
+							   (this.dbx == 7 && this.dby ==  5)) { // down
+								this.t_light = light[6];
+							}
+							
+							// light  7
+							if((this.dbx == 2 && this.dby == 15) || // up
+							   (this.dbx == 1 && this.dby == 10) || // down
+							   (this.dbx == 3 && this.dby == 11) || // left
+							   (this.dbx == 3 && this.dby == 12)) {
+								this.t_light = light[7];
+							}
+							
+							// light  8
+							if((this.dbx == 5 && this.dby == 15) || // up
+							   (this.dbx == 3 && this.dby == 13) || // right
+							   (this.dbx == 3 && this.dby == 14) ||
+							   (this.dbx == 4 && this.dby == 10) || // down
+							   (this.dbx == 6 && this.dby == 11) || // left
+							   (this.dbx == 6 && this.dby == 12)) {
+								this.t_light = light[8];
+							}
+							
+							// light  9
+							if((this.dbx == 8 && this.dby == 15) || // up
+							   (this.dbx == 6 && this.dby == 13) || // right
+							   (this.dbx == 6 && this.dby == 14) ||
+							   (this.dbx == 7 && this.dby == 10)) { // down
+								this.t_light = light[9];
+							}
+							
+							// light 10
+							if((this.dbx == 1 && this.dby == 15) || // down
+							   (this.dbx == 3 && this.dby == 16) || // left
+							   (this.dbx == 3 && this.dby == 17)) {
+								this.t_light = light[10];
+							}
+							
+							// light 11
+							if((this.dbx == 3 && this.dby == 18) || // right
+							   (this.dbx == 4 && this.dby == 15) || // down
+							   (this.dbx == 6 && this.dby == 16) || // left
+							   (this.dbx == 6 && this.dby == 17)) {
+								this.t_light = light[11];
+							}
+							
+							// light 12
+							if((this.dbx == 6 && this.dby == 18) || // right
+							   (this.dbx == 7 && this.dby == 15)) { // down
+								this.t_light = light[12];
+							}
+							
+							if	(this.t_light ==  1)	this.turn = 2;
+							else if	(this.t_light ==  2)	this.turn = 3;
+							else if	(this.t_light ==  3)	this.turn = 4;
+							else if	(this.t_light ==  4)	this.turn = 2;
+							else if	(this.t_light ==  5)	this.turn = 1;
+							else if	(this.t_light ==  6)	this.turn = 2;
+							else if	(this.t_light ==  7)	this.turn = 2;
+							else if	(this.t_light ==  8)	this.turn = 3;
+							else if	(this.t_light ==  9)	this.turn = 4;
+							else if	(this.t_light == 10)	this.turn = 2;
+							else if	(this.t_light == 11)	this.turn = 1;
+							else if	(this.t_light == 12)	this.turn = 2;
+							
+							else if	(this.t_light == 13)	this.turn = 2;
+							else if	(this.t_light == 14)	this.turn = 1;
+							else if	(this.t_light == 15)	this.turn = 3;
+							else if	(this.t_light == 16)	this.turn = 2;
+							else if	(this.t_light == 17)	this.turn = 1;
+							else if	(this.t_light == 18)	this.turn = 3;
+						}
+						
+						// reset traffic light
+						if(this.turn == 0)			this.t_light = 0;
+						
+						// turn with traffic light
+						if(this.t_light > 0) {
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
 							// down left 7 / down right 8 / down down 9
 							// left down 10 / left up 11 / left left 12
 							
 							// right up13 down14 right15  / left down16 up17 left18
-						
-							mysql_conn();
-							var light = document.getElementById('outputt').innerHTML.split(" "); 
-							
-							// light  1
-							if	(this.dbx == 3 && this.dby == 1) {
-								this.t_light = light[1];
+							if	(this.t_light ==  1) {
+								this.status = 1;
+								if(u_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 2;
 							}
-							else if	(this.dbx == 3 && this.dby == 2) {
-								this.t_light = light[1];
+							else if	(this.t_light ==  2) {
+								this.status = 1;
+								if(u_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 4;
 							}
-							else if	(this.dbx == 2 && this.dby == 5) {
-								this.t_light = light[1];
+							else if	(this.t_light ==  3) {
+								this.status = 1;
+								if(u_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 1;
 							}
-							// light  2
-							// light  3
-							// light  4
-							// light  5
-							// light  6
-							// light  7
-							// light  8
-							// light  9
-							// light 10
-							// light 11
-							// light 12
-						
+							else if	(this.t_light ==  4 || this.t_light == 13) {
+								this.status = 2;
+								if(r_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 1;
+							}
+							else if	(this.t_light ==  5 || this.t_light == 14) {
+								this.status = 2;
+								if(r_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 3;
+							}
+							else if	(this.t_light ==  6) {
+								this.status = 2;
+								if(r_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 2;
+							}
+							else if	(this.t_light ==  7) {
+								this.status = 3;
+								if(d_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 4;
+							}
+							else if	(this.t_light ==  8) {
+								this.status = 3;
+								if(d_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 2;
+							}
+							else if	(this.t_light ==  9) {
+								this.status = 3;
+								if(d_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 3;
+							}
+							else if	(this.t_light == 10 || this.t_light == 16) {
+								this.status = 4;
+								if(l_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 3;
+							}
+							else if	(this.t_light == 11 || this.t_light == 17) {
+								this.status = 4;
+								if(l_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 1;
+							}
+							else if	(this.t_light == 12) {
+								this.status = 4;
+								if(l_middle)		this.turn--;
+								if(this.turn == 0)	this.status = 4;
+							}
+							else if	(this.t_light == 15) {
+								this.status = 2;
+								if(r_middle && this.turn >=2)	this.turn--;
+								else if(u_middle && this.turn == 1)	this.turn--;
+								if(this.turn == 1)	this.status = 1;
+							}
+							else if	(this.t_light == 18) {
+								this.status = 4;
+								if(l_middle && this.turn >=2)	this.turn--;
+								else if(d_middle && this.turn == 1)	this.turn--;
+								if(this.turn == 1)	this.status = 3;
+							}
 						}
-						*/
 						
 						// change the location
 						if	(this.status == 1) { // up
 							
-							this.sizex = road*0.8;
+							this.sizex = road*0.9;
 							this.sizey = this.sizex/3*5;
 							this.front = 1;
 							
@@ -605,7 +771,7 @@
 						}
 						else if	(this.status == 2) { // right
 							
-							this.sizey = road*0.8;
+							this.sizey = road*0.9;
 							this.sizex = this.sizey/3*5;
 							this.front = 2;
 							
@@ -613,7 +779,7 @@
 						}
 						else if	(this.status == 3) { // down
 							
-							this.sizex = road*0.8;
+							this.sizex = road*0.9;
 							this.sizey = this.sizex/3*5;
 							this.front = 3;
 							
@@ -621,7 +787,7 @@
 						}
 						else if	(this.status == 4) { // left
 							
-							this.sizey = road*0.8;
+							this.sizey = road*0.9;
 							this.sizex = this.sizey/3*5;
 							this.front = 4;
 							
