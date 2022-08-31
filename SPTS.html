@@ -434,29 +434,6 @@
 							}
 						}
 						
-						// move on road
-						if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
-							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
-								this.status = 1;
-							}
-							
-						}
-						else if	(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
-							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
-								this.status = 3;
-							}
-						}
-						else if	(this.dbx == 3 || this.dbx == 6) {
-							if	(this.dby == 3 || this.dby == 4 || this.dby == 8 || this.dby == 9 || 
-								 this.dby == 13 || this.dby == 14 || this.dby == 18) {
-								this.status = 2;
-							}
-							else if	(this.dby == 2 || this.dby == 6 || this.dby == 7 || 
-								 this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17) {
-								this.status = 4;
-							}
-						}
-						
 						var beforeCrain = [0, 3.5*road+(wth/2-road)/4, 3.5*road+(wth/2-road)/4*3, 4.5*road+wth/2+(wth/2-road)/4, 4.5*road+wth/2+(wth/2-road)/4*3];
 						
 						// go to crain and get container
@@ -821,6 +798,29 @@
 									this.turn = 0.9;
 								}
 								if(this.turn == 0.1) this.status = 4;
+							}
+						}
+						
+						// move on road
+						if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
+								this.status = 1;
+							}
+							
+						}
+						else if	(this.dbx == 1 || this.dbx == 4 || this.dbx == 7) {
+							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
+								this.status = 3;
+							}
+						}
+						else if	(this.dbx == 3 || this.dbx == 6) {
+							if	(this.dby == 3 || this.dby == 4 || this.dby == 8 || this.dby == 9 || 
+								 this.dby == 13 || this.dby == 14 || this.dby == 18) {
+								this.status = 2;
+							}
+							else if	(this.dby == 2 || this.dby == 6 || this.dby == 7 || 
+								 this.dby == 11 || this.dby == 12 || this.dby == 16 || this.dby == 17) {
+								this.status = 4;
 							}
 						}
 						
