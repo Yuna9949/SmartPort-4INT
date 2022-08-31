@@ -702,9 +702,10 @@
 						}
 						
 						// reset traffic light
-						if(this.turn == 0)			this.t_light = 0;
-						
-						alert(this.num +" "+this.enter);
+						if(this.turn == 0) {
+							this.t_light = 0;
+							this.enter = 0;
+						}
 						
 						// turn with traffic light
 						if(this.t_light > 0 && this.enter == 1) {
