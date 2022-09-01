@@ -1101,10 +1101,10 @@
 						var chx = null;
 						var chy = null;
 						var thiscar = parseInt(this.num);
+						alert(this.num+" check start");
 						for(var i = 1; i <= totalcarnum; i++) {
-							alert(this.num+" checkx"+i+" checkx"+i);
-							//document.getElementById("checkx"+i).innerText = "0";
-							//document.getElementById("checky"+i).innerText = "0";
+							document.getElementById("checkx"+i).innerText = "0";
+							document.getElementById("checky"+i).innerText = "0";
 							if(i != thiscar) {
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
@@ -1124,6 +1124,7 @@
 								}
 							}
 						}
+						alert(this.num+" check stop");
 					}
 				}
 				
