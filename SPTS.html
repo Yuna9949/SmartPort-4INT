@@ -1025,8 +1025,10 @@
 							
 							this.x -= this.speed;
 						}
+						
 						insertCar(this.num, this.x, this.y, this.cup, this.cright, this.cdown, this.cleft, this.container);
 						getCar(this.num);
+						
 					}
 					draw() {
 						// draw truck
@@ -1415,7 +1417,7 @@
 						alert(data.code);
 					}
 					else {
-						alert(data.data);
+						alert(data.success);
 					}
 				}
 			} );
