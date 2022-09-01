@@ -1087,10 +1087,10 @@
 						var ch = null;
 						var chx = null;
 						var chy = null;
+						var thiscar = parseInt(this.num);
 						for(var i = 1; i <= totalcarnum; i++) {
 							ch = parseInt(document.getElementById("checkx").innerText);
-							if(i <= ch) {
-								alert(i+":"+this.num);
+							if(i <= ch && i != this.car) {
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
 							
