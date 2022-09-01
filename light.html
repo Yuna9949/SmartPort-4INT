@@ -51,7 +51,7 @@
 						<tr>
 							<td></td>
 							<td>				<input type='button' value='↲' onclick='status("t1",  7)'/></td>
-							<td id="t1up1">			<input type='button' value='↓' onclick='status("t1",  9)'/></td>
+							<td id="t1up1">			<input type='button' value='↓' onclick='status("t1",  9)' id="tlup1b"/></td>
 							<td>				<input type='button' value='↳' onclick='status("t1",  8)'/></td>
 							<td></td>
 						</tr>
@@ -59,27 +59,27 @@
 							<td class="turnr">		<input type='button' value='↰' onclick='status("t1",  4)'/></td>
 							<td class="turnr">		<input type='button' value='↰' onclick='status("t1", 13)'/></td>
 							<td id="t1up2"></td>
-							<td id="t1r4" class="turnr">	<input type='button' value='↲' onclick='status("t1", 17)'/></td>
-							<td id="t1r3" class="turnr">	<input type='button' value='↲' onclick='status("t1", 11)'/></td>
+							<td id="t1r4" class="turnr">	<input type='button' value='↲' onclick='status("t1", 17)' id="t1r4b"/></td>
+							<td id="t1r3" class="turnr">	<input type='button' value='↲' onclick='status("t1", 11)' id="t1r3b"/></td>
 						</tr>
 						<tr>
-							<td id="t1l1">			<input type='button' value='→' onclick='status("t1",  6)'/></td>
-							<td id="t1l2">			<input type='button' value='→' onclick='status("t1", 15)'/></td>
+							<td id="t1l1">			<input type='button' value='→' onclick='status("t1",  6)' id="t1l1b"/></td>
+							<td id="t1l2">			<input type='button' value='→' onclick='status("t1", 15)' id="t1l2b"/></td>
 							<td id="t1"  >0</td>
-							<td id="t1r2">			<input type='button' value='←' onclick='status("t1", 18)'/></td>
-							<td id="t1r1">			<input type='button' value='←' onclick='status("t1", 12)'/></td>
+							<td id="t1r2">			<input type='button' value='←' onclick='status("t1", 18)' id="t1r2b"/></td>
+							<td id="t1r1">			<input type='button' value='←' onclick='status("t1", 12)' id="t1r1b"/></td>
 						</tr>
 						<tr>
-							<td id="t1l3">			<input type='button' value='↴' onclick='status("t1",  5)'/></td>
-							<td id="t1l4">			<input type='button' value='↴' onclick='status("t1", 14)'/></td>
-							<td id="t1dw2">			<input type='button' value='■' onclick='status("t1",  0)'/></td>
+							<td id="t1l3">			<input type='button' value='↴' onclick='status("t1",  5)' id="t1l3b"/></td>
+							<td id="t1l4">			<input type='button' value='↴' onclick='status("t1", 14)' id="t1l4b"/></td>
+							<td id="t1dw2">			<input type='button' value='■' onclick='status("t1",  0)' id="t1dw2b"/></td>
 							<td class="turnr">		<input type='button' value='↳' onclick='status("t1", 16)'/></td>
 							<td class="turnr">		<input type='button' value='↳' onclick='status("t1", 10)'/></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td>				<input type='button' value='↰' onclick='status("t1",  2)'/></td>
-							<td id="t1dw1">			<input type='button' value='↑' onclick='status("t1",  3)'/></td>
+							<td id="t1dw1">			<input type='button' value='↑' onclick='status("t1",  3)' id="t1dw1b"/></td>
 							<td>				<input type='button' value='↱' onclick='status("t1",  1)'/></td>
 							<td></td>
 						</tr>
@@ -622,12 +622,29 @@
 			document.getElementById($traffic+"r3").style.backgroundColor = "white";
 			document.getElementById($traffic+"r4").style.backgroundColor = "white";
 			
+			document.getElementById($traffic+"up1b").style.backgroundColor = "white";
+			document.getElementById($traffic+"dw1b").style.backgroundColor = "white";
+			document.getElementById($traffic+"dw2b").style.backgroundColor = "white";
+			document.getElementById($traffic+"l1b").style.backgroundColor = "white";
+			document.getElementById($traffic+"l2b").style.backgroundColor = "white";
+			document.getElementById($traffic+"r1b").style.backgroundColor = "white";
+			document.getElementById($traffic+"r2b").style.backgroundColor = "white";
+			document.getElementById($traffic+"l3b").style.backgroundColor = "white";
+			document.getElementById($traffic+"l4b").style.backgroundColor = "white";
+			document.getElementById($traffic+"r3b").style.backgroundColor = "white";
+			document.getElementById($traffic+"r4b").style.backgroundColor = "white";
+			
 			if($light == 1){ //up right
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
 			}
 			else if($light == 2){ // up left
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
@@ -635,6 +652,11 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
 			}
 			else if($light == 3){ // up up
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
@@ -642,6 +664,10 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
 			}
 			else if($light == 4){ // right up
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
@@ -649,6 +675,10 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
 			}
 			else if($light == 5){ // right down
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
@@ -656,6 +686,11 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
 			}
 			else if($light == 6){ // right right
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
@@ -663,6 +698,11 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
 			}
 			else if($light == 7){ // down left
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
@@ -670,6 +710,10 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
 			}
 			else if($light == 8){ // down right
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
@@ -677,6 +721,10 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
 			}
 			else if($light == 9){ // down down
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
@@ -684,6 +732,10 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
 			}
 			else if($light == 10){ // left down
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
@@ -691,6 +743,11 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
 			}
 			else if($light == 11){ // left up
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
@@ -698,6 +755,10 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
 			}
 			else if($light == 12){ // left left
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
@@ -705,6 +766,11 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
 			}
 			
 			
@@ -715,12 +781,22 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"l3b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l4b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
 			}
 			else if($light == 14){ // right down
 				document.getElementById($traffic+"l3").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l4").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"l3b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l4b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
 			}
 			else if($light == 15){ // right right
 				document.getElementById($traffic+"l3").style.backgroundColor = "gray";
@@ -729,6 +805,12 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"r1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"l3b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l4b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r2b").style.backgroundColor = "gray";
 			}
 			
 			else if( $light == 16){ // left down
@@ -738,12 +820,21 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"dw2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"r3b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r4b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"dw2b").style.backgroundColor = "gray";
 			}
 			else if($light == 17){ // left up
 				document.getElementById($traffic+"r3").style.backgroundColor = "gray";
 				document.getElementById($traffic+"r4").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"up2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"r3b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r4b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"up1b").style.backgroundColor = "gray";
 			}
 			else if($light == 18){ // left left
 				document.getElementById($traffic+"r3").style.backgroundColor = "gray";
@@ -752,6 +843,11 @@
 				document.getElementById($traffic).style.backgroundColor = "gray";
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
+				
+				document.getElementById($traffic+"r3b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"r4b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l1b").style.backgroundColor = "gray";
+				document.getElementById($traffic+"l2b").style.backgroundColor = "gray";
 			}
 		}
 		
