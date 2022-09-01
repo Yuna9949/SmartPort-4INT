@@ -1238,7 +1238,7 @@
 			</tr>
 			<tr>
 				<td class="controler">
-					<div class="panel">
+					<div class="panel" id="trafficlight">
 						<div class="title">
 							신호등 지시 현황
 							<i class="output" id="outputa">
@@ -1419,6 +1419,8 @@
 						else if(contact[lightnum[i]] == 5 || contact[lightnum[i]] == 9 || contact[lightnum[i]] == 10)  document.getElementById(lightid[i]).innerHTML = down;
 						else if(contact[lightnum[i]] == 2 || contact[lightnum[i]] == 7 || contact[lightnum[i]] == 12)  document.getElementById(lightid[i]).innerHTML = left;
 					}
+					
+					$("#trafficlight").load(document.URL +  " #trafficlight");
 				}
 			} );
 		}
