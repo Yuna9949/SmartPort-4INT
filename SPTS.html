@@ -299,6 +299,7 @@
 			var stopani = null;
 			var crain_status = [0, 0, 0, 0, 0];
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
+			var checkturm = 0;
 			
 			function start() {
 				const canvas = document.getElementById("canvas");
@@ -1138,19 +1139,18 @@
 				
 				function animate() {
 					drawMap();
+					checkturm++;
 					
-					for(var i = 1; i <= numcar; i++) {
-						truck[i].check();
-						truck[i].check();
-						truck[i].check();
-						truck[i].check();
-						truck[i].check();
-						alert("check");
-					}	
+					if(checkturm == 5) {
+						for(var i = 1; i <= numcar; i++) {
+							truck[i].check();
+						}	
 					
-					for(var i = 1; i <= numcar; i++) {
-						truck[i].update();
-						truck[i].draw();
+						for(var i = 1; i <= numcar; i++) {
+							truck[i].update();
+							truck[i].draw();
+						}
+						checkturm = 0;
 					}
 						
 					stopani = requestAnimationFrame(animate);
