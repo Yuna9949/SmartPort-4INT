@@ -9,7 +9,7 @@
 
 		$row = mysqli_fetch_assoc($result);
 		$data['x'] = $row['x'];
-    $data['y'] = $row['y'];
+    		$data['y'] = $row['y'];
    
 		mysqli_close($conn);
 		
