@@ -1089,13 +1089,15 @@
 						this.warnl = 0;
 						
 						const totalcarnum = document.getElementById("carnum").value;
-						var ch = null;
+						var chxx = null;
+						var chyy = null;
 						var chx = null;
 						var chy = null;
 						var thiscar = parseInt(this.num);
 						for(var i = 1; i <= totalcarnum; i++) {
-							ch = parseInt(document.getElementById("checkx").innerText);
-							if(1 <= ch && i != thiscar) {
+							chxx = parseInt(document.getElementById("checkx"+i).innerText);
+							chyy = parseInt(document.getElementById("checky"+i).innerText);
+							if(chxx == 1 && chyy == 1 && i != thiscar) {
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
 								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {								
@@ -1192,8 +1194,26 @@
 							<i class="output" id="outy9">0</i>
 							<i class="output" id="outx10">0</i>
 							<i class="output" id="outy10">0</i>
-							<i class="output" id="checkx">0</i>
-							<i class="output" id="checky">0</i>
+							<i class="output" id="checkx1">0</i>
+							<i class="output" id="checky1">0</i>
+							<i class="output" id="checkx2">0</i>
+							<i class="output" id="checky2">0</i>
+							<i class="output" id="checkx3">0</i>
+							<i class="output" id="checky3">0</i>
+							<i class="output" id="checkx4">0</i>
+							<i class="output" id="checky4">0</i>
+							<i class="output" id="checkx5">0</i>
+							<i class="output" id="checky5">0</i>
+							<i class="output" id="checkx6">0</i>
+							<i class="output" id="checky6">0</i>
+							<i class="output" id="checkx7">0</i>
+							<i class="output" id="checky7">0</i>
+							<i class="output" id="checkx8">0</i>
+							<i class="output" id="checky8">0</i>
+							<i class="output" id="checkx9">0</i>
+							<i class="output" id="checky9">0</i>
+							<i class="output" id="checkx10">0</i>
+							<i class="output" id="checky10">0</i>
 						</div>
 						<select>
 							<option value="1" selected>#1</option>
@@ -1476,8 +1496,8 @@
 					else {
 						$("#outx"+car).text(data.x);
 						$("#outy"+car).text(data.y);
-						$("#checkx").text(car);
-						$("#checky").text(car);
+						$("#checkx"+car).text("1");
+						$("#checky"+car).text("1");
 					}
 				}
 			} );
