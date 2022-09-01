@@ -1361,10 +1361,10 @@
 			} );
 		}
 		
-		// update car location
+		// insert car location
 		function updateCar(car, cx, cy, up, right, down, left, c) {
 			$.ajax( {
-				url: "updateCarMySql.php",
+				url: "insertCarMySql.php",
 				type: "GET",
 				data: {
 					num : car,
