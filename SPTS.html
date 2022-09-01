@@ -1087,10 +1087,10 @@
 							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2-this.sizey/2, this.y-this.sizey/2, 2, this.sizey);
 						}
 						
-						if	(this.warnu == 1)	ctx.fillRect(this.x-this.sizex/2, this.y-this.sizey/2-5, this.sizex, 5);
-						else if	(this.warnr == 1)	ctx.fillRect(this.x+this.sizex/2, this.y-this.sizey/2, 5, this.sizey);
-						else if	(this.warnd == 1)	ctx.fillRect(this.x-this.sizex/2, this.y+this.sizey/2, this.sizex, 5);
-						else if	(this.warnl == 1)	ctx.fillRect(this.x-this.sizex/2-5, this.y-this.sizey/2, 5, this.sizey);
+						if(this.warnu == 1)	ctx.fillRect(this.x-this.sizex/2, this.y-this.sizey/2-5, this.sizex, 5);
+						if(this.warnr == 1)	ctx.fillRect(this.x+this.sizex/2, this.y-this.sizey/2, 5, this.sizey);
+						if(this.warnd == 1)	ctx.fillRect(this.x-this.sizex/2, this.y+this.sizey/2, this.sizex, 5);
+						if(this.warnl == 1)	ctx.fillRect(this.x-this.sizex/2-5, this.y-this.sizey/2, 5, this.sizey);
 					}
 					check() {
 						this.warnu = 0;
