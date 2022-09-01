@@ -1034,6 +1034,16 @@
 						
 						insertCar(this.num, this.x, this.y, this.cup, this.cright, this.cdown, this.cleft, this.container);
 						getCar(this.num);
+						var chex = null;
+						var chey = null;
+						while(true) {
+							chex = parseInt(document.getElementById("checkx"+this.num).innerText);
+							chey = parseInt(document.getElementById("checky"+this.num).innerText);
+							
+							if(chex == 1 && chey == 1) {
+								break;
+							}
+						}
 						
 					}
 					draw() {
@@ -1098,6 +1108,8 @@
 						var chy = null;
 						var thiscar = parseInt(this.num);
 						for(var i = 1; i <= totalcarnum; i++) {
+							document.getElementById("checkx"+this.num).innerText = "0";
+							document.getElementById("checky"+this.num).innerText = "0";
 							if(i != thiscar) {
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
@@ -1114,7 +1126,7 @@
 									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x > chx) {
 										this.warnl = 1;
 									}
-								}	
+								}
 							}
 						}
 					}
