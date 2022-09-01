@@ -1039,7 +1039,7 @@
 						}
 						
 						insertCar(this.num, this.x, this.y, this.cup, this.cright, this.cdown, this.cleft, this.container);
-						getCar(this.num);						
+						getCar(this.num);					
 					}
 					draw() {
 						// draw truck
@@ -1139,13 +1139,9 @@
 				
 				function animate() {
 					drawMap();
-					checkturm++;
 					
-					if(checkturm == 5) {
-						for(var i = 1; i <= numcar; i++) {
-							truck[i].check();
-						}
-						checkturm = 0;
+					for(var i = 1; i <= numcar; i++) {
+						truck[i].check();
 					}
 					
 					for(var i = 1; i <= numcar; i++) {
@@ -1207,26 +1203,6 @@
 								<i class="output" id="outy9">0</i>
 								<i class="output" id="outx10">0</i>
 								<i class="output" id="outy10">0</i>
-								<i class="output" id="checkx1">0</i>
-								<i class="output" id="checky1">0</i>
-								<i class="output" id="checkx2">0</i>
-								<i class="output" id="checky2">0</i>
-								<i class="output" id="checkx3">0</i>
-								<i class="output" id="checky3">0</i>
-								<i class="output" id="checkx4">0</i>
-								<i class="output" id="checky4">0</i>
-								<i class="output" id="checkx5">0</i>
-								<i class="output" id="checky5">0</i>
-								<i class="output" id="checkx6">0</i>
-								<i class="output" id="checky6">0</i>
-								<i class="output" id="checkx7">0</i>
-								<i class="output" id="checky7">0</i>
-								<i class="output" id="checkx8">0</i>
-								<i class="output" id="checky8">0</i>
-								<i class="output" id="checkx9">0</i>
-								<i class="output" id="checky9">0</i>
-								<i class="output" id="checkx10">0</i>
-								<i class="output" id="checky10">0</i>
 							</div>
 						</div>
 						<select>
@@ -1512,9 +1488,7 @@
 					else {
 						$("#outx"+car).text(data.x);
 						$("#outy"+car).text(data.y);
-						$("#checkx"+car).text("1");
-						$("#checky"+car).text("1");
-						$("#outputc").load(document.URL +  " #outputc");
+						$("#outputc").load(document.URL+" #outputc");
 					}
 				}
 			} );
