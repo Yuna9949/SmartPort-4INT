@@ -299,7 +299,6 @@
 			var stopani = null;
 			var crain_status = [0, 0, 0, 0, 0];
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
-			var checkturm = 0;
 			
 			function start() {
 				const canvas = document.getElementById("canvas");
@@ -1036,10 +1035,10 @@
 							this.front = 4;
 							
 							this.x -= this.speed;
-						}
+						}		
 						
-						insertCar(this.num, this.x, this.y, this.cup, this.cright, this.cdown, this.cleft, this.container);
-						getCar(this.num);					
+						document.getElementById("outx"+this.num).innerText = this.x;
+						document.getElementById("outy"+this.num).innerText = this.y;
 					}
 					draw() {
 						// draw truck
@@ -1137,20 +1136,15 @@
 				}
 				
 				function animate() {
-					checkturm++;
-					
-					if(checkturm == 5) {
-						drawMap();
+					drawMap();
 						
-						for(var i = 1; i <= numcar; i++) {
-							truck[i].check();
-						}
+					for(var i = 1; i <= numcar; i++) {
+						truck[i].check();
+					}
 						
-						for(var i = 1; i <= numcar; i++) {
-							truck[i].update();
-							truck[i].draw();
-						}
-						checkturm = 0;
+					for(var i = 1; i <= numcar; i++) {
+						truck[i].update();
+						truck[i].draw();
 					}
 						
 					stopani = requestAnimationFrame(animate);
@@ -1439,57 +1433,6 @@
 							$("#crain4").text(data.data);
 							$("#craincheck4").text("1");
 						}
-					}
-				}
-			} );
-		}
-		
-		// insert car location
-		function insertCar(car, cx, cy, up, right, down, left, c) {
-			$.ajax( {
-				url: "insertCarMySql.php",
-				type: "GET",
-				data: {
-					num : car,
-					x : cx,
-					y : cy,
-					u : up,
-					r : right,
-					d : down,
-					l : left,
-					container : c
-				},
-				dataType: 'json',
-				success: function(data) {
-					if(data.success == false) {
-						alert(data.success);
-						alert(data.data);
-						alert(data.msg);
-						alert(data.code);
-					}
-				}
-			} );
-		}
-		
-		// get car location
-		function getCar(car) {
-			$.ajax( {
-				url: "getCarMySql.php",
-				type: "GET",
-				data: {
-					num : car
-				},
-				dataType: 'json',
-				success: function(data) {
-					if(data.success == false) {
-						alert(data.success);
-						alert(data.x);
-						alert(data.msg);
-						alert(data.code);
-					}
-					else {
-						$("#outx"+car).text(data.x);
-						$("#outy"+car).text(data.y);
 					}
 				}
 			} );
