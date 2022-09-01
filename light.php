@@ -25,7 +25,7 @@
 				<td><input type='button' value='mysql_conn' onclick='mysql_conn()'/></td>
 				<td colspan="2"><input type='button' value='mysql_update' onclick='mysql_update()'/></td>
 			</tr>
-			<tr>//right up13 down14 right15  / left down16 up17 left18
+			<tr>
 				<td>
 					<table>
 						<tr>
