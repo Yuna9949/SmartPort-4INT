@@ -1081,6 +1081,11 @@
 							else if(this.front == 3)	ctx.fillRect(this.x-this.sizex/2, this.y-this.sizey/2-2+this.sizex/2, this.sizex, 2);
 							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2-this.sizey/2, this.y-this.sizey/2, 2, this.sizey);
 						}
+						
+						if	(this.warnu == 1)	ctx.fillRect(this.x-this.sizex/2, this.y-this.sizey/2-5, this.sizex, 5);
+						else if	(this.warnr == 1)	ctx.fillRect(this.x+this.sizex/2, this.y-this.sizey/2, 5, this.sizey);
+						else if	(this.warnd == 1)	ctx.fillRect(this.x-this.sizex/2, this.y+this.sizey/2, this.sizex, 5);
+						else if	(this.warnl == 1)	ctx.fillRect(this.x-this.sizex/2-5, this.y-this.sizey/2, 5, this.sizey);
 					}
 					check() {
 						this.warnu = 0;
@@ -1089,19 +1094,14 @@
 						this.warnl = 0;
 						
 						const totalcarnum = document.getElementById("carnum").value;
-						var chxx = null;
-						var chyy = null;
 						var chx = null;
 						var chy = null;
 						var thiscar = parseInt(this.num);
 						for(var i = 1; i <= totalcarnum; i++) {
-							chxx = parseInt(document.getElementById("checkx"+i).innerText);
-							chyy = parseInt(document.getElementById("checky"+i).innerText);
-							if(chxx == 1 && chyy == 1 && i != thiscar) {
+							if(i != thiscar) {
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
 								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {	
-									alert(this.num+" "+i);
 									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y > chy) {
 										this.warnu = 1;
 									}
