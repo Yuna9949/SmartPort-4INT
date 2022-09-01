@@ -1084,14 +1084,22 @@
 					}
 					check() {
 						const totalcarnum = parseInt(document.getElementById("carnum").value);
+						var ch = null;
+						var checkx = null;
+						var checky = null;
 						for(var i = 1; i <= totalcarnum; i++) {
-							var ch = parseInt(document.getElementById("checkx").value);
-							var checkx = parseInt(document.getElementById("outx"+i).value);
-							var checky = parseInt(document.getElementById("outy"+i).value);
+							if(i != this.num) {
+								ch = parseInt(document.getElementById("checkx").value);
+								alert(ch);
+								checkx = parseInt(document.getElementById("outx"+i).value);
+								checky = parseInt(document.getElementById("outy"+i).value);
 							
-							if(this.x + 5 > checkx && this.x - 5 < checkx) {
-							}
-							if(this.y + 5 > checky && this.y - 5 < checky) {
+								if(this.x + 2 > checkx && this.x - 2 < checkx) {
+									alert("x"+i);
+								}
+								if(this.y + 2 > checky && this.y - 2 < checky) {
+									alert("y"+i);
+								}
 							}
 						}
 					}
