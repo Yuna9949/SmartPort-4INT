@@ -1416,9 +1416,6 @@
 						alert(data.msg);
 						alert(data.code);
 					}
-					else {
-						alert(data.success);
-					}
 				}
 			} );
 		}
@@ -1440,6 +1437,7 @@
 						alert(data.code);
 					}
 					else {
+						alert(data.x);
 						$("#outx"+car).text(data.x.toFixed(2));
 						$("#outy"+car).text(data.y.toFixed(2));
 						$("#checkx").text(car);
