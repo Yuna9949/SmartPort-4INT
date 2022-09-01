@@ -1438,10 +1438,10 @@
 					}
 					else {
 						alert(data.x);
-						$("#outx"+car).text(data.x.toFixed(2));
-						$("#outy"+car).text(data.y.toFixed(2));
-						$("#checkx").text(car);
-						$("#checky").text(car);
+						$("#outx"+String(car)).text(String(data.x.toFixed(2)));
+						$("#outy"+String(car)).text(String(data.y.toFixed(2)));
+						$("#checkx").text(String(car));
+						$("#checky").text(String(car));
 					}
 				}
 			} );
