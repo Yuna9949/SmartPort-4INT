@@ -1098,6 +1098,8 @@
 							chxx = parseInt(document.getElementById("checkx"+i).innerText);
 							chyy = parseInt(document.getElementById("checky"+i).innerText);
 							if(chxx == 1 && chyy == 1 && i != thiscar) {
+								document.getElementById("checkx"+i).innerText = "0";
+								document.getElementById("checky"+i).innerText = "0";
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
 								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {								
@@ -1114,6 +1116,12 @@
 										this.warnl = 1;
 									}
 								}	
+							}
+							else if(chxx == 0 || chyy == 0) {
+								this.warnu = 1;
+								this.warnr = 1;
+								this.warnd = 1;
+								this.warnl = 1;
 							}
 						}
 					}
