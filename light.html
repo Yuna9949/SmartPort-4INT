@@ -42,7 +42,8 @@
 			</tr>
 			<tr>
 				<td><input type='button' value='get' onclick='mysql_conn()'/></td>
-				<td colspan="2"><input type='button' value='new' onclick='mysql_update()'/></td>
+				<td><input type='button' value='rst' onclick='reset()'/></td>
+				<td><input type='button' value='new' onclick='mysql_update()'/></td>
 			</tr>
 			<tr>
 				<td>
@@ -523,7 +524,7 @@
 		</table>			
 	</body>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<script>
+	<script>		
 		function mysql_conn(){
 			$.ajax({
 				type: "GET",
@@ -752,6 +753,21 @@
 				document.getElementById($traffic+"l1").style.backgroundColor = "gray";
 				document.getElementById($traffic+"l2").style.backgroundColor = "gray";
 			}
+		}
+		
+		function reset(){
+			status("t1",  0);
+			status("t2",  0);
+			status("t3",  0);
+			status("t4",  0);
+			status("t5",  0);
+			status("t6",  0);
+			status("t7",  0);
+			status("t8",  0);
+			status("t9",  0);
+			status("t10", 0);
+			status("t11", 0);
+			status("t12", 0);
 		}
 
 	</script>
