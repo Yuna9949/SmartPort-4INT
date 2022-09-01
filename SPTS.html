@@ -1043,10 +1043,10 @@
 					draw() {
 						// draw truck
 						ctx.fillStyle = "rgb(9, 96, 47)";
-						ctx.fillRect(this.x-1, this.y-1, this.sizex/2+1		, this.sizey/2+1	);
+						ctx.fillRect(this.x  , this.y  , this.sizex/2  		, this.sizey/2		);
 						ctx.fillRect(this.x  , this.y  , this.sizex/2		, (this.sizey/2)*(-1)	);
 						ctx.fillRect(this.x  , this.y  , (this.sizex/2)*(-1)	, this.sizey/2		);
-						ctx.fillRect(this.x+1, this.y+1, (this.sizex/2)*(-1)-1	, (this.sizey/2)*(-1)-1	);
+						ctx.fillRect(this.x  , this.y  , (this.sizex/2)*(-1)	, (this.sizey/2)*(-1)	);
 						
 						// draw color value of each truck
 						for(var i = 1; i <= 10; i++) {
