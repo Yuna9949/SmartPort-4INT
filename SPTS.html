@@ -1361,6 +1361,53 @@
 			} );
 		}
 		
+		// update car location
+		function updateCar(car, cx, cy, up, right, down, left, c) {
+			$.ajax( {
+				url: "updateCarMySql.php",
+				type: "GET",
+				data: {
+					num : car,
+					x : cx,
+					y : cy,
+					u : up,
+					r : right,
+					d : down,
+					l : left,
+					container : c
+				},
+				dataType: 'json',
+				success: function(data) {
+					if(data.success == false) {
+						alert(data.success);
+						alert(data.data);
+						alert(data.msg);
+						alert(data.code);
+					}
+				}
+			} );
+		}
+		
+		// get car location
+		function getCar(car) {
+			$.ajax( {
+				url: "getCarMySql.php",
+				type: "GET",
+				data: {
+					num : car
+				},
+				dataType: 'json',
+				success: function(data) {
+					if(data.success == false) {
+						alert(data.success);
+						alert(data.data);
+						alert(data.msg);
+						alert(data.code);
+					}
+				}
+			} );
+		}
+		
 		// redraw Map
 		window.onload = drawMap();
 					 
