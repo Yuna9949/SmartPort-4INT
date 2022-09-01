@@ -14,11 +14,12 @@
 		mysqli_close($conn);
 		
 		$data['success'] = true;
-		$data['msg'] = $time;
+		$data['msg'] = "success";
 		$data['code'] = $num;
 	} catch(exception $e) {
 		$data['success'] = false;
     		$data['x'] = "fail";
+		$data['y'] = "fail";
     		$data['msg'] = $e->getMessage();
     		$data['code']	= $e->getCode();
 	} finally {
