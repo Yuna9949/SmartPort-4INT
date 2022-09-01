@@ -1437,11 +1437,13 @@
 						alert(data.code);
 					}
 					else {
-						alert(data.x);
-						$("#outx"+String(car)).text(String(data.x.toFixed(2)));
-						$("#outy"+String(car)).text(String(data.y.toFixed(2)));
-						$("#checkx").text(String(car));
-						$("#checky").text(String(car));
+						if(car == 1) {
+							alert(car);
+							$("#outx1").text(data.x.toFixed(2));
+							$("#outy1").text(data.y.toFixed(2));
+							$("#checkx").text(car);
+							$("#checky").text(car);
+						}
 					}
 				}
 			} );
