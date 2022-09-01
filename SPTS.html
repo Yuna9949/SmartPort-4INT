@@ -509,6 +509,7 @@
 						   (this.container == 5  && (this.dby == 8  || this.dby == 9 )) ||
 						   (this.container == 9  && (this.dby == 13 || this.dby == 14)) )) {
 							this.status = 3;
+							alert("mv to side road 1 5 9");
 						}
 						
 						if(beforeCrain[2] > this.x && this.dbx == 3 && (
@@ -516,6 +517,7 @@
 						   (this.container == 6  && (this.dby == 11 || this.dby == 12)) ||
 						   (this.container == 10 && (this.dby == 16 || this.dby == 17)) )) {
 							this.status = 1;
+							alert("mv to side road 2 6 10");
 						}
 						
 						if(beforeCrain[3] < this.x && this.dbx == 6 && (
@@ -523,6 +525,7 @@
 						   (this.container == 7  && (this.dby == 8  || this.dby == 9 )) ||
 						   (this.container == 11 && (this.dby == 13 || this.dby == 14)) )) {
 							this.status = 3;
+							alert("mv to side road 3 7 11");
 						}
 						
 						if(beforeCrain[4] > this.x && this.dbx == 6 && (
@@ -530,6 +533,7 @@
 						   (this.container == 8  && (this.dby == 11 || this.dby == 12)) ||
 						   (this.container == 12 && (this.dby == 16 || this.dby == 17)) )) {
 							this.status = 1;
+							alert("mv to side road 4 8 12");
 						}
 						
 						// go to deloading location
@@ -539,6 +543,7 @@
 						   (this.container == 9  && this.dby == 14) )) {
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
+							alert("go to deloading location 1 5 9");
 						}
 						
 						if(u_middle && this.dbx == 3 && (
@@ -547,6 +552,7 @@
 						   (this.container == 10 && this.dby == 17) )) {
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 4;
+							alert("go to deloading location 2 6 10");
 						}
 						
 						if(d_middle && this.dbx == 6 && (
@@ -555,6 +561,7 @@
 						   (this.container == 11 && this.dby == 14) )) {
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
+							alert("go to deloading location 3 7 11");
 						}
 						
 						if(u_middle > this.x && this.dbx == 6 && (
@@ -563,6 +570,7 @@
 						   (this.container == 12 && this.dby == 17) )) {
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 4;
+							alert("go to deloading location 4 8 12");
 						}
 						
 						// deloading
@@ -572,6 +580,7 @@
 						   (this.container == 9  && this.dby == 14) )) {
 							this.deloading+=this.speed;
 							this.status = 0;
+							alert("deloading 1 5 9");
 						}
 						
 						if(beforeCrain[1] > this.x && this.dbx == 3 && (
@@ -580,6 +589,7 @@
 						   (this.container == 10 && this.dby == 17) )) {
 							this.deloading+=this.speed;
 							this.status = 0;
+							alert("deloading 2 6 10");
 						}
 						
 						if(beforeCrain[4] < this.x && this.dbx == 6 && (
@@ -588,6 +598,7 @@
 						   (this.container == 11 && this.dby == 14) )) {
 							this.deloading+=this.speed;
 							this.status = 0;
+							alert("deloading 3 7 11");
 						}
 						
 						if(beforeCrain[3] > this.x && this.dbx == 6 && (
@@ -596,6 +607,7 @@
 						   (this.container == 12 && this.dby == 17) )) {
 							this.deloading+=this.speed;
 							this.status = 0;
+							alert("deloading 4 8 12");
 						}
 						
 						if(this.container > 0 && this.deloading >= 300) {
