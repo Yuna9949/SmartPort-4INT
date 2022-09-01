@@ -1139,10 +1139,15 @@
 				function animate() {
 					drawMap();
 					
-					for(var i = 1; i <= numcar; i++) {
-						truck[i].check();
-					}
+					checkturm++;
 					
+					if(checkturm == 5) {
+						for(var i = 1; i <= numcar; i++) {
+							truck[i].check();
+						}
+						checkturm = 0;
+					}
+						
 					for(var i = 1; i <= numcar; i++) {
 						truck[i].update();
 						truck[i].draw();
