@@ -347,6 +347,12 @@
 						this.cright = 0;
 						this.cdown = 0;
 						this.cleft = 0;
+						
+						// warning
+						this.warnu = 0;
+						this.warnr = 0;
+						this.warnd = 0;
+						this.warnl = 0;
 					}
 					update() {
 						this.speed = parseInt(document.getElementById("spdnum").value);
@@ -1077,7 +1083,17 @@
 						}
 					}
 					check() {
-						alert("check");
+						const totalcarnum = parseInt(document.getElementById("carnum").value);
+						for(var i = 1; i <= totalcarnum; i++) {
+							var ch = parseInt(document.getElementById("checkx").value);
+							var checkx = parseInt(document.getElementById("outx"+i).value);
+							var checky = parseInt(document.getElementById("outy"+i).value);
+							
+							if(this.x + 5 > checkx && this.x - 5 < checkx) {
+							}
+							if(this.y + 5 > checky && this.y - 5 < checky) {
+							}
+						}
 					}
 				}
 				
