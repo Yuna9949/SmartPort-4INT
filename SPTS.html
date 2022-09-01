@@ -1077,6 +1077,7 @@
 						}
 					}
 					check() {
+						alert("check");
 					}
 				}
 				
@@ -1437,13 +1438,10 @@
 						alert(data.code);
 					}
 					else {
-						if(car == 1) {
-							alert(data.x);
-							$("#outx1").text(data.x);
-							$("#outy1").text(data.y);
-							$("#checkx").text(car);
-							$("#checky").text(car);
-						}
+						$("#outx"+car).text(data.x);
+						$("#outy"+car).text(data.y);
+						$("#checkx").text(car);
+						$("#checky").text(car);
 					}
 				}
 			} );
