@@ -1144,13 +1144,13 @@
 					if(checkturm == 5) {
 						for(var i = 1; i <= numcar; i++) {
 							truck[i].check();
-						}	
-					
-						for(var i = 1; i <= numcar; i++) {
-							truck[i].update();
-							truck[i].draw();
 						}
 						checkturm = 0;
+					}
+					
+					for(var i = 1; i <= numcar; i++) {
+						truck[i].update();
+						truck[i].draw();
 					}
 						
 					stopani = requestAnimationFrame(animate);
