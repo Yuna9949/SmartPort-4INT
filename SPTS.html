@@ -1098,23 +1098,17 @@
 							if(i <= ch && i != thiscar) {
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
-								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {
-									//alert(this.num +":"+i+"="+(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)))+" "+(Math.max(this.sizex, this.sizey)/2*3) );
-									
+								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {								
 									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y > chy) {
-										alert(this.num+":"+i+"u");
 										this.warnu = 1;
 									}
 									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x < chx) {
-										//alert(this.num+":"+i+"right");
 										this.warnr = 1;
 									}
 									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y < chy) {
-										alert(this.num+":"+i+"d");
 										this.warnd = 1;
 									}
 									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x > chx) {
-										//alert(this.num+":"+i+"left");
 										this.warnl = 1;
 									}
 								}	
