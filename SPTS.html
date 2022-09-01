@@ -1083,6 +1083,11 @@
 						}
 					}
 					check() {
+						this.warnu = 0;
+						this.warnr = 0;
+						this.warnd = 0;
+						this.warnl = 0;
+						
 						const totalcarnum = document.getElementById("carnum").value;
 						var ch = null;
 						var chx = null;
@@ -1091,14 +1096,23 @@
 						for(var i = 1; i <= totalcarnum; i++) {
 							ch = parseInt(document.getElementById("checkx").innerText);
 							if(i <= ch && i != thiscar) {
-								alert(i+" "+thiscar);
 								chx = document.getElementById("outx"+i).innerText;
 								chy = document.getElementById("outy"+i).innerText;
-							
-								if(this.x + 2 > chx && this.x - 2 < chx) {
-								}
-								if(this.y + 2 > chy && this.y - 2 < chy) {
-								}
+								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {
+									alert(this.num +":"+i+"="+(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)))+" "+(Math.max(this.sizex, this.sizey)/2*3) );
+									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y < chy) {
+										this.warnu = 1;
+									}
+									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x < chx) {
+										this.warnr = 1;
+									}
+									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y > chy) {
+										this.warnd = 1;
+									}
+									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x > chx) {
+										this.warnl = 1;
+									}
+								}	
 							}
 						}
 					}
