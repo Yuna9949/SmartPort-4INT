@@ -1083,16 +1083,16 @@
 						}
 					}
 					check() {
-						const totalcarnum = parseInt(document.getElementById("carnum").value);
+						const totalcarnum = document.getElementById("carnum").value;
 						var ch = null;
 						var checkx = null;
 						var checky = null;
 						for(var i = 1; i <= totalcarnum; i++) {
+							ch = document.getElementById("checkx").value;
 							if(i != this.num) {
-								ch = parseInt(document.getElementById("checkx").value);
-								alert(ch);
-								checkx = parseInt(document.getElementById("outx"+i).value);
-								checky = parseInt(document.getElementById("outy"+i).value);
+								alert(i+":"+ch);
+								checkx = document.getElementById("outx"+i).value;
+								checky = document.getElementById("outy"+i).value;
 							
 								if(this.x + 2 > checkx && this.x - 2 < checkx) {
 									alert("x"+i);
@@ -1119,12 +1119,9 @@
 					drawMap();
 					
 					for(var i = 1; i <= numcar; i++) {
+						truck[i].check();
 						truck[i].update();
 						truck[i].draw();
-					}
-					
-					for(var i = 1; i <= numcar; i++) {
-						truck[i].check();
 					}
 						
 					stopani = requestAnimationFrame(animate);
