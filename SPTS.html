@@ -1088,11 +1088,11 @@
 						var chx = null;
 						var chy = null;
 						for(var i = 1; i <= totalcarnum; i++) {
-							ch = parseInt(document.getElementById("checkx").value);
-							if(parseInt(i) != this.num) {
+							ch = parseInt(document.getElementById("checkx").innerText);
+							if(i != parseInt(this.num)) {
 								alert(i+":"+ch);
-								chx = document.getElementById("outx"+i).value;
-								chy = document.getElementById("outy"+i).value;
+								chx = document.getElementById("outx"+i).innerText;
+								chy = document.getElementById("outy"+i).innerText;
 							
 								if(this.x + 2 > chx && this.x - 2 < chx) {
 									alert("x"+i);
