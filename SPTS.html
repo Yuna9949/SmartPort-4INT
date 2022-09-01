@@ -999,7 +999,7 @@
 						}
 						
 						// change the location
-						if	(this.status == 1) { // up
+						if	(this.status == 1 && this.warnu == 0) { // up
 							
 							this.sizex = road*0.9;
 							this.sizey = this.sizex/3*5;
@@ -1007,7 +1007,7 @@
 							
 							this.y -= this.speed;
 						}
-						else if	(this.status == 2) { // right
+						else if	(this.status == 2 && this.warnr == 0) { // right
 							
 							this.sizey = road*0.9;
 							this.sizex = this.sizey/3*5;
@@ -1015,7 +1015,7 @@
 							
 							this.x += this.speed;
 						}
-						else if	(this.status == 3) { // down
+						else if	(this.status == 3 && this.warnd == 0) { // down
 							
 							this.sizex = road*0.9;
 							this.sizey = this.sizex/3*5;
@@ -1023,7 +1023,7 @@
 							
 							this.y += this.speed;
 						}
-						else if	(this.status == 4) { // left
+						else if	(this.status == 4 && this.warnl == 0) { // left
 							
 							this.sizey = road*0.9;
 							this.sizex = this.sizey/3*5;
