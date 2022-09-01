@@ -1137,20 +1137,22 @@
 				}
 				
 				function animate() {
-					drawMap();
+					
 					
 					checkturm++;
 					
 					if(checkturm == 5) {
+						drawMap();
+						
 						for(var i = 1; i <= numcar; i++) {
 							truck[i].check();
 						}
-						checkturm = 0;
-					}
 						
-					for(var i = 1; i <= numcar; i++) {
-						truck[i].update();
-						truck[i].draw();
+						for(var i = 1; i <= numcar; i++) {
+							truck[i].update();
+							truck[i].draw();
+						}
+						checkturm = 0;
 					}
 						
 					stopani = requestAnimationFrame(animate);
