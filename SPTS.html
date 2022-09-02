@@ -458,6 +458,7 @@
 						this.container = 0;
 						this.loading = 0;
 						this.deloading = 0;
+						this.ship = 0;
 						
 						// draw
 						this.front = 1;
@@ -522,21 +523,25 @@
 							if     (crain_status[1] == 0) {
 								crain_status[1] = this.num;
 								this.crain = 1;
+								this.ship = 1;
 								this.container = -1; // wait to get container
 							}
 							else if(crain_status[2] == 0) {
 								crain_status[2] = this.num;
 								this.crain = 2;
+								this.ship = 2;
 								this.container = -1;
 							}
 							else if(crain_status[3] == 0) {
 								crain_status[3] = this.num;
 								this.crain = 3;
+								this.ship = 3;
 								this.container = -1;
 							}
 							else if(crain_status[4] == 0) {
 								crain_status[4] = this.num;
 								this.crain = 4;
+								this.ship = 4;
 								this.container = -1;
 							}
 							else {
@@ -739,8 +744,12 @@
 						
 						// deload and go
 						if(this.container > 0 && this.deloading >= 300) {
+							var cupdate = document.getElementById("s"+this.ship+"c"+this.container).innerText;
+							document.getElementById("s"+this.ship+"c"+this.container).innerText = cupdate-1;
+							
 							this.container = 0;
 							this.loading = 0;
+							this.ship = 0;
 						}
 						
 						
@@ -1338,10 +1347,10 @@
 						<table class="tbclyt">
 							<tr>
 								<td class="tbclytquarter">
-									<div id="s1c1"></div>
-									<div id="s1c2"></div>
-									<div id="s1c3"></div>
-									<div id="s1c4"></div>
+									<div id="s1c1">99</div>
+									<div id="s1c2">99</div>
+									<div id="s1c3">99</div>
+									<div id="s1c4">99</div>
 									<div id="s1c5"></div>
 									<div id="s1c6"></div>
 									<div id="s1c7"></div>
