@@ -623,9 +623,10 @@
 						}
 						
 						// load container
+						var senario = document.getElementById("senarioslct").selectedIndex+1;
 						if(this.loading >= 300 && this.crain != 0 && this.dby == 1) {
 							this.deloading = 0;
-							getCrain(this.crain);
+							getCrain(this.crain, senario);
 							var crainch = document.getElementById('craincheck'+this.crain).innerText;
 							if(crainch == 1) {
 								this.container = document.getElementById('crain'+this.crain).innerText;
