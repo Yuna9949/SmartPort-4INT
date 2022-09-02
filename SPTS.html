@@ -220,8 +220,17 @@
 			
 			var color_st = ["White", "LightCoral", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
+			var truck = [null,null,null,null,null,null,null,null,null,null,null];
 
 			function show_senario() {
+				drawMap();
+				for(var c = 1; c <= 12; c++) {
+					document.getElementById("s1c"+c).style.backgroundColor = color_st[c];
+					document.getElementById("s2c"+c).style.backgroundColor = color_st[c];
+					document.getElementById("s3c"+c).style.backgroundColor = color_st[c];
+					document.getElementById("s4c"+c).style.backgroundColor = color_st[c];
+				}
+				
 				var selectSenario = document.getElementById("senarioslct");
 				var senario = selectSenario.options[selectSenario.selectedIndex].value;
 				if(senario == 1) {
@@ -283,14 +292,7 @@
 			}
 
 			// draw map
-			function drawMap() {
-				for(var c = 1; c <= 12; c++) {
-					document.getElementById("s1c"+c).style.backgroundColor = color_st[c];
-					document.getElementById("s2c"+c).style.backgroundColor = color_st[c];
-					document.getElementById("s3c"+c).style.backgroundColor = color_st[c];
-					document.getElementById("s4c"+c).style.backgroundColor = color_st[c];
-				}
-				
+			function drawMap() {				
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
 				
@@ -409,7 +411,6 @@
 			
 			var stopani = null;
 			var crain_status = [0, 0, 0, 0, 0];
-			var truck = [null,null,null,null,null,null,null,null,null,null,null];
 			
 			function start() {
 				document.getElementById("senarioslct").style.pointerEvents = "none";
