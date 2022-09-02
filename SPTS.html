@@ -160,6 +160,10 @@
 			.tblyt {
 				width: 23%;
 				min-width: 50px;
+				text-align: center;
+			}
+			#waittime, #loadtime, #percent {
+				text-align: right;
 			}
 		</style>
     
@@ -1305,21 +1309,21 @@
 								<tr>
 									<td class="subtitlewth">평균 대기시간</td>
 									<td class="paneltb"></td>
-									<td class="tblyt">005</td>
+									<td class="tblyt" id="waittime">005</td>
 									<td class="tblyt">분</td>
 									<td class="tblyt"></td>
 								</tr>
 								<tr>
 									<td>평균 소요시간</td>
 									<td class="paneltb"></td>
-									<td class="tblyt">030</td>
+									<td class="tblyt" id="loadtime">030</td>
 									<td class="tblyt">분</td>
 									<td class="tblyt"></td>
 								</tr>
 								<tr>
 									<td>물건 적재율</td>
 									<td class="paneltb"></td>
-									<td class="tblyt">010</td>
+									<td class="tblyt" id="percent">010</td>
 									<td class="tblyt">%</td>
 									<td class="tblyt"></td>
 								</tr>
