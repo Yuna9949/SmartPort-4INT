@@ -239,9 +239,7 @@
 				}
 				
 				// show senario in detail
-				var selectSenario = document.getElementById("senarioslct");
-				//var senario = selectSenario.options[selectSenario.selectedIndex].value;
-				var senario = selectSenario.selectedIndex;
+				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				if(senario == 1) {
 					for(var c = 1; c <= 12; c++) {
 						document.getElementById("s1c"+c).style.display = "none";
