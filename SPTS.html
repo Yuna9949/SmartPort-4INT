@@ -151,23 +151,15 @@
 				width: 110px;
 			}
 			.paneltb {
-				width: 20px;
+				width: 15px;
 				border-left: 1px solid #e7e7e7;
-				backgroun-color: #ff0000;
 			}
 			.tblayout {
 				width: 100%;
 			}
-			.tbctrllyt {
+			.tblyt {
 				width: 23%;
 				min-width: 50px;
-			}
-			.tbstlyt {
-				width: 69%;
-				min-width: 150px;
-			}
-			.statustb {
-				padding: 0px;
 			}
 		</style>
     
@@ -1273,21 +1265,21 @@
 								<tr>
 									<td class="subtitlewth">차량 대수</td>
 									<td class="paneltb"></td>
-									<td class="tbctrllyt"><div class="shw" id="carshw">1</div></td>
+									<td class="tblyt"><div class="shw" id="carshw">1</div></td>
 									<td colspan="2">1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
 								</tr>
 								<tr>
 									<td>현재 배속</td>
 									<td class="paneltb"></td>
-									<td class="tbctrllyt"><div class="shw" id="spdshw">1</div></td>
+									<td class="tblyt"><div class="shw" id="spdshw">1</div></td>
 									<td colspan="2">1 <input class="valuenum" id="spdnum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
 								</tr>
 								<tr>
 									<td>시작/일시정지</td>
 									<td class="paneltb"></td>
-									<td class="tbctrllyt"><button class="btn" id="play" onclick="start()">►</button></td>
-									<td class="tbctrllyt"><button class="btn" id="pause" onclick="stop()">I I</button></td>
-									<td class="tbctrllyt"><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
+									<td class="tblyt"><button class="btn" id="play" onclick="start()">►</button></td>
+									<td class="tblyt"><button class="btn" id="pause" onclick="stop()">I I</button></td>
+									<td class="tblyt"><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
 								</tr>
 							</table>
 						</div>
@@ -1313,38 +1305,23 @@
 								<tr>
 									<td class="subtitlewth">평균 대기시간</td>
 									<td class="paneltb"></td>
-									<td class="tbstlyt">
-										<table class="statustb">
-											<tr>
-												<td>005</td>
-												<td>분</td>
-											</tr>
-										</table>
-									</td>
+									<td class="tblyt">005</td>
+									<td class="tblyt">분</td>
+									<td class="tblyt"></td>
 								</tr>
 								<tr>
 									<td>평균 소요시간</td>
 									<td class="paneltb"></td>
-									<td class="tbstlyt">
-										<table class="statustb">
-											<tr>
-												<td>030</td>
-												<td>분</td>
-											</tr>
-										</table>
-									</td>
+									<td class="tblyt">030</td>
+									<td class="tblyt">분</td>
+									<td class="tblyt"></td>
 								</tr>
 								<tr>
 									<td>물건 적재율</td>
 									<td class="paneltb"></td>
-									<td class="tbstlyt">
-										<table class="statustb">
-											<tr>
-												<td>010</td>
-												<td>%</td>
-											</tr>
-										</table>
-									</td>
+									<td class="tblyt">010</td>
+									<td class="tblyt">%</td>
+									<td class="tblyt"></td>
 								</tr>
 							</table>
 						</div>
