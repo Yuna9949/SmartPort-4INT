@@ -157,13 +157,25 @@
 			.tblayout {
 				width: 100%;
 			}
+			.tblytcenter {
+				width: 46%;
+				min-width: 50px;
+				text-align: center;
+			}
 			.tblyt {
 				width: 23%;
 				min-width: 50px;
 				text-align: center;
 			}
-			#waittime, #loadtime, #percent {
+			.tblytright {
+				width: 23%;
+				min-width: 50px;
 				text-align: right;
+			}
+			.tblytleft {
+				width: 23%;
+				min-width: 50px;
+				text-align: left;
 			}
 		</style>
     
@@ -1270,13 +1282,13 @@
 									<td class="subtitlewth">차량 대수</td>
 									<td class="paneltb"></td>
 									<td class="tblyt"><div class="shw" id="carshw">1</div></td>
-									<td colspan="2">1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
+									<td class="tblytcenter" colspan="2">1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
 								</tr>
 								<tr>
 									<td>현재 배속</td>
 									<td class="paneltb"></td>
 									<td class="tblyt"><div class="shw" id="spdshw">1</div></td>
-									<td colspan="2">1 <input class="valuenum" id="spdnum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
+									<td class="tblytcenter" colspan="2">1 <input class="valuenum" id="spdnum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
 								</tr>
 								<tr>
 									<td>시작/일시정지</td>
@@ -1309,22 +1321,22 @@
 								<tr>
 									<td class="subtitlewth">평균 대기시간</td>
 									<td class="paneltb"></td>
-									<td class="tblyt" id="waittime">005</td>
-									<td class="tblyt">분</td>
+									<td class="tblytright" id="waittime">005</td>
+									<td class="tblytleft" >분</td>
 									<td class="tblyt"></td>
 								</tr>
 								<tr>
 									<td>평균 소요시간</td>
 									<td class="paneltb"></td>
-									<td class="tblyt" id="loadtime">030</td>
-									<td class="tblyt">분</td>
+									<td class="tblytright" id="loadtime">030</td>
+									<td class="tblytleft">분</td>
 									<td class="tblyt"></td>
 								</tr>
 								<tr>
 									<td>물건 적재율</td>
 									<td class="paneltb"></td>
-									<td class="tblyt" id="percent">010</td>
-									<td class="tblyt">%</td>
+									<td class="tblytright" id="percent">010</td>
+									<td class="tblytleft">%</td>
 									<td class="tblyt"></td>
 								</tr>
 							</table>
