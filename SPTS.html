@@ -420,6 +420,7 @@
 			
 			function start() {
 				document.getElementById("senarioslct").style.pointerEvents = "none";
+				document.getElementById("carnum").style.pointerEvents = "none";
 				
 				const canvas = document.getElementById("canvas");
 				var ctx = canvas.getContext("2d");
@@ -1278,6 +1279,7 @@
 			
 			function stop() {
 				document.getElementById("senarioslct").style.pointerEvents = "auto";
+				document.getElementById("carnum").style.pointerEvents = "auto";
 				cancelAnimationFrame(stopani);
 			}
 		</script>
