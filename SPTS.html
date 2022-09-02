@@ -225,16 +225,43 @@
 				var selectSenario = document.getElementById("senarioslct");
 				var senario = selectSenario.options[selectSenario.selectedIndex].value;
 				if(senario == 1) {
-					alert(1);
+					for(var c = 1; c <= 12; c++) {
+						document.getElementById("s1c"+c).style.display = "none";
+						document.getElementById("s2c"+c).style.display = "none";
+						document.getElementById("s3c"+c).style.display = "none";
+						document.getElementById("s4c"+c).style.display = "none";
+					}
 				}
 				else if(senario == 2) {
-					alert(2);
+					for(var c = 1; c <= 12; c++) {
+						document.getElementById("s1c"+c).style.display = "none";
+						document.getElementById("s2c"+c).style.display = "none";
+						document.getElementById("s3c"+c).style.display = "none";
+						document.getElementById("s4c"+c).style.display = "none";
+					}
+					
+					for(var c = 1; c <= 12; c++) {
+						document.getElementById("s1c"+c).style.display = "block";
+						document.getElementById("s2c"+c).style.display = "block";
+						document.getElementById("s3c"+c).style.display = "block";
+						document.getElementById("s4c"+c).style.display = "block";
+					}
 				}
 				else if(senario == 3) {
-					alert(3);
+					for(var c = 1; c <= 12; c++) {
+						document.getElementById("s1c"+c).style.display = "none";
+						document.getElementById("s2c"+c).style.display = "none";
+						document.getElementById("s3c"+c).style.display = "none";
+						document.getElementById("s4c"+c).style.display = "none";
+					}
 				}
 				else if(senario == 4) {
-					alert(4);
+					for(var c = 1; c <= 12; c++) {
+						document.getElementById("s1c"+c).style.display = "none";
+						document.getElementById("s2c"+c).style.display = "none";
+						document.getElementById("s3c"+c).style.display = "none";
+						document.getElementById("s4c"+c).style.display = "none";
+					}
 				}
 			}
 
