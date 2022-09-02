@@ -195,6 +195,13 @@
 			var color_st = ["White", "LightCoral", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			
+			// resize window
+			window.addEventListener('resize', function(){
+				const canvas = document.getElementById('canvas');
+				canvas.width = window.innerWidth*0.635;
+				canvas.height = window.innerHeight*0.793;
+			});
+			
 			// draw map
 			function drawMap() {
 				const canvas = document.getElementById('canvas');
