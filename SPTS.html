@@ -221,12 +221,14 @@
 			var color_st = ["White", "LightCoral", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
+			var crain_status = [0, 0, 0, 0, 0];
 			
 			// show senario
 			function show_senario() {
 				// reset
 				drawMap();
 				truck = [null,null,null,null,null,null,null,null,null,null,null];
+				crain_status = [0, 0, 0, 0, 0];
 				document.getElementById("outputt").innerHTML = "no data input";
 				for(var c = 1; c <= 12; c++) {
 					document.getElementById("s1c"+c).style.backgroundColor = color_st[c];
@@ -415,7 +417,6 @@
 			}
 			
 			var stopani = null;
-			var crain_status = [0, 0, 0, 0, 0];
 			
 			function start() {
 				document.getElementById("senarioslct").style.pointerEvents = "none";
