@@ -160,6 +160,7 @@
 			.tbclyt {
 				padding-top: 3px;
 				width: 100%;
+				text-align: center;
 			}
 			.tbclytquarter {
 				width: 25%;
@@ -204,8 +205,6 @@
 				vertical-align: middle;
 				line-height: 10px; 
 				
-				border: 1px solid red;
-				
 				/*display : none;*/
 			}
 		</style>
@@ -224,6 +223,13 @@
 
 			// draw map
 			function drawMap() {
+				for(var c = 1; c <= 12; c++) {
+					document.getElementById("s1c"+c).style.backgroundColor = color_st[c];
+					document.getElementById("s2c"+c).style.backgroundColor = color_st[c];
+					document.getElementById("s3c"+c).style.backgroundColor = color_st[c];
+					document.getElementById("s4c"+c).style.backgroundColor = color_st[c];
+				}
+				
 				const canvas = document.getElementById('canvas');
 				var ctx = canvas.getContext('2d');
 				
