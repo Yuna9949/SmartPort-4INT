@@ -1,17 +1,18 @@
 <?php
 	try{
 		$num = (string)$_GET['num'];
+		$senario = (string)$_GET['senario'];
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-		$sql = "SELECT * FROM crain".$num." WHERE loaded='0' ORDER BY time ASC;";
+		$sql = "SELECT * FROM crain".$num." WHERE loaded='0' AND senario='".$senario."' ORDER BY time ASC;";
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
 		$data['data'] = $row['container'];
     		$time = $row['time'];
 
-    		//$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = '".$time."'";
+    		//$sql = "UPDATE crain".$num." SET loaded = 1 WHERE time = '".$time."' AND senario='".$senario."'";
     		//mysqli_query($conn, $sql);
    
 		mysqli_close($conn);
