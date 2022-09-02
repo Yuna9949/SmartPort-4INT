@@ -5,14 +5,14 @@
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-		$sql = "SELECT * FROM crain WHERE AND num='".$num."' loaded='0' AND senario='".$senario."' ORDER BY time ASC;";
+		$sql = "SELECT * FROM crain WHERE loaded='0' AND senario='".$senario."' AND num='".$num."' ORDER BY time ASC;";
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
 		$data['data'] = $row['container'];
     		$time = $row['time'];
 
-    		//$sql = "UPDATE crain SET loaded = 1 WHERE time = '".$time."' AND senario='".$senario."' num='".$num."'";
+    		//$sql = "UPDATE crain SET loaded = 1 WHERE time = '".$time."' AND senario='".$senario."' AND num='".$num."'";
     		//mysqli_query($conn, $sql);
    
 		mysqli_close($conn);
