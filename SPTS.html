@@ -221,10 +221,13 @@
 			var color_st = ["White", "LightCoral", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
-
+			
+			// show senario
 			function show_senario() {
+				// reset
 				drawMap();
 				truck = [null,null,null,null,null,null,null,null,null,null,null];
+				document.getElementById("outputt").innerHTML = "no data input";
 				for(var c = 1; c <= 12; c++) {
 					document.getElementById("s1c"+c).style.backgroundColor = color_st[c];
 					document.getElementById("s2c"+c).style.backgroundColor = color_st[c];
@@ -232,6 +235,7 @@
 					document.getElementById("s4c"+c).style.backgroundColor = color_st[c];
 				}
 				
+				// show senario in detail
 				var selectSenario = document.getElementById("senarioslct");
 				var senario = selectSenario.options[selectSenario.selectedIndex].value;
 				if(senario == 1) {
