@@ -1572,12 +1572,13 @@
 		}
 		
 		// get crain data
-		function getCrain(crain) {
+		function getCrain(crain, s) {
 			$.ajax( {
 				url: "getCrainMySql.php",
 				type: "GET",
 				data: {
-					num : crain
+					num : crain,
+					senario : s
 				},
 				dataType: 'json',
 				success: function(data) {
