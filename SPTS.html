@@ -1263,26 +1263,20 @@
 									<td class="subtitlewth">차량 대수</td>
 									<td class="paneltb"></td>
 									<td><div class="shw" id="carshw">1</div></td>
-									<td>1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
+									<td colspan="2">1 <input class="valuenum" id="carnum" type="range" min="1" max="10" value="1" onchange="show_carnn()" /> 10</td>
 								</tr>
 								<tr>
 									<td>현재 배속</td>
 									<td class="paneltb"></td>
 									<td><div class="shw" id="spdshw">1</div></td>
-									<td>1 <input class="valuenum" id="spdnum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
+									<td colspan="2">1 <input class="valuenum" id="spdnum" type="range" min="1" max="10" value="1" onchange="show_speed()"  /> 10</td>
 								</tr>
 								<tr>
 									<td>시작/일시정지</td>
 									<td class="paneltb"></td>
 									<td><button class="btn" id="play" onclick="start()">►</button></td>
-									<td>
-										<table>
-											<tr>
-												<td><button class="btn" id="pause" onclick="stop()">I I</button></td>
-												<td><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
-											</tr>
-										</table>
-									</td>
+									<td><button class="btn" id="pause" onclick="stop()">I I</button></td>
+									<td><button class="btn" id="reload" onclick="window.location.reload()">⟳</button></td>
 								</tr>
 							</table>
 						</div>
