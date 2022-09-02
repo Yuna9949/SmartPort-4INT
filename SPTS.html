@@ -194,14 +194,7 @@
 			
 			var color_st = ["White", "LightCoral", "Red", "Orange", "Yellow", "YellowGreen", "OliveDrab", 
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
-			
-			// resize window
-			window.addEventListener('resize', function(){
-				const canvas = document.getElementById('canvas');
-				canvas.width = window.innerWidth*0.635;
-				canvas.height = window.innerHeight*0.793;
-			});
-			
+
 			// draw map
 			function drawMap() {
 				const canvas = document.getElementById('canvas');
@@ -212,12 +205,6 @@
 				
 				var road = canvas.height*0.045;
 				var wth  = canvas.width-8*road;
-				
-				// resize window
-				window.addEventListener('resize', function(){
-					canvas.width = window.innerWidth*0.635;
-					canvas.height = window.innerHeight*0.793;
-				});
 				
 				// background
 				ctx.fillStyle = 'rgb(255,255,255)';
@@ -1456,6 +1443,11 @@
 				}
 			} );
 		}
+		
+		// resize window
+		window.addEventListener('resize', function(){
+			drawMap();
+		});
 		
 		// redraw Map
 		window.onload = drawMap();
