@@ -193,10 +193,6 @@
 				text-align: left;
 			}
 			
-			#play, #pause {
-				pointer-events: none;
-			}
-			
 			#s1c1, #s1c2, #s1c3, #s1c4, #s1c5, #s1c6, #s1c7, #s1c8, #s1c9, #s1c10, #s1c11, #s1c12, 
 			#s2c1, #s2c2, #s2c3, #s2c4, #s2c5, #s2c6, #s2c7, #s2c8, #s2c9, #s2c10, #s2c11, #s2c12, 
 			#s3c1, #s3c2, #s3c3, #s3c4, #s3c5, #s3c6, #s3c7, #s3c8, #s3c9, #s3c10, #s3c11, #s3c12, 
@@ -255,11 +251,8 @@
 				// show senario in detail
 				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				if(senario == 1) {
-					document.getElementById("play").style.pointerEvents = "none";
 				}
 				else if(senario == 2) {
-					document.getElementById("play").style.pointerEvents = "auto";
-					
 					document.getElementById("s1c1").style.display = "block";
 					document.getElementById("s2c2").style.display = "block";
 					document.getElementById("s3c3").style.display = "block";
@@ -271,19 +264,16 @@
 					document.getElementById("s4c4").innerText = "99";
 				}
 				else if(senario == 3) {			
-					document.getElementById("play").style.pointerEvents = "auto";
 					for(var c = 1; c <= 12; c++) {
 						document.getElementById("s2c"+c).style.display = "block";
 					}
 				}
 				else if(senario == 4) {			
-					document.getElementById("play").style.pointerEvents = "auto";
 					for(var c = 1; c <= 12; c++) {
 						document.getElementById("s3c"+c).style.display = "block";
 					}
 				}
 				else if(senario == 5) {				
-					document.getElementById("play").style.pointerEvents = "auto";
 					for(var c = 1; c <= 12; c++) {
 						document.getElementById("s4c"+c).style.display = "block";
 					}
@@ -411,7 +401,6 @@
 			var stopani = null;
 			
 			function start() {
-				document.getElementById("pause").style.pointerEvents = "auto";
 				document.getElementById("senarioslct").style.pointerEvents = "none";
 				document.getElementById("carnum").style.pointerEvents = "none";
 				
