@@ -5,6 +5,7 @@
 	function checkW($st, $se, $dt, $de, $t, $tc){
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
+		$result = mysqli_query($conn, $sql);
 		
 		$mst = 0;
 		$mse = 0;
