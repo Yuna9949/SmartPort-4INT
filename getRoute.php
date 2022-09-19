@@ -17,7 +17,7 @@
 				
 				$t[$pos] = $t[$n]+$row['weight'];
 				
-				echo '<br><br>';
+				echo '<br>';
 				
 				//for($i = 1; $i <= 12; $i = $i + 1) {
 				//	for($j = 1; $j <= 6; $j = $j + 1) {
@@ -25,9 +25,9 @@
 				//		echo ' t'.$i.' e'.$j.' w'.$t[$num].' <br>';
 				//	}
 				//}
-				echo ' t5 e1 w'.$t[51].' <br>';
+				echo ' t5 e1 w'.$t[51];
 				
-				echo '<br><br>';
+				echo '<br>';
 				
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de);
 			}
@@ -57,6 +57,9 @@
 		$t[$n] = 0;
 		
 		checkW($st, $se, $dt, $de);
+		
+		$dest = $dt*10+$de;
+		$c = $t[$dest];
 		
 		return $c;
 	}
