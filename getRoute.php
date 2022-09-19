@@ -3,6 +3,13 @@
 		$c = 0;
 		
 		$t = array();
+		for($i = 1; $i <= 12; $i = $i + 1) {
+			for($j = 1; $j <= 6; $j = $j + 1) {
+				$num = $i*10+$j;
+				$t[$num] = 1000;
+				echo ' / t'.$num.' / ';
+			}
+		}
 				
 		return $c;
 	}
