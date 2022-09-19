@@ -4,7 +4,7 @@
 		return $c;
 	}
 
-	$start_traffic = (string)2;//$_GET['start_traffic'];
+	$start_traffic = 2;//$_GET['start_traffic'];
 	$start_enter = 4;//$_GET['start_enter'];
 	$dest_traffic = 5;//$_GET['dest_traffic'];
 	$dest_enter = 3;//$_GET['dest_enter'];
@@ -12,14 +12,13 @@
 
 	$sql = "SELECT * FROM map WHERE start_traffic='".$start_traffic."' AND start_enter='".$start_enter."';";
 
-	echo ''.$sql.' / ';
 	$result = mysqli_query($conn, $sql);
 
 	$maxcost = 0;
 	$traffic = 0;
 
 	while($row = mysqli_fetch_assoc($result)){
-		print_r($row);
+		//print_r($row);
 		echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
 
 		$cost = getCost($row['$dest_traffic'], $row['$dest_enter'], $dest_traffic, $dest_enter);
