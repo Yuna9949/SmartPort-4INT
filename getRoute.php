@@ -20,7 +20,7 @@
 
 	while($row = mysqli_fetch_assoc($result)){
 		print_r($row);
-		echo ''.$row['$dest_traffic'].' / '.$row['$dest_enter'].'';
+		echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
 
 		$cost = getCost($row['$dest_traffic'], $row['$dest_enter'], $dest_traffic, $dest_enter);
 
