@@ -7,7 +7,7 @@
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
 		$result = mysqli_query($conn, $sql);
 		
-		echo ' / start node:'.$st.' '.$se.' - ';
+		echo '<br> / start node:'.$st.' '.$se.' - ';
 		
 		$dest = $dt*10+$de;
 		if($tc[$dest] == 1) {
