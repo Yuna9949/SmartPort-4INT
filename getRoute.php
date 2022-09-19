@@ -9,6 +9,7 @@
 		
 		$dest = $dt*10+$de;
 		if($tc[$dest] == 1) {
+			echo ' <br><br>destination :'.$t[$dest].'<br>';
 			return $t[$dest];
 		}
 		
