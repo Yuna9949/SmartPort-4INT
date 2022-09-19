@@ -1,6 +1,6 @@
 <?php
 	$t = array();
-	function checkW($st, $se, $dt, $de){
+	function checkW($st, $se, $dt, $de, $tab){
 		global $t;
 		
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
@@ -8,7 +8,11 @@
 		$result = mysqli_query($conn, $sql);
 		
 		while($row = mysqli_fetch_assoc($result)){
-			echo '<br> / start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
+			echo '<br>';
+			for($i = 0; $i < $tab; $i = $i + 1) {
+				echo '-';
+			}
+			echo 'start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
 			
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
@@ -18,7 +22,7 @@
 				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				
 				$t[$pos] = $t[$n]+$row['weight'];
-				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de);
+				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $tab+1);
 			}
 			else echo 'node:'.$t[$pos];	
 		}
@@ -41,7 +45,9 @@
 		$n = $st*10+$se;
 		$t[$n] = 0;
 		
-		checkW($st, $se, $dt, $de);
+		$tab = 0;
+		
+		checkW($st, $se, $dt, $de, $tab);
 		
 		$dest = $dt*10+$de;
 		$c = $t[$dest];
