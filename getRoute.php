@@ -7,15 +7,13 @@
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
 		$result = mysqli_query($conn, $sql);
 		
-		echo '<br> / start node:'.$st.' '.$se.' - ';
-		
 		$dest = $dt*10+$de;
 		if($tc[$dest] == 1) {
 			return $t[$dest];
 		}
 		
 		while($row = mysqli_fetch_assoc($result)){
-			echo 'neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
+			echo '<br> / start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
 			
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
