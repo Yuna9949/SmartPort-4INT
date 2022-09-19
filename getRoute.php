@@ -4,12 +4,6 @@
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
 		$result = mysqli_query($conn, $sql);
 		
-		$dest = $dt*10+$de;
-		if($tc[$dest] == 1) {
-			echo ' <br><br>destination :'.$t[$dest].'<br>';
-			return $t[$dest];
-		}
-		
 		while($row = mysqli_fetch_assoc($result)){
 			echo '<br> / start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
 			
@@ -26,6 +20,9 @@
 			
 			
 		}
+		
+		$dest = $dt*10+$de;
+		return $t[$dest];
 	}
 
 	function getCost($st, $se, $dt, $de){
@@ -51,7 +48,7 @@
 		$t[$n] = 0;
 		$tc[$n] = 1;
 		
-		$c = checkW($st, $se, $dt, $de, $t, $tc);
+		checkW($st, $se, $dt, $de, $t, $tc);
 		
 		return $c;
 	}
