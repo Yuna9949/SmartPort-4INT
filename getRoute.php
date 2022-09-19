@@ -10,7 +10,7 @@
 		$mse = 0;
 		$minposdata = 1000;
 		
-		echo ' / start node:'.$st.' '.$st.' - ';
+		echo ' / start node:'.$st.' '.$se.' - ';
 		
 		while($row = mysqli_fetch_assoc($result)){
 			echo 'neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
