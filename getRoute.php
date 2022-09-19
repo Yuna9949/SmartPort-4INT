@@ -27,15 +27,11 @@
 				//}
 				echo ' t5 e1 w'.$t[51];
 				
-				echo '<br>';
+				echo '';
 				
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de);
 			}
-			else echo 'node:'.$t[$pos];
-			
-			if($pos == 51) echo '<br><br> dest node:'.$t[$pos].'<br><br>';
-			
-			
+			else echo 'node:'.$t[$pos];	
 		}
 		
 		$dest = $dt*10+$de;
