@@ -69,7 +69,7 @@
 
 		$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 
-		echo ' / cost='.$cost.' / ';
+		echo '<br><br> cost='.$cost.' <br><br>';
 		if($cost < $mincost) {
 			$maxcost = $cost;
 			$traffic = $row['traffic'];
