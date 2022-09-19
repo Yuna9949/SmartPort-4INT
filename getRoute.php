@@ -19,9 +19,9 @@
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			if($tc[$pos] == 0 && $t[$pos] > $t[$n]+$row['weight']) {
+				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'].' - ';
 				$tc[$pos] = 1;
 				$t[$pos] = $t[$n]+$row['weight'];
-				echo 'update node:'.$t[$pos].' - ';
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t, $tc);
 			}
 			$tc[$pos] = 1;
@@ -51,10 +51,7 @@
 		$t[$n] = 0;
 		$tc[$n] = 1;
 		
-		checkW($st, $se, $dt, $de, $t, $tc);
-		
-		$dest = $dt*10+$de;
-		$c = $t[$dest];
+		$c = checkW($st, $se, $dt, $de, $t, $tc);
 		
 		return $c;
 	}
