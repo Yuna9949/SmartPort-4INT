@@ -17,7 +17,7 @@
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			
-				echo 't1 e3 w'.$t[13].' - ';
+				echo 't1 e1 w'.$t[11].' - ';
 			if($t[$pos] > $t[$n]+$row['weight']) {
 				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				
@@ -58,7 +58,7 @@
 	$start_traffic = 1;//$_GET['start_traffic'];
 	$start_enter = 6;//$_GET['start_enter'];
 	$dest_traffic = 1;//$_GET['dest_traffic'];
-	$dest_enter = 3;//$_GET['dest_enter'];
+	$dest_enter = 1;//$_GET['dest_enter'];
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
 	$sql = "SELECT * FROM map WHERE start_traffic='".$start_traffic."' AND start_enter='".$start_enter."';";
