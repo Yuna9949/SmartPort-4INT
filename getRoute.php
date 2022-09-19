@@ -11,6 +11,19 @@
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			if($t[$pos] > $t[$n]+$row['weight']) {
 				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
+				
+				
+				echo '<br><br>';
+				
+				for($i = 1; $i <= 12; $i = $i + 1) {
+					for($j = 1; $j <= 6; $j = $j + 1) {
+						$num = $i*10+$j;
+						echo ' t'.$i.' e'.$j.' w'.$t[$num].' <br>';
+					}
+				}
+				
+				echo '<br><br>';
+				
 				$t[$pos] = $t[$n]+$row['weight'];
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t);
 			}
