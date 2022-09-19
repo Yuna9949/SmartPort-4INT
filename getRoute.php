@@ -1,5 +1,8 @@
 <?php
-	function checkW($st, $se, $dt, $de, $t){
+	$t = array();
+	function checkW($st, $se, $dt, $de){
+		global $t;
+		
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
 		$result = mysqli_query($conn, $sql);
@@ -16,16 +19,17 @@
 				
 				echo '<br><br>';
 				
-				for($i = 1; $i <= 12; $i = $i + 1) {
-					for($j = 1; $j <= 6; $j = $j + 1) {
-						$num = $i*10+$j;
-						echo ' t'.$i.' e'.$j.' w'.$t[$num].' <br>';
-					}
-				}
+				//for($i = 1; $i <= 12; $i = $i + 1) {
+				//	for($j = 1; $j <= 6; $j = $j + 1) {
+				//		$num = $i*10+$j;
+				//		echo ' t'.$i.' e'.$j.' w'.$t[$num].' <br>';
+				//	}
+				//}
+				echo ' t5 e1 w'.$t[51].' <br>';
 				
 				echo '<br><br>';
 				
-				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t);
+				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de);
 			}
 			else echo 'node:'.$t[$pos];
 			
@@ -41,7 +45,7 @@
 	function getCost($st, $se, $dt, $de){
 		$c = 0;
 		
-		$t = array();
+		global $t;
 		for($i = 1; $i <= 12; $i = $i + 1) {
 			for($j = 1; $j <= 6; $j = $j + 1) {
 				$num = $i*10+$j;
@@ -52,7 +56,7 @@
 		$n = $st*10+$se;
 		$t[$n] = 0;
 		
-		checkW($st, $se, $dt, $de, $t);
+		checkW($st, $se, $dt, $de);
 		
 		return $c;
 	}
