@@ -1,16 +1,66 @@
 <?php
+	$t = array();
+	$tc = array();
+
+	function checkW($st, $se, $dt, $de, $t, $tc){
+		$conn = mysqli_connect("localhost","root","smartport4int","test");
+		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
+		
+		$mst = 0;
+		$mse = 0;
+		$minposdata = 1000;
+		
+		echo ' / start node:'.$st.' '.$st.' - ';
+		
+		while($row = mysqli_fetch_assoc($result)){
+			echo 'neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
+			
+			$n = $st*10+$se;
+			$pos = $row['dest_traffic']*10+$row['dest_enter'];
+			if($tc[$pos] == 0 && $t[$pos] > $t[$n]+$row['weight']) {
+				$t[$pos] = $t[$n]+$row['weight'];
+				echo 'update node:'.$t[$pos].' - ';
+			}
+			$tc[$pos] = 1;
+			
+			if($t[$pos] < $minposdata) {
+				$mst = $row['dest_traffic'];
+				$mse = $row['dest_enter'];
+			}
+		}
+		
+		$dest = $dt*10+$de;
+		if($tc[$dest] == 0) {
+			checkW($mst, $mse, $dt, $de, $t, $tc);
+		}
+	}
+
 	function getCost($st, $se, $dt, $de){
 		$c = 0;
 		
-		$t = array();
 		for($i = 1; $i <= 12; $i = $i + 1) {
 			for($j = 1; $j <= 6; $j = $j + 1) {
 				$num = $i*10+$j;
 				$t[$num] = 1000;
-				echo ' / t'.$num.' / ';
 			}
 		}
-				
+		
+		for($i = 1; $i <= 12; $i = $i + 1) {
+			for($j = 1; $j <= 6; $j = $j + 1) {
+				$num = $i*10+$j;
+				$tc[$num] = 0;
+			}
+		}
+		
+		$n = $st*10+$se;
+		$t[$n] = 0;
+		$tc[$n] = 1;
+		
+		checkW($st, $se, $dt, $de, $t, $tc);
+		
+		$dest = $dt*10+$de;
+		$c = $t[$dest];
+		
 		return $c;
 	}
 
