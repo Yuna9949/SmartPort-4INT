@@ -25,10 +25,13 @@
 			$tc[$pos] = 1;
 			
 			if($t[$pos] < $minposdata) {
+				$minposdata = $t[$pos];
 				$mst = $row['dest_traffic'];
 				$mse = $row['dest_enter'];
 			}
 		}
+		
+		echo 'next node:'.$mst.' '.$mse.' - ';
 		
 		$dest = $dt*10+$de;
 		if($tc[$dest] == 0) {
