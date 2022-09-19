@@ -1,5 +1,5 @@
 <?php
-	function checkW($st, $se, $dt, $de, $t, $tc){
+	function checkW($st, $se, $dt, $de, $t){
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
 		$result = mysqli_query($conn, $sql);
@@ -9,11 +9,10 @@
 			
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
-			if($tc[$pos] == 0 && $t[$pos] > $t[$n]+$row['weight']) {
+			if($t[$pos] > $t[$n]+$row['weight']) {
 				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
-				$tc[$pos] = 1;
 				$t[$pos] = $t[$n]+$row['weight'];
-				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t, $tc);
+				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t);
 			}
 			else echo 'node:'.$t[$pos];
 			
@@ -37,19 +36,10 @@
 			}
 		}
 		
-		$tc = array();
-		for($i = 1; $i <= 12; $i = $i + 1) {
-			for($j = 1; $j <= 6; $j = $j + 1) {
-				$num = $i*10+$j;
-				$tc[$num] = 0;
-			}
-		}
-		
 		$n = $st*10+$se;
 		$t[$n] = 0;
-		$tc[$n] = 1;
 		
-		checkW($st, $se, $dt, $de, $t, $tc);
+		checkW($st, $se, $dt, $de, $t);
 		
 		return $c;
 	}
