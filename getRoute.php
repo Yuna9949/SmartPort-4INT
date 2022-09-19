@@ -12,6 +12,7 @@
 			if($t[$pos] > $t[$n]+$row['weight']) {
 				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				
+				$t[$pos] = $t[$n]+$row['weight'];
 				
 				echo '<br><br>';
 				
@@ -24,7 +25,6 @@
 				
 				echo '<br><br>';
 				
-				$t[$pos] = $t[$n]+$row['weight'];
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t);
 			}
 			else echo 'node:'.$t[$pos];
