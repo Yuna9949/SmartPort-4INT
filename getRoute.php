@@ -7,11 +7,12 @@
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
 		$result = mysqli_query($conn, $sql);
 		
-		$mst = 0;
-		$mse = 0;
-		$minposdata = 1000;
-		
 		echo ' / start node:'.$st.' '.$se.' - ';
+		
+		$dest = $dt*10+$de;
+		if($tc[$dest] == 1) {
+			return $t[$dest];
+		}
 		
 		while($row = mysqli_fetch_assoc($result)){
 			echo 'neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
@@ -23,19 +24,7 @@
 				echo 'update node:'.$t[$pos].' - ';
 			}
 			$tc[$pos] = 1;
-			
-			if($t[$pos] < $minposdata) {
-				$minposdata = $t[$pos];
-				$mst = $row['dest_traffic'];
-				$mse = $row['dest_enter'];
-			}
-		}
-		
-		echo 'next node:'.$mst.' '.$mse.' - ';
-		
-		$dest = $dt*10+$de;
-		if($tc[$dest] == 0) {
-			checkW($mst, $mse, $dt, $de, $t, $tc);
+			checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t, $tc);
 		}
 	}
 
