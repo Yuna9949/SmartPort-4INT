@@ -1,6 +1,8 @@
 <?php
 	function getCost($st, $se, $dt, $de){
 		$c = 0;
+		
+		$t = array();
 				
 		return $c;
 	}
