@@ -14,9 +14,9 @@
 
 	$result = mysqli_query($conn, $sql);
 
-	$maxcost = 0;
-	$traffic = 10;
-	$dt = 2;
+	$mincost = 99;
+	$traffic = 0;
+	$dt = 0;
 
 	while($row = mysqli_fetch_assoc($result)){
 		//print_r($row);
@@ -25,7 +25,7 @@
 		$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 
 		echo ' / cost='.$cost.' / ';
-		if($cost > $maxcost) {
+		if($cost < $mincost) {
 			$maxcost = $cost;
 			$traffic = $row['traffic'];
 			$dt = $row['dest_traffic'];
@@ -38,8 +38,6 @@
 	
 	if($dt > 9) $row["light".$dt] = $traffic;
 	else	    $row["light0".$dt] = $traffic;
-
-	echo ' / '.$row["light".$dt].' / ';
 
 	$sql = "INSERT INTO traffic (
 			light01, light02, light03, 
