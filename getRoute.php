@@ -1,6 +1,40 @@
 <?php
 	function getCost($st, $se, $dt, $de){
 		$c = 0;
+		
+		$t = array(
+			 	array();
+				array();
+				array();
+				array();
+				array();
+				array();
+				array();
+			);
+		
+		for($i = 1; $i <= 12, $i = $i + 1) {
+			$t[$i][1] = 1000;
+			$t[$i][2] = 1000;
+			$t[$i][3] = 1000;
+			$t[$i][4] = 1000;
+			$t[$i][5] = 1000;
+			$t[$i][6] = 1000;
+		}
+		
+		$t[$st][$se] = 0;
+		
+		for($i = 1; $i <= 12, $i = $i + 1) {
+			for($j = 1; $j <= 6; $j = $j + 1) {
+				echo "t[".$i."][".$j."]=".$t[$i][$j]." / ";
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
 		return $c;
 	}
 
@@ -14,7 +48,7 @@
 
 	$result = mysqli_query($conn, $sql);
 
-	$mincost = 99;
+	$mincost = 1000;
 	$traffic = 0;
 	$dt = 0;
 
