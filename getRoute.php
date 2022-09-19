@@ -8,14 +8,14 @@
 		$result = mysqli_query($conn, $sql);
 		
 		while($row = mysqli_fetch_assoc($result)){
-			echo '<br> / start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
+			//echo '<br> / start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
 			
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			
-				echo 't5 e1 w'.$t[51].' - ';
+				//echo 't5 e1 w'.$t[51].' - ';
 			if($t[$pos] > $t[$n]+$row['weight']) {
-				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
+				//echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				
 				$t[$pos] = $t[$n]+$row['weight'];
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de);
@@ -49,10 +49,10 @@
 		return $c;
 	}
 
-	$start_traffic = 2;//$_GET['start_traffic'];
-	$start_enter = 4;//$_GET['start_enter'];
-	$dest_traffic = 5;//$_GET['dest_traffic'];
-	$dest_enter = 1;//$_GET['dest_enter'];
+	$start_traffic = 1;//$_GET['start_traffic'];
+	$start_enter = 6;//$_GET['start_enter'];
+	$dest_traffic = 1;//$_GET['dest_traffic'];
+	$dest_enter = 3;//$_GET['dest_enter'];
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
 	$sql = "SELECT * FROM map WHERE start_traffic='".$start_traffic."' AND start_enter='".$start_enter."';";
@@ -65,7 +65,7 @@
 
 	while($row = mysqli_fetch_assoc($result)){
 		//print_r($row);
-		echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
+		//echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
 
 		$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 
