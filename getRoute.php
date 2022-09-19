@@ -16,7 +16,8 @@
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t, $tc);
 			}
 			else echo 'node:'.$t[$pos];
-			$tc[$pos] = 1;
+			
+			if($pos == 51) echo '<br><br> dest node:'.$t[$pos].'<br><br>';
 			
 			
 		}
