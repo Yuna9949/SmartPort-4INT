@@ -1,7 +1,4 @@
 <?php
-	$t = array();
-	$tc = array();
-
 	function checkW($st, $se, $dt, $de, $t, $tc){
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
@@ -19,11 +16,12 @@
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			if($tc[$pos] == 0 && $t[$pos] > $t[$n]+$row['weight']) {
-				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'].' - ';
+				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				$tc[$pos] = 1;
 				$t[$pos] = $t[$n]+$row['weight'];
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $t, $tc);
 			}
+			else echo 'node:'.$t[$pos];
 			$tc[$pos] = 1;
 			
 			
@@ -33,6 +31,7 @@
 	function getCost($st, $se, $dt, $de){
 		$c = 0;
 		
+		$t = array();
 		for($i = 1; $i <= 12; $i = $i + 1) {
 			for($j = 1; $j <= 6; $j = $j + 1) {
 				$num = $i*10+$j;
@@ -40,6 +39,7 @@
 			}
 		}
 		
+		$tc = array();
 		for($i = 1; $i <= 12; $i = $i + 1) {
 			for($j = 1; $j <= 6; $j = $j + 1) {
 				$num = $i*10+$j;
