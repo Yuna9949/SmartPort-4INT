@@ -971,13 +971,14 @@
 						}
 						
 						var ts = document.getElementById('updating').innerText;
-						if(ts == "success") {
+						if(ts == "success" && this.stop == 1) {
 							alert("checked");
 							traffic_status[this.t_light_num] = this.num;
+							this.stop = 2;
 						}
 						
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1 && this.stop == 1) {						
+						if(this.status == 0 && this.t_light == -1 && this.stop == 2) {						
 							mysql_conn();
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
