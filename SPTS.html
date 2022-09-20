@@ -507,24 +507,32 @@
 								this.crain = 1;
 								this.ship = 1;
 								this.container = -1; // wait to get container
+								this.dest = 1;
+								this.dest_enter = 4;
 							}
 							else if(crain_status[2] == 0) {
 								crain_status[2] = this.num;
 								this.crain = 2;
 								this.ship = 2;
 								this.container = -1;
+								this.dest = 1;
+								this.dest_enter = 4;
 							}
 							else if(crain_status[3] == 0) {
 								crain_status[3] = this.num;
 								this.crain = 3;
 								this.ship = 3;
 								this.container = -1;
+								this.dest = 2;
+								this.dest_enter = 4;
 							}
 							else if(crain_status[4] == 0) {
 								crain_status[4] = this.num;
 								this.crain = 4;
 								this.ship = 4;
 								this.container = -1;
+								this.dest = 2;
+								this.dest_enter = 4;
 							}
 							else {
 								this.crain = -1; // wait for crain
@@ -622,18 +630,18 @@
 								this.crain = 0;
 								
 								// set destination
-								if(this.container == 1) 	this.dest = 1;
-								else if(this.container == 2)	this.dest = 5;
-								else if(this.container == 3) 	this.dest = 2;
-								else if(this.container == 4) 	this.dest = 6;
-								else if(this.container == 5) 	this.dest = 4;
-								else if(this.container == 6) 	this.dest = 8;
-								else if(this.container == 7)	this.dest = 5;
-								else if(this.container == 8) 	this.dest = 9;
-								else if(this.container == 9) 	this.dest = 7;
-								else if(this.container == 10) 	this.dest = 11;
-								else if(this.container == 11)	this.dest = 8;
-								else if(this.container == 12) 	this.dest = 12;
+								if(this.container == 1) 	{this.dest = 2;  this.dest_enter = 2;}
+								else if(this.container == 2)	{this.dest = 4;  this.dest_enter = 4;}
+								else if(this.container == 3) 	{this.dest = 3;  this.dest_enter = 2;}
+								else if(this.container == 4) 	{this.dest = 5;  this.dest_enter = 4;}
+								else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
+								else if(this.container == 6) 	{this.dest = 7;  this.dest_enter = 4;}
+								else if(this.container == 7)	{this.dest = 6;  this.dest_enter = 2;}
+								else if(this.container == 8) 	{this.dest = 8;  this.dest_enter = 4;}
+								else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
+								else if(this.container == 10) 	{this.dest = 10; this.dest_enter = 4;}
+								else if(this.container == 11)	{this.dest = 9;  this.dest_enter = 2;}
+								else if(this.container == 12) 	{this.dest = 11; this.dest_enter = 4;}
 							}
 						}
 						
@@ -925,7 +933,7 @@
 							}
 							
 							// set traffic light
-							getRoute(this.t_light_num, this.enter, 1,1);
+							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
 							
 						}
 						
