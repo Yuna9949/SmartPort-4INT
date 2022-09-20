@@ -398,6 +398,33 @@
 				ctx.fillRect (2*road, 16*road-1, wth+4*road, 2);
 				ctx.fillRect (2*road, 20*road-1, wth+4*road, 2);
 				ctx.fillRect (2*road, 22*road-1, wth+4*road, 2);
+				
+				
+				// show traffic sign for
+				ctx.fillStyle = color_st[traffic_status[1]];
+				ctx.fillRect(2.5*road+1,	 2.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[4]];
+				ctx.fillRect(2.5*road+1,	 8.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[7]];
+				ctx.fillRect(2.5*road+1,	14.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[10]];
+				ctx.fillRect(2.5*road+1,	20.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[2]];
+				ctx.fillRect(3.5*road+wth/2+1,	 2.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[5]];
+				ctx.fillRect(3.5*road+wth/2+1,	 8.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[8]];
+				ctx.fillRect(3.5*road+wth/2+1,	14.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[11]];
+				ctx.fillRect(3.5*road+wth/2+1,	20.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[3]];
+				ctx.fillRect(4.5*road+wth+1,	 2.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[6]];
+				ctx.fillRect(4.5*road+wth+1,	 8.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[9]];
+				ctx.fillRect(4.5*road+wth+1,	14.5*road, 1*road-2, 1*road);
+				ctx.fillStyle = color_st[traffic_status[12]];
+				ctx.fillRect(4.5*road+wth+1,	20.5*road, 1*road-2, 1*road);
 			}
 			
 			var stopani = null;
@@ -1199,33 +1226,7 @@
 						document.getElementById("outx"+this.num).innerText = this.x;
 						document.getElementById("outy"+this.num).innerText = this.y;
 					}
-					draw() {
-						// show traffic sign for
-						ctx.fillStyle = color_st[traffic_status[1]];
-						ctx.fillRect(2.5*road+1,	 2.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[4]];
-						ctx.fillRect(2.5*road+1,	 8.5*road, 1*road-2, 2*road);
-						ctx.fillStyle = color_st[traffic_status[7]];
-						ctx.fillRect(2.5*road+1,	14.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[10]];
-						ctx.fillRect(2.5*road+1,	20.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[2]];
-						ctx.fillRect(3.5*road+wth/2+1,	 2.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[5]];
-						ctx.fillRect(3.5*road+wth/2+1,	 8.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[8]];
-						ctx.fillRect(3.5*road+wth/2+1,	14.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[11]];
-						ctx.fillRect(3.5*road+wth/2+1,	20.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[3]];
-						ctx.fillRect(4.5*road+wth+1,	 2.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[6]];
-						ctx.fillRect(4.5*road+wth+1,	 8.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[9]];
-						ctx.fillRect(4.5*road+wth+1,	14.5*road, 1*road-2, 1*road);
-						ctx.fillStyle = color_st[traffic_status[12]];
-						ctx.fillRect(4.5*road+wth+1,	20.5*road, 1*road-2, 1*road);
-						
+					draw() {						
 						// draw truck
 						ctx.fillStyle = "rgb(9, 96, 47)";
 						ctx.fillRect(this.x-1, this.y-1, this.sizex/2+1		, this.sizey/2+1	);
