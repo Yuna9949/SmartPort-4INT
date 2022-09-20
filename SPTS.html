@@ -645,10 +645,6 @@
 							}
 						}
 						
-						alert("dest : "+this.dest+" dest_enter : "+this.dest_enter);
-						
-						
-						
 						// go after load
 						if(this.container > 0 && this.dbx != 1 && this.dbx != 4 && this.dby == 1) {
 							this.status = 4;
@@ -940,6 +936,10 @@
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
 							
 						}
+						
+						
+						alert("start : "+this.t_light_num+" enter : "+this.enter+" dest : "+this.dest+" dest_enter : "+this.dest_enter);
+						
 						
 						// get traffic light
 						if(this.status == 0 && this.t_light == -1) {						
