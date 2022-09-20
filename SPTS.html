@@ -223,6 +223,7 @@
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
 			var crain_status = [0, 0, 0, 0, 0];
+			var traffic_status = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 			
 			// show senario
 			function show_senario() {
@@ -934,6 +935,7 @@
 							
 							// set traffic light
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
+							traffic_status[this.t_light_num] = this.num;
 							
 						}
 						
