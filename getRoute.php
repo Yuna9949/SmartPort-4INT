@@ -77,10 +77,10 @@
 
 		echo '<br><br> cost='.$cost.' <br><br>';
 		if($cost < $mincost) {
-			$maxcost = $cost;
+			$mincost = $cost;
 			$traffic = $row['traffic'];
 		}
-		echo 'maxcost='.$maxcost.' / traffic='.$traffic.'<br><br>';
+		echo 'maxcost='.$mincost.' / traffic='.$traffic.'<br><br>';
 	}
 
 	$sql = "SELECT * FROM traffic ORDER BY time DESC";
