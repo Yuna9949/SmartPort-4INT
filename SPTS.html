@@ -965,6 +965,7 @@
 							
 							// set traffic light
 							document.getElementById('updating').innerText = "loading";
+							alert("loading");
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
 							//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter);
 						}
@@ -1506,7 +1507,7 @@
 						<div class="title">
 							설정 제어판
 							<i class="output" id="outputt">no data input</i>
-							<i id="updating">loading</i>
+							<i id="updating">start</i>
 						</div>
 						<div class="controlpanel">
 							<table class="tblayout">
@@ -1693,8 +1694,8 @@
 				dataType: 'json',
 				success: function(data) {
 					if(data == true) {
-						alert("success");
 						$("#updating").text("success");
+						alert("success");
 					}
 				}
 			} );
