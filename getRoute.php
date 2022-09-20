@@ -17,7 +17,7 @@
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			
-				echo 't1 e4 w'.$t[14].' - ';
+				echo 't2 e2 w'.$t[22].' - ';
 			if($t[$pos] > $t[$n]+$row['weight']) {
 				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				
