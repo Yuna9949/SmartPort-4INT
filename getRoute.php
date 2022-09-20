@@ -8,23 +8,23 @@
 		$result = mysqli_query($conn, $sql);
 		
 		while($row = mysqli_fetch_assoc($result)){
-			echo '<br>';
+			//echo '<br>';
 			for($i = 0; $i < $tab; $i = $i + 1) {
 				echo '-';
 			}
-			echo 'start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
+			//echo 'start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
 			
 			$n = $st*10+$se;
 			$pos = $row['dest_traffic']*10+$row['dest_enter'];
 			
-				echo 't1 e4 w'.$t[14].' - ';
+				//echo 't1 e4 w'.$t[14].' - ';
 			if($t[$pos] > $t[$n]+$row['weight']) {
-				echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
+				//echo 'update node:'.$t[$pos].' -> '.$t[$n]+$row['weight'];
 				
 				$t[$pos] = $t[$n]+$row['weight'];
 				checkW($row['dest_traffic'], $row['dest_enter'], $dt, $de, $tab+1);
 			}
-			else echo 'node:'.$t[$pos];	
+			//else echo 'node:'.$t[$pos];	
 		}
 		
 		$dest = $dt*10+$de;
@@ -71,11 +71,11 @@
 
 	while($row = mysqli_fetch_assoc($result)){
 		//print_r($row);
-		echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
+		//echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
 
 		$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 
-		echo '<br><br> cost='.$cost.' <br><br>';
+		//echo '<br><br> cost='.$cost.' <br><br>';
 		if($cost < $mincost) {
 			$maxcost = $cost;
 			$traffic = $row['traffic'];
@@ -101,7 +101,7 @@
 			'".$row["light07"]."', '".$row["light08"]."', '".$row["light09"]."',
 			'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
 		);";
-	echo ' / '.$sql.' / ';
+	//echo ' / '.$sql.' / ';
 	$result = mysqli_query($conn, $sql);
 
 	mysqli_close($conn);
