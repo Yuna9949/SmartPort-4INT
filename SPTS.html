@@ -973,13 +973,13 @@
 						var ts = document.getElementById('updating').innerText;
 						if(ts == "success" && this.stop >= 1) {
 							alert("checked");
-							traffic_status[this.t_light_num] = this.num;
-							this.stop++;
+							traffic_status[this.t_light_num] = this.num;			
+							mysql_conn();
+							this.stop++;		
 						}
 						
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1 && this.stop == 10) {						
-							mysql_conn();
+						if(this.status == 0 && this.t_light == -1 && this.stop == 5) {	
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							// get traffic light
