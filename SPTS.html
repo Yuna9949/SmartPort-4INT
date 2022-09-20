@@ -963,7 +963,6 @@
 							// set traffic light
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
 							traffic_status[this.t_light_num] = this.num;
-							
 						}
 						
 						
@@ -979,7 +978,7 @@
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							// get traffic light
-							this.t_light = light[this.t_light_num];
+							if(traffic_status[this.t_light_num] == this.num) this.t_light = light[this.t_light_num];
 							
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
@@ -1016,7 +1015,7 @@
 						}
 						
 						// turn with traffic light
-						if(this.t_light > 0 && this.enter == 1 && traffic_status[this.t_light_num] == this.num) {
+						if(this.t_light > 0 && this.enter == 1) {
 							if	(this.t_light ==  1) { // up right
 								this.status = 1;
 								if(u_middle)		this.turn--;
@@ -1042,7 +1041,7 @@
 								}
 							}
 						}
-						if(this.t_light > 0 && this.enter == 2 && traffic_status[this.t_light_num] == this.num) {
+						if(this.t_light > 0 && this.enter == 2) {
 							if	(this.t_light ==  4) { // right up
 								this.status = 2;
 								if(r_middle)		this.turn--;
@@ -1068,7 +1067,7 @@
 								}
 							}
 						}
-						if(this.t_light > 0 && this.enter == 3 && traffic_status[this.t_light_num] == this.num) {
+						if(this.t_light > 0 && this.enter == 3) {
 							if	(this.t_light ==  7) { // down left
 								this.status = 3;
 								if(d_middle)		this.turn--;
@@ -1094,7 +1093,7 @@
 								}
 							}
 						}
-						if(this.t_light > 0 && this.enter == 4 && traffic_status[this.t_light_num] == this.num) {
+						if(this.t_light > 0 && this.enter == 4) {
 							if	(this.t_light == 10) { // left down
 								this.status = 4;
 								if(l_middle)		this.turn--;
@@ -1120,7 +1119,7 @@
 								}
 							}
 						}
-						if(this.t_light > 0 && this.enter == 5 && traffic_status[this.t_light_num] == this.num) {
+						if(this.t_light > 0 && this.enter == 5) {
 							if	(this.t_light == 13) { // right up
 								this.status = 2;
 								if(r_middle)		this.turn--;
@@ -1154,7 +1153,7 @@
 								if(this.turn == 0.1) this.status = 2;
 							} 
 						}
-						if(this.t_light > 0 && this.enter == 6 && traffic_status[this.t_light_num] == this.num) {
+						if(this.t_light > 0 && this.enter == 6) {
 							if	(this.t_light == 16) { // left down
 								this.status = 4;
 								if(l_middle)		this.turn--;
