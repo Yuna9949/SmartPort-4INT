@@ -87,8 +87,8 @@
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	
-	if($dt > 9) $row["light".$dt] = $traffic;
-	else	    $row["light0".$dt] = $traffic;
+	if($dt > 9) $row["light".$start_traffic] = $traffic;
+	else	    $row["light0".$start_traffic] = $traffic;
 
 	$sql = "INSERT INTO traffic (
 			light01, light02, light03, 
