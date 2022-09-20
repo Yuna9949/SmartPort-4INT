@@ -961,16 +961,15 @@
 							}
 							
 							// set traffic light
+							document.getElementById('updating').innerText = "loading";
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
-							traffic_status[this.t_light_num] = this.num;
-							alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter);
+							//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter);
 						}
 						
-						
-						
-						
-						
-						
+						var ts = document.getElementById('updating').innerText;
+						if(ts == "success") {
+							traffic_status[this.t_light_num] = this.num;
+						}
 						
 						// get traffic light
 						if(this.status == 0 && this.t_light == -1) {						
@@ -1502,6 +1501,7 @@
 						<div class="title">
 							설정 제어판
 							<i class="output" id="outputt">no data input</i>
+							<i class="output" id="updating">loading</i>
 						</div>
 						<div class="controlpanel">
 							<table class="tblayout">
@@ -1687,6 +1687,9 @@
 				},
 				dataType: 'json',
 				success: function(data) {
+					if(data.success == true) {
+						$("#updating").text("success");
+					}
 				}
 			} );
 		}
