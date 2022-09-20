@@ -484,6 +484,7 @@
 						this.dest = 0;
 						this.dest_enter = 0;
 						this.t_light_num = 0;
+						this.stop = 0;
 						
 						// warning
 						this.warnu = 0;
@@ -861,7 +862,7 @@
 						}
 						
 						// set traffic light by way
-						if(this.status == 0 && this.t_light == -1) {
+						if(this.status == 0 && this.t_light == -1 && this.stop == 0) {
 							
 							// light  1
 							if((this.dbx == 2 && this.dby == 5) || // up
@@ -960,6 +961,8 @@
 								this.t_light_num = 12;
 							}
 							
+							this.stop = 1;
+							
 							// set traffic light
 							document.getElementById('updating').innerText = "loading";
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter);
@@ -972,7 +975,7 @@
 						}
 						
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1) {						
+						if(this.status == 0 && this.t_light == -1 && this.stop == 1) {						
 							mysql_conn();
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
@@ -1005,6 +1008,8 @@
 							else if	(this.t_light == 16)	this.turn = 2;
 							else if	(this.t_light == 17)	this.turn = 1;
 							else if	(this.t_light == 18)	this.turn = 3;
+							
+							this.stop = 0;
 						}
 						
 						// reset traffic light
