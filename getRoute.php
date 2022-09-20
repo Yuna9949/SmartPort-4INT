@@ -55,10 +55,10 @@
 		return $c;
 	}
 
-	$start_traffic = 2;//$_GET['start_traffic'];
-	$start_enter = 4;//$_GET['start_enter'];
-	$dest_traffic = 1;//$_GET['dest_traffic'];
-	$dest_enter = 4;//$_GET['dest_enter'];
+	$start_traffic = $_GET['start_traffic'];
+	$start_enter = $_GET['start_enter'];
+	$dest_traffic = $_GET['dest_traffic'];
+	$dest_enter = $_GET['dest_enter'];
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
 	$sql = "SELECT * FROM map WHERE start_traffic='".$start_traffic."' AND start_enter='".$start_enter."' ORDER BY dest_enter;";
