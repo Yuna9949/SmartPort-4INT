@@ -80,7 +80,7 @@
 			$maxcost = $cost;
 			$traffic = $row['traffic'];
 		}
-		echo 'maxcost='.$maxcost.' / traffic='.$traffic;
+		echo 'maxcost='.$maxcost.' / traffic='.$traffic.'<br><br>';
 	}
 
 	$sql = "SELECT * FROM traffic ORDER BY time DESC";
