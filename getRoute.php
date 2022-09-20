@@ -79,15 +79,15 @@
 		if($cost < $mincost) {
 			$maxcost = $cost;
 			$traffic = $row['traffic'];
-			$dt = $row['dest_traffic'];
 		}
+		echo 'maxcost='.$maxcost.' / traffic='.$traffic;
 	}
 
 	$sql = "SELECT * FROM traffic ORDER BY time DESC";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	
-	if($dt > 9) $row["light".$start_traffic] = $traffic;
+	if($start_traffic > 9) $row["light".$start_traffic] = $traffic;
 	else	    $row["light0".$start_traffic] = $traffic;
 
 	$sql = "INSERT INTO traffic (
