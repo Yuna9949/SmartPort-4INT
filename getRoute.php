@@ -8,9 +8,9 @@
 		$result = mysqli_query($conn, $sql);
 		
 		while($row = mysqli_fetch_assoc($result)){
-			//echo '<br>';
+			echo '<br>';
 			for($i = 0; $i < $tab; $i = $i + 1) {
-				//echo '-';
+				echo '-';
 			}
 			echo 'start node:'.$st.' '.$se.' - neighber node:'.$row['dest_traffic'].' '.$row['dest_enter'].' - ';
 			
