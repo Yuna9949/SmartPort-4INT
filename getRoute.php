@@ -4,7 +4,7 @@
 		global $t;
 		
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
-		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."';";
+		$sql = "SELECT * FROM map WHERE start_traffic='".$st."' AND start_enter='".$se."' ORDER BY dest_enter;";
 		$result = mysqli_query($conn, $sql);
 		
 		while($row = mysqli_fetch_assoc($result)){
