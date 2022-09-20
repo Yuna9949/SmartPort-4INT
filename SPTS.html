@@ -972,6 +972,7 @@
 						
 						var ts = document.getElementById('updating').innerText;
 						if(ts == "success") {
+							alert("checked");
 							traffic_status[this.t_light_num] = this.num;
 						}
 						
@@ -981,7 +982,10 @@
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							// get traffic light
-							if(traffic_status[this.t_light_num] == this.num) this.t_light = light[this.t_light_num];
+							if(traffic_status[this.t_light_num] == this.num) {
+								this.t_light = light[this.t_light_num];
+								this.stop = 0;
+							}
 							
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
@@ -1009,8 +1013,6 @@
 							else if	(this.t_light == 16)	this.turn = 2;
 							else if	(this.t_light == 17)	this.turn = 1;
 							else if	(this.t_light == 18)	this.turn = 3;
-							
-							this.stop = 0;
 						}
 						
 						// reset traffic light
