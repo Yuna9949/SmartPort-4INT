@@ -223,7 +223,6 @@
 					"SkyBlue", "Blue", "Navy", "Purple", "Gray", "Black"];
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
 			var crain_status = [0, 0, 0, 0, 0];
-			var traffic_status = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 			var traffic_stop = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 			
 			// show senario
@@ -457,29 +456,29 @@
 				
 				
 				// show traffic sign for
-				ctx.fillStyle = color_st[traffic_status[1]];
+				ctx.fillStyle = color_st[traffic_stop[1]];
 				ctx.fillRect(2.5*road+1,	 2.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[4]];
+				ctx.fillStyle = color_st[traffic_stop[4]];
 				ctx.fillRect(2.5*road+1,	 8.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[7]];
+				ctx.fillStyle = color_st[traffic_stop[7]];
 				ctx.fillRect(2.5*road+1,	14.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[10]];
+				ctx.fillStyle = color_st[traffic_stop[10]];
 				ctx.fillRect(2.5*road+1,	20.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[2]];
+				ctx.fillStyle = color_st[traffic_stop[2]];
 				ctx.fillRect(3.5*road+wth/2+1,	 2.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[5]];
+				ctx.fillStyle = color_st[traffic_stop[5]];
 				ctx.fillRect(3.5*road+wth/2+1,	 8.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[8]];
+				ctx.fillStyle = color_st[traffic_stop[8]];
 				ctx.fillRect(3.5*road+wth/2+1,	14.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[11]];
+				ctx.fillStyle = color_st[traffic_stop[11]];
 				ctx.fillRect(3.5*road+wth/2+1,	20.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[3]];
+				ctx.fillStyle = color_st[traffic_stop[3]];
 				ctx.fillRect(4.5*road+wth+1,	 2.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[6]];
+				ctx.fillStyle = color_st[traffic_stop[6]];
 				ctx.fillRect(4.5*road+wth+1,	 8.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[9]];
+				ctx.fillStyle = color_st[traffic_stop[9]];
 				ctx.fillRect(4.5*road+wth+1,	14.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_status[12]];
+				ctx.fillStyle = color_st[traffic_stop[12]];
 				ctx.fillRect(4.5*road+wth+1,	20.5*road, 1*road-2, 1*road);
 			}
 			
@@ -1030,13 +1029,9 @@
 							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
-						
-						if(this.stop == 3*this.speed && traffic_stop[this.t_light_num] == this.num) {
-							traffic_status[this.t_light_num] = this.num;	
-						}
 												
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
+						if(this.status == 0 && this.t_light == -1 && this.stop == 4*this.speed && traffic_stop[this.t_light_num] == this.num) {	
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							// get traffic light
@@ -1077,7 +1072,7 @@
 							else if	(this.t_light == 17)	this.turn = 1;
 							else if	(this.t_light == 18)	this.turn = 3;
 							
-							//alert("c : "+this.num+" t_light : "+this.t_light+" turn : "+this.turn);
+							alert("c : "+this.num+" t_light : "+this.t_light+" turn : "+this.turn);
 						}
 						
 						if(this.stop >= 3*road && traffic_stop[this.t_light_num] == this.num) {
