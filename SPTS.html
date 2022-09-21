@@ -922,12 +922,8 @@
 							}
 						}
 						
-						if(this.status == 0 && this.t_light == -1 && this.stop == 0 && traffic_stop[this.t_light_num] == 0) {
-							traffic_stop[this.t_light_num] = this.num;
-						}
-						
 						// set traffic light by way
-						if(this.status == 0 && this.t_light == -1 && this.stop == 0 && traffic_stop[this.t_light_num] == this.num) {
+						if(this.status == 0 && this.t_light == -1 && this.stop == 0) {
 							
 							// light  1
 							if((this.dbx == 2 && this.dby == 5) || // up
@@ -1026,13 +1022,18 @@
 								this.t_light_num = 12;
 							}
 							
-							this.stop = this.speed;
+							if(traffic_stop[this.t_light_num] == 0) {
+								traffic_stop[this.t_light_num] = this.num;
 							
-							// set traffic light
-							document.getElementById('updating'+this.num).innerText = "loading";
-							//alert("c : "+this.num+" loading");
-							getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
-							//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
+								this.stop = this.speed;
+							
+								// set traffic light
+								document.getElementById('updating'+this.num).innerText = "loading";
+								//alert("c : "+this.num+" loading");
+								getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
+								//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
+						
+							}
 						}
 						
 						// update traffic light
