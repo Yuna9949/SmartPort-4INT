@@ -1064,19 +1064,19 @@
 							else if	(this.t_light ==  9)	{this.turn = 4; this.turnCnt = 3;}
 							else if	(this.t_light == 10)	{this.turn = 2; this.turnCnt = 2;}
 							else if	(this.t_light == 11)	{this.turn = 1; this.turnCnt = 3;}
-							else if	(this.t_light == 12)	{this.turn = 2; this.turnCnt = 2;}
+							else if	(this.t_light == 12)	{this.turn = 2; this.turnCnt = 2.5;}
 							
 							else if	(this.t_light == 13)	{this.turn = 2; this.turnCnt = 4;}
 							else if	(this.t_light == 14)	{this.turn = 1; this.turnCnt = 1;}
 							else if	(this.t_light == 15)	{this.turn = 3; this.turnCnt = 3;}
-							else if	(this.t_light == 16)	{this.turn = 2; this.turnCnt = 3;}
+							else if	(this.t_light == 16)	{this.turn = 2; this.turnCnt = 1;}
 							else if	(this.t_light == 17)	{this.turn = 1; this.turnCnt = 1;}
 							else if	(this.t_light == 18)	{this.turn = 3; this.turnCnt = 3;}
 							
 							alert("c : "+this.num+" t_light : "+this.t_light+" turn : "+this.turn);
 						}
 						
-						if(this.stop >= this.turnCnt*road && traffic_stop[this.t_light_num] == this.num) {
+						if(this.stop >= 3*road && traffic_stop[this.t_light_num] == this.num) {
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
 						}
