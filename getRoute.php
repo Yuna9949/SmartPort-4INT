@@ -208,4 +208,8 @@
 		$data = true;
 		echo $data;
 	}
+	else {
+		$data = false;
+		echo $data;
+	}
 ?>
