@@ -83,16 +83,16 @@
 		// chose way
 		while($row = mysqli_fetch_assoc($result)){
 			//print_r($row);
-			echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
+			//echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
 
 			$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 
-			echo '<br><br> cost='.$cost.' <br><br>';
+			//echo '<br><br> cost='.$cost.' <br><br>';
 			if($cost < $mincost) {
 				$mincost = $cost;
 				$traffic = $row['traffic'];
 			}
-			echo 'maxcost='.$mincost.' / traffic='.$traffic.'<br><br>';
+			//echo 'maxcost='.$mincost.' / traffic='.$traffic.'<br><br>';
 		}
 
 		// change weight at passed road
@@ -193,5 +193,4 @@
 		$data = true;
 		echo $data;
 	}
-	
 ?>
