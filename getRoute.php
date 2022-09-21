@@ -130,7 +130,7 @@
 			
 			
 			$row = mysqli_fetch_assoc($result);
-			$downWeight = $row['weight']-1;
+			$downWeight = $row['weight'];
 			
 			$sql = "UPDATE map 
 				SET weight='".$downWeight."' 
