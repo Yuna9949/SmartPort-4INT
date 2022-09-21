@@ -1025,9 +1025,9 @@
 							
 							// set traffic light
 							document.getElementById('updating').innerText = "loading";
-							//alert("loading");
+							alert("c : "+this.num+"loading");
 							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
-							//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
+							alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
 						
 							this.b_light = this.t_light_num;
 							this.b_enter = this.enter;
@@ -1036,7 +1036,7 @@
 						// update traffic light
 						var ts = document.getElementById('updating').innerText;
 						if(ts == "success" && this.stop >= 1) {
-							//alert("checked");
+							alert("c : "+this.num+"checked");
 							traffic_status[this.t_light_num] = this.num;			
 							mysql_conn();
 							this.stop++;		
@@ -1774,7 +1774,7 @@
 				success: function(data) {
 					if(data == true) {
 						$("#updating").text("success");
-						//alert("success");
+						alert("success");
 					}
 				}
 			} );
