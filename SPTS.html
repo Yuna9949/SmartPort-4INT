@@ -1025,9 +1025,9 @@
 							
 							// set traffic light
 							document.getElementById('updating'+this.num).innerText = "loading";
-							alert("c : "+this.num+" loading");
+							//alert("c : "+this.num+" loading");
 							getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
-							alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
+							//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
 						
 							this.b_light = this.t_light_num;
 							this.b_enter = this.enter;
@@ -1036,7 +1036,7 @@
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed) {
-							alert("c : "+this.num+" checked");		
+							//alert("c : "+this.num+" checked");		
 							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
@@ -1051,7 +1051,7 @@
 							
 							// get traffic light
 							if(traffic_status[this.t_light_num] == this.num) {
-								alert("c : "+this.num+" updated");
+								//alert("c : "+this.num+" updated");
 								this.t_light = light[this.t_light_num];
 							}
 							
@@ -1791,7 +1791,7 @@
 				success: function(data) {
 					if(data == num) {
 						$("#updating"+num).text("success");
-						alert("success");
+						//alert("success");
 					}
 				}
 			} );
