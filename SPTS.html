@@ -1024,9 +1024,9 @@
 							this.stop = this.speed;
 							
 							// set traffic light
-							document.getElementById('updating').innerText = "loading";
+							document.getElementById('updating'+this.num).innerText = "loading";
 							alert("c : "+this.num+" loading");
-							getRoute(this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
+							getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
 							alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
 						
 							this.b_light = this.t_light_num;
@@ -1034,7 +1034,7 @@
 						}
 						
 						// update traffic light
-						var ts = document.getElementById('updating').innerText;
+						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed) {
 							alert("c : "+this.num+" checked");		
 							mysql_conn();
@@ -1266,9 +1266,6 @@
 								if(this.turn == 0.1) this.status = 4;
 							}
 						}
-						
-						alert("c : "+this.num+" status : "+this.status);
-						
 						
 						// change the location
 						if	(this.status == 1 && this.warnu == 0) { // up
@@ -1584,7 +1581,16 @@
 						<div class="title">
 							설정 제어판
 							<i class="output" id="outputt">no data input</i>
-							<i class="output" id="updating">start</i>
+							<i class="output" id="updating1">start</i>
+							<i class="output" id="updating2">start</i>
+							<i class="output" id="updating3">start</i>
+							<i class="output" id="updating4">start</i>
+							<i class="output" id="updating5">start</i>
+							<i class="output" id="updating6">start</i>
+							<i class="output" id="updating7">start</i>
+							<i class="output" id="updating8">start</i>
+							<i class="output" id="updating9">start</i>
+							<i class="output" id="updating10">start</i>
 						</div>
 						<div class="controlpanel">
 							<table class="tblayout">
@@ -1768,11 +1774,12 @@
 		}
 		
 		// get route
-		function getRoute(st, se, dt, de, bt, be) {
+		function getRoute(num, st, se, dt, de, bt, be) {
 			$.ajax( {
 				url: "getRoute.php",
 				type: "GET",
 				data: {
+					number : num,
 					start_traffic : st,
 					start_enter : se,
 					dest_traffic : dt,
@@ -1782,8 +1789,8 @@
 				},
 				dataType: 'json',
 				success: function(data) {
-					if(data == true) {
-						$("#updating").text("success");
+					if(data == num) {
+						$("#updating"+num).text("success");
 						alert("success");
 					}
 				}
