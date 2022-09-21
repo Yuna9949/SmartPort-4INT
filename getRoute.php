@@ -65,6 +65,13 @@
 	$before_traffic = $_GET['before_traffic'];
 	$before_enter = $_GET['before_enter'];
 
+	if($before_enter == 5) {
+		$before_enter = 2;
+	}
+	else if($before_enter == 6) {
+		$before_enter = 4;
+	}
+
 	if($start_traffic != $before_traffic && $start_enter != $before_enter) {
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
