@@ -1036,9 +1036,6 @@
 							//alert("c : "+this.num+" loading");
 							getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, this.b_light, this.b_enter);
 							//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter+" b : "+this.b_light+" be : "+this.b_enter);
-						
-							this.b_light = this.t_light_num;
-							this.b_enter = this.enter;
 						}
 						
 						// update traffic light
@@ -1059,7 +1056,11 @@
 							
 							// get traffic light
 							this.t_light = light[this.t_light_num];
-							if(this.t_light == 0) this.stop = this.stop - this.speed;
+							if(this.t_light == 0) this.stop = 0;
+							else {
+								this.b_light = this.t_light_num;
+								this.b_enter = this.enter;
+							}
 							
 							// up right 1 / up left 2 / up up 3
 							// right up 4 / right down 5 / right right 6
