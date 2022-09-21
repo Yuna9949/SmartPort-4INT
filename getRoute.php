@@ -128,9 +128,9 @@
 				AND dest_traffic='".$start_traffic."' 
 				AND dest_enter='".$start_e."';";
 			
-			
+			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_assoc($result);
-			$downWeight = $row['weight'];
+			$downWeight = $row['weight'] - 1;
 			
 			$sql = "UPDATE map 
 				SET weight='".$downWeight."' 
