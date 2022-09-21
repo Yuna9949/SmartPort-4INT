@@ -1036,10 +1036,13 @@
 						// update traffic light
 						var ts = document.getElementById('updating').innerText;
 						if(ts == "success" && this.stop >= 1) {
-							//alert("c : "+this.num+"checked");
-							traffic_status[this.t_light_num] = this.num;			
+							alert("c : "+this.num+"checked");		
 							mysql_conn();
 							this.stop++;		
+						}
+						
+						if(this.stop == 4) {
+							traffic_status[this.t_light_num] = this.num;	
 						}
 						
 						if(this.stop == 10) {
