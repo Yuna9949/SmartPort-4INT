@@ -65,7 +65,22 @@
 	$before_traffic = $_GET['before_traffic'];
 	$before_enter = $_GET['before_enter'];
 
-	if($start_traffic != $before_traffic && $start_enter != $before_enter) {
+	$start_e = $start_enter;
+	if($start_enter == 5) {
+		$start_e = 2;
+	}
+	if($start_enter == 6) {
+		$start_e = 4;
+	}
+	$before_e = $before_enter;
+	if($before_enter == 5) {
+		$before_e = 2;
+	}
+	if($before_enter == 6) {
+		$before_e = 4;
+	}
+
+	if($start_traffic != $before_traffic && $start_e != $before_e) {
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
@@ -96,20 +111,6 @@
 		}
 
 		// change weight at passed road
-		$start_e = $start_enter;
-		if($start_enter == 5) {
-			$start_e = 2;
-		}
-		if($start_enter == 6) {
-			$start_e = 4;
-		}
-		$before_e = $before_enter;
-		if($before_enter == 5) {
-			$before_e = 2;
-		}
-		if($before_enter == 6) {
-			$before_e = 4;
-		}
 		if($before_traffic == 0) {
 			$sql = "UPDATE map 
 				SET weight='1'
