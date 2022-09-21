@@ -224,6 +224,7 @@
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
 			var crain_status = [0, 0, 0, 0, 0];
 			var traffic_status = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+			var traffic_stop = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 			
 			// show senario
 			function show_senario() {
@@ -865,6 +866,7 @@
 							this.x = this.tll+this.sizex/2;
 							this.t_light = -1;
 							this.enter = 6;
+							traffic_stop[this.t_light_num] = this.num;
 						}
 						else if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
 							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
@@ -873,6 +875,7 @@
 									this.y = this.tlu+this.sizey/2;
 									this.t_light = -1;
 									this.enter = 1;
+									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 						}
@@ -883,6 +886,7 @@
 									this.y = this.tld-this.sizey/2;
 									this.t_light = -1;
 									this.enter = 3;
+									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 						}
@@ -893,6 +897,7 @@
 									this.x = this.tlr-this.sizex/2;
 									this.t_light = -1;
 									this.enter = 2;
+									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 							else if	(this.dby == 4 || this.dby == 9 || this.dby == 14) {
@@ -901,6 +906,7 @@
 									this.x = this.tlr-this.sizex/2;
 									this.t_light = -1;
 									this.enter = 5;
+									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 							else if	(this.dby == 2 || this.dby == 7 || this.dby == 12 || this.dby == 17) {
@@ -909,6 +915,7 @@
 									this.x = this.tll+this.sizex/2;
 									this.t_light = -1;
 									this.enter = 4;
+									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 							else if	(this.dby == 6 || this.dby == 11 || this.dby == 16) {
@@ -917,12 +924,13 @@
 									this.x = this.tll+this.sizex/2;
 									this.t_light = -1;
 									this.enter = 6;
+									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 						}
 						
 						// set traffic light by way
-						if(this.status == 0 && this.t_light == -1 && this.stop == 0) {
+						if(this.status == 0 && this.t_light == -1 && this.stop == 0 && traffic_stop[this.t_light_num] == this.num) {
 							
 							// light  1
 							if((this.dbx == 2 && this.dby == 5) || // up
@@ -1035,18 +1043,18 @@
 						
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
-						if(ts == "success" && this.stop >= this.speed) {
+						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
 							//alert("c : "+this.num+" checked");		
 							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
 						
-						if(this.stop == 3*this.speed) {
+						if(this.stop == 3*this.speed && traffic_stop[this.t_light_num] == this.num) {
 							traffic_status[this.t_light_num] = this.num;	
 						}
 												
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed) {	
+						if(this.status == 0 && this.t_light == -1 && this.stop >= 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							// get traffic light
@@ -1083,8 +1091,9 @@
 							else if	(this.t_light == 18)	this.turn = 3;
 						}
 						
-						if(this.stop >= 2*road) {
+						if(this.stop >= 2*road && traffic_stop[this.t_light_num] == this.num) {
 							this.stop = 0;
+							traffic_stop[this.t_light_num] = 0;
 						}
 						
 						// reset traffic light
