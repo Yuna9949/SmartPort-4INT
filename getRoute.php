@@ -57,7 +57,8 @@
 		
 		return $c;
 	}
-
+	
+	$number = $_GET['number'];
 	$start_traffic = $_GET['start_traffic'];
 	$start_enter = $_GET['start_enter'];
 	$dest_traffic = $_GET['dest_traffic'];
@@ -201,6 +202,6 @@
 
 	mysqli_close($conn);
 
-	$data = true;
+	$data = $number;
 	echo $data;
 ?>
