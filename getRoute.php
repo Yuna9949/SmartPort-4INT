@@ -205,11 +205,7 @@
 
 		mysqli_close($conn);
 
-		$data = true;
-		echo $data;
 	}
-	else {
-		$data = false;
-		echo $data;
-	}
+	$data = true;
+	echo $data;
 ?>
