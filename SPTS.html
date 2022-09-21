@@ -866,7 +866,6 @@
 							this.x = this.tll+this.sizex/2;
 							this.t_light = -1;
 							this.enter = 6;
-							traffic_stop[this.t_light_num] = this.num;
 						}
 						else if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
 							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
@@ -875,7 +874,6 @@
 									this.y = this.tlu+this.sizey/2;
 									this.t_light = -1;
 									this.enter = 1;
-									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 						}
@@ -886,7 +884,6 @@
 									this.y = this.tld-this.sizey/2;
 									this.t_light = -1;
 									this.enter = 3;
-									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 						}
@@ -897,7 +894,6 @@
 									this.x = this.tlr-this.sizex/2;
 									this.t_light = -1;
 									this.enter = 2;
-									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 							else if	(this.dby == 4 || this.dby == 9 || this.dby == 14) {
@@ -906,7 +902,6 @@
 									this.x = this.tlr-this.sizex/2;
 									this.t_light = -1;
 									this.enter = 5;
-									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 							else if	(this.dby == 2 || this.dby == 7 || this.dby == 12 || this.dby == 17) {
@@ -915,7 +910,6 @@
 									this.x = this.tll+this.sizex/2;
 									this.t_light = -1;
 									this.enter = 4;
-									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
 							else if	(this.dby == 6 || this.dby == 11 || this.dby == 16) {
@@ -924,9 +918,12 @@
 									this.x = this.tll+this.sizex/2;
 									this.t_light = -1;
 									this.enter = 6;
-									traffic_stop[this.t_light_num] = this.num;
 								}
 							}
+						}
+						
+						if(this.status == 0 && this.t_light == -1 && this.stop == 0 && traffic_stop[this.t_light_num] == 0) {
+							traffic_stop[this.t_light_num] = this.num;
 						}
 						
 						// set traffic light by way
