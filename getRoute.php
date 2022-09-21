@@ -83,16 +83,16 @@
 		// chose way
 		while($row = mysqli_fetch_assoc($result)){
 			//print_r($row);
-			//echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
+			echo ''.$row['dest_traffic'].' / '.$row['dest_enter'].'';
 
 			$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 
-			//echo '<br><br> cost='.$cost.' <br><br>';
+			echo '<br><br> cost='.$cost.' <br><br>';
 			if($cost < $mincost) {
 				$mincost = $cost;
 				$traffic = $row['traffic'];
 			}
-			//echo 'maxcost='.$mincost.' / traffic='.$traffic.'<br><br>';
+			echo 'maxcost='.$mincost.' / traffic='.$traffic.'<br><br>';
 		}
 
 		// change weight at passed road
@@ -103,6 +103,8 @@
 				AND start_enter='1' 
 				AND dest_traffic='".$start_traffic."' 
 				AND dest_enter='".$start_enter."';";
+			
+			$result = mysqli_query($conn, $sql);
 		}
 		else {
 			$sql = "SELECT * FROM map 
@@ -111,7 +113,7 @@
 				AND dest_traffic='".$start_traffic."' 
 				AND dest_enter='".$start_enter."';";
 			
-			$result = mysqli_query($conn, $sql);
+			
 			$row = mysqli_fetch_assoc($result);
 			$downWeight = $row['weight']-1;
 			
