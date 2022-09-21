@@ -5,7 +5,7 @@
 
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-		$sql = "SELECT * FROM crain WHERE loaded='0' AND senario='".$senario."' AND num='".$num."' ORDER BY time ASC;";
+		$sql = "SELECT * FROM crain WHERE loaded='0' AND senario='".$senario."' AND num='".$num."' ORDER BY rand();"; // ORDER BY time ASC;";
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
