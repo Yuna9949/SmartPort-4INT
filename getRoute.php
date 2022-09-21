@@ -145,19 +145,19 @@
 		// change weight road that will go
 		$dest_t = 0;
 		$dest_e = 0;
-		if($traffic == 3 || $traffic == 4 || $traffic == 11) { // up
+		if($traffic == 3 || $traffic == 4 || $traffic == 11 || $traffic == 13 || $traffic == 17) { // up
 			$dest_t = $start_traffic - 3;
 			$dest_e = 1;
 		}
-		else if($traffic == 1 || $traffic == 6 || $traffic == 8) { // right
+		else if($traffic == 1 || $traffic == 6 || $traffic == 8 || $traffic == 15) { // right
 			$dest_t = $start_traffic + 1;
 			$dest_e = 2;
 		}
-		else if($traffic == 5 || $traffic == 9 || $traffic == 10) { // down
+		else if($traffic == 5 || $traffic == 9 || $traffic == 10 || $traffic == 14 || $traffic == 16) { // down
 			$dest_t = $start_traffic + 3;
 			$dest_e = 3;
 		}
-		else if($traffic == 2 || $traffic == 7 || $traffic == 12) { // left
+		else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18) { // left
 			$dest_t = $start_traffic - 1;
 			$dest_e = 4;
 		}
