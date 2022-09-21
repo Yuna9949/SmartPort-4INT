@@ -228,6 +228,7 @@
 			// show senario
 			function show_senario() {
 				// reset
+				resetDB();
 				drawMap();
 				document.getElementById("carnum").style.pointerEvents = "auto";
 				truck = [null,null,null,null,null,null,null,null,null,null,null];
@@ -484,7 +485,6 @@
 			var stopani = null;
 			
 			function start() {
-				resetDB();
 				
 				document.getElementById("senarioslct").style.pointerEvents = "none";
 				document.getElementById("carnum").style.pointerEvents = "none";
