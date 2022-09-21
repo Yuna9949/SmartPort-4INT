@@ -1041,7 +1041,10 @@
 							
 							// get traffic light
 							this.t_light = light[this.t_light_num];
-							if(this.t_light == 0) this.stop = 0;
+							if(this.t_light == 0) {
+								this.stop = 0;
+								traffic_stop[this.t_light_num] = 0;
+							}
 							else {
 								this.b_light = this.t_light_num;
 								this.b_enter = this.enter;
