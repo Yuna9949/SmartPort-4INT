@@ -484,6 +484,8 @@
 			var stopani = null;
 			
 			function start() {
+				resetDB();
+				
 				document.getElementById("senarioslct").style.pointerEvents = "none";
 				document.getElementById("carnum").style.pointerEvents = "none";
 				
@@ -1645,6 +1647,16 @@
 	</body>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script>
+		// reset database
+		function resetDB() {
+			$.ajax( {
+				url: "resetDB.php",
+				type: "GET",
+				success: function(data) {
+				}
+			} );
+		}
+		
 		// get traffic light data
 		function mysql_conn() {
 			$.ajax( {
