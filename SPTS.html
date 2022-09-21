@@ -248,6 +248,13 @@
 					document.getElementById("s2c"+c).innerText = "";
 					document.getElementById("s3c"+c).innerText = "";
 					document.getElementById("s4c"+c).innerText = "";
+					
+					if(c == 12 || c == 10 || c == 9 || c == 8) {
+						document.getElementById("s1c"+c).style.color = "white";
+						document.getElementById("s2c"+c).style.color = "white";
+						document.getElementById("s3c"+c).style.color = "white";
+						document.getElementById("s4c"+c).style.color = "white";
+					}
 				}
 				
 				// show senario in detail
