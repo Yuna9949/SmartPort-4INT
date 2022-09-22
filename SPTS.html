@@ -1743,9 +1743,9 @@
 						        contact[lightnum[i]] == 18)  									document.getElementById(lightid[i]).innerHTML = left;
 						
 						else if(contact[lightnum[i]] == 21)									document.getElementById(lightid[i]).innerHTML = stopu;
-						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr
-						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd
-						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl
+						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr;
+						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd;
+						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl;
 					}
 				}
 			} );
@@ -1825,7 +1825,6 @@
 				success: function(data) {
 					if(data == num) {
 						$("#updating"+num).text("start");
-						//alert("success");
 					}
 				}
 			} );
