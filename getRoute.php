@@ -63,8 +63,6 @@
 	$start_enter = $_GET['start_enter'];
 	$dest_traffic = $_GET['dest_traffic'];
 	$dest_enter = $_GET['dest_enter'];
-	$before_traffic = $_GET['before_traffic'];
-	$before_enter = $_GET['before_enter'];
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
@@ -92,92 +90,6 @@
 		//echo 'maxcost='.$mincost.' / traffic='.$traffic.'<br><br>';
 	}
 
-	// change weight at passed road
-	$start_e = $start_enter;
-	if($start_enter == 5) {
-		$start_e = 2;
-	}
-	if($start_enter == 6) {
-		$start_e = 4;
-	}
-	$before_e = $before_enter;
-	if($before_enter == 5) {
-		$before_e = 2;
-	}
-	if($before_enter == 6) {
-		$before_e = 4;
-	}
-		
-	if($before_traffic == 0) {
-		$sql = "UPDATE map 
-			SET weight='1'
-			WHERE start_traffic='3'
-			AND start_enter='1' 
-			AND dest_traffic='".$start_traffic."' 
-			AND dest_enter='".$start_e."';";
-		
-		$result = mysqli_query($conn, $sql);
-	}
-	else {
-		$sql = "SELECT * FROM map 
-			WHERE start_traffic='".$before_traffic."' 
-			AND start_enter='".$before_e."' 
-			AND dest_traffic='".$start_traffic."' 
-			AND dest_enter='".$start_e."';";
-			
-		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_assoc($result);
-		$downWeight = $row['weight'] - 1;
-		
-		$sql = "UPDATE map 
-			SET weight='".$downWeight."' 
-			WHERE start_traffic='".$before_traffic."' 
-			AND start_enter='".$before_e."' 
-			AND dest_traffic='".$start_traffic."' 
-			AND dest_enter='".$start_e."';";
-			
-		$result = mysqli_query($conn, $sql);
-	}
-		
-	// change weight road that will go
-	$dest_t = 0;
-	$dest_e = 0;
-	if($traffic == 3 || $traffic == 4 || $traffic == 11 || $traffic == 13 || $traffic == 17) { // up
-		$dest_t = $start_traffic - 3;
-		$dest_e = 1;
-	}
-	else if($traffic == 1 || $traffic == 6 || $traffic == 8 || $traffic == 15) { // right
-		$dest_t = $start_traffic + 1;
-		$dest_e = 2;
-	}
-	else if($traffic == 5 || $traffic == 9 || $traffic == 10 || $traffic == 14 || $traffic == 16) { // down
-		$dest_t = $start_traffic + 3;
-		$dest_e = 3;
-	}
-	else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18) { // left
-		$dest_t = $start_traffic - 1;
-		$dest_e = 4;
-	}
-	
-	$sql = "SELECT * FROM map 
-		WHERE start_traffic='".$start_traffic."' 
-		AND start_enter='".$start_e."' 
-		AND dest_traffic='".$dest_t."' 
-		AND dest_enter='".$dest_e."';";
-	
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	$upWeight = $row['weight'] + 1;
-	
-	$sql = "UPDATE map 
-		SET weight='".$upWeight."' 
-		WHERE start_traffic='".$start_traffic."' 
-		AND start_enter='".$start_e."' 
-		AND dest_traffic='".$dest_t."' 
-		AND dest_enter='".$dest_e."';";
-	
-	$result = mysqli_query($conn, $sql);
-	
 	// update traffic
 	$sql = "SELECT * FROM traffic ORDER BY time DESC";
 	$result = mysqli_query($conn, $sql);
