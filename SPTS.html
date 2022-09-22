@@ -1029,20 +1029,19 @@
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
-							alert("c : "+this.num+" 4");
 							//alert("c : "+this.num+" checked"+" stop : "+this.stop);	
 							this.stop = this.stop+this.speed;		
 						}
 												
 						// get traffic light
 						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
-							alert("c : "+this.num+" 5");
+							alert("c : "+this.num+" 4");
 														
 							// get traffic light
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							this.t_light = light[this.t_light_num];
 							if(this.t_light == 0 || this.t_light > 20) {
-								alert("c : "+this.num+" 5-1");
+								alert("c : "+this.num+" 4-1");
 								this.stop = 0;
 								//alert("retry");
 							}
@@ -1089,7 +1088,7 @@
 						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
-							alert("c : "+this.num+" 6");
+							alert("c : "+this.num+" 5");
 							//alert("ts : "+traffic_stop[this.t_light_num]+" out");
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
