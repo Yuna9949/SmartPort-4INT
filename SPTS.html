@@ -535,6 +535,7 @@
 						this.t_light = 0;
 						this.turn = 0;
 						this.enter = 0;
+						this.turnCnt = 0;
 						
 						// destination
 						this.dest = 0;
@@ -1064,48 +1065,25 @@
 							else if	(this.t_light == 17)	this.turn = 1;
 							else if	(this.t_light == 18)	this.turn = 3;
 							
-							//alert("c : "+this.num+" t_light : "+this.t_light+" turn : "+this.turn);
+							if(this.t_light == 14 || this.t_light == 17)	this.turnCnt = 2;
+							if(this.t_light == 15 || this.t_light == 18)	this.turnCnt = 3;
+							if(this.t_light == 1 || this.t_light == 5 || 
+							   this.t_light == 6 || this.t_light == 7 || 
+							   this.t_light == 11 || this.t_light == 12)	this.turnCnt = 4;
+							if(this.t_light == 2 || this.t_light == 3 ||
+							   this.t_light == 4 || this.t_light == 8 ||
+							   this.t_light == 9 || this.t_light == 10)	this.turnCnt = 5;
+							if(this.t_light == 13 || this.t_light == 16)	this.turnCnt = 5;
+							
+							alert("c : "+this.num+" t_light : "+this.t_light+" turnCnt : "+this.turnCnt);
 						}
 						
-						if(this.stop >= 5*road && traffic_stop[this.t_light_num] == this.num) {
+						if(this.turnCnt > 0; this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
 							alert("stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
+							this.turnCnt = 0;
 						}
-						
-						/*
-						if((this.t_light == 14 || this.t_light == 17) &&
-						    this.stop >= 1*road && traffic_stop[this.t_light_num] == this.num) {
-							alert("14 17 stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
-							this.stop = 0;
-							traffic_stop[this.t_light_num] = 0;
-						}
-						else if((this.t_light == 15 || this.t_light == 18) &&
-						         this.stop >= 3*road && traffic_stop[this.t_light_num] == this.num) {
-							alert("15 18 stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
-							this.stop = 0;
-							traffic_stop[this.t_light_num] = 0;
-						}
-						else if((this.t_light == 1 || this.t_light == 5 || this.t_light == 6 || 
-							 this.t_light == 7 || this.t_light == 11 || this.t_light == 12) &&
-						         this.stop >= 2*road && traffic_stop[this.t_light_num] == this.num) {
-							alert("1 5 6 7 11 12 stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
-							this.stop = 0;
-							traffic_stop[this.t_light_num] = 0;
-						}
-						else if((this.t_light == 2 || this.t_light == 3 || this.t_light == 4 || 
-							 this.t_light == 8 || this.t_light == 9 || this.t_light == 10) &&
-							 this.stop >= 4*road && traffic_stop[this.t_light_num] == this.num) {
-							alert("2 3 4 8 9 10 stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
-							this.stop = 0;
-							traffic_stop[this.t_light_num] = 0;
-						}
-						else if((this.t_light == 13 || this.t_light == 16) &&
-						         this.stop >= 4*road && traffic_stop[this.t_light_num] == this.num) {
-							alert("13 16 stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
-							this.stop = 0;
-							traffic_stop[this.t_light_num] = 0;
-						}*/
 						
 						// reset traffic light
 						if(this.turn == 0) {
