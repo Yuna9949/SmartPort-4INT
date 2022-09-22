@@ -1021,14 +1021,14 @@
 						
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
-						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
+						if((ts == "success" || ts == "updated") && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
 							//alert("c : "+this.num+" checked");	
 							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
 												
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
+						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num && ts == "updated") {	
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							alert("c : "+this.num+" t_light1 : "+this.t_light+" turnCnt : "+this.turnCnt);
@@ -1079,6 +1079,7 @@
 							alert("c : "+this.num+" t_light2 : "+this.t_light+" turnCnt : "+this.turnCnt);
 						}
 						
+						// turn off the traffic light of num
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
 							alert("ts : "+traffic_stop[this.t_light_num]+" out");
 							this.stop = 0;
@@ -1267,7 +1268,7 @@
 						}
 						
 						if(this.stop == this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
-						if(this.stop == 10*this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
+						if(this.stop == 15*this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
 						
 						// change the location
 						if	(this.status == 1 && this.warnu == 0) { // up
@@ -1699,7 +1700,16 @@
 					var right	= "<img src='go.png'   width='45%' style='transform:rotate(  0deg);'/>";
 					var down	= "<img src='go.png'   width='45%' style='transform:rotate( 90deg);'/>";
 					var left	= "<img src='go.png'   width='45%' style='transform:rotate(180deg);'/>";
-					var stay 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
+					
+					var stayU 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
+					var stayR 	= "<img src='stay.png' width='45%' style='transform:rotate(  0deg);'/>";
+					var stayD 	= "<img src='stay.png' width='45%' style='transform:rotate( 90deg);'/>";
+					var stayL 	= "<img src='stay.png' width='45%' style='transform:rotate(180deg);'/>";
+					
+					var stopU 	= "<img src='stop.png' width='45%' style='transform:rotate(270deg);'/>";
+					var stopR 	= "<img src='stop.png' width='45%' style='transform:rotate(  0deg);'/>";
+					var stopD 	= "<img src='stop.png' width='45%' style='transform:rotate( 90deg);'/>";
+					var stopL 	= "<img src='stop.png' width='45%' style='transform:rotate(180deg);'/>";
           
 					// up 3 4 11 13 17
 					// right 1 6 8 15
@@ -1718,7 +1728,7 @@
 						       "l10", "l11", "l12"];
 					
 					for(var i = 1; i < lightid.length; i++) {
-						if     (contact[lightnum[i]] == 0)   									document.getElementById(lightid[i]).innerHTML = stay;
+						if     (contact[lightnum[i]] == 0)   									document.getElementById(lightid[i]).innerHTML = stayU;
 						
 						else if(contact[lightnum[i]] ==  3 || contact[lightnum[i]] ==  4 || contact[lightnum[i]] == 11 ||
 						        contact[lightnum[i]] == 13 || contact[lightnum[i]] == 17)  					document.getElementById(lightid[i]).innerHTML = up;
@@ -1731,6 +1741,7 @@
 						
 						else if(contact[lightnum[i]] ==  2 || contact[lightnum[i]] ==  7 || contact[lightnum[i]] == 12 ||
 						        contact[lightnum[i]] == 18)  									document.getElementById(lightid[i]).innerHTML = left;
+						$("#updating"+i).text("updated");
 					}
 				}
 			} );
