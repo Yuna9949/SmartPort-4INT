@@ -1044,7 +1044,11 @@
 								//alert("c : "+this.num+" 4-1");
 								this.stop = 0;
 								document.getElementById('updating'+this.num).innerText = "start";
+								document.getElementById('l'+this.t_light_num).style.border = "1px solid red"
 								//alert("retry");
+							}
+							else {
+								document.getElementById('l'+this.t_light_num).style.border = "1px solid white"
 							}
 							
 							// up right 1 / up left 2 / up up 3
