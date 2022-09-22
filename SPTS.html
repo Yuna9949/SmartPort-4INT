@@ -1022,13 +1022,14 @@
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
-							//alert("c : "+this.num+" checked");		
+							//alert("c : "+this.num+" checked");	
+							light[this.t_light_num] = 0;
 							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
 												
 						// get traffic light
-						if(this.status == 0 && this.t_light == -1 && this.stop == 4*this.speed && traffic_stop[this.t_light_num] == this.num) {	
+						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
 							alert("c : "+this.num+" t_light1 : "+this.t_light+" turnCnt : "+this.turnCnt);
