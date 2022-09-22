@@ -1027,7 +1027,6 @@
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
 							alert("c : "+this.num+" checked"+" stop : "+this.stop);	
-							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
 												
@@ -1089,7 +1088,6 @@
 							this.turnCnt = 0;
 							
 							insertStop(this.num, this.t_light_num);
-							mysql_conn();
 						}
 						
 						// reset traffic light
@@ -1411,6 +1409,7 @@
 				
 				function animate() {
 					drawMap();
+					mysql_conn();
 						
 					for(var i = 1; i <= numcar; i++) {
 						truck[i].check();
