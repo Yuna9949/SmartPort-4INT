@@ -1091,6 +1091,11 @@
 							//alert("c : "+this.num+" t_light : "+this.t_light+" turnCnt : "+this.turnCnt);
 						}
 						
+						// stop traffic light
+						if(this.turnCnt > 0 && this.stop == road*(this.turnCnt-1) && traffic_stop[this.t_light_num] == this.num) {
+							insertStop(this.num, this.t_light_num);
+						}
+						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
 							//alert("c : "+this.num+" 5");
