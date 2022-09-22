@@ -1079,7 +1079,7 @@
 						}
 						
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
-							//alert("stop : "+this.stop+" ts : "+traffic_stop[this.t_light_num]);
+							alert("ts : "+traffic_stop[this.t_light_num]+" out");
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
 							this.turnCnt = 0;
