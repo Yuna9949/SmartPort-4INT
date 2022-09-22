@@ -1745,7 +1745,9 @@
 						else if(contact[lightnum[i]] == 21)									document.getElementById(lightid[i]).innerHTML = stopu;
 						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr;
 						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd;
-						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl;
+						else if(contact[lightnum[i]] == 24)									{document.getElementById(lightid[i]).innerHTML = stopl;
+							alert("stopl");
+						}
 					}
 				}
 			} );
