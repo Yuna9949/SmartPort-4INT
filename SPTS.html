@@ -1012,7 +1012,7 @@
 							
 								// set traffic light
 								document.getElementById('updating'+this.num).innerText = "loading";
-								//alert("c : "+this.num+" loading");
+								alert("c : "+this.num+" loading");
 								getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter);
 								//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter);
 						
@@ -1022,7 +1022,7 @@
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
-							//alert("c : "+this.num+" checked");	
+							alert("c : "+this.num+" checked");	
 							mysql_conn();
 							this.stop = this.stop+this.speed;		
 						}
