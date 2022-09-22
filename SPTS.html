@@ -1026,7 +1026,7 @@
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
-							//alert("c : "+this.num+" checked"+" stop : "+this.stop);	
+							alert("c : "+this.num+" checked"+" stop : "+this.stop);	
 							this.stop = this.stop+this.speed;		
 						}
 												
@@ -1036,10 +1036,8 @@
 							// get traffic light
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							this.t_light = light[this.t_light_num];
-							if(this.t_light == 0 || this.t_light > 20) {
+							if(this.t_light == 0) {
 								this.stop = 0;
-								this.t_light = -1;
-								alert("retry");
 							}
 							
 							// up right 1 / up left 2 / up up 3
@@ -1272,7 +1270,7 @@
 							}
 						}
 						
-						//if(this.stop == this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
+						if(this.stop == this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
 						if(this.stop == 10*this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
 						
 						// change the location
@@ -1590,10 +1588,10 @@
 						<div class="title">
 							설정 제어판
 							<i class="output" id="outputt">no data input</i>
-							<i class="output" id="updating1">start</i>
-							<i class="output" id="updating2">start</i>
-							<i class="output" id="updating3">start</i>
-							<i class="output" id="updating4">start</i>
+							<i id="updating1">start</i>
+							<i id="updating2">start</i>
+							<i id="updating3">start</i>
+							<i id="updating4">start</i>
 							<i class="output" id="updating5">start</i>
 							<i class="output" id="updating6">start</i>
 							<i class="output" id="updating7">start</i>
@@ -1747,7 +1745,9 @@
 						else if(contact[lightnum[i]] == 21)									document.getElementById(lightid[i]).innerHTML = stopu;
 						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr;
 						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd;
-						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl;
+						else if(contact[lightnum[i]] == 24)									{document.getElementById(lightid[i]).innerHTML = stopl;
+							alert("stopl");
+						}
 					}
 				}
 			} );
