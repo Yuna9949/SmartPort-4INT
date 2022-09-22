@@ -1038,6 +1038,7 @@
 							this.t_light = light[this.t_light_num];
 							if(this.t_light == 0 || this.t_light > 20) {
 								this.stop = 0;
+								this.t_light = -1;
 								alert("retry");
 							}
 							
@@ -1272,7 +1273,7 @@
 						}
 						
 						//if(this.stop == this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
-						//if(this.stop == 10*this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
+						if(this.stop == 10*this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
 						
 						// change the location
 						if	(this.status == 1 && this.warnu == 0) { // up
