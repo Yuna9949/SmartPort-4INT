@@ -1097,7 +1097,7 @@
 						}
 						
 						// turn off traffic light
-						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
+						if(this.turnCnt > 0 && this.stop >= road*(this.turnCnt+1) && traffic_stop[this.t_light_num] == this.num) {
 							//alert("c : "+this.num+" 5");
 							//alert("ts : "+traffic_stop[this.t_light_num]+" out");
 							this.stop = 0;
