@@ -17,11 +17,11 @@
 	if($traffic == 3 || $traffic == 4 || $traffic == 11 || $traffic == 13 || $traffic == 17)
 		$traffic = 21;
 	else if($traffic == 1 || $traffic == 6 || $traffic == 8 || $traffic == 15)
-		$traffic == 22;
+		$traffic = 22;
 	else if($traffic == 5 || $traffic == 9 || $traffic == 10 || $traffic == 14 || $traffic == 16)
-		$traffic == 23;
+		$traffic = 23;
 	else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18)
-		$traffic == 24;
+		$traffic = 24;
 
 	if($traffic_light > 9) 	$row["light".$traffic_light] = $traffic;
 	else	    		$row["light0".$traffic_light] = $traffic;
