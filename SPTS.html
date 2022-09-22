@@ -1015,7 +1015,7 @@
 								if(document.getElementById('updating'+this.num).innerText == "start") {
 									this.stop = this.speed;
 									document.getElementById('updating'+this.num).innerText = "loading";
-									//alert("c : "+this.num+" loading");
+									alert("c : "+this.num+" loading");
 									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter);
 									//alert("c : "+this.num+" s : "+this.t_light_num+" e : "+this.enter+" d : "+this.dest+" de : "+this.dest_enter);
 								}
@@ -1077,12 +1077,12 @@
 							   this.t_light == 9 || this.t_light == 10)	this.turnCnt = 5;
 							if(this.t_light == 13 || this.t_light == 16)	this.turnCnt = 6;
 							
-							//alert("c : "+this.num+" t_light : "+this.t_light+" turnCnt : "+this.turnCnt);
+							alert("c : "+this.num+" t_light : "+this.t_light+" turnCnt : "+this.turnCnt);
 						}
 						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
-							//alert("ts : "+traffic_stop[this.t_light_num]+" out");
+							alert("ts : "+traffic_stop[this.t_light_num]+" out");
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
 							this.turnCnt = 0;
