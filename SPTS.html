@@ -1004,7 +1004,7 @@
 								this.t_light_num = 12;
 							}
 							
-							if(traffic_stop[this.t_light_num] == 0) {
+							if(traffic_stop[this.t_light_num] == 0 || traffic_stop[this.t_light_num] == this.num) {
 								traffic_stop[this.t_light_num] = this.num;
 							
 								this.stop = this.speed;
