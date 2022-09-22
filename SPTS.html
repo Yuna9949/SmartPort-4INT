@@ -1031,6 +1031,8 @@
 						if(this.status == 0 && this.t_light == -1 && this.stop == 4*this.speed && traffic_stop[this.t_light_num] == this.num) {	
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							
+							alert("c : "+this.num+" t_light1 : "+this.t_light+" turnCnt : "+this.turnCnt);
+							
 							// get traffic light
 							this.t_light = light[this.t_light_num];
 							if(this.t_light == 0) {
@@ -1074,7 +1076,7 @@
 							   this.t_light == 9 || this.t_light == 10)	this.turnCnt = 5;
 							if(this.t_light == 13 || this.t_light == 16)	this.turnCnt = 6;
 							
-							alert("c : "+this.num+" t_light : "+this.t_light+" turnCnt : "+this.turnCnt);
+							alert("c : "+this.num+" t_light2 : "+this.t_light+" turnCnt : "+this.turnCnt);
 						}
 						
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
