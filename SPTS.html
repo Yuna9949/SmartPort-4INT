@@ -1698,6 +1698,11 @@
 					var down	= "<img src='go.png'   width='45%' style='transform:rotate( 90deg);'/>";
 					var left	= "<img src='go.png'   width='45%' style='transform:rotate(180deg);'/>";
 					var stay 	= "<img src='stay.png' width='45%' style='transform:rotate(270deg);'/>";
+					
+					var stopu	= "<img src='stop.png'   width='45%' style='transform:rotate(270deg);'/>";
+					var stopr	= "<img src='stop.png'   width='45%' style='transform:rotate(  0deg);'/>";
+					var stopd	= "<img src='stop.png'   width='45%' style='transform:rotate( 90deg);'/>";
+					var stopl	= "<img src='stop.png'   width='45%' style='transform:rotate(180deg);'/>";
           
 					// up 3 4 11 13 17
 					// right 1 6 8 15
@@ -1729,6 +1734,11 @@
 						
 						else if(contact[lightnum[i]] ==  2 || contact[lightnum[i]] ==  7 || contact[lightnum[i]] == 12 ||
 						        contact[lightnum[i]] == 18)  									document.getElementById(lightid[i]).innerHTML = left;
+						
+						else if(contact[lightnum[i]] == 21)									document.getElementById(lightid[i]).innerHTML = stopu;
+						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr
+						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd
+						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl
 					}
 				}
 			} );
