@@ -37,7 +37,6 @@
 			'".$row["light07"]."', '".$row["light08"]."', '".$row["light09"]."',
 			'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
 		);";
-	//echo ' / '.$sql.' / ';
 	$result = mysqli_query($conn, $sql);
 
 	mysqli_close($conn);
