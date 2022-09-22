@@ -907,7 +907,7 @@
 						
 						// set traffic light by way
 						if(this.status == 0 && this.t_light == -1 && this.stop == 0) {
-							alert("c : "+this.num+" 1");
+							//alert("c : "+this.num+" 1");
 							
 							// light  1
 							if((this.dbx == 2 && this.dby == 5) || // up
@@ -1008,14 +1008,14 @@
 							
 							// get route
 							if(traffic_stop[this.t_light_num] == 0 || traffic_stop[this.t_light_num] == this.num) {
-								alert("c : "+this.num+" 2");
+								//alert("c : "+this.num+" 2");
 								traffic_stop[this.t_light_num] = this.num;
 							
 								
 							
 								// set traffic light
 								if(document.getElementById('updating'+this.num).innerText == "start") {
-									alert("c : "+this.num+" 3");
+									//alert("c : "+this.num+" 3");
 									this.stop = this.speed;
 									document.getElementById('updating'+this.num).innerText = "loading";
 									//alert("c : "+this.num+" loading");
@@ -1035,13 +1035,13 @@
 												
 						// get traffic light
 						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
-							alert("c : "+this.num+" 4");
+							//alert("c : "+this.num+" 4");
 														
 							// get traffic light
 							var light = document.getElementById('outputt').innerHTML.split(" "); 
 							this.t_light = light[this.t_light_num];
 							if(this.t_light == 0 || this.t_light > 20) {
-								alert("c : "+this.num+" 4-1");
+								//alert("c : "+this.num+" 4-1");
 								this.stop = 0;
 								document.getElementById('updating'+this.num).innerText = "start";
 								//alert("retry");
@@ -1089,7 +1089,7 @@
 						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= (road*this.turnCnt) && traffic_stop[this.t_light_num] == this.num) {
-							alert("c : "+this.num+" 5");
+							//alert("c : "+this.num+" 5");
 							//alert("ts : "+traffic_stop[this.t_light_num]+" out");
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
