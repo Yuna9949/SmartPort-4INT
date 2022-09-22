@@ -1026,7 +1026,7 @@
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
-							alert("c : "+this.num+" checked"+" stop : "+this.stop);	
+							//alert("c : "+this.num+" checked"+" stop : "+this.stop);	
 							this.stop = this.stop+this.speed;		
 						}
 												
@@ -1745,9 +1745,7 @@
 						else if(contact[lightnum[i]] == 21)									document.getElementById(lightid[i]).innerHTML = stopu;
 						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr;
 						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd;
-						else if(contact[lightnum[i]] == 24)									{document.getElementById(lightid[i]).innerHTML = stopl;
-							alert("stopl");
-						}
+						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl;
 					}
 				}
 			} );
