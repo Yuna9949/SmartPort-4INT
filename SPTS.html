@@ -209,8 +209,11 @@
 				display : none;
 			}
 		</style>
-    
+    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script type="text/javascript">
+			var array = [];
+			var cycle = 0;
+			
 			// show input bar value
 			function show_carnn() {
 				document.getElementById("carshw").innerText = document.getElementById("carnum").value;
@@ -501,8 +504,7 @@
 			
 			var stopani = null;
 			
-			function start() {
-				
+			function start() {				
 				document.getElementById("senarioslct").style.pointerEvents = "none";
 				document.getElementById("carnum").style.pointerEvents = "none";
 				
@@ -568,6 +570,7 @@
 					}
 					update() {
 						this.speed = parseInt(document.getElementById("spdnum").value);
+						array.push({num:this.num, cycle:cycle, part:1, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						//get section position
 						if     (this.x >= 2*road       	&& this.x < 3*road      ) {this.dbx =  1; this.tll = 2*road;		this.tlr = 3*road;		}
@@ -600,6 +603,8 @@
 						else if(this.y >= 20*road 	&& this.y < 21*road 	) {this.dby = 17; this.tlu = 20*road; 		this.tld = 21*road;	}
 						else if(this.y >= 21*road 	&& this.y < 22*road 	) {this.dby = 18; this.tlu = 21*road; 		this.tld = 22*road;	}
 						else							  {this.dby =  0;							}
+						
+						array.push({num:this.num, cycle:cycle, part:2, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// get container
 						// container 0=defalut -1=waiting 1~12=container
@@ -642,6 +647,8 @@
 							}
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:3, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// check if middle of road
 						var u_middle = (this.tlu+this.tld)/2 <= this.y && (this.tlu+this.tld)/2 > this.y-this.speed;
 						var r_middle = (this.tll+this.tlr)/2 >= this.x && (this.tll+this.tlr)/2 < this.x+this.speed;
@@ -666,6 +673,8 @@
 							}
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:4, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// move on road
 						if	(this.dbx == 2 || this.dbx == 5 || this.dbx == 8) {
 							if(this.dby == 5 || this.dby == 10 || this.dby == 15) {
@@ -689,6 +698,8 @@
 							}
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:5, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						var beforeCrain = [0, 3.5*road+(wth/2-road)/4, 3.5*road+(wth/2-road)/4*3, 4.5*road+wth/2+(wth/2-road)/4, 4.5*road+wth/2+(wth/2-road)/4*3];
 						
 						// go to crain and get container
@@ -706,6 +717,8 @@
 							}
 							
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:6, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// load container
 						var senario = document.getElementById("senarioslct").selectedIndex+1;
@@ -735,10 +748,14 @@
 							}
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:7, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// go after load
 						if(this.container > 0 && this.dbx != 1 && this.dbx != 4 && this.dby == 1) {
 							this.status = 4;
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:8, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// off container
 						// move to side road
@@ -769,6 +786,8 @@
 						   (this.container == 12 && (this.dby == 16 || this.dby == 17)) )) {
 							this.status = 1;
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:9, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// go to deloading location
 						if(d_middle && this.dbx == 3 && (
@@ -807,6 +826,8 @@
 							if(this.warnl == 1) this.deloading+=this.speed;
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:10, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// deloading
 						if(beforeCrain[2] < this.x && this.dbx == 3 && (
 						   (this.container == 1  && this.dby == 4 ) ||
@@ -840,6 +861,8 @@
 							this.status = 0;
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:11, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// deload and go
 						if(this.container > 0 && this.deloading >= 300) {
 							var cupdate = document.getElementById("s"+this.ship+"c"+this.container).innerText;
@@ -850,6 +873,7 @@
 							this.ship = 0;
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:12, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// check if stop infront of traffic light
 						var u_stop = this.tlu+this.sizey/2 <= this.y && this.tlu+this.sizey/2 > this.y-this.speed;
@@ -921,6 +945,8 @@
 								}
 							}
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:13, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// set traffic light by way
 						if(this.status == 0 && this.t_light == -1 && this.stop == 0) {
@@ -1043,12 +1069,16 @@
 							}
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:14, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// update traffic light
 						var ts = document.getElementById('updating'+this.num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {
 							//alert("c : "+this.num+" checked"+" stop : "+this.stop);	
 							this.stop = this.stop+this.speed;		
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:15, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 												
 						// get traffic light
 						if(this.status == 0 && this.t_light == -1 && this.stop == 5*this.speed && traffic_stop[this.t_light_num] == this.num) {	
@@ -1108,10 +1138,14 @@
 							//alert("c : "+this.num+" t_light : "+this.t_light+" turnCnt : "+this.turnCnt);
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:16, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// stop traffic light
 						if(this.turnCnt > 0 && this.stop == road*(this.turnCnt-1) && traffic_stop[this.t_light_num] == this.num) {
 							insertStop(this.num, this.t_light_num);
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:17, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= road*(this.turnCnt+1) && traffic_stop[this.t_light_num] == this.num) {
@@ -1124,11 +1158,15 @@
 							insertStop(this.num, this.t_light_num);
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:18, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						// reset traffic light
 						if(this.turn == 0) {
 							this.t_light = 0;
 							this.enter = 0;
 						}
+						
+						array.push({num:this.num, cycle:cycle, part:19, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// turn with traffic light
 						if(this.t_light > 0 && this.enter == 1) {
@@ -1304,6 +1342,8 @@
 							}
 						}
 						
+						array.push({num:this.num, cycle:cycle, part:20, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+						
 						//if(this.stop == this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
 						//if(this.stop == 10*this.speed) alert(" ts : "+traffic_stop[this.t_light_num]+" stop : "+this.stop+" status : "+this.status);
 						
@@ -1340,6 +1380,8 @@
 							
 							this.x -= this.speed;
 						}		
+						
+						array.push({num:this.num, cycle:cycle, part:21, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						document.getElementById("outx"+this.num).innerText = this.x;
 						document.getElementById("outy"+this.num).innerText = this.y;
@@ -1432,6 +1474,7 @@
 					}
 						
 					for(var i = 1; i <= numcar; i++) {
+						cycle++;
 						truck[i].update();
 						truck[i].draw();
 					}
@@ -1446,6 +1489,18 @@
 			function stop() {
 				document.getElementById("senarioslct").style.pointerEvents = "auto";
 				cancelAnimationFrame(stopani);
+				for(var i=0; i<array.length; i++){
+					a += array[i].num + "," + array[i].cycle + "," + array[i].part + "," + array[i].x + "," + array[i].y + "," + array[i].dbx + "," + array[i].dby + "," + array[i].status + "," + array[i].crain + "," + array[i].container + "," + array[i].loading + "," + array[i].deloading + "," + array[i].ship + "," + array[i].t_light + "," + array[i].turn + "," + array[i].enter + "," + array[i].turnCnt + "," + array[i].dest + "," + array[i].dest_enter + "," + array[i].t_light_num + "," + array[i].stop + "," + array[i].warnu + "," + array[i].warnr + "," + array[i].warnd + "," + array[i].warnl + "\r\n";
+				}
+				array.push({num:this.num, cycle:cycle, part:21, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
+				var downloadLink = document.createElement("a");
+				var blob = new Blob([a], {type:"text/csv;charset=utf-8"});
+				var url = URL.createObjectURL(blob);
+				downloadLink.href = url;
+				downloadLink.download = "data.csv";
+				document.body.appendChild(downloadLink);
+				downloadLink.click();
+				document.body.removeChild(downloadLink);
 			}
 		</script>
     
