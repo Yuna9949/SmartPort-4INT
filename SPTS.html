@@ -1131,7 +1131,7 @@
 						// stop traffic light
 						if(this.turnCnt > 0 && this.stop == road*(this.turnCnt-1) && traffic_stop[this.t_light_num] == this.num) {
 							this.t_light = -10;
-							insertStop(this.num, this.t_light_num);
+							//insertStop(this.num, this.t_light_num);
 						}
 						
 						array.push({num:this.num, cycle:cycle, part:17, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
@@ -1143,7 +1143,7 @@
 							traffic_stop[this.t_light_num] = 0;
 							this.turnCnt = 0;
 							
-							//insertStop(this.num, this.t_light_num);
+							insertStop(this.num, this.t_light_num);
 							this.t_light_num = 0;
 						}
 						
