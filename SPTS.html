@@ -1114,7 +1114,7 @@
 							}
 							
 							// get route
-							if(traffic_stop[this.t_light_num] == 0 || traffic_stop[this.t_light_num] == this.num) {
+							if(this.t_light_num > 0 && (traffic_stop[this.t_light_num] == 0 || traffic_stop[this.t_light_num] == this.num)) {
 								traffic_stop[this.t_light_num] = this.num;
 							
 								// set traffic light
