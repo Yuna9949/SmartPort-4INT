@@ -2,7 +2,7 @@
 	function mysql_conn(){
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-		$sql = "SELECT * FROM traffic ORDER BY time DESC";
+		$sql = "SELECT * FROM get_traffic ORDER BY time DESC";
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
