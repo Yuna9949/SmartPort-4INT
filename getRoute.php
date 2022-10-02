@@ -114,6 +114,6 @@
 
 	mysqli_close($conn);
 
-	$data = $number;
+	$data = $start_traffic;
 	echo $data;
 ?>
