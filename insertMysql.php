@@ -26,6 +26,14 @@
         '$t10', '$t11', '$t12', NOW()
       );";
     mysqli_query($conn, $sql);
+    
+    $sql = "UPDATE get_traffic SET 
+        light01='$t1', light02='$t2', light03='$t3', 
+        light04='$t4', light05='$t5', light06='$t6', 
+        light07='$t7', light08='$t8', light09='$t9', 
+        light10='$t10', light11='$t11', light12='$t12';";
+    mysqli_query($conn, $sql);
+    
     mysqli_close($conn);
     
     $result['success'] = true;
