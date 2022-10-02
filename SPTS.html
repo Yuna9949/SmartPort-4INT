@@ -1523,7 +1523,7 @@
 				var park = 85;
 				init = () => {
 					for(var i = 1; i <= numcar; i++) {
-						truck[i] = new Truck(canvas.width-3*road, 3*road+i*park, i);
+						truck[i] = new Truck(canvas.width-2*road, 3*road+i*park, i);
 					}
 					
 					mysql_conn();
