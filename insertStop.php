@@ -41,6 +41,6 @@
 
 	mysqli_close($conn);
 
-	$data = $number;
+	$data = $traffic_light;
 	echo $data;
 ?>
