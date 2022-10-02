@@ -1428,7 +1428,7 @@
 						
 						if	(((this.status == 1 && this.warnu == 1) || (this.status == 2 && this.warnr == 1) ||
 							  (this.status == 3 && this.warnd == 1) || (this.status == 4 && this.warnl == 1))
-							 && this.stop >= this.speed)
+							 && this.stop > this.speed)
 							this.stop -= this.speed;
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:20, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
@@ -1464,12 +1464,12 @@
 							else if(this.front == 4)	ctx.fillRect(this.x+this.sizex/2-this.sizey/2, this.y-this.sizey/2, 2, this.sizey);
 						}
 						
-						/*
+						
 						if(this.warnu == 1)	ctx.fillRect(this.x-this.sizex/2, this.y-this.sizey/2-5, this.sizex, 5);
 						if(this.warnr == 1)	ctx.fillRect(this.x+this.sizex/2, this.y-this.sizey/2, 5, this.sizey);
 						if(this.warnd == 1)	ctx.fillRect(this.x-this.sizex/2, this.y+this.sizey/2, this.sizex, 5);
 						if(this.warnl == 1)	ctx.fillRect(this.x-this.sizex/2-5, this.y-this.sizey/2, 5, this.sizey);
-						*/
+						
 					}
 					check() {
 						this.warnu = 0;
@@ -1482,26 +1482,41 @@
 						var chy = null;
 						var thiscar = parseInt(this.num);
 						
-						for(var i = 1; i <= totalcarnum; i++) {
-							if(i != thiscar) {
-								chx = document.getElementById("outx"+i).innerText;
-								chy = document.getElementById("outy"+i).innerText;
-								if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {	
-									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y > chy) {
-										this.warnu = 1;
+						if((this.dbx == 1 || this.dbx == 2 || this.dbx == 4 || this.dbx == 5 || this.dbx == 7 || this.dbx == 8) &&
+						   (this.dby == 1 || this.dby == 2 || this.dby == 3 || this.dby == 4 ||
+						    this.dby == 6 || this.dby == 7 || this.dby == 8 || this.dby == 9 ||
+						    this.dby == 11|| this.dby == 12|| this.dby == 13|| this.dby == 14||
+						    this.dby == 16|| this.dby == 17|| this.dby == 18)) {
+							for(var i = 1; i <= totalcarnum; i++) {
+								if(i != thiscar) {
+									chx = document.getElementById("outx"+i).innerText;
+									chy = document.getElementById("outy"+i).innerText;
+									if((Math.abs(this.x - chx) < 2) && (Math.abs(this.y - chy) < this.sizey/2*3)) {
+										if(this.y > chy) { this.warnu = 1; }
+										if(this.y < chy) { this.warnd = 1; }
 									}
-									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x < chx) {
-										this.warnr = 1;
+									if((Math.abs(this.y - chy) < 2) && (Math.abs(this.x - chx) < this.sizex/2*3)) {
+										if(this.x > chx) { this.warnl = 1; }
+										if(this.x < chx) { this.warnr = 1; }
 									}
-									if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y < chy) {
-										this.warnd = 1;
-									}
-									if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x > chx) {
-										this.warnl = 1;
+							}
+						}
+						else {
+							for(var i = 1; i <= totalcarnum; i++) {
+								if(i != thiscar) {
+									chx = document.getElementById("outx"+i).innerText;
+									chy = document.getElementById("outy"+i).innerText;
+									if(Math.sqrt(Math.pow(Math.abs(this.x-chx), 2) + Math.pow(Math.abs(this.y-chy), 2)) < Math.max(this.sizex, this.sizey)/2*3) {	
+										if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y > chy) { this.warnu = 1; }
+										if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x < chx) { this.warnr = 1; }
+										if(this.x+this.sizex > chx && this.x-this.sizex < chx && this.y < chy) { this.warnd = 1; }
+										if(this.y+this.sizey > chy && this.y-this.sizey < chy && this.x > chx) { this.warnl = 1; }
 									}
 								}
 							}
 						}
+						
+						
 					}
 				}
 				
