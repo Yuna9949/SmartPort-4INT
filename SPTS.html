@@ -1122,7 +1122,7 @@
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
 									this.stop = this.speed;
 									document.getElementById('updating'+this.t_light_num).innerText = "loading";
-									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter);
+									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, logcheck);
 								}
 						
 							}
@@ -1202,7 +1202,7 @@
 							traffic_stop[this.t_light_num] = 0;
 							this.turnCnt = 0;
 							
-							insertStop(this.num, this.t_light_num);
+							insertStop(this.num, this.t_light_num, logcheck);
 							this.t_light_num = 0;
 						}
 						
@@ -1918,7 +1918,7 @@
 		}
 		
 		// get route
-		function getRoute(num, st, se, dt, de) {
+		function getRoute(num, st, se, dt, de, log) {
 			$.ajax( {
 				url: "getRoute.php",
 				type: "GET",
@@ -1927,7 +1927,8 @@
 					start_traffic : st,
 					start_enter : se,
 					dest_traffic : dt,
-					dest_enter : de
+					dest_enter : de,
+					logcheck : log
 				},
 				dataType: 'json',
 				success: function(data) {
@@ -1939,13 +1940,14 @@
 		}
 		
 		// stop route
-		function insertStop(num, tl) {
+		function insertStop(num, tl, log) {
 			$.ajax( {
 				url: "insertStop.php",
 				type: "GET",
 				data: {
 					number : num,
-					traffic_light : tl
+					traffic_light : tl,
+					logcheck : log
 				},
 				dataType: 'json',
 				success: function(data) {
