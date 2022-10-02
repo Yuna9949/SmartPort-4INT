@@ -17,5 +17,12 @@
 	$sql = "UPDATE map SET weight='1';";
 	$result = mysqli_query($conn, $sql);
 
+	$sql = "UPDATE get_traffic SET
+        		light01='0', light02='0', light03='0', 
+        		light04='0', light05='0', light06='0', 
+        		light07='0', light08='0', light09='0', 
+        		light10='0', light11='0', light12='0';";
+	$result = mysqli_query($conn, $sql);
+
 	mysqli_close($conn);
 ?>
