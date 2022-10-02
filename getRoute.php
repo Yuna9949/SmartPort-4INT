@@ -63,6 +63,7 @@
 	$start_enter = $_GET['start_enter'];
 	$dest_traffic = $_GET['dest_traffic'];
 	$dest_enter = $_GET['dest_enter'];
+	$logcheck = $_GET['logcheck'];
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
@@ -91,32 +92,35 @@
 	}
 
 	// update traffic
-	$sql = "SELECT * FROM traffic ORDER BY time DESC";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-
 	$lst="";
-	
+
 	if($start_traffic > 9)  $lst = "light".$start_traffic;
 	else	    		$lst = "light0".$start_traffic;
 
-	$row[$lst] = $traffic;
-	
-	$sql = "INSERT INTO traffic (
-			light01, light02, light03, 
-			light04, light05, light06, 
-			light07, light08, light09, 
-			light10, light11, light12, time
-		) VALUES (
-			'".$row["light01"]."', '".$row["light02"]."', '".$row["light03"]."',
-			'".$row["light04"]."', '".$row["light05"]."', '".$row["light06"]."',
-			'".$row["light07"]."', '".$row["light08"]."', '".$row["light09"]."',
-			'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
-		);";
-	//echo ' / '.$sql.' / ';
-	$result = mysqli_query($conn, $sql);
+	if($logcheck) {
+		$sql = "SELECT * FROM traffic ORDER BY time DESC";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
 
-	$sql = "UPDATE get_traffic SET ".$lst." = '".$row[$lst]."'"; 
+		$row[$lst] = $traffic;
+	
+	
+		$sql = "INSERT INTO traffic (
+				light01, light02, light03, 
+				light04, light05, light06, 
+				light07, light08, light09, 
+				light10, light11, light12, time
+			) VALUES (
+				'".$row["light01"]."', '".$row["light02"]."', '".$row["light03"]."',
+				'".$row["light04"]."', '".$row["light05"]."', '".$row["light06"]."',
+				'".$row["light07"]."', '".$row["light08"]."', '".$row["light09"]."',
+				'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
+			);";
+		//echo ' / '.$sql.' / ';
+		$result = mysqli_query($conn, $sql);
+	}
+
+	$sql = "UPDATE get_traffic SET ".$lst." = '".$traffic."';"; 
 	$result = mysqli_query($conn, $sql);
 
 	mysqli_close($conn);
