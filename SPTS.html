@@ -1016,7 +1016,6 @@
 						
 						// set traffic light by way
 						if(this.status == 0 && this.t_light == -1 && this.stop == 0) {
-							//alert("c : "+this.num+" 1");
 							
 							// light  1
 							if((this.dbx == 2 && this.dby == 5) || // up
@@ -1120,9 +1119,9 @@
 								traffic_stop[this.t_light_num] = this.num;
 							
 								// set traffic light
-								if(document.getElementById('updating'+this.num).innerText == "start") {
+								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
 									this.stop = this.speed;
-									document.getElementById('updating'+this.num).innerText = "loading";
+									document.getElementById('updating'+this.t_light_num).innerText = "loading";
 									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter);
 								}
 						
@@ -1132,7 +1131,7 @@
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:14, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// update traffic light
-						var ts = document.getElementById('updating'+this.num).innerText;
+						var ts = document.getElementById('updating'+this.t_light_num).innerText;
 						if(ts == "success" && this.stop >= this.speed && traffic_stop[this.t_light_num] == this.num) {	
 							this.stop = this.stop+this.speed;		
 						}
@@ -1147,7 +1146,7 @@
 							this.t_light = light[this.t_light_num];
 							if(this.t_light == 0 || this.t_light > 20) {
 								this.stop = 0;
-								document.getElementById('updating'+this.num).innerText = "start";
+								document.getElementById('updating'+this.t_light_num).innerText = "start";
 								document.getElementById('l'+this.t_light_num).style.border = "1px solid red"
 							}
 							else {
@@ -1709,7 +1708,6 @@
     									<span class="onf_btn"></span>
   								</label>
 							</div>
-							<i class="output" id="logdata">testing</i>
 							<i class="output" id="outputt">no data input</i>
 							<i class="output" id="updating1">start</i>
 							<i class="output" id="updating2">start</i>
@@ -1721,6 +1719,8 @@
 							<i class="output" id="updating8">start</i>
 							<i class="output" id="updating9">start</i>
 							<i class="output" id="updating10">start</i>
+							<i class="output" id="updating11">start</i>
+							<i class="output" id="updating12">start</i>
 						</div>
 						<div class="controlpanel">
 							<table class="tblayout">
@@ -1927,9 +1927,8 @@
 				},
 				dataType: 'json',
 				success: function(data) {
-					if(data == num) {
-						$("#updating"+num).text("success");
-						//alert("success");
+					if(data == st) {
+						$("#updating"+st).text("success");
 					}
 				}
 			} );
@@ -1946,8 +1945,8 @@
 				},
 				dataType: 'json',
 				success: function(data) {
-					if(data == num) {
-						$("#updating"+num).text("start");
+					if(data == tl) {
+						$("#updating"+tl).text("start");
 					}
 				}
 			} );
