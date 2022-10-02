@@ -199,7 +199,6 @@
 				text-align: center;
 				margin: 0 40px 0 0;
 				float: right;
-				background: #000;
 			}
 			#switch {
 				position: absolute;
@@ -634,7 +633,7 @@
 						this.warnl = 0;
 					}
 					update() {
-						document.getElementById("logdata").value = document.geElementById("switch").value;
+						//document.getElementById("logdata").value = document.geElementById("switch").value;
 						this.speed = parseInt(document.getElementById("spdnum").value);
 						array.push({num:this.num, cycle:cycle, part:1, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
@@ -1709,7 +1708,7 @@
     									<span class="onf_btn"></span>
   								</label>
 							</div>
-							<i class="output" id="logdata"></i>
+							<i class="output" id="logdata">testing</i>
 							<i class="output" id="outputt">no data input</i>
 							<i class="output" id="updating1">start</i>
 							<i class="output" id="updating2">start</i>
