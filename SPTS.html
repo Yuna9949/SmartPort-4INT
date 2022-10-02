@@ -1148,7 +1148,7 @@
 							this.t_light = light[this.t_light_num];
 							if(this.t_light == 0 || this.t_light > 20) {
 								this.stop = 0;
-								document.getElementById('updating'+this.num).innerText = "start";
+								document.getElementById('updating'+this.t_light_num).innerText = "start";
 								document.getElementById('l'+this.t_light_num).style.border = "1px solid red"
 							}
 							else {
@@ -1533,19 +1533,21 @@
 			function stop() {
 				document.getElementById("senarioslct").style.pointerEvents = "auto";
 				cancelAnimationFrame(stopani);
-				var a = "num,cycle,part,x,y,dbx,dby,status,crain,container,loading,deloading,ship,t_light,turn,enter,turnCnt,dest,dest_enter,t_light_num,stop,warnu,warnr,warnd,warnl\r\n";
-				for(var i=0; i<array.length; i++){
-					a += array[i].num + "," + array[i].cycle + "," + array[i].part + "," + array[i].x + "," + array[i].y + "," + array[i].dbx + "," + array[i].dby + "," + array[i].status + "," + array[i].crain + "," + array[i].container + "," + array[i].loading + "," + array[i].deloading + "," + array[i].ship + "," + array[i].t_light + "," + array[i].turn + "," + array[i].enter + "," + array[i].turnCnt + "," + array[i].dest + "," + array[i].dest_enter + "," + array[i].t_light_num + "," + array[i].stop + "," + array[i].warnu + "," + array[i].warnr + "," + array[i].warnd + "," + array[i].warnl + "\r\n";
-				}
+				if(logcheck) {
+					var a = "num,cycle,part,x,y,dbx,dby,status,crain,container,loading,deloading,ship,t_light,turn,enter,turnCnt,dest,dest_enter,t_light_num,stop,warnu,warnr,warnd,warnl\r\n";
+					for(var i=0; i<array.length; i++){
+						a += array[i].num + "," + array[i].cycle + "," + array[i].part + "," + array[i].x + "," + array[i].y + "," + array[i].dbx + "," + array[i].dby + "," + array[i].status + "," + array[i].crain + "," + array[i].container + "," + array[i].loading + "," + array[i].deloading + "," + array[i].ship + "," + array[i].t_light + "," + array[i].turn + "," + array[i].enter + "," + array[i].turnCnt + "," + array[i].dest + "," + array[i].dest_enter + "," + array[i].t_light_num + "," + array[i].stop + "," + array[i].warnu + "," + array[i].warnr + "," + array[i].warnd + "," + array[i].warnl + "\r\n";
+					}
 				
-				var downloadLink = document.createElement("a");
-				var blob = new Blob([a], {type:"text/csv;charset=utf-8"});
-				var url = URL.createObjectURL(blob);
-				downloadLink.href = url;
-				downloadLink.download = "data.csv";
-				document.body.appendChild(downloadLink);
-				downloadLink.click();
-				document.body.removeChild(downloadLink);
+					var downloadLink = document.createElement("a");
+					var blob = new Blob([a], {type:"text/csv;charset=utf-8"});
+					var url = URL.createObjectURL(blob);
+					downloadLink.href = url;
+					downloadLink.download = "data.csv";
+					document.body.appendChild(downloadLink);
+					downloadLink.click();
+					document.body.removeChild(downloadLink);
+				}
 			}
 		</script>
     
