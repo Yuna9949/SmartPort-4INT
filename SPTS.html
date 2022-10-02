@@ -1520,10 +1520,10 @@
 				}
 				
 				const numcar = document.getElementById("carnum").value;
-				var park = 100;
+				var park = 85;
 				init = () => {
 					for(var i = 1; i <= numcar; i++) {
-						truck[i] = new Truck(canvas.width-41, i*park, i);
+						truck[i] = new Truck(canvas.width-3*road, 3*road+i*park, i);
 					}
 					
 					mysql_conn();
