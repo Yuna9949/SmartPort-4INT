@@ -27,7 +27,7 @@
 	else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18)
 		$traffic = 24;
 
-	if($logcheck) {
+	if($logcheck != 'false') {
 		$row[$lst] = $traffic;
 
 		$sql = "INSERT INTO traffic (
