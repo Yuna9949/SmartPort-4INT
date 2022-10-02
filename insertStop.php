@@ -23,6 +23,8 @@
 	else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18)
 		$traffic = 24;
 
+	$lst="";
+
 	if($traffic_light > 9) 	$lst="light".$traffic_light;
 	else	    		$lst="light0".$traffic_light;
 	$row[$lst] = $traffic;
@@ -38,6 +40,9 @@
 			'".$row["light07"]."', '".$row["light08"]."', '".$row["light09"]."',
 			'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
 		);";
+	$result = mysqli_query($conn, $sql);
+
+	$sql = "UPDATE get_traffic SET ".$lst." = '".$row[$lst]."'"; 
 	$result = mysqli_query($conn, $sql);
 
 	mysqli_close($conn);
