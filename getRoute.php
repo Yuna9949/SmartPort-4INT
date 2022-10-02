@@ -95,8 +95,10 @@
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	
-	if($start_traffic > 9) $row["light".$start_traffic] = $traffic;
-	else	    $row["light0".$start_traffic] = $traffic;
+	if($start_traffic > 9)  $lst = "light".$start_traffic;
+	else	    		$lst = "light0".$start_traffic;
+
+	$row[$lst] = $traffic;
 	
 	$sql = "INSERT INTO traffic (
 			light01, light02, light03, 
@@ -110,6 +112,9 @@
 			'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
 		);";
 	//echo ' / '.$sql.' / ';
+	$result = mysqli_query($conn, $sql);
+
+	$sql = "UPDATE get_traffic SET ".$lst." = '".$row[$lst]."'"; 
 	$result = mysqli_query($conn, $sql);
 
 	mysqli_close($conn);
