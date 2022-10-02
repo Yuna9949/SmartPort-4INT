@@ -579,9 +579,6 @@
 				var road = canvas.height*0.045;
 				var wth  = canvas.width-8*road;
 				
-				var sizes = road*0.8;
-				var sizel = this.sizes/3*4;
-				
 				class Truck {
 					constructor(x, y, num) {
 						// location
@@ -592,8 +589,10 @@
 						this.num = num;
 						
 						// size
-						this.sizex = sizes;
-						this.sizey = sizel;
+						this.sizes = road*0.9;
+						this.sizel = this.sizes/3*5;
+						this.sizex = this.sizes;
+						this.sizey = this.sizel;
 						
 						// position detail
 						this.dbx = 0;
@@ -1396,32 +1395,32 @@
 						// change the location
 						if	(this.status == 1 && this.warnu == 0) { // up
 							
-							this.sizex = sizes;
-							this.sizey = sizel;
+							this.sizex = this.sizes;
+							this.sizey = this.sizel;
 							this.front = 1;
 							
 							this.y -= this.speed;
 						}
 						else if	(this.status == 2 && this.warnr == 0) { // right
 							
-							this.sizex = sizel;
-							this.sizey = sizes;
+							this.sizex = this.sizel;
+							this.sizey = this.sizes;
 							this.front = 2;
 							
 							this.x += this.speed;
 						}
 						else if	(this.status == 3 && this.warnd == 0) { // down
 							
-							this.sizex = sizes;
-							this.sizey = sizel;
+							this.sizex = this.sizes;
+							this.sizey = this.sizel;
 							this.front = 3;
 							
 							this.y += this.speed;
 						}
 						else if	(this.status == 4 && this.warnl == 0) { // left
 							
-							this.sizex = sizel;
-							this.sizey = sizes;
+							this.sizex = this.sizel;
+							this.sizey = this.sizes;
 							this.front = 4;
 							
 							this.x -= this.speed;
