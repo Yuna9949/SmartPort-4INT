@@ -97,7 +97,7 @@
 	if($start_traffic > 9)  $lst = "light".$start_traffic;
 	else	    		$lst = "light0".$start_traffic;
 
-	if($logcheck == true) {
+	if(false) {
 		$sql = "SELECT * FROM traffic ORDER BY time DESC";
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
