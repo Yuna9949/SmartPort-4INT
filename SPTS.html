@@ -217,8 +217,6 @@
 				border: 2px solid #aad;
 				border-radius: 15px;
 				transition: 0.2s;
-				color: #fefefe;
-				text-align: left;
 			}
 			.switch_label:hover {
 				background: #efefef;
@@ -233,6 +231,17 @@
 				border-radius: 15px;
 				background: #aad;
 				transition: 0.2s;
+			}
+			.onf_txt {
+				position: absolute;
+				top: 3px;
+				left: 40px;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				border-radius: 15px;
+				transition: 0.2s;
+				color: #aad;
 			}
 			/* checking style */
 			#switch:checked+.switch_label {
@@ -1694,7 +1703,7 @@
 							<div class="wrapper">
   								<input type="checkbox" id="switch">
   								<label for="switch" class="switch_label">
-									log
+									<span class="onf_txt">LOG</span>
     									<span class="onf_btn"></span>
   								</label>
 							</div>
