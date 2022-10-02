@@ -1121,7 +1121,7 @@
 								// set traffic light
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
 									this.stop = this.speed;
-									document.getElementById('updating'+this.num).innerText = "loading";
+									document.getElementById('updating'+this.t_light_num).innerText = "loading";
 									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter);
 								}
 						
