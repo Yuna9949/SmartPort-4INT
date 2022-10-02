@@ -23,8 +23,9 @@
 	else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18)
 		$traffic = 24;
 
-	if($traffic_light > 9) 	$row["light".$traffic_light] = $traffic;
-	else	    		$row["light0".$traffic_light] = $traffic;
+	if($traffic_light > 9) 	$lst="light".$traffic_light;
+	else	    		$lst="light0".$traffic_light;
+	$row[$lst] = $traffic;
 
 	$sql = "INSERT INTO traffic (
 			light01, light02, light03, 
