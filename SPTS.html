@@ -1132,7 +1132,7 @@
 							if(this.t_light_num > 0 && (traffic_stop[this.t_light_num] == 0 || traffic_stop[this.t_light_num] == this.num)) {
 								traffic_stop[this.t_light_num] = this.num;
 								
-								if(this.current != 0) resetWeight(this.current, this.current_enter, road, wth);
+								if(this.current != 0) resetWeight(this.current, this.current_enter, road, (wth-2*road)/2);
 							
 								// set traffic light
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
@@ -1542,7 +1542,7 @@
 					for(var i = 1; i <= numcar; i++) {
 						truck[i] = new Truck(canvas.width-road, 3*road+i*park, i);
 					}
-					initWeight(road, wth);
+					initWeight(road, (wth-2*road)/2);
 					mysql_conn();
 				}
 				
