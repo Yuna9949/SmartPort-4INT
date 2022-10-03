@@ -778,12 +778,12 @@
 						if(this.crain != 0 && this.crain > 0 && this.loading < 300) {
 							if(this.dby == 2 && beforeCrain[this.crain]+2*road > this.x) {
 								this.status = 1; // up
+								this.current = 0;
+								this.current_enter = 0;
 							}
 							if(this.dby == 1 && u_middle) {
 								this.y = (this.tlu+this.tld)/2;
 								this.status = 4; // left
-								this.current = 0;
-								this.current_enter = 0;
 							}
 							if(this.dby == 1 && beforeCrain[this.crain]+road/2 > this.x) {
 								this.status = 0; // stop
@@ -838,6 +838,8 @@
 						   (this.container == 5  && (this.dby == 8  || this.dby == 9 )) ||
 						   (this.container == 9  && (this.dby == 13 || this.dby == 14)) )) {
 							this.status = 3;
+							this.current = 0;
+							this.current_enter = 0;
 						}
 						
 						if(beforeCrain[2] > this.x && this.dbx == 3 && (
@@ -845,6 +847,8 @@
 						   (this.container == 6  && (this.dby == 11 || this.dby == 12)) ||
 						   (this.container == 10 && (this.dby == 16 || this.dby == 17)) )) {
 							this.status = 1;
+							this.current = 0;
+							this.current_enter = 0;
 						}
 						
 						if(beforeCrain[3] < this.x && this.dbx == 6 && (
@@ -852,6 +856,8 @@
 						   (this.container == 7  && (this.dby == 8  || this.dby == 9 )) ||
 						   (this.container == 11 && (this.dby == 13 || this.dby == 14)) )) {
 							this.status = 3;
+							this.current = 0;
+							this.current_enter = 0;
 						}
 						
 						if(beforeCrain[4] > this.x && this.dbx == 6 && (
@@ -859,6 +865,8 @@
 						   (this.container == 8  && (this.dby == 11 || this.dby == 12)) ||
 						   (this.container == 12 && (this.dby == 16 || this.dby == 17)) )) {
 							this.status = 1;
+							this.current = 0;
+							this.current_enter = 0;
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:9, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
@@ -871,8 +879,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
 							if(this.warnr == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(u_middle && this.dbx == 3 && (
@@ -882,8 +888,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 4;
 							if(this.warnl == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(d_middle && this.dbx == 6 && (
@@ -893,8 +897,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
 							if(this.warnr == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(u_middle && this.dbx == 6 && (
@@ -904,8 +906,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 4;
 							if(this.warnl == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:10, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
