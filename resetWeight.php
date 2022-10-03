@@ -14,7 +14,6 @@
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-	/*
 	$sql1 = "UPDATE map SET weight = '".$r2w."' WHERE (traffic='1' OR traffic='6' OR traffic='7' OR traffic='8' OR traffic='12') AND dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
 	$sql2 = "UPDATE map SET weight = '".$r4w."' WHERE (traffic='2') AND dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
 	$sql3 = "UPDATE map SET weight = '".$r6."' WHERE (traffic='3' OR traffic='4' OR traffic='9' OR traffic='10') AND dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
@@ -30,10 +29,7 @@
 	mysqli_query($conn, $sql5);
 	mysqli_query($conn, $sql6);
 	mysqli_query($conn, $sql7);
-	*/
 
-	$sql = "UPDATE map SET weight = weight - 1000 WHERE dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
-	mysqli_query($conn, $sql);
 	$data = $traffic_light;
 	echo $data;
 ?>
