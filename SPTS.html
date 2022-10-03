@@ -1132,7 +1132,7 @@
 							if(this.t_light_num > 0 && (traffic_stop[this.t_light_num] == 0 || traffic_stop[this.t_light_num] == this.num)) {
 								traffic_stop[this.t_light_num] = this.num;
 								
-								if(this.current != 0) resetWeight(this.current, this.current_enter);
+								if(this.current != 0) resetWeight(this.current, this.current_enter, road, wth);
 							
 								// set traffic light
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
@@ -1860,13 +1860,15 @@
 		}
 		
 		// reset weight
-		function resetWeight(traffic_light, traffic_enter) {
+		function resetWeight(traffic_light, traffic_enter, road, wth) {
 			$.ajax( {
 				url: "resetWeight.php",
 				type: "GET",
 				data: {
 					traffic_light : traffic_light,
-					traffic_enter : traffic_enter
+					traffic_enter : traffic_enter,
+					road : road,
+					wth : wth
 				},
 				dataType: 'json',
 				success: function(data) {
