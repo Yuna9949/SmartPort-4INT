@@ -1,8 +1,6 @@
 <?php
 	$traffic_light = $_GET['traffic_light'];
 	$traffic_enter = $_GET['traffic_enter'];
-	$road = $_GET['road'];
-	$wth = $_GET['wth'];
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 	$sql = "SELECT * FROM map 
