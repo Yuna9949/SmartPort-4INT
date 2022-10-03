@@ -41,7 +41,7 @@
 		for($i = 1; $i <= 12; $i = $i + 1) {
 			for($j = 1; $j <= 6; $j = $j + 1) {
 				$num = $i*10+$j;
-				$t[$num] = 1000;
+				$t[$num] = 2147483647;
 			}
 		}
 		
@@ -74,7 +74,7 @@
 
 	$result = mysqli_query($conn, $sql);
 
-	$mincost = 1000;
+	$mincost = 2147483647;
 	$traffic = 0;
 	$dt = 0;
 
