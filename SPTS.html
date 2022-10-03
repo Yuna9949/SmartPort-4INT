@@ -954,9 +954,9 @@
 							avr_taken = (avr_taken*(off_loaded-1)+this.taken_time)/off_loaded;
 							avr_waiting = (avr_waiting*(off_loaded-1)+this.waiting_time)/off_loaded;
 							
-							document.getElementById("waittime").innerText = avr_waiting;
-							document.getElementById("loadtime").innerText = avr_taken;
-							document.getElementById("percent").innerText = off_loaded;
+							document.getElementById("waittime").innerText = Math.round(avr_waiting);
+							document.getElementById("loadtime").innerText = Math.round(avr_taken);
+							document.getElementById("percent").innerText = Math.round(off_loaded);
 							
 							this.container = 0;
 							this.loading = 0;
