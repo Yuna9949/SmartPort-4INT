@@ -782,8 +782,6 @@
 							if(this.dby == 1 && u_middle) {
 								this.y = (this.tlu+this.tld)/2;
 								this.status = 4; // left
-								this.current = 0;
-								this.current_enter = 0;
 							}
 							if(this.dby == 1 && beforeCrain[this.crain]+road/2 > this.x) {
 								this.status = 0; // stop
@@ -871,8 +869,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
 							if(this.warnr == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(u_middle && this.dbx == 3 && (
@@ -882,8 +878,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 4;
 							if(this.warnl == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(d_middle && this.dbx == 6 && (
@@ -893,8 +887,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 2;
 							if(this.warnr == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(u_middle && this.dbx == 6 && (
@@ -904,8 +896,6 @@
 							this.y = (this.tlu+this.tld)/2;
 							this.status = 4;
 							if(this.warnl == 1) this.deloading+=this.speed;
-							this.current = 0;
-							this.current_enter = 0;
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:10, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
