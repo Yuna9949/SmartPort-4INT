@@ -292,6 +292,9 @@
 			var truck = [null,null,null,null,null,null,null,null,null,null,null];
 			var crain_status = [0, 0, 0, 0, 0];
 			var traffic_stop = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+			var off_loaded = 0;
+			var avr_waiting = 0;
+			var avr_taken = 0;
 			
 			// show senario
 			function show_senario() {
@@ -629,9 +632,13 @@
 						this.t_light_num = 0;
 						this.stop = 0;
 						
-						//current way
+						// current way
 						this.current = 0;
 						this.current_enter = 0;
+						
+						// time
+						this.taken_time = 0;
+						this.waiting_time = 0;
 						
 						// warning
 						this.warnu = 0;
@@ -717,6 +724,9 @@
 							else {
 								this.crain = -1; // wait for crain
 							}
+						}
+						else {
+							this.taken_time++;
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:3, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
@@ -940,9 +950,20 @@
 							var cupdate = document.getElementById("s"+this.ship+"c"+this.container).innerText;
 							document.getElementById("s"+this.ship+"c"+this.container).innerText = cupdate-1;
 							
+							off_loaded++;
+							avr_taken = (avr_taken*(off_loaded-1)+this.taken_time)/off_loaded;
+							avr_waiting = (avr_waiting*(off_loaded-1)+this.waiting_time)/off_loaded;
+							
+							document.getElementById("waittime").innerText = avr_waiting;
+							document.getElementById("loadtime").innerText = avr_taken;
+							document.getElementById("percent").innerText = off_loaded;
+							
 							this.container = 0;
 							this.loading = 0;
 							this.ship = 0;
+							this.taken_time = 0;
+							this.waiting_time = 0;
+							
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:12, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
@@ -1435,8 +1456,13 @@
 						
 						if	(((this.status == 1 && this.warnu == 1) || (this.status == 2 && this.warnr == 1) ||
 							  (this.status == 3 && this.warnd == 1) || (this.status == 4 && this.warnl == 1))
-							 && this.stop > this.speed)
+							 && this.stop > this.speed) {
 							this.stop -= this.speed;
+							this.waiting_time++;
+						}
+						else if(this.status == 0) {
+							this.waiting_time++;
+						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:20, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
