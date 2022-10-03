@@ -2,52 +2,30 @@
 	$road = $_GET['road'];
 	$wth = $_GET['wth'];
 
+
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
+	$sql = "UPDATE map SET weight = '".$road*2+$wth."' WHERE traffic='1';
+		UPDATE map SET weight = '".$road*4+$wth."' WHERE traffic='2';
+		UPDATE map SET weight = '".$road*6."' WHERE traffic='3';
+		UPDATE map SET weight = '".$road*6."' WHERE traffic='4';
+		UPDATE map SET weight = '".$road*4."' WHERE traffic='5';
+		UPDATE map SET weight = '".$road*2+$wth."' WHERE traffic='6';
+		UPDATE map SET weight = '".$road*2+$wth."' WHERE traffic='7';
+		UPDATE map SET weight = '".$road*4+$wth."' WHERE traffic='8';
+		UPDATE map SET weight = '".$road*6."' WHERE traffic='9';
+		UPDATE map SET weight = '".$road*6."' WHERE traffic='10';
+		UPDATE map SET weight = '".$road*4."' WHERE traffic='11';
+		UPDATE map SET weight = '".$road*2+$wth."' WHERE traffic='12';
+		UPDATE map SET weight = '".$road*7."' WHERE traffic='13';
+		UPDATE map SET weight = '".$road*3."' WHERE traffic='14';
+		UPDATE map SET weight = '".$road*3+$wth."' WHERE traffic='15';
+		UPDATE map SET weight = '".$road*7."' WHERE traffic='16';
+		UPDATE map SET weight = '".$road*3."' WHERE traffic='17';
+		UPDATE map SET weight = '".$road*3+$wth."' WHERE traffic='18';
+		";
+		
+	mysqli_query($conn, $sql);
 
-	// update traffic
-	$sql = "SELECT * FROM get_traffic";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	
-	$traffic = 0;
-	$lst="";
-
-	if($traffic_light > 9) 	$lst="light".$traffic_light;
-	else	    		$lst="light0".$traffic_light;
-
-	$traffic = $row[$lst];
-	
-	if($traffic == 3 || $traffic == 4 || $traffic == 11 || $traffic == 13 || $traffic == 17)
-		$traffic = 21;
-	else if($traffic == 1 || $traffic == 6 || $traffic == 8 || $traffic == 15)
-		$traffic = 22;
-	else if($traffic == 5 || $traffic == 9 || $traffic == 10 || $traffic == 14 || $traffic == 16)
-		$traffic = 23;
-	else if($traffic == 2 || $traffic == 7 || $traffic == 12 || $traffic == 18)
-		$traffic = 24;
-
-	if($logcheck != 'false') {
-		$row[$lst] = $traffic;
-
-		$sql = "INSERT INTO traffic (
-				light01, light02, light03, 
-				light04, light05, light06, 
-				light07, light08, light09, 
-				light10, light11, light12, time
-			) VALUES (
-				'".$row["light01"]."', '".$row["light02"]."', '".$row["light03"]."',
-				'".$row["light04"]."', '".$row["light05"]."', '".$row["light06"]."',
-				'".$row["light07"]."', '".$row["light08"]."', '".$row["light09"]."',
-				'".$row["light10"]."', '".$row["light11"]."', '".$row["light12"]."', NOW()
-			);";
-		$result = mysqli_query($conn, $sql);
-	}
-
-	$sql = "UPDATE get_traffic SET ".$lst." = '".$traffic."'"; 
-	$result = mysqli_query($conn, $sql);
-
-	mysqli_close($conn);
-
-	$data = $traffic_light;
+	$data = $road;
 	echo $data;
 ?>
