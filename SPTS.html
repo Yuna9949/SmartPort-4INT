@@ -1486,7 +1486,7 @@
 						}
 					}
 					check() {
-						if(this.current != 0) updateWeight(this.current, this.current_enter, road, wth);
+						if(this.current != 0) updateWeight(this.current, this.current_enter);
 						
 						this.warnu = 0;
 						this.warnr = 0;
@@ -1860,15 +1860,13 @@
 		}
 		
 		// update weight
-		function updateWeight(traffic_light, traffic_enter, road, wth) {
+		function updateWeight(traffic_light, traffic_enter) {
 			$.ajax( {
 				url: "updateWeight.php",
 				type: "GET",
 				data: {
 					traffic_light : traffic_light,
-					traffic_enter : traffic_enter,
-					road : road,
-					wth : wth
+					traffic_enter : traffic_enter
 				},
 				dataType: 'json',
 				success: function(data) {
