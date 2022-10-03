@@ -4,14 +4,6 @@
 	$road = $_GET['road'];
 	$wth = $_GET['wth'];
 
-	$r2w = $road*2+$wth;
-	$r3w = $road*3+$wth;
-	$r4w = $road*4+$wth;
-	$r3 = $road*3;
-	$r4 = $road*4;
-	$r6 = $road*6;
-	$r7 = $road*7;
-
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 	$sql = "SELECT * FROM map 
 		WHERE dest_traffic='".$traffic_light."' 
