@@ -1532,7 +1532,7 @@
 				function animate() {
 					drawMap();
 					mysql_conn();
-					initWeight();
+					initWeight(road, (wth-2*road)/2);
 						
 					for(var i = 1; i <= numcar; i++) {
 						truck[i].check();
@@ -1829,10 +1829,15 @@
 		}
 		
 		// reset weight
-		function initWeight() {
+		function initWeight(road, wth) {
 			$.ajax( {
 				url: "initWeight.php",
 				type: "GET",
+				data: {
+					road : road,
+					with : wth
+				},
+				dataType: 'json',
 				success: function(data) {
 				}
 			} );
