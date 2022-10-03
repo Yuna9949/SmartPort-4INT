@@ -8,8 +8,7 @@
 		AND dest_enter='".$traffic_enter."'";
 		$result = mysqli_query($conn, $sql);
 	while($row = mysqli_fetch_assoc($result)){
-		
-		$row['weight'] = $row['weight']+100;
+		//$row['weight'] = $row['weight']+100;
 		
 		$sql2 = "UPDATE map SET weight='".$row['weight']."' WHERE description='".$row['description']."';";
 		mysqli_query($conn, $sql2);
