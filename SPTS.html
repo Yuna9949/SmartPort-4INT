@@ -1474,8 +1474,6 @@
 							if(this.warnd == 1)	ctx.fillRect(this.x-this.sizex/2, this.y+this.sizey/2, this.sizex, 5);
 							if(this.warnl == 1)	ctx.fillRect(this.x-this.sizex/2-5, this.y-this.sizey/2, 5, this.sizey);
 						}
-						
-						if(this.current != 0)	alert(this.current+" : "+this.current_enter);
 					}
 					check() {
 						if(this.current != 0) updateWeight(this.current, this.current_enter);
@@ -1862,7 +1860,7 @@
 				},
 				dataType: 'json',
 				success: function(data) {
-					alert("update");
+					alert(traffic_light);
 				}
 			} );
 		}
