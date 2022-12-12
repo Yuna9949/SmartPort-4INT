@@ -532,19 +532,38 @@
 				ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, 0, road, 2*road);
 				
 				// check crain
-				if(crain_status[1] != 0) {
+				if(crain_status[1] == 11) {
+					ctx.fillStyle = color_st[12];
+					ctx.fillRect (3.5*road+(wth/2-road)/4		, road/2-2, road, 4);
+				}
+				else if(crain_status[1] != 0) {
 					ctx.fillStyle = color_st[crain_status[1]];
 					ctx.fillRect (3.5*road+(wth/2-road)/4		, road/2-2, road, 4);
 				}
-				if(crain_status[2] != 0) {
+				
+				if(crain_status[2] == 11) {
+					ctx.fillStyle = color_st[12];
+					ctx.fillRect (3.5*road+(wth/2-road)/4*3		, road/2-2, road, 4);
+				}
+				else if(crain_status[2] != 0) {
 					ctx.fillStyle = color_st[crain_status[2]];
 					ctx.fillRect (3.5*road+(wth/2-road)/4*3		, road/2-2, road, 4);
 				}
-				if(crain_status[3] != 0) {
+				
+				if(crain_status[3] == 11) {
+					ctx.fillStyle = color_st[12];
+					ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4	, road/2-2, road, 4);
+				}
+				else if(crain_status[3] != 0) {
 					ctx.fillStyle = color_st[crain_status[3]];
 					ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4	, road/2-2, road, 4);
 				}
-				if(crain_status[4] != 0) {
+				
+				if(crain_status[4] == 11) {
+					ctx.fillStyle = color_st[12];
+					ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, road/2-2, road, 4);
+				}
+				else if(crain_status[4] != 0) {
 					ctx.fillStyle = color_st[crain_status[4]];
 					ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, road/2-2, road, 4);
 				}
