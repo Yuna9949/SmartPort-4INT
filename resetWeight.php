@@ -30,7 +30,7 @@
 	mysqli_query($conn, $sql6);
 	mysqli_query($conn, $sql7);
 
-	$sql = "UPDATE map SET weight = '10' WHERE dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
+	$sql = "UPDATE model_map SET weight = '10' WHERE dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
 	mysqli_query($conn, $sql);
 
 	$data = $traffic_light;
