@@ -4,11 +4,11 @@
 		global $t;
 		
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
-		if($snar != 1) {
+		
 			$sql = "SELECT * FROM map 
 				WHERE start_traffic='".$st."' 
 				AND start_enter='".$se."'";
-		}
+		
 		
 		$result = mysqli_query($conn, $sql);
 		
@@ -60,12 +60,12 @@
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-	if($senario != 1) {
+	
 		$sql = "SELECT * FROM map 
 		WHERE start_traffic='".$start_traffic."' 
 		AND start_enter='".$start_enter."' 
 		ORDER BY dest_enter;";
-	}
+	
 
 	$result = mysqli_query($conn, $sql);
 
