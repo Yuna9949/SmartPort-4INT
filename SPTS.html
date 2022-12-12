@@ -2061,13 +2061,14 @@
 		}
 		
 		// update weight
-		function updateWeight(traffic_light, traffic_enter) {
+		function updateWeight(traffic_light, traffic_enter, snar) {
 			$.ajax( {
 				url: "updateWeight.php",
 				type: "GET",
 				data: {
 					traffic_light : traffic_light,
-					traffic_enter : traffic_enter
+					traffic_enter : traffic_enter,
+					senario : snar
 				},
 				dataType: 'json',
 				success: function(data) {
@@ -2210,7 +2211,7 @@
 		}
 		
 		// get route
-		function getRoute(num, st, se, dt, de, log) {
+		function getRoute(num, st, se, dt, de, log, snar) {
 			$.ajax( {
 				url: "getRoute.php",
 				type: "GET",
@@ -2220,7 +2221,8 @@
 					start_enter : se,
 					dest_traffic : dt,
 					dest_enter : de,
-					logcheck : log
+					logcheck : log,
+					senario : snar
 				},
 				dataType: 'json',
 				success: function(data) {
