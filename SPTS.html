@@ -961,6 +961,7 @@
 									else if(this.container == 7)	{this.dest = 8;  this.dest_enter = 4;}
 									else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
 									else if(this.container == 11)	{this.dest = 8;  this.dest_enter = 1;}
+									
 								}
 							}
 						}
@@ -1284,6 +1285,7 @@
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
 									this.stop = this.speed;
 									document.getElementById('updating'+this.t_light_num).innerText = "loading";
+									alert("this.num"+this.num+"this.t_light_num"+this.t_light_num+"this.enter"+this.enter+"this.dest"+this.dest+"this.dest_enter"+this.dest_enter);
 									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, logcheck, senario);
 								}
 						
