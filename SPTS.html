@@ -941,18 +941,28 @@
 								this.crain = 0;
 								
 								// set destination
-								if(this.container == 1) 	{this.dest = 2;  this.dest_enter = 2;}
-								else if(this.container == 2)	{this.dest = 4;  this.dest_enter = 4;}
-								else if(this.container == 3) 	{this.dest = 3;  this.dest_enter = 2;}
-								else if(this.container == 4) 	{this.dest = 5;  this.dest_enter = 4;}
-								else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
-								else if(this.container == 6) 	{this.dest = 7;  this.dest_enter = 4;}
-								else if(this.container == 7)	{this.dest = 6;  this.dest_enter = 2;}
-								else if(this.container == 8) 	{this.dest = 8;  this.dest_enter = 4;}
-								else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
-								else if(this.container == 10) 	{this.dest = 10; this.dest_enter = 4;}
-								else if(this.container == 11)	{this.dest = 9;  this.dest_enter = 2;}
-								else if(this.container == 12) 	{this.dest = 11; this.dest_enter = 4;}
+								if(senario != 1) {
+									if(this.container == 1) 	{this.dest = 2;  this.dest_enter = 2;}
+									else if(this.container == 2)	{this.dest = 4;  this.dest_enter = 4;}
+									else if(this.container == 3) 	{this.dest = 3;  this.dest_enter = 2;}
+									else if(this.container == 4) 	{this.dest = 5;  this.dest_enter = 4;}
+									else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
+									else if(this.container == 6) 	{this.dest = 7;  this.dest_enter = 4;}
+									else if(this.container == 7)	{this.dest = 6;  this.dest_enter = 2;}
+									else if(this.container == 8) 	{this.dest = 8;  this.dest_enter = 4;}
+									else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
+									else if(this.container == 10) 	{this.dest = 10; this.dest_enter = 4;}
+									else if(this.container == 11)	{this.dest = 9;  this.dest_enter = 2;}
+									else if(this.container == 12) 	{this.dest = 11; this.dest_enter = 4;}
+								}
+								else {
+									if(this.container == 1) 	{this.dest = 5;  this.dest_enter = 3;}
+									else if(this.container == 3) 	{this.dest = 5;  this.dest_enter = 4;}
+									else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
+									else if(this.container == 7)	{this.dest = 8;  this.dest_enter = 4;}
+									else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
+									else if(this.container == 11)	{this.dest = 8;  this.dest_enter = 1;}
+								}
 							}
 						}
 						
