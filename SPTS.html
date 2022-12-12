@@ -495,21 +495,21 @@
 				
 				// 선박
 				ctx.fillStyle = "rgb(211, 211, 211)";
-				ctx.fillRect (3*road+(wth/2-road)/4		, 0, 2*road, road);
-				ctx.fillRect (3*road+(wth/2-road)/4*3		, 0, 2*road, road);
 				if(senario != 1)
-					ctx.fillRect (4*road+wth/2+(wth/2-road)/4	, 0, 2*road, road);
-				if(senario != 1) 
-					ctx.fillRect (4*road+wth/2+(wth/2-road)/4*3	, 0, 2*road, road);				
+					ctx.fillRect (3*road+(wth/2-road)/4		, 0, 2*road, road);
+				if(senario != 1)
+					ctx.fillRect (3*road+(wth/2-road)/4*3		, 0, 2*road, road);
+				ctx.fillRect (4*road+wth/2+(wth/2-road)/4	, 0, 2*road, road);
+				ctx.fillRect (4*road+wth/2+(wth/2-road)/4*3	, 0, 2*road, road);				
 				
 				// 하역 크레인
 				ctx.fillStyle = "Pink";
-				ctx.fillRect (3.5*road+(wth/2-road)/4		, 0, road, 2*road);
-				ctx.fillRect (3.5*road+(wth/2-road)/4*3		, 0, road, 2*road);
-				if(senario != 1)
-					ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4	, 0, road, 2*road);
 				if(senario != 1)	
-					ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, 0, road, 2*road);
+					ctx.fillRect (3.5*road+(wth/2-road)/4		, 0, road, 2*road);
+				if(senario != 1)	
+					ctx.fillRect (3.5*road+(wth/2-road)/4*3		, 0, road, 2*road);
+				ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4	, 0, road, 2*road);
+				ctx.fillRect (4.5*road+wth/2+(wth/2-road)/4*3	, 0, road, 2*road);
 				
 				// check crain
 				if(crain_status[1] != 0) {
