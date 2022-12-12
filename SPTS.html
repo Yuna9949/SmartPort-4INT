@@ -131,9 +131,8 @@
 			}
       
 			.output {
-				/*display : none;*/
+				display : none;
 				color: red;
-				display : visible;
 			}
 			#outputa{
 				position: absolute;
@@ -939,31 +938,21 @@
 								document.getElementById('craincheck'+this.crain).innerText = "0";
 								crain_status[this.crain] = 0;
 								this.crain = 0;
+								alert(this.num);
 								
 								// set destination
-								if(senario != 1) {
-									if(this.container == 1) 	{this.dest = 2;  this.dest_enter = 2;}
-									else if(this.container == 2)	{this.dest = 4;  this.dest_enter = 4;}
-									else if(this.container == 3) 	{this.dest = 3;  this.dest_enter = 2;}
-									else if(this.container == 4) 	{this.dest = 5;  this.dest_enter = 4;}
-									else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
-									else if(this.container == 6) 	{this.dest = 7;  this.dest_enter = 4;}
-									else if(this.container == 7)	{this.dest = 6;  this.dest_enter = 2;}
-									else if(this.container == 8) 	{this.dest = 8;  this.dest_enter = 4;}
-									else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
-									else if(this.container == 10) 	{this.dest = 10; this.dest_enter = 4;}
-									else if(this.container == 11)	{this.dest = 9;  this.dest_enter = 2;}
-									else if(this.container == 12) 	{this.dest = 11; this.dest_enter = 4;}
-								}
-								else {
-									if(this.container == 1) 	{this.dest = 5;  this.dest_enter = 3;}
-									else if(this.container == 3) 	{this.dest = 5;  this.dest_enter = 4;}
-									else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
-									else if(this.container == 7)	{this.dest = 8;  this.dest_enter = 4;}
-									else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
-									else if(this.container == 11)	{this.dest = 8;  this.dest_enter = 1;}
-									
-								}
+								if(this.container == 1) 	{this.dest = 2;  this.dest_enter = 2;}
+								else if(this.container == 2)	{this.dest = 4;  this.dest_enter = 4;}
+								else if(this.container == 3) 	{this.dest = 3;  this.dest_enter = 2;}
+								else if(this.container == 4) 	{this.dest = 5;  this.dest_enter = 4;}
+								else if(this.container == 5) 	{this.dest = 5;  this.dest_enter = 2;}
+								else if(this.container == 6) 	{this.dest = 7;  this.dest_enter = 4;}
+								else if(this.container == 7)	{this.dest = 6;  this.dest_enter = 2;}
+								else if(this.container == 8) 	{this.dest = 8;  this.dest_enter = 4;}
+								else if(this.container == 9) 	{this.dest = 8;  this.dest_enter = 2;}
+								else if(this.container == 10) 	{this.dest = 10; this.dest_enter = 4;}
+								else if(this.container == 11)	{this.dest = 9;  this.dest_enter = 2;}
+								else if(this.container == 12) 	{this.dest = 11; this.dest_enter = 4;}
 							}
 						}
 						
@@ -1286,8 +1275,7 @@
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
 									this.stop = this.speed;
 									document.getElementById('updating'+this.t_light_num).innerText = "loading";
-									alert("this.num"+this.num+"this.t_light_num"+this.t_light_num+"this.enter"+this.enter+"this.dest"+this.dest+"this.dest_enter"+this.dest_enter);
-									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, logcheck, senario);
+									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, logcheck);
 								}
 						
 							}
@@ -1342,7 +1330,6 @@
 							else if(this.t_light_num == 11 && this.enter == 4)	this.t_light = 11;
 							else if(this.t_light_num == 11 && this.enter == 6)	this.t_light = 17;
 							else if(this.t_light_num == 12) 			this.t_light = 7;
-						
 							
 							if(this.t_light == 0 || this.t_light > 20) {
 								this.stop = 0;
@@ -1390,7 +1377,7 @@
 							   this.t_light == 9 || this.t_light == 10)	this.turnCnt = 5;
 							if(this.t_light == 13 || this.t_light == 16)	this.turnCnt = 6;
 							
-							if(this.current != 0) updateWeight(this.current, this.current_enter, senario);
+							if(this.current != 0) updateWeight(this.current, this.current_enter);
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:16, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
@@ -2074,18 +2061,16 @@
 		}
 		
 		// update weight
-		function updateWeight(traffic_light, traffic_enter, snar) {
+		function updateWeight(traffic_light, traffic_enter) {
 			$.ajax( {
 				url: "updateWeight.php",
 				type: "GET",
 				data: {
 					traffic_light : traffic_light,
-					traffic_enter : traffic_enter,
-					senario : snar
+					traffic_enter : traffic_enter
 				},
 				dataType: 'json',
 				success: function(data) {
-					alert(data);
 				}
 			} );
 		}
@@ -2225,7 +2210,7 @@
 		}
 		
 		// get route
-		function getRoute(num, st, se, dt, de, log, snar) {
+		function getRoute(num, st, se, dt, de, log) {
 			$.ajax( {
 				url: "getRoute.php",
 				type: "GET",
@@ -2235,15 +2220,13 @@
 					start_enter : se,
 					dest_traffic : dt,
 					dest_enter : de,
-					logcheck : log,
-					senario : snar
+					logcheck : log
 				},
 				dataType: 'json',
 				success: function(data) {
 					if(data == st) {
 						$("#updating"+st).text("success");
 					}
-					alert(data);
 				}
 			} );
 		}
