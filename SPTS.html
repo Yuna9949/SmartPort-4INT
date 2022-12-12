@@ -2304,6 +2304,22 @@
 			} );
 		}
 		
+		// update weight
+		function getTrafficLightData() {
+			$.ajax( {
+				url: "getTrafficLightData.php",
+				type: "GET",
+				dataType: 'json',
+				success: function(data) {
+					var dataJson = JSON.parse(data);
+					$("#outputl1").text(data["car1l"]);
+					$("#outputc1").text(data["car1c"]);
+					$("#outputl2").text(data["car2l"]);
+					$("#outputc2").text(data["car2c"]);
+				}
+			} );
+		}
+		
 		// resize window
 		window.addEventListener('resize', function(){
 			drawMap();
