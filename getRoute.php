@@ -9,11 +9,6 @@
 				WHERE start_traffic='".$st."' 
 				AND start_enter='".$se."'";
 		}
-		else {
-			$sql = "SELECT * FROM model_map 
-				WHERE start_traffic='".$st."' 
-				AND start_enter='".$se."'";
-		}
 		
 		$result = mysqli_query($conn, $sql);
 		
@@ -67,12 +62,6 @@
 
 	if($senario != 1) {
 		$sql = "SELECT * FROM map 
-		WHERE start_traffic='".$start_traffic."' 
-		AND start_enter='".$start_enter."' 
-		ORDER BY dest_enter;";
-	}
-	else {
-		$sql = "SELECT * FROM model_map 
 		WHERE start_traffic='".$start_traffic."' 
 		AND start_enter='".$start_enter."' 
 		ORDER BY dest_enter;";
