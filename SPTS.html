@@ -792,32 +792,56 @@
 								this.crain = 1;
 								this.ship = 1;
 								this.container = -1; // wait to get container
-								this.dest = 1;
-								this.dest_enter = 4;
+								if(senario != 1) {
+									this.dest = 1;
+									this.dest_enter = 4;
+								}
+								else {
+									this.dest = 0;
+									this.dest_enter = 0;
+								}
 							}
 							else if(crain_status[2] == 0) {
 								crain_status[2] = this.num;
 								this.crain = 2;
 								this.ship = 2;
 								this.container = -1;
-								this.dest = 1;
-								this.dest_enter = 4;
+								if(senario != 1) {
+									this.dest = 1;
+									this.dest_enter = 4;
+								}
+								else {
+									this.dest = 0;
+									this.dest_enter = 0;
+								}
 							}
 							else if(crain_status[3] == 0) {
 								crain_status[3] = this.num;
 								this.crain = 3;
 								this.ship = 3;
 								this.container = -1;
-								this.dest = 2;
-								this.dest_enter = 4;
+								if(senario != 1) {
+									this.dest = 1;
+									this.dest_enter = 4;
+								}
+								else {
+									this.dest = 0;
+									this.dest_enter = 0;
+								}
 							}
 							else if(crain_status[4] == 0) {
 								crain_status[4] = this.num;
 								this.crain = 4;
 								this.ship = 4;
 								this.container = -1;
-								this.dest = 2;
-								this.dest_enter = 4;
+								if(senario != 1) {
+									this.dest = 1;
+									this.dest_enter = 4;
+								}
+								else {
+									this.dest = 0;
+									this.dest_enter = 0;
+								}
 							}
 							else {
 								this.crain = -1; // wait for crain
@@ -899,6 +923,8 @@
 						}
 						else if(senario == 1 && this.crain != 0 && this.crain > 0 && this.loading < 300) {
 							this.loading += this.speed;
+							alert(this.loading);
+							this.status = 0;
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:6, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
