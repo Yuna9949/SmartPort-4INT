@@ -335,8 +335,8 @@
 					document.getElementById("carshw").innerText = 2;
 					document.getElementById("carnum").style.pointerEvents = "none";
 					
-					document.getElementById("spdnum").value = 3;
-					document.getElementById("spdshw").innerText = 3;
+					document.getElementById("spdnum").value = 1;
+					document.getElementById("spdshw").innerText = 1;
 					document.getElementById("spdnum").style.pointerEvents = "none";
 					
 					document.getElementById("s1c1").style.display = "block";
@@ -922,15 +922,14 @@
 							
 						}
 						else if(senario == 1 && this.crain != 0 && this.crain > 0 && this.loading < 300) {
-							this.loading += this.speed;
-							alert(this.loading);
+							this.loading += this.speed+this.speed;
 							this.status = 0;
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:6, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
 						
 						// load container
-						if(this.loading >= 300 && this.crain != 0 && this.dby == 1) {
+						if(this.loading >= 300 && this.crain != 0 && (this.dby == 1 || senario == 1)) {
 							this.deloading = 0;
 							getCrain(this.crain, senario);
 							var crainch = document.getElementById('craincheck'+this.crain).innerText;
@@ -939,6 +938,7 @@
 								document.getElementById('craincheck'+this.crain).innerText = "0";
 								crain_status[this.crain] = 0;
 								this.crain = 0;
+								alert(this.num);
 								
 								// set destination
 								if(this.container == 1) 	{this.dest = 2;  this.dest_enter = 2;}
