@@ -549,28 +549,30 @@
 				// 컨테이너 내부물품
 				ctx.fillStyle = color_st[1];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		,  5*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[2];
-				ctx.fillRect (4*road+(wth/2-road)*0.1		,  6*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = color_st[3];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  5*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[4];
-				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  6*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = color_st[5];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[6];
-				ctx.fillRect (4*road+(wth/2-road)*0.1		, 12*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = color_st[7];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 11*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[8];
-				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 12*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = color_st[9];
 				ctx.fillRect (4*road+(wth/2-road)*0.1		, 17*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[10];
-				ctx.fillRect (4*road+(wth/2-road)*0.1		, 18*road+road/2-5, (wth/2-road)*0.8, 5);
 				ctx.fillStyle = color_st[11];
 				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 17*road+road/2  , (wth/2-road)*0.8, 5);
-				ctx.fillStyle = color_st[12];
-				ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 18*road+road/2-5, (wth/2-road)*0.8, 5);
+				if(senario != 1) {
+					ctx.fillStyle = color_st[2];
+					ctx.fillRect (4*road+(wth/2-road)*0.1		,  6*road+road/2-5, (wth/2-road)*0.8, 5);
+					ctx.fillStyle = color_st[4];
+					ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	,  6*road+road/2-5, (wth/2-road)*0.8, 5);
+					ctx.fillStyle = color_st[6];
+					ctx.fillRect (4*road+(wth/2-road)*0.1		, 12*road+road/2-5, (wth/2-road)*0.8, 5);
+					ctx.fillStyle = color_st[8];
+					ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 12*road+road/2-5, (wth/2-road)*0.8, 5);
+					ctx.fillStyle = color_st[10];
+					ctx.fillRect (4*road+(wth/2-road)*0.1		, 18*road+road/2-5, (wth/2-road)*0.8, 5);
+					ctx.fillStyle = color_st[12];
+					ctx.fillRect (5*road+wth/2+(wth/2-road)*0.1	, 18*road+road/2-5, (wth/2-road)*0.8, 5);
+				}
 
 				// 신호등
 				ctx.fillStyle = "rgb(192, 244, 241)";
