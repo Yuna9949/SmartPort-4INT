@@ -333,7 +333,12 @@
 				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				if(senario == 1) {
 					document.getElementById("carnum").value = 2;
+					document.getElementById("carshw").innerText = 2;
 					document.getElementById("carnum").style.pointerEvents = "none";
+					
+					document.getElementById("spdnum").value = 1;
+					document.getElementById("spdshw").innerText = 1;
+					document.getElementById("spdnum").style.pointerEvents = "none";
 					
 					document.getElementById("s1c3").style.display = "block";
 					document.getElementById("s1c5").style.display = "block";
