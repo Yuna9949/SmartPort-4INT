@@ -332,6 +332,8 @@
 				// show senario in detail
 				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				if(senario == 1) {
+					crain_status[2] = 11;
+					crain_status[4] = 11;
 					document.getElementById("carnum").value = 2;
 					document.getElementById("carshw").innerText = 2;
 					document.getElementById("carnum").style.pointerEvents = "none";
@@ -366,6 +368,8 @@
 					document.getElementById("s3c11").innerText = "99";
 				}
 				else if(senario == 2) {
+					crain_status[2] = 0;
+					crain_status[4] = 0;
 					document.getElementById("s1c1").style.display = "block";
 					document.getElementById("s1c3").style.display = "block";
 					document.getElementById("s1c5").style.display = "block";
@@ -416,6 +420,8 @@
 					document.getElementById("s4c12").innerText = "99";
 				}
 				else if(senario == 3) {	
+					crain_status[2] = 0;
+					crain_status[4] = 0;
 					document.getElementById("s1c11").style.display = "block";
 					document.getElementById("s1c10").style.display = "block";
 					document.getElementById("s1c9").style.display = "block";
