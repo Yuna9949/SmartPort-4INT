@@ -5,7 +5,6 @@
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 	if($senario != 1) $sql = "UPDATE map SET weight = weight + 1000 WHERE dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
-	else $sql =  "UPDATE model_map SET weight = weight + 1000 WHERE dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
 	mysqli_query($conn, $sql);
 
 	$data = $senario;
