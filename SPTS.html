@@ -745,6 +745,7 @@
 						this.warnl = 0;
 					}
 					update() {
+						getTrafficLightData();
 						logcheck = document.getElementById("switch").checked;
 						this.speed = parseInt(document.getElementById("spdnum").value);
 						var senario = document.getElementById("senarioslct").selectedIndex+1;
