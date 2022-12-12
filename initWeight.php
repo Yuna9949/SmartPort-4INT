@@ -28,7 +28,7 @@
 	mysqli_query($conn, $sql6);
 	mysqli_query($conn, $sql7);
 
-	$sql = "UPDATE map SET weight = '10' WHERE 1;";
+	$sql = "UPDATE model_map SET weight = '10' WHERE 1;";
 	mysqli_query($conn, $sql);
 
 	$data = $road;
