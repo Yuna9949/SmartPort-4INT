@@ -8,6 +8,6 @@
 	else $sql =  "UPDATE model_map SET weight = weight + 1000 WHERE dest_traffic='$traffic_light' AND dest_enter='$traffic_enter';";
 	mysqli_query($conn, $sql);
 
-	$data = $traffic_light;
+	$data = $senario;
 	echo $data;
 ?>
