@@ -1639,10 +1639,17 @@
 				
 				const numcar = document.getElementById("carnum").value;
 				var park = 85;
+				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				init = () => {
-					for(var i = 1; i <= numcar; i++) {
-						truck[i] = new Truck(canvas.width-road, 3*road+i*park, i);
+					if(senario != 1) {
+						for(var i = 1; i <= numcar; i++) {
+							truck[i] = new Truck(canvas.width-road, 3*road+i*park, i);
+						}
 					}
+					else {
+						truck[1] = new Truck(canvas.width-road, 3*road+park, 2);
+						truck[2] = new Truck(canvas.width-road, 3*road+2*park, 6);
+					}	
 					initWeight(road, (wth-2*road)/2);
 					mysql_conn();
 				}
