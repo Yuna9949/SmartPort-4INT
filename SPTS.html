@@ -1750,7 +1750,6 @@
 					drawMap();
 					mysql_conn();
 					getTrafficLightData();
-					alert("here");
 					
 					for(var i = 1; i <= numcar; i++) {
 						truck[i].check();
@@ -2313,7 +2312,7 @@
 				dataType: 'json',
 				success: function(data) {
 					if(data.msg == "success") {
-						alert(data.car1l+" "+data.car1c+" "+data.car2l+" "+data.car2c);
+						//alert(data.car1l+" "+data.car1c+" "+data.car2l+" "+data.car2c);
 						$("#outputl1").text(data.car1l);
 						$("#outputc1").text(data.car1c);
 						$("#outputl2").text(data.car2l);
