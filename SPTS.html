@@ -1749,7 +1749,7 @@
 				function animate() {
 					drawMap();
 					mysql_conn();
-						
+					getTrafficLightData();
 					for(var i = 1; i <= numcar; i++) {
 						truck[i].check();
 					}
@@ -1908,6 +1908,10 @@
 								{"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0",
 								"light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
 							</i>
+							<i class="output" id="outputl1"> 0 </i>
+							<i class="output" id="outputc1"> 0 </i>
+							<i class="output" id="outputl2"> 0 </i>
+							<i class="output" id="outputc2"> 0 </i>
 						</div>
 						<table class="traffic">
 							<tr>
@@ -2294,6 +2298,28 @@
 				success: function(data) {
 					if(data == tl) {
 						$("#updating"+tl).text("start");
+					}
+				}
+			} );
+		}
+		
+		// update wherecar
+		function getTrafficLightData() {
+			$.ajax( {
+				url: "getTrafficLightData.php",
+				type: "GET",
+				dataType: 'json',
+				success: function(data) {
+					if(data.code != 0) {
+						alert(data.msg);
+						alert(data.code);
+					}
+					else {
+						alert(data.car1l+" "+data.car1c+" "+data.car2l+" "+data.car2c);
+						$("#outputl1").text(data.car1l);
+						$("#outputc1").text(data.car1c);
+						$("#outputl2").text(data.car2l);
+						$("#outputc2").text(data.car2c);
 					}
 				}
 			} );
