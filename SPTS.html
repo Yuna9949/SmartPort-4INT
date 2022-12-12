@@ -332,6 +332,34 @@
 				// show senario in detail
 				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				if(senario == 1) {
+					document.getElementById("s1c1").style.display = "block";
+					document.getElementById("s1c3").style.display = "block";
+					document.getElementById("s1c5").style.display = "block";
+					document.getElementById("s1c7").style.display = "block";
+					document.getElementById("s1c9").style.display = "block";
+					document.getElementById("s1c11").style.display = "block";
+					
+					document.getElementById("s3c1").style.display = "block";
+					document.getElementById("s3c3").style.display = "block";
+					document.getElementById("s3c5").style.display = "block";
+					document.getElementById("s3c7").style.display = "block";
+					document.getElementById("s3c9").style.display = "block";
+					document.getElementById("s3c11").style.display = "block";
+					
+					
+					document.getElementById("s1c1").innerText = "99";
+					document.getElementById("s1c3").innerText = "99";
+					document.getElementById("s1c5").innerText = "99";
+					document.getElementById("s1c7").innerText = "99";
+					document.getElementById("s1c9").innerText = "99";
+					document.getElementById("s1c11").innerText = "99";
+					
+					document.getElementById("s3c1").innerText = "99";
+					document.getElementById("s3c3").innerText = "99";
+					document.getElementById("s3c5").innerText = "99";
+					document.getElementById("s3c7").innerText = "99";
+					document.getElementById("s3c9").innerText = "99";
+					document.getElementById("s3c11").innerText = "99";
 				}
 				else if(senario == 2) {
 					document.getElementById("s1c1").style.display = "block";
@@ -391,20 +419,63 @@
 					document.getElementById("s4c8").innerText = "99";
 					document.getElementById("s4c12").innerText = "99";
 				}
-				else if(senario == 3) {			
-					for(var c = 1; c <= 12; c++) {
-						document.getElementById("s2c"+c).style.display = "block";
-					}
-				}
-				else if(senario == 4) {			
-					for(var c = 1; c <= 12; c++) {
-						document.getElementById("s3c"+c).style.display = "block";
-					}
-				}
-				else if(senario == 5) {				
-					for(var c = 1; c <= 12; c++) {
-						document.getElementById("s4c"+c).style.display = "block";
-					}
+				else if(senario == 3) {	
+					document.getElementById("s1c8").style.display = "block";
+					document.getElementById("s1c10").style.display = "block";
+					document.getElementById("s1c9").style.display = "block";
+					document.getElementById("s1c7").style.display = "block";
+					document.getElementById("s1c12").style.display = "block";
+					document.getElementById("s1c1").style.display = "block";
+					
+					document.getElementById("s2c10").style.display = "block";
+					document.getElementById("s2c4").style.display = "block";
+					document.getElementById("s2c1").style.display = "block";
+					document.getElementById("s2c12").style.display = "block";
+					document.getElementById("s2c10").style.display = "block";
+					document.getElementById("s2c9").style.display = "block";
+					
+					document.getElementById("s3c12").style.display = "block";
+					document.getElementById("s3c3").style.display = "block";
+					document.getElementById("s3c5").style.display = "block";
+					document.getElementById("s3c4").style.display = "block";
+					document.getElementById("s3c6").style.display = "block";
+					document.getElementById("s3c8").style.display = "block";
+					
+					document.getElementById("s4c1").style.display = "block";
+					document.getElementById("s4c2").style.display = "block";
+					document.getElementById("s4c4").style.display = "block";
+					document.getElementById("s4c8").style.display = "block";
+					document.getElementById("s4c3").style.display = "block";
+					document.getElementById("s4c6").style.display = "block";
+					
+					
+					document.getElementById("s1c8").innerText = "99";
+					document.getElementById("s1c10").innerText = "99";
+					document.getElementById("s1c9").innerText = "99";
+					document.getElementById("s1c7").innerText = "99";
+					document.getElementById("s1c12").innerText = "99";
+					document.getElementById("s1c1").innerText = "99";
+					
+					document.getElementById("s2c10").innerText = "99";
+					document.getElementById("s2c4").innerText = "99";
+					document.getElementById("s2c1").innerText = "99";
+					document.getElementById("s2c12").innerText = "99";
+					document.getElementById("s2c10").innerText = "99";
+					document.getElementById("s2c9").innerText = "99";
+					
+					document.getElementById("s3c12").innerText = "99";
+					document.getElementById("s3c3").innerText = "99";
+					document.getElementById("s3c5").innerText = "99";
+					document.getElementById("s3c4").innerText = "99";
+					document.getElementById("s3c6").innerText = "99";
+					document.getElementById("s3c8").innerText = "99";
+					
+					document.getElementById("s4c1").innerText = "99";
+					document.getElementById("s4c2").innerText = "99";
+					document.getElementById("s4c4").innerText = "99";
+					document.getElementById("s4c8").innerText = "99";
+					document.getElementById("s4c3").innerText = "99";
+					document.getElementById("s4c6").innerText = "99";
 				}
 			}
 
@@ -564,13 +635,13 @@
 					ctx.fillRect(2.5*road+1,	20.5*road, 1*road-2, 1*road);
 					ctx.fillStyle = color_st[traffic_stop[2]];
 					ctx.fillRect(3.5*road+wth/2+1,	 2.5*road, 1*road-2, 1*road);
-					ctx.fillStyle = color_st[traffic_stop[5]];
 				}
+				ctx.fillStyle = color_st[traffic_stop[5]];
 				ctx.fillRect(3.5*road+wth/2+1,	 8.5*road, 1*road-2, 1*road);
 				ctx.fillStyle = color_st[traffic_stop[8]];
 				ctx.fillRect(3.5*road+wth/2+1,	14.5*road, 1*road-2, 1*road);
-				ctx.fillStyle = color_st[traffic_stop[11]];
 				if(senario != 1) {
+					ctx.fillStyle = color_st[traffic_stop[11]];
 					ctx.fillRect(3.5*road+wth/2+1,	20.5*road, 1*road-2, 1*road);
 					ctx.fillStyle = color_st[traffic_stop[3]];
 					ctx.fillRect(4.5*road+wth+1,	 2.5*road, 1*road-2, 1*road);
@@ -1669,8 +1740,6 @@
 							<option value="1">#1</option>
 							<option value="2" selected>#2</option>
 							<option value="3">#3</option>
-							<option value="4">#4</option>
-							<option value="5">#5</option>
 						</select>
 						<table class="tbclyt">
 							<tr>
@@ -1990,6 +2059,31 @@
 						else if(contact[lightnum[i]] == 22)									document.getElementById(lightid[i]).innerHTML = stopr;
 						else if(contact[lightnum[i]] == 23)									document.getElementById(lightid[i]).innerHTML = stopd;
 						else if(contact[lightnum[i]] == 24)									document.getElementById(lightid[i]).innerHTML = stopl;
+					}
+					var senario = document.getElementById("senarioslct").selectedIndex+1;
+					if(senario == 1) {
+						document.getElementById(lightid[1]).style.visibility = "hidden";
+						document.getElementById(lightid[2]).style.visibility = "hidden";
+						document.getElementById(lightid[3]).style.visibility = "hidden";
+						document.getElementById(lightid[4]).style.visibility = "hidden";
+						document.getElementById(lightid[6]).style.visibility = "hidden";
+						document.getElementById(lightid[7]).style.visibility = "hidden";
+						document.getElementById(lightid[9]).style.visibility = "hidden";
+						document.getElementById(lightid[10]).style.visibility = "hidden";
+						document.getElementById(lightid[11]).style.visibility = "hidden";
+						document.getElementById(lightid[12]).style.visibility = "hidden";
+					}
+					else {
+						document.getElementById(lightid[1]).style.visibility = "visible";
+						document.getElementById(lightid[2]).style.visibility = "visible";
+						document.getElementById(lightid[3]).style.visibility = "visible";
+						document.getElementById(lightid[4]).style.visibility = "visible";
+						document.getElementById(lightid[6]).style.visibility = "visible";
+						document.getElementById(lightid[7]).style.visibility = "visible";
+						document.getElementById(lightid[9]).style.visibility = "visible";
+						document.getElementById(lightid[10]).style.visibility = "visible";
+						document.getElementById(lightid[11]).style.visibility = "visible";
+						document.getElementById(lightid[12]).style.visibility = "visible";
 					}
 				}
 			} );
