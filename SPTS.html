@@ -1275,7 +1275,7 @@
 								if(document.getElementById('updating'+this.t_light_num).innerText == "start") {
 									this.stop = this.speed;
 									document.getElementById('updating'+this.t_light_num).innerText = "loading";
-									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, logcheck);
+									getRoute(this.num, this.t_light_num, this.enter, this.dest, this.dest_enter, logcheck, senario);
 								}
 						
 							}
@@ -1377,7 +1377,7 @@
 							   this.t_light == 9 || this.t_light == 10)	this.turnCnt = 5;
 							if(this.t_light == 13 || this.t_light == 16)	this.turnCnt = 6;
 							
-							if(this.current != 0) updateWeight(this.current, this.current_enter);
+							if(this.current != 0) updateWeight(this.current, this.current_enter, senario);
 						}
 						
 						if(logcheck) array.push({num:this.num, cycle:cycle, part:16, x:this.x, y:this.y, dbx:this.dbx, dby:this.dby, status:this.status, crain:this.crain, container:this.container, loading:this.loading, deloading:this.deloading, ship:this.ship, t_light:this.t_light, turn:this.turn, enter:this.enter, turnCnt:this.turnCnt, dest:this.dest, dest_enter:this.dest_enter, t_light_num:this.t_light_num, stop:this.stop, warnu:this.warnu, warnr:this.warnr, warnd:this.warnd, warnl:this.warnl});
