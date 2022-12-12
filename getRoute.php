@@ -1,14 +1,12 @@
 <?php
 	$t = array();
-	function checkW($st, $se, $dt, $de, $tab, $snar){
+	function checkW($st, $se, $dt, $de, $tab){
 		global $t;
 		
 		$conn = mysqli_connect("localhost","root","smartport4int","test");
-		
-			$sql = "SELECT * FROM map 
-				WHERE start_traffic='".$st."' 
-				AND start_enter='".$se."'";
-		
+		$sql = "SELECT * FROM map 
+			WHERE start_traffic='".$st."' 
+			AND start_enter='".$se."'";
 		
 		$result = mysqli_query($conn, $sql);
 		
@@ -26,7 +24,7 @@
 		return $t[$dest];
 	}
 
-	function getCost($st, $se, $dt, $de, $snar){
+	function getCost($st, $se, $dt, $de){
 		$c = 0;
 		
 		global $t;
@@ -42,7 +40,7 @@
 		
 		$tab = 0;
 		
-		checkW($st, $se, $dt, $de, $tab, $snar);
+		checkW($st, $se, $dt, $de, $tab);
 		
 		$dest = $dt*10+$de;
 		$c = $t[$dest];
@@ -56,16 +54,13 @@
 	$dest_traffic = $_GET['dest_traffic'];
 	$dest_enter = $_GET['dest_enter'];
 	$logcheck = $_GET['logcheck'];
-	$senario = $_GET['senario'];
 
 	$conn = mysqli_connect("localhost","root","smartport4int","test");
 
-	
-		$sql = "SELECT * FROM map 
+	$sql = "SELECT * FROM map 
 		WHERE start_traffic='".$start_traffic."' 
 		AND start_enter='".$start_enter."' 
 		ORDER BY dest_enter;";
-	
 
 	$result = mysqli_query($conn, $sql);
 
@@ -75,7 +70,7 @@
 
 	// chose way
 	while($row = mysqli_fetch_assoc($result)){
-		$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter, $senario);
+		$cost = getCost($row['dest_traffic'], $row['dest_enter'], $dest_traffic, $dest_enter);
 		
 		if($cost < $mincost) {
 			$mincost = $cost;
