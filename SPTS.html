@@ -1359,27 +1359,26 @@
 							// left down 10 / left up 11 / left left 12
 							
 							// right up13 down14 right15  / left down16 up17 left18
-							if(senario != 1) {
-								if	(this.t_light ==  1)	{ this.turn = 2; this.current = this.t_light_num+1; this.current_enter = 2; }
-								else if	(this.t_light ==  2)	{ this.turn = 3; this.current = this.t_light_num-1; this.current_enter = 4; }
-								else if	(this.t_light ==  3)	{ this.turn = 4; this.current = this.t_light_num-3; this.current_enter = 1; }
-								else if	(this.t_light ==  4)	{ this.turn = 2; this.current = this.t_light_num-3; this.current_enter = 1; }
-								else if	(this.t_light ==  5)	{ this.turn = 1; this.current = this.t_light_num+3; this.current_enter = 3; }
-								else if	(this.t_light ==  6)	{ this.turn = 2; this.current = this.t_light_num+1; this.current_enter = 2; }
-								else if	(this.t_light ==  7)	{ this.turn = 2; this.current = this.t_light_num-1; this.current_enter = 4; }
-								else if	(this.t_light ==  8)	{ this.turn = 3; this.current = this.t_light_num+1; this.current_enter = 2; }
-								else if	(this.t_light ==  9)	{ this.turn = 4; this.current = this.t_light_num+3; this.current_enter = 3; }
-								else if	(this.t_light == 10)	{ this.turn = 2; this.current = this.t_light_num+3; this.current_enter = 3; }
-								else if	(this.t_light == 11)	{ this.turn = 1; this.current = this.t_light_num-3; this.current_enter = 1; }
-								else if	(this.t_light == 12)	{ this.turn = 2; this.current = this.t_light_num-1; this.current_enter = 4; }
 							
-								else if	(this.t_light == 13)	{ this.turn = 2; this.current = this.t_light_num-3; this.current_enter = 1; }
-								else if	(this.t_light == 14)	{ this.turn = 1; this.current = this.t_light_num+3; this.current_enter = 3; }
-								else if	(this.t_light == 15)	{ this.turn = 3; this.current = this.t_light_num+1; this.current_enter = 2; }
-								else if	(this.t_light == 16)	{ this.turn = 2; this.current = this.t_light_num+3; this.current_enter = 3; }
-								else if	(this.t_light == 17)	{ this.turn = 1; this.current = this.t_light_num-3; this.current_enter = 1; }
-								else if	(this.t_light == 18)	{ this.turn = 3; this.current = this.t_light_num-1; this.current_enter = 4; }
-							}
+							if	(this.t_light ==  1)	{ this.turn = 2; this.current = this.t_light_num+1; this.current_enter = 2; }
+							else if	(this.t_light ==  2)	{ this.turn = 3; this.current = this.t_light_num-1; this.current_enter = 4; }
+							else if	(this.t_light ==  3)	{ this.turn = 4; this.current = this.t_light_num-3; this.current_enter = 1; }
+							else if	(this.t_light ==  4)	{ this.turn = 2; this.current = this.t_light_num-3; this.current_enter = 1; }
+							else if	(this.t_light ==  5)	{ this.turn = 1; this.current = this.t_light_num+3; this.current_enter = 3; }
+							else if	(this.t_light ==  6)	{ this.turn = 2; this.current = this.t_light_num+1; this.current_enter = 2; }
+							else if	(this.t_light ==  7)	{ this.turn = 2; this.current = this.t_light_num-1; this.current_enter = 4; }
+							else if	(this.t_light ==  8)	{ this.turn = 3; this.current = this.t_light_num+1; this.current_enter = 2; }
+							else if	(this.t_light ==  9)	{ this.turn = 4; this.current = this.t_light_num+3; this.current_enter = 3; }
+							else if	(this.t_light == 10)	{ this.turn = 2; this.current = this.t_light_num+3; this.current_enter = 3; }
+							else if	(this.t_light == 11)	{ this.turn = 1; this.current = this.t_light_num-3; this.current_enter = 1; }
+							else if	(this.t_light == 12)	{ this.turn = 2; this.current = this.t_light_num-1; this.current_enter = 4; }
+							
+							else if	(this.t_light == 13)	{ this.turn = 2; this.current = this.t_light_num-3; this.current_enter = 1; }
+							else if	(this.t_light == 14)	{ this.turn = 1; this.current = this.t_light_num+3; this.current_enter = 3; }
+							else if	(this.t_light == 15)	{ this.turn = 3; this.current = this.t_light_num+1; this.current_enter = 2; }
+							else if	(this.t_light == 16)	{ this.turn = 2; this.current = this.t_light_num+3; this.current_enter = 3; }
+							else if	(this.t_light == 17)	{ this.turn = 1; this.current = this.t_light_num-3; this.current_enter = 1; }
+							else if	(this.t_light == 18)	{ this.turn = 3; this.current = this.t_light_num-1; this.current_enter = 4; }
 							
 							if(this.t_light == 14 || this.t_light == 17)	this.turnCnt = 2;
 							if(this.t_light == 1 || this.t_light == 5 || 
@@ -1750,7 +1749,6 @@
 				function animate() {
 					drawMap();
 					mysql_conn();
-					getTrafficLightData();
 						
 					for(var i = 1; i <= numcar; i++) {
 						truck[i].check();
@@ -1910,10 +1908,6 @@
 								{"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0",
 								"light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
 							</i>
-							<i class="output" id="outputl1"> 0 </i>
-							<i class="output" id="outputc1"> 0 </i>
-							<i class="output" id="outputl2"> 0 </i>
-							<i class="output" id="outputc2"> 0 </i>
 						</div>
 						<table class="traffic">
 							<tr>
@@ -2300,28 +2294,6 @@
 				success: function(data) {
 					if(data == tl) {
 						$("#updating"+tl).text("start");
-					}
-				}
-			} );
-		}
-		
-		// update weight
-		function getTrafficLightData() {
-			$.ajax( {
-				url: "getTrafficLightData.php",
-				type: "GET",
-				dataType: 'json',
-				success: function(data) {
-					if(data.code != 0) {
-						alert(data.msg);
-						alert(data.code);
-					}
-					else {
-						alert(data.car1l+" "+data.car1c+" "+data.car2l+" "+data.car2c);
-						$("#outputl1").text(data.car1l);
-						$("#outputc1").text(data.car1c);
-						$("#outputl2").text(data.car2l);
-						$("#outputc2").text(data.car2c);
 					}
 				}
 			} );
