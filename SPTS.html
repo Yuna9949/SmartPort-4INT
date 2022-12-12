@@ -2312,11 +2312,16 @@
 				type: "GET",
 				dataType: 'json',
 				success: function(data) {
-					alert(data.car1l+" "+data.car1c+" "+data.car2l+" "+data.car2c);
-					$("#outputl1").text(data.car1l);
-					$("#outputc1").text(data.car1c);
-					$("#outputl2").text(data.car2l);
-					$("#outputc2").text(data.car2c);
+					if(data.msg == "success") {
+						alert(data.car1l+" "+data.car1c+" "+data.car2l+" "+data.car2c);
+						$("#outputl1").text(data.car1l);
+						$("#outputc1").text(data.car1c);
+						$("#outputl2").text(data.car2l);
+						$("#outputc2").text(data.car2c);
+					}
+					else {
+						alert(data.msg);
+					}
 				}
 			} );
 		}
