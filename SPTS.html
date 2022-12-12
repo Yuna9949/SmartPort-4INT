@@ -2084,6 +2084,20 @@
 				}
 			} );
 		}
+		// update weight
+		function updateWeight2(traffic_light, traffic_enter) {
+			$.ajax( {
+				url: "updateWeight2.php",
+				type: "GET",
+				data: {
+					traffic_light : traffic_light,
+					traffic_enter : traffic_enter
+				},
+				dataType: 'json',
+				success: function(data) {
+				}
+			} );
+		}
 		
 		// get traffic light data
 		function mysql_conn() {
@@ -2223,6 +2237,27 @@
 		function getRoute(num, st, se, dt, de, log) {
 			$.ajax( {
 				url: "getRoute.php",
+				type: "GET",
+				data: {
+					number : num,
+					start_traffic : st,
+					start_enter : se,
+					dest_traffic : dt,
+					dest_enter : de,
+					logcheck : log
+				},
+				dataType: 'json',
+				success: function(data) {
+					if(data == st) {
+						$("#updating"+st).text("success");
+					}
+				}
+			} );
+		}
+		// get route
+		function getRoute2(num, st, se, dt, de, log) {
+			$.ajax( {
+				url: "getRoute2.php",
 				type: "GET",
 				data: {
 					number : num,
