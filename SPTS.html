@@ -332,6 +332,9 @@
 				// show senario in detail
 				var senario = document.getElementById("senarioslct").selectedIndex+1;
 				if(senario == 1) {
+					document.getElementById("carnum").options[2].selected = true;
+					document.getElementById("carnum").style.pointerEvents = "none";
+					
 					document.getElementById("s1c3").style.display = "block";
 					document.getElementById("s1c5").style.display = "block";
 					document.getElementById("s1c7").style.display = "block";
