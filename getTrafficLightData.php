@@ -39,7 +39,6 @@
 		
   		mysqli_free_result($result);
   		mysqli_close($conn);
-		echo $data;
 		
 	} catch (exception $e) {
 		$data['car1l'] = 0;
