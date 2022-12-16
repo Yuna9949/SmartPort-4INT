@@ -672,11 +672,16 @@
 				var tl_2 = document.getElementById("outputl2").innerText;
 				var tc_2 = document.getElementById("outputc2").innerText;
 				
+				// 2번 차량이 2번 신호등에서 1번 방향에서 감지됨
+				if(tl_2 == 2) {
+					if(tc_2 == 1) {
+						alert("go");
+						ctx.fillStyle = color_st[2];
+						ctx.fillRect(3.5*road+wth/2+1,	14.5*road+road, 1*road-2, 1*road-0.5*road);
+					}
+				}
 				
-				alert(tl_1);
-				alert(tc_1);
-				alert(tl_2);
-				alert(tc_2);
+				/*
 				if(tl_1 == 1) {
 					ctx.fillStyle = color_st[2];
 					if(tc_1 == 1) {
@@ -738,6 +743,7 @@
 						ctx.fillRect(3.5*road+wth/2+1+road,	14.5*road, 1*road-2-0.5*road, 1*road);
 					}
 				}
+				*/
 				
 			}
 			
