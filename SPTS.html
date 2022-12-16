@@ -638,7 +638,7 @@
 				ctx.fillRect (2*road, 22*road-1, wth+4*road, 2);
 				
 				// show traffic sign for
-				if(senario != 1) {
+				//if(senario != 1) {
 					ctx.fillStyle = color_st[traffic_stop[1]];
 					ctx.fillRect(2.5*road+1,	 2.5*road, 1*road-2, 1*road);
 					ctx.fillStyle = color_st[traffic_stop[4]];
@@ -649,12 +649,12 @@
 					ctx.fillRect(2.5*road+1,	20.5*road, 1*road-2, 1*road);
 					ctx.fillStyle = color_st[traffic_stop[2]];
 					ctx.fillRect(3.5*road+wth/2+1,	 2.5*road, 1*road-2, 1*road);
-				}
+				//}
 				ctx.fillStyle = color_st[traffic_stop[5]];
 				ctx.fillRect(3.5*road+wth/2+1,	 8.5*road, 1*road-2, 1*road);
 				ctx.fillStyle = color_st[traffic_stop[8]];
 				ctx.fillRect(3.5*road+wth/2+1,	14.5*road, 1*road-2, 1*road);
-				if(senario != 1) {
+				//if(senario != 1) {
 					ctx.fillStyle = color_st[traffic_stop[11]];
 					ctx.fillRect(3.5*road+wth/2+1,	20.5*road, 1*road-2, 1*road);
 					ctx.fillStyle = color_st[traffic_stop[3]];
@@ -665,7 +665,7 @@
 					ctx.fillRect(4.5*road+wth+1,	14.5*road, 1*road-2, 1*road);
 					ctx.fillStyle = color_st[traffic_stop[12]];
 					ctx.fillRect(4.5*road+wth+1,	20.5*road, 1*road-2, 1*road);
-				}
+				//}
 			}
 			
 			var stopani = null;
