@@ -1348,7 +1348,7 @@
 								if(traffic_stop[this.t_light_num] == 2) {
 									alert("car1 go"+this.t_light);
 								}
-								else if(traffic_stop[this.t_light_num] == 5) {
+								else if(traffic_stop[this.t_light_num] == 6) {
 									alert("car2 go"+this.t_light);
 								}
 							}
@@ -1409,11 +1409,11 @@
 						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= road*(this.turnCnt+1) && traffic_stop[this.t_light_num] == this.num) {
-							if(senario == 1 && this.t_light > 0) {
+							if(senario == 1) {
 								if(traffic_stop[this.t_light_num] == 2) {
 									alert("car1 stop");
 								}
-								else if(traffic_stop[this.t_light_num] == 5) {
+								else if(traffic_stop[this.t_light_num] == 6) {
 									alert("car2 stop");
 								}
 							}
