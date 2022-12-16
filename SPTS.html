@@ -1427,7 +1427,13 @@
 									if     (current_traffic == 1) current_traffic = 5;
 									else if(current_traffic == 2) current_traffic = 8;
 									
+									if     (current_t_enter == 3) current_traffic = 2;
+									else if(current_t_enter == 2) current_traffic = 3;
+									
 									updateWeight2(current_traffic, current_t_enter);
+									
+									if     (current_t_enter == 2) updateWeight2(current_traffic, 5);
+									else if(current_t_enter == 4) updateWeight2(current_traffic, 6);
 								}
 								else if(this.num == 6) {
 									var current_traffic = document.getElementById("outputl2").innerText;
@@ -1436,7 +1442,13 @@
 									if     (current_traffic == 1) current_traffic = 5;
 									else if(current_traffic == 2) current_traffic = 8;
 									
+									if     (current_t_enter == 4) current_traffic = 3;
+									else if(current_t_enter == 3) current_traffic = 4;
+									
 									updateWeight2(current_traffic, current_t_enter);
+									
+									if     (current_t_enter == 2) updateWeight2(current_traffic, 5);
+									else if(current_t_enter == 4) updateWeight2(current_traffic, 6);									
 								}
 							}
 						}
