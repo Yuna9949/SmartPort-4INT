@@ -672,78 +672,35 @@
 				var tl_2 = document.getElementById("outputl2").innerText;
 				var tc_2 = document.getElementById("outputc2").innerText;
 				
-				// 2번 차량이 2번 신호등에서 1번 방향에서 감지됨
-				if(tl_2 == 2) {
-					if(tc_2 == 1) {
-						alert("go");
-						ctx.fillStyle = color_st[2];
-						ctx.fillRect(3.5*road+wth/2+1,	14.5*road+road, 1*road-2, 1*road-0.5*road);
-					}
-				}
-				
-				/*
 				if(tl_1 == 1) {
-					ctx.fillStyle = color_st[2];
-					if(tc_1 == 1) {
-						ctx.fillRect(3.5*road+wth/2+1,	 8.5*road+road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 3) {
-						ctx.fillRect(3.5*road+wth/2+1-0.5*road,	 8.5*road, 1*road-2-0.5*road, 1*road);
-					}
-					else if(tc_1 == 2) {
-						ctx.fillRect(3.5*road+wth/2+1,	 8.5*road-0.5*road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 4) {
-						ctx.fillRect(3.5*road+wth/2+1+road,	 8.5*road, 1*road-2-0.5*road, 1*road);
-					}
-				}
-				else if(tl_1 == 2) {
 					ctx.fillStyle = color_st[6];
-					if(tc_1 == 1) {
-						ctx.fillRect(3.5*road+wth/2+1,	 8.5*road+road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 3) {
-						ctx.fillRect(3.5*road+wth/2+1-0.5*road,	 8.5*road, 1*road-2-0.5*road, 1*road);
-					}
-					else if(tc_1 == 2) {
-						ctx.fillRect(3.5*road+wth/2+1,	 8.5*road-0.5*road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 4) {
-						ctx.fillRect(3.5*road+wth/2+1+road,	 8.5*road, 1*road-2-0.5*road, 1*road);
-					}
+					if     (tc_1 == 1) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road+road, 		1*road-2, 		1*road-0.5*road);
+					else if(tc_1 == 3) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	8.5*road,		1*road-2-0.5*road, 	1*road);
+					else if(tc_1 == 2) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road-0.5*road, 	1*road-2, 		1*road-0.5*road);
+					else if(tc_1 == 4) ctx.fillRect(3.5*road+wth/2+1+road,	 	8.5*road, 		1*road-2-0.5*road, 	1*road);
+				}
+				else if(tl_1 == 2) { // 2번 차량이 2번 신호등에서 n 방향에서 감지됨
+					ctx.fillStyle = color_st[6];
+					if     (tc_1 == 1) ctx.fillRect(3.5*road+wth/2+1,		14.5*road+road, 	1*road-2, 		1*road-0.5*road);
+					else if(tc_1 == 2) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	14.5*road, 		1*road-2-0.5*road, 	1*road);
+					else if(tc_1 == 4) ctx.fillRect(3.5*road+wth/2+1,		14.5*road-0.5*road, 	1*road-2, 		1*road-0.5*road);
+					else if(tc_1 == 3) ctx.fillRect(3.5*road+wth/2+1+road,		14.5*road, 		1*road-2-0.5*road, 	1*road);
 				}
 				
 				if(tl_2 == 1) {
 					ctx.fillStyle = color_st[2];
-					if(tc_1 == 1) {
-						ctx.fillRect(3.5*road+wth/2+1,	14.5*road+road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 2) {
-						ctx.fillRect(3.5*road+wth/2+1-0.5*road,	14.5*road, 1*road-2-0.5*road, 1*road);
-					}
-					else if(tc_1 == 4) {
-						ctx.fillRect(3.5*road+wth/2+1,	14.5*road-0.5*road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 3) {
-						ctx.fillRect(3.5*road+wth/2+1+road,	14.5*road, 1*road-2-0.5*road, 1*road);
-					}
+					if     (tc_2 == 1) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road+road, 		1*road-2, 		1*road-0.5*road);
+					else if(tc_2 == 3) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	8.5*road,		1*road-2-0.5*road, 	1*road);
+					else if(tc_2 == 2) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road-0.5*road, 	1*road-2, 		1*road-0.5*road);
+					else if(tc_2 == 4) ctx.fillRect(3.5*road+wth/2+1+road,	 	8.5*road, 		1*road-2-0.5*road, 	1*road);
 				}
-				else if(tl_2 == 2) {
-					ctx.fillStyle = color_st[6];
-					if(tc_1 == 1) {
-						ctx.fillRect(3.5*road+wth/2+1,	14.5*road+road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 2) {
-						ctx.fillRect(3.5*road+wth/2+1-0.5*road,	14.5*road, 1*road-2-0.5*road, 1*road);
-					}
-					else if(tc_1 == 4) {
-						ctx.fillRect(3.5*road+wth/2+1,	14.5*road-0.5*road, 1*road-2, 1*road-0.5*road);
-					}
-					else if(tc_1 == 3) {
-						ctx.fillRect(3.5*road+wth/2+1+road,	14.5*road, 1*road-2-0.5*road, 1*road);
-					}
+				else if(tl_2 == 2) { // 2번 차량이 2번 신호등에서 n 방향에서 감지됨
+					ctx.fillStyle = color_st[2];
+					if     (tc_2 == 1) ctx.fillRect(3.5*road+wth/2+1,		14.5*road+road, 	1*road-2, 		1*road-0.5*road);
+					else if(tc_2 == 2) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	14.5*road, 		1*road-2-0.5*road, 	1*road);
+					else if(tc_2 == 4) ctx.fillRect(3.5*road+wth/2+1,		14.5*road-0.5*road, 	1*road-2, 		1*road-0.5*road);
+					else if(tc_2 == 3) ctx.fillRect(3.5*road+wth/2+1+road,		14.5*road, 		1*road-2-0.5*road, 	1*road);
 				}
-				*/
 				
 			}
 			
