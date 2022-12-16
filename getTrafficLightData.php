@@ -23,11 +23,19 @@
   		else if($row12["detect_num"] == 1) {$car1l = 1; $car1c = 2;}
   		else if($row13["detect_num"] == 1) {$car1l = 1; $car1c = 3;}
   		else if($row14["detect_num"] == 1) {$car1l = 1; $car1c = 4;}
-
-  		if($row11["detect_num"] == 2) {$car2l = 2; $car2c = 1;}
-  		else if($row12["detect_num"] == 2) {$car2l = 2; $car2c = 2;}
-  		else if($row13["detect_num"] == 2) {$car2l = 2; $car2c = 3;}
-  		else if($row14["detect_num"] == 2) {$car2l = 2; $car2c = 4;}
+  		else if($row21["detect_num"] == 1) {$car1l = 2; $car1c = 1;}
+  		else if($row22["detect_num"] == 1) {$car1l = 2; $car1c = 2;}
+  		else if($row23["detect_num"] == 1) {$car1l = 2; $car1c = 3;}
+  		else if($row24["detect_num"] == 1) {$car1l = 2; $car1c = 4;}
+		
+		if     ($row11["detect_num"] == 2) {$car2l = 1; $car1c = 1;}
+  		else if($row12["detect_num"] == 2) {$car2l = 1; $car1c = 2;}
+  		else if($row13["detect_num"] == 2) {$car2l = 1; $car1c = 3;}
+  		else if($row14["detect_num"] == 2) {$car2l = 1; $car1c = 4;}
+  		else if($row21["detect_num"] == 2) {$car2l = 2; $car1c = 1;}
+  		else if($row22["detect_num"] == 2) {$car2l = 2; $car1c = 2;}
+  		else if($row23["detect_num"] == 2) {$car2l = 2; $car1c = 3;}
+  		else if($row24["detect_num"] == 2) {$car2l = 2; $car1c = 4;}
   
 	
 		$data['car1l'] = $car1l;
