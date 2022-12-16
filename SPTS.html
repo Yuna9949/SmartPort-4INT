@@ -672,14 +672,14 @@
 				var tl_2 = document.getElementById("outputl2").innerText;
 				var tc_2 = document.getElementById("outputc2").innerText;
 				
-				if(tl_1 == 1) {
+				if(tl_1 == 1) { 
 					ctx.fillStyle = color_st[2];
 					if     (tc_1 == 1) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road+road, 		1*road-2, 		1*road-0.5*road);
 					else if(tc_1 == 3) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	8.5*road,		1*road-2-0.5*road, 	1*road);
 					else if(tc_1 == 2) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road-0.5*road, 	1*road-2, 		1*road-0.5*road);
 					else if(tc_1 == 4) ctx.fillRect(3.5*road+wth/2+1+road,	 	8.5*road, 		1*road-2-0.5*road, 	1*road);
 				}
-				else if(tl_1 == 2) { // 2번 차량이 2번 신호등에서 n 방향에서 감지됨
+				else if(tl_1 == 2) {  // 1번 차량이 2번 신호등에서 n 방향에서 감지됨
 					ctx.fillStyle = color_st[2];
 					if     (tc_1 == 1) ctx.fillRect(3.5*road+wth/2+1,		14.5*road+road, 	1*road-2, 		1*road-0.5*road);
 					else if(tc_1 == 2) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	14.5*road, 		1*road-2-0.5*road, 	1*road);
@@ -687,14 +687,14 @@
 					else if(tc_1 == 3) ctx.fillRect(3.5*road+wth/2+1+road,		14.5*road, 		1*road-2-0.5*road, 	1*road);
 				}
 				
-				if(tl_2 == 1) {
+				if(tl_2 == 1) { // 2번 차량이 1번 신호등에서 n 방향에서 감지됨
 					ctx.fillStyle = color_st[6];
 					if     (tc_2 == 1) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road+road, 		1*road-2, 		1*road-0.5*road);
 					else if(tc_2 == 3) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	8.5*road,		1*road-2-0.5*road, 	1*road);
 					else if(tc_2 == 2) ctx.fillRect(3.5*road+wth/2+1,	 	8.5*road-0.5*road, 	1*road-2, 		1*road-0.5*road);
 					else if(tc_2 == 4) ctx.fillRect(3.5*road+wth/2+1+road,	 	8.5*road, 		1*road-2-0.5*road, 	1*road);
 				}
-				else if(tl_2 == 2) { // 2번 차량이 2번 신호등에서 n 방향에서 감지됨
+				else if(tl_2 == 2) { 
 					ctx.fillStyle = color_st[6];
 					if     (tc_2 == 1) ctx.fillRect(3.5*road+wth/2+1,		14.5*road+road, 	1*road-2, 		1*road-0.5*road);
 					else if(tc_2 == 2) ctx.fillRect(3.5*road+wth/2+1-0.5*road,	14.5*road, 		1*road-2-0.5*road, 	1*road);
@@ -2015,10 +2015,13 @@
 								{"light01":"0","light02":"0","light03":"0","light04":"0","light05":"0","light06":"0",
 								"light07":"0","light08":"0","light09":"0","light10":"0","light11":"0","light12":"0"}
 							</i>
+							<i class="output"> car1( </i>
 							<i class="output" id="outputl1"> 0 </i>
 							<i class="output" id="outputc1"> 0 </i>
+							<i class="output"> ) car2( </i>
 							<i class="output" id="outputl2"> 0 </i>
 							<i class="output" id="outputc2"> 0 </i>
+							<i class="output"> ) </i>
 						</div>
 						<table class="traffic">
 							<tr>
