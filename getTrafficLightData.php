@@ -24,7 +24,7 @@
   		else if($row13["detect_num"] == 1) {$car1l = 1; $car1c = 3;}
   		else if($row14["detect_num"] == 1) {$car1l = 1; $car1c = 4;}
 
-  		else if($row11["detect_num"] == 2) {$car2l = 2; $car2c = 1;}
+  		if($row11["detect_num"] == 2) {$car2l = 2; $car2c = 1;}
   		else if($row12["detect_num"] == 2) {$car2l = 2; $car2c = 2;}
   		else if($row13["detect_num"] == 2) {$car2l = 2; $car2c = 3;}
   		else if($row14["detect_num"] == 2) {$car2l = 2; $car2c = 4;}
