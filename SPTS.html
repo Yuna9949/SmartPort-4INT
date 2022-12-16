@@ -1346,10 +1346,26 @@
 							
 							if(senario == 1 && this.t_light > 0 && (this.t_light_num == 5 || this.t_light_num == 8) ) {
 								if(traffic_stop[this.t_light_num] == 2) {
-									alert("car1 go"+this.t_light);
+									if(this.t_light == 2 || this.t_light == 4 || this.t_light == 8 || this.t_light == 10 || this.t_light == 13 || this.t_light == 16) {
+										alert("car1 go L");
+									}
+									else if(this.t_light == 1 || this.t_light == 5 || this.t_light == 7 || this.t_light == 11 || this.t_light == 14 || this.t_light == 17) {
+										alert("car1 go R");
+									}
+									else if(this.t_light == 3 || this.t_light == 6 || this.t_light == 9 || this.t_light == 12 || this.t_light == 15 || this.t_light == 18){
+										alert("car1 go S");
+									}
 								}
 								else if(traffic_stop[this.t_light_num] == 6) {
-									alert("car2 go"+this.t_light);
+									if(this.t_light == 2 || this.t_light == 4 || this.t_light == 8 || this.t_light == 10 || this.t_light == 13 || this.t_light == 16) {
+										alert("car2 go L");
+									}
+									else if(this.t_light == 1 || this.t_light == 5 || this.t_light == 7 || this.t_light == 11 || this.t_light == 14 || this.t_light == 17) {
+										alert("car2 go R");
+									}
+									else if(this.t_light == 3 || this.t_light == 6 || this.t_light == 9 || this.t_light == 12 || this.t_light == 15 || this.t_light == 18){
+										alert("car2 go S");
+									}
 								}
 							}
 							
