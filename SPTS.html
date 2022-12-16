@@ -1409,6 +1409,15 @@
 						
 						// turn off traffic light
 						if(this.turnCnt > 0 && this.stop >= road*(this.turnCnt+1) && traffic_stop[this.t_light_num] == this.num) {
+							if(senario == 1 && this.t_light > 0) {
+								if(traffic_stop[this.t_light_num] == 2) {
+									alert("car1 stop");
+								}
+								else if(traffic_stop[this.t_light_num] == 5) {
+									alert("car2 stop");
+								}
+							}
+							
 							this.t_light = 0;
 							this.stop = 0;
 							traffic_stop[this.t_light_num] = 0;
